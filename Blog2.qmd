@@ -1,0 +1,18 @@
+---
+title: "Blog about Topic 2"
+listing:
+    id: id_Blog2
+    contents: "Blogs2/b*/*.qmd"
+    type: default
+    sort: "date"
+    max-items: 15
+    image-align: left
+    image-placeholder: "Figures/noFigureMessage.jpg"
+    date-format: long
+    categories: true
+    sort-ui: [title, date]
+---
+Still working ...
+
+::: {#id_Blog1}
+:::

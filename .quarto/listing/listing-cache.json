@@ -1,0 +1,23 @@
+{
+  "listingMap": {
+    "Blog.qmd": [
+      "B3049D40",
+      "Blogs/*.qmd",
+      "Blogs/*/.*qmd",
+      "Blogs/**.*qmd",
+      "Blogs/b*/*.qmd"
+    ],
+    "Blog1.qmd": [
+      "Blogs1/b*/*.qmd"
+    ],
+    "Blog2.qmd": [
+      "Blogs2/b*/*.qmd"
+    ],
+    "Gallery.qmd": [
+      "Gallery/g*/*.qmd"
+    ],
+    "Research.qmd": [
+      "Gallery/g*/*.qmd"
+    ]
+  }
+}

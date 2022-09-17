@@ -1,0 +1,26 @@
+---
+title: "Sergio Jácobo"
+about:
+  template: trestles
+  image: "Figures/sergio.png"
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/JacoboZavaleta
+    - icon: github
+      text: Github
+      href: https://www.github.com/SJacoboZavaleta
+---
+
+Sergio Jácobo is a Mechatronics Enginner and his research interests include design of clinical robots and biomedical applications based on Artifitial Intelligence using Machine Learning. When not innovating on data platforms, Sergio enjoys spending  time warching films and writing code.
+
+## Education
+
+National University of Trujillo, Trujillo | Trujillo, Peru
+Bach. in Mechatronics Engineering | May 2014 - Dec 2018
+
+## Experience
+
+Corpotation Tecnobiomédica Healthcare del Perú SAC | Auxiliar in Maintainance | Nov 2020 - Apr 2021
+
+Norsac SAC | Auxiliar in Maintainance | May 2019 - Nov 2018

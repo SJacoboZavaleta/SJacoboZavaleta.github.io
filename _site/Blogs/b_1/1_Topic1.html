@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sergio Jácobo Zavaleta">
+<meta name="description" content="First topic of blog">
+
+<title>Sergio’s Blog - Topic 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Sergio’s Blog - Topic 1">
+<meta property="og:description" content="First topic of blog">
+<meta property="og:image" content="1_cover.jpg">
+<meta property="og:site-name" content="Sergio's Blog">
+<meta name="twitter:title" content="Sergio’s Blog">
+<meta name="twitter:description" content="First topic of blog">
+<meta name="twitter:image" content="1_cover.jpg">
+<meta name="twitter:creator" content="@JacoboZavaleta">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../Figures/totoroLogo.png" alt="Logo" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Sergio’s Blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tutorials</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorials">    
+        <li>
+    <a class="dropdown-item" href="../../more1.html">
+ <span class="dropdown-text">More 1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../more1.html">More 1</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentals" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fundamentals</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentals">    
+        <li>
+    <a class="dropdown-item" href="../../more1.html">
+ <span class="dropdown-text">More 1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">Sobre mí</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#a-quien-va-dirigido" id="toc-a-quien-va-dirigido" class="nav-link active" data-scroll-target="#a-quien-va-dirigido">¿A quien va dirigido?</a></li>
+  <li><a href="#gestor-de-referencias" id="toc-gestor-de-referencias" class="nav-link" data-scroll-target="#gestor-de-referencias">Gestor de Referencias</a>
+  <ul class="collapse">
+  <li><a href="#exportación-de-las-referencias" id="toc-exportación-de-las-referencias" class="nav-link" data-scroll-target="#exportación-de-las-referencias">Exportación de las referencias</a></li>
+  </ul></li>
+  <li><a href="#entorno-colaborativo-para-creación-de-documentos" id="toc-entorno-colaborativo-para-creación-de-documentos" class="nav-link" data-scroll-target="#entorno-colaborativo-para-creación-de-documentos">Entorno colaborativo para creación de documentos</a>
+  <ul class="collapse">
+  <li><a href="#subir-archivos-al-proyecto" id="toc-subir-archivos-al-proyecto" class="nav-link" data-scroll-target="#subir-archivos-al-proyecto">Subir archivos al “proyecto”</a></li>
+  <li><a href="#compartir-plantilla" id="toc-compartir-plantilla" class="nav-link" data-scroll-target="#compartir-plantilla">Compartir plantilla</a></li>
+  <li><a href="#manejo-de-referencias-.bib" id="toc-manejo-de-referencias-.bib" class="nav-link" data-scroll-target="#manejo-de-referencias-.bib">Manejo de referencias <code>.bib</code></a></li>
+  <li><a href="#sentencias-necesarias" id="toc-sentencias-necesarias" class="nav-link" data-scroll-target="#sentencias-necesarias">Sentencias necesarias</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Topic 1</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Latex</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    First topic of blog
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sergio Jácobo Zavaleta </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de Publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">7 de septiembre de 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-left page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="1_cover.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">About the topic 1</figcaption><p></p>
+</figure>
+</div>
+<section id="a-quien-va-dirigido" class="level1">
+<h1>¿A quien va dirigido?</h1>
+<p>La presente guía tiene como objetivo presentar un flujo de trabajo para la generación de reportes universitarios, literarios, científicos y más de alta calidad, bajo la modalidad colaborativa en la nube utilizando la plataforma web <strong>Overleaf</strong> y el administrador de referencias <strong>Zotero</strong>. Esta guía es útil para nuevos usuarios que desean comenzar en el mundo de o buscan una alternativa práctica y open-source a editores de texto comerciales. Siendo su principal ventaja, centrarse menos en la <em>forma</em> del documento y más en el <em>fondo</em> del mismo. Pero sobre todo, para todos aquellos estudiantes y profesionales que prefieren aprender lo básico en idioma español.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/logoZoteroOverleaf.png" class="img-fluid figure-img" width="441"></p>
+</figure>
+</div>
+</section>
+<section id="gestor-de-referencias" class="level1 page-columns page-full">
+<h1>Gestor de Referencias</h1>
+<p>En esta oportunidad, se recomienda el uso de <a href="https://www.zotero.org">Zotero</a> <img src="icons/zotero.png" class="img-fluid" width="20"> por la evidente ventaja y flexibilidad sobre otros programas en el mercado gracias a la gran cantidad de <a href="https://www.zotero.org/support/plugins">plugins</a> o extensiones que mejoran, simplifican y enlazan el manejo de referencias bibliográficas, tanto para editar libros, páginas web, blogs, etc.</p>
+<ol type="1" class="page-columns page-full">
+<li><p>Crearse una cuenta de forma gratuita en su página oficial.</p></li>
+<li class="page-columns page-full"><p>Descargar el programa e instalar según tu sistema operativo de preferencia. La pantalla principal se verá así.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/2_inicio.png" class="img-fluid figure-img" alt="Ventana principal de Zotero." width="500"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso 2. Ventana principal de Zotero</figcaption><p></p>
+</figure>
+</div></li>
+<li class="page-columns page-full"><p>Descargar e instalar el plugin <code>Zotero Better Bibtex</code> <a href="https://retorque.re/zotero-better-bibtex/">más reciente</a> (desde Github) para el control y creación de etiquetas automáticas (identificador que deberás escribir para especificar una referencia particular) para citar de forma fácil y ordenada durante la redacción de documentos.</p>
+<ol type="i" class="page-columns page-full">
+<li class="page-columns page-full"><p>Ir a la pestaña de <strong>Herramientas</strong>, luego a <strong>Complementos</strong> que abrirá una nueva ventana.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/3_1_zoteroConfiguracion.png" class="img-fluid figure-img" alt="Complementos." width="425"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso i. Ir a complementos</figcaption><p></p>
+</figure>
+</div></li>
+<li class="page-columns page-full"><p>Ir a <strong>Configuración</strong> ⚙️ y escoger instalar desde un archivo (<em>install Add-on From File</em>). Buscar y seleccionar el archivo previamente descargado (por ejemplo <code>zotero-better-bibtex-6.7.1.xpi</code>). Reiniciar el programa.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/3_2_instalarPlugin.png" class="img-fluid figure-img" alt="Plugin Zotero Bibtex." width="550"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso ii. Instalar plugin</figcaption><p></p>
+</figure>
+</div></li>
+<li class="page-columns page-full"><p>Repetir el paso 1 y el plugin ahora debe aparecer instalado así.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/3_3_bibtexPlugin.png" class="img-fluid figure-img" alt="Plugin instalado." width="447"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso iii. Verificar plugin instalado</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>Ahora lo más importante es modificar la configuración por defecto de etiquetas (<em>labels</em>). Término que tal vez te resulte familiar si tienes experiencia con , Markdown, Rmarkdown o Quarto. En cualquier caso, una etiqueta es la palabra clave por el que identificarás una fuente específica a la hora de relacionar y crear una cita para algún documento científico, libro, página web, etc. Dependiendo del formato de etiqueta que desees por comodidad, el parámetro a modificar será diferente. Por conveniencia, se utiliza el formato APA compuesto por el primer apellido del autor principal y el año de publicación<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p></li>
+<li class="page-columns page-full"><p>Ir a la pestaña <strong>Editar</strong> y luego a <strong>Preferencias</strong> que abrirá una nueva ventana. Ir a la opción <strong>Better BibTex</strong> y a la subpestaña <strong>Citation keys</strong>.</p>
+<blockquote class="blockquote">
+<p>En el espacio <em>New citation key format</em> modificar a <code>auth.capitalize+year</code> .</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/5_editarCitationKey.png" class="img-fluid figure-img" alt="Formato de etiquetas." width="486"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso v. Formato de etiquetas</figcaption><p></p>
+</figure>
+</div></li>
+<li class="page-columns page-full"><p>En este punto, cualquier archivo nuevo que se agregue a tu biblioteca, estará asociado a una etiqueta reconocible para su fácil manejo y memorización a la hora de buscar alguna cita. En caso de repetirse citas, el plugin tiene la capacidad de diferenciarlos por letras al final de la etiqueta según su antiguedad, por ejemplo, Cryan2019a, Cryan2019b, etc.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/6_nuevaEtiqueta.png" class="img-fluid figure-img" alt="Etiquetas." width="310"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso vi. Etiquetas</figcaption><p></p>
+</figure>
+</div></li>
+</ol></li>
+<li class="page-columns page-full"><p>Armar tu biblioteca Zotero</p>
+<p>Antes de explicar como agregar nuevas fuentes, es necesario saber dos aspectos importantes:</p>
+<ul>
+<li><p>Tu biblioteca puede organizarse como cualquier organizador de archivos: Carpetas y subcarpetas 📁.</p></li>
+<li><p>Existen dos bibliotecas principales: <strong>Mi biblioteca</strong> y <strong>Bibliotecas de grupo.</strong> La primera es para tu manejo personal y los documentos agregados solo podrán ser manipulados por ti. Por el contrario, los de tipo grupal pueden compartirse con otros usuarios de Zotero, incluso con privilegios de modificación (agregar notas 📔, adjuntar archivos 🔗, comentar 📝, etc.). En pocas palabras, investigación colaborativa 🧑‍🤝‍🧑.</p></li>
+</ul>
+<ol type="a" class="page-columns page-full">
+<li class="page-columns page-full"><p>Desde la aplicación de escritorio 🖥️</p>
+<ol type="A" class="page-columns page-full">
+<li class="page-columns page-full"><p>Método 1 (<strong>El mejor método 😃</strong>): La forma más elegante es buscar los códigos de la publicación como DOI, ISBN, PMID, arXiv, etc. En el caso de artículos científicos, el código está casi siempre en la página de publicación. Solo basta con copiar, pegar, presionar enter y voilà : Toda la información ha sido agregado. Si tienes suerte (o mejor dicho si la publicación es <em>open-access</em>), el archivo pdf aparecerá como adjunto <img src="icons/pdf.png" class="img-fluid" width="20" alt="pdf">. Sino adjuntarlo de forma manual <code>click derecho a tu cita agregada -&gt; Añadir adjunto -&gt;  Añadir copia guardada</code>.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/4_1_metodo1_1.png" class="img-fluid figure-img" width="489"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso A. Busqueda de archivos por código DOI</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/4_1_metodo1_2.png" class="img-fluid figure-img" width="583"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso A. Archivo pdf correctamente agregado.</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_a%C3%B1adirPDF.png" class="img-fluid figure-img" width="583"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso A. Adjutando pdf al archivo.</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>Método 2 (<strong>Cuando no tienes opción 😑</strong>): El ingreso se realiza de forma manual y según el tipo de fuente bibliográfica (revista, libro, etc.), los datos requeridos pueden variar (<strong>al menos un autor y el título son necesarios</strong>).</p></li>
+</ol></li>
+<li class="page-columns page-full"><p>Desde tu navegador de búsqueda 🌐</p>
+<p>La magia de utilizar una extensión (<em>add-on)</em> desde tu navegador favorito, es que <a href="https://www.zotero.org/download/">Zotero Connector</a> permite guardar la información de la página web con un solo click (utilizando metadata) a tu biblioteca.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/4_2_metodo2.png" class="img-fluid figure-img" width="565"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso b. Método 2 para añadir referencias</figcaption><p></p>
+</figure>
+</div></li>
+</ol></li>
+</ol>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para un guardado correcto de los datos, utilizar la extensión desde la página oficial o repositorio de preferencia del artículo científico. Por ejemplo, SAGE, IEEE, Scielo, etc.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Manteniendo la carpeta de interés seleccionada desde la aplicación de Zotero mientras se activa la extensión en el navegador, el nuevo documento es automáticamente guardado en dicha carpeta. Caso contrario, se selecciona la ubicación desde la misma extensión.</p>
+</div>
+</div>
+<section id="exportación-de-las-referencias" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="exportación-de-las-referencias">Exportación de las referencias</h2>
+<p>Zotero ofrece la ventaja de exportar las referencias en diferentes formatos, debidamente estructurados en un simple paso. Para su uso con Overleaf, es necesario el uso de ficheros <code>.bib</code> compatibles con . El plugin <strong>Better Bibtex</strong> ayuda justamente en la correcta exportación de las referencias, sobre todo, a la hora de manejar las tildes y diéresis en el nombre de los autores y títulos en el idioma español.</p>
+<ul>
+<li><strong>Método 1</strong>: Selección parcial. Seleccionar los elementos deseados, click derecho y <strong>Exportar elementos</strong>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_exportarFiles.png" class="img-fluid figure-img" width="652"></p>
+<p></p><figcaption class="figure-caption margin-caption">Método 1</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><strong>Método 2</strong>: Selección de una carpeta completa. Dirigirse al panel izquierdo y seleccionar la carpeta de interés (por ejemplo ScrewTheory). Todos los elementos dentro de ella serán exportados.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_exportarFolder.png" class="img-fluid figure-img" width="638"></p>
+<p></p><figcaption class="figure-caption margin-caption">Método 2</figcaption><p></p>
+</figure>
+</div>
+<p>Finalmente, una ventana con algunos ajustes pueden seleccionarse si es necesario. Por recomendación, dejar sin marcar todas las opciones, y dar <strong>OK</strong>. Un archivo <code>.bib</code> será creado.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_exportarSettings.png" class="img-fluid figure-img" width="316"></p>
+<p></p><figcaption class="figure-caption margin-caption">Modificar exportación de referencias</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="entorno-colaborativo-para-creación-de-documentos" class="level1 page-columns page-full">
+<h1>Entorno colaborativo para creación de documentos</h1>
+<p>Si bien existen múltiples editores o aplicaciones web de moda para escribir documentos de forma colaborativa en tiempo real como <a href="https://docs.google.com/">GoogleDocs</a>, <a href="https://www.office.com/">Microsoft Office 365</a>, <a href="https://jupyter.org">Jupyter</a>, la mayoría de ellos siguen el estilo de redacción <em>“What you see, what you get”</em> , que en otras palabras, la configuración y personalización de los estilos de texto se realizan mediante la interfaz del programa al presionar botones (por ejemplo, la clásica justificación de texto en Microsoft Word que todos hemos realizado alguna vez). Sin embargo, existen otros editores que utilizan código plano mediante instrucciones específicas (algunas palabras claves que hay que memorizarse 😢) que pueden realizar lo mismo o incluso, mayor personalización.</p>
+<p>Tal es el caso de los editores que trabajan como entornos para la preparación de artículos científicos. Si bien su uso desde una aplicación de escritorio implica la instalación de algunos programas, editores y paquetes desde un <a href="https://www.ctan.org/">super repositorio</a>, en esta oportunidad, se recomienda el uso de editores <em>online</em> que se encargan de todo ese trabajo aburrido y concentrarte principalmente en escribir <img src="icons/typeWriter.png" class="img-fluid" width="20" alt="typewriter">, que es para lo que estamos aquí. Así, la mejor opción que te recomiendo es comenzar con <strong>Overleaf</strong>, ya que cuenta con más de 15 000 plantillas, desde como hacer un currículum vitae profesional hasta utilizar los formatos de publicación de las revistas indexadas más conocidas. En cualquier caso, la creación de una nueva plantilla establece la configuración mínima reproducible para generar tu documento en formato pdf (curiosamente es el único formato que puede exportarse pero el más utilizado para compartir en la nube ☁️😂☁️).</p>
+<ol type="a" class="page-columns page-full">
+<li class="page-columns page-full"><p>Crearse una cuenta desde la <a href="https://www.overleaf.com/">página oficial</a>. Por recomendación, utilizar el mismo correo electrónico de su cuenta Zotero.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_inicio.png" class="img-fluid figure-img" width="622"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso a. Ventana principal de Overleaf</figcaption><p></p>
+</figure>
+</div></li>
+<li class="page-columns page-full"><p>Escoger alguna plantilla para comenzar a escribir. Una vez seleccionada, se abrirá el entorno de edición. Para seleccionar otra plantilla, ir a <code>Templates</code> o si prefieres escoger alguno otro previamente creado, ir a <code>Projects</code> o presionar <img src="icons/home.png" class="img-fluid" width="20" alt="home">.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_templates.png" class="img-fluid figure-img" width="608"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso b. Biblioteca de plantillas</figcaption><p></p>
+</figure>
+</div></li>
+<li class="page-columns page-full"><p>El editor se compone de cuatro paneles principales según:</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_recompile_chat_mod.png" class="img-fluid figure-img" width="604"></p>
+<p></p><figcaption class="figure-caption margin-caption">Paso c.&nbsp;Paneles del editor Overleaf</figcaption><p></p>
+</figure>
+</div>
+<p>Donde,</p>
+<ol type="1">
+<li><p><strong>El administrador de archivos.</strong> Contiene distintos ficheros para la creación del documento, como el fichero base (.tex), los distintos estilos de la plantilla si existen (<code>.cls</code>, ⚠️ no modificar a menos que tengas conocimiento previo), el archivo de referencias (<code>.bib</code>), figuras, etc.</p></li>
+<li><p><strong>El editor de documentos</strong>. Todo el texto deseado se escribe dentro de los límites definidos por las sentencias <code>\begin{document} … \end{document}</code>.</p></li>
+<li><p><strong>Salida del documento.</strong> El documento es creado por la compilación del código y su exportación en formato pdf, al presionar el botón superior derecho <strong>Recompile</strong>.</p></li>
+<li><p><strong>Chat.</strong> Para la comunicación entre colaboradores.</p></li>
+</ol></li>
+</ol>
+<section id="subir-archivos-al-proyecto" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="subir-archivos-al-proyecto">Subir archivos al “proyecto”</h2>
+<p>Desde el botón <img src="icons/upload.png" class="img-fluid" width="20"> puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo <code>.bib</code> contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_subirArchivos.png" class="img-fluid figure-img" width="480"></p>
+<p></p><figcaption class="figure-caption margin-caption">Ventana para subir y enlazar archivos a Overleaf</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="compartir-plantilla" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="compartir-plantilla">Compartir plantilla</h2>
+<p>Para trabajar de forma conjunta y redactar el reporte en tiempo real, basta con activar la opción de compartir la plantilla desde el bóton <strong>Share</strong> <img src="icons/share.png" class="img-fluid" width="20"> para invitar a otros usuarios de Overleaf (necesario) con permisos de visualización o modificación según prefieras.</p>
+<ul>
+<li>La ventana que se abre tiene por defecto la opción de <em>compartido general</em> apagado y puede activarse desde la opción <em>Turn on link sharing</em>. Solo colaboradores invitados por correo electrónico podrán acceder al proyecto en Overleaf según los permisos otorgados.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_compartirArchivo2.png" class="img-fluid figure-img" width="444"></p>
+<p></p><figcaption class="figure-caption margin-caption">Ventana para invitar a colaboradores de trabajo</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Caso contrario, puede compartirse como cualquier archivo en la nube mediante dos tipos de enlace para visualización o edición.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_compartirArchivo.png" class="img-fluid figure-img" width="445"></p>
+<p></p><figcaption class="figure-caption margin-caption">Ventana para compartir un documento con permisos</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="manejo-de-referencias-.bib" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="manejo-de-referencias-.bib">Manejo de referencias <code>.bib</code></h2>
+<ul>
+<li><p>Por defecto, la mayoría de plantillas utilizan el siguiente código, donde el archivo de referencias <code>.bib</code> es indicado dentro de <code>\bibliography{}</code>. Y el estilo de citas y bibliografía dentro de <code>\bibliographystyle{}</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Área de encabezados y modificación de plantilla</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Inicio de reporte</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">% Fin de reporte</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">apalike</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">biblio.bib</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}    </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>De forma alterna, el archivo de referencias <code>.bib</code> puede también indicarse dentro de <code>\addbibresource{}</code>. Y el estilo de citas y bibliografías dentro de <code>\usepackage{style=apa}{biblatex}</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Área de encabezados y modificación de plantilla</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[backend=biber,style=apa,sortcites=true,natbib=true, url=true]{<span class="ex">biblatex</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\DeclareLanguageMapping</span>{spanish}{spanish-apa}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\addbibresource</span>{biblio.bib}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">% Inicio de reporte</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">% Fin de reporte</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}  </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p>Las referencias exportadas por Zotero (<code>biblio.bib</code>) pueden modificarse según sea necesario. Nótese los elementos de dos artículos de tipo <span class="citation" data-cites="article">@article</span> con sus etiquetas <code>Abbasi2019</code> y <code>Acharya2018</code> respectivamente.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/o_bib.png" class="img-fluid figure-img" width="585"></p>
+<p></p><figcaption class="figure-caption margin-caption">Detalle de un archivo <code>.bib</code></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sentencias-necesarias" class="level2">
+<h2 class="anchored" data-anchor-id="sentencias-necesarias">Sentencias necesarias</h2>
+<table class="table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Código</th>
+<th style="text-align: center;">Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Título 1}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{Título 2}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsubsection</span>{Título 3}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsubsection</span>{Título 4}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><img src="images/1_titulos.png" class="img-fluid" width="190"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[width="valor"]{<span class="ex">cat.jpg</span>}</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{A cat.}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:etiqueta1</span>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Donde “valor” puede ser:</p>
+<blockquote class="blockquote">
+<ul>
+<li><p>Ancho máximo de la hoja para escribir: \textwidth.</p></li>
+<li><p>Ancho máximo de una columna: \linewidth.</p></li>
+<li><p>Ancho por unidades métricas: 2cm, 20mm, 40em, 1in.</p></li>
+</ul>
+</blockquote></td>
+<td style="text-align: center;"><img src="images/3_figuraSimple.png" class="img-fluid" width="240"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para leer más sobre \linewdith y \textwidth y sus diferencias, revisar <a href="https://tex.stackexchange.com/questions/16942/difference-between-textwidth-linewidth-and-hsize">aquí</a>.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">subfig</span>}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\subfloat</span>[Un lemur.]{<span class="bu">\includegraphics</span>[width=0.4<span class="fu">\linewidth</span>]{<span class="ex">lemur.jpg</span>}}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\subfloat</span>[Un lobo.]{<span class="bu">\includegraphics</span>[width=0.4<span class="fu">\linewidth</span>]{<span class="ex">fox.jpg</span>}}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{Animales random.}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:etiqueta2</span>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3_figuraDoble.png" class="img-fluid figure-img" width="633"></p>
+</figure>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{l|r}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\hline</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  Variable <span class="op">&amp;</span> Cantidad <span class="fu">\\</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\hline</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  Presión <span class="op">&amp;</span> 0.5 kPa <span class="fu">\\</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  Fuerza <span class="op">&amp;</span> 2 N <span class="fu">\\</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  Masa <span class="op">&amp;</span> 5 kg<span class="fu">\\</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\hline</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{Ejemplo de una tabla.}</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">tab:Tabla1</span>}</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><img src="images/4_tablas.png" class="img-fluid" width="234"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  F = G</span><span class="sc">\left</span><span class="ss">[{</span><span class="sc">\frac</span><span class="ss">{{{m_1}{m_2}}}{{{r^2}}}}</span><span class="sc">\right</span><span class="ss">]</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  </span><span class="sc">\label</span><span class="ss">{eq:Eq1}</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[F = G\left[ {\frac{{{m_1}{m_2}}}{{{r^2}}}} \right]\]</span></p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para crear las ecuaciones de forma rápida y fácil se recomienda el uso páginas web gratis para escribir de forma gráfica (símbolos, texto, etc.) como <a href="https://latex.codecogs.com/eqneditor/editor.php">latex.codecogs</a>, <a href="https://latexeditor.lagrida.com/">latexeditor</a>, <a href="https://www.latex4technics.com/">latex4technics</a> y más; o en forma <em>offline</em>, con programas como <a href="https://www.wiris.com/en/mathtype/">MathType</a> para insertar el código directamente entre los entornos de ecuaciones <code>\begin{equation} … \end{equation}</code> o a nivel del texto usando <code>$ … $</code> o <code>\( … \)</code>. Por ejemplo, esta ecuación de aquí <span class="math inline">\(\sum a^{i} + \epsilon\)</span> se escribe como <code>$\sum a^{i} + \epsilon$</code>.</p>
+<p>Mayor información acerca de los entornos de ecuaciones, símbolos matemáticos (<span class="math inline">\(\alpha, \gamma, \pm\)</span>, etc.) y sus ejemplos pueden encontrarse en esta corta pero útil <a href="http://tug.ctan.org/info/short-math-guide/short-math-guide.pdf">guía</a> (en inglés).</p>
+</div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 55%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Monday</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Tuesday</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Twitter</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Discord</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><img src="images/5_listas.png" class="img-fluid" width="125"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Como referenciar una figura, una tabla y citar}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Realizando una referencia cruzada a la Figura <span class="kw">\ref</span>{<span class="ex">fig:Figura1</span>}. A la Tabla <span class="kw">\ref</span>{<span class="ex">tab:Tabla1</span>}.</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7_referenciasCruzada.png" class="img-fluid figure-img" width="465"></p>
+</figure>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Como citar y agregar una lista de referencias}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Aquí va una cita textual <span class="kw">\cite</span>{<span class="ex">Abbasi2019</span>} y otra de tipo indirecta <span class="kw">\citep</span>{<span class="ex">Anwar2020</span>} en formato APA7.</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/8_referencias.png" class="img-fluid figure-img" width="653"></p>
+</figure>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Más allá de esta guía
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Overleaf ofrece las herramientas básicas para un trabajo colaborativo en la nube, con las ventajas de crear reportes de alta calidad en de forma sencilla, sin tener que preocuparte por su instalación y actualización de paquetes (códigos específicos para modificar el formato como figuras, colores, formas geométricas, encabezados, bloques de código de programación, anexos, tablas, etc.), y aumentar la productividad de tu escritura. Y que junto al gestor de referencias de Zotero, puede obtenerse un fácil guardado, modificación y exportación de referencias bibliográficas correctamente formateadas para su trabajo desde Overleaf o con cualquier otro editor disponible.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Las etiquetas usadas por Zotero se utilizan únicamente para crear el enlace y llamar la cita requerida durante la redacción de documentos. No confundir con el estilo visual de las citas que se aprecian en el documento final. El formato de las etiquetas es para un uso interno y de ayuda memotécnica, ordenada y sencilla a la hora de buscar un autor particular dentro de toda una biblioteca.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Built with <a href="https://quarto.org">Quarto</a></div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

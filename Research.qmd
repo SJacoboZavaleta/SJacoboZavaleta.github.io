@@ -1,0 +1,22 @@
+---
+title: My researches
+description: Some published works
+date: last-modified
+date-format: short
+listing:
+    id: id_research
+    contents: "Gallery/g*/*.qmd"
+    type: grid
+    sort: "date"
+    max-items: 15
+    image-align: left
+    image-placeholder: "Figures/noFigureMessage.jpg"
+    date-format: long
+    categories: true
+    sort-ui: [title, date]
+---
+
+Still working ...
+
+::: {#id_research}
+:::

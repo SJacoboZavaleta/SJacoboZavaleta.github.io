@@ -1,0 +1,18 @@
+---
+title: "Blog about Research writing"
+listing:
+    id: id_Blog1
+    contents: "Blogs1/b*/*.qmd"
+    type: default
+    sort: "date"
+    max-items: 15
+    image-align: left
+    image-placeholder: "Figures/noFigureMessage.jpg"
+    date-format: long
+    categories: true
+    sort-ui: [title, date]
+---
+Here's a list of short articles, tutorials and guides related to research writing.
+
+::: {#id_Blog1}
+:::
