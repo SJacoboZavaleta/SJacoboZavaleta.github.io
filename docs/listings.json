@@ -1,0 +1,27 @@
+[
+  {
+    "listing": "/Blog1.html",
+    "items": [
+      "/Blogs1/b_1/b1_Topic1.html",
+      "/Blogs1/b_2/b2_Topic2.html"
+    ]
+  },
+  {
+    "listing": "/Blog2.html",
+    "items": []
+  },
+  {
+    "listing": "/gallery.html",
+    "items": [
+      "/Gallery/g_1/g1_Topic1.html",
+      "/Gallery/g_2/g2_Topic2.html"
+    ]
+  },
+  {
+    "listing": "/Research.html",
+    "items": [
+      "/Gallery/g_1/g1_Topic1.html",
+      "/Gallery/g_2/g2_Topic2.html"
+    ]
+  }
+]
