@@ -1,2 +1,2 @@
 # First blog site
-## For publishing personal and reserach things
+## For publishing personal and research things
