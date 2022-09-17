@@ -5,7 +5,7 @@ title: "Hello new visitor !!! 🐈"
 Welcome to my website made for everyone who wants to learn about modern tools for an efficient writting of research manuscripts: $\LaTeX$, Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using [Quarto](https://quarto.org/docs/websites).
 
 ::: callout-important
-Most of my articles are written in **spanish** because detailed but awesome information is not widespread in these topics for new hispanoamerican students yet. 
+Most of my articles are written in **spanish** because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet.
 :::
 
 <!-- [about](about.qmd)
