@@ -23,5 +23,12 @@
       "/Gallery/g_1/g1_Topic1.html",
       "/Gallery/g_2/g2_Topic2.html"
     ]
+  },
+  {
+    "listing": "/Gallery.html",
+    "items": [
+      "/Gallery/g_1/g1_Topic1.html",
+      "/Gallery/g_2/g2_Topic2.html"
+    ]
   }
 ]
