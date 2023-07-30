@@ -29,7 +29,7 @@ website:
     background: primary
     left:
       - text: "Home"
-        file: Index.qmd
+        file: index.qmd
       - sidebar:blogs
       - text: "Gallery"
         file: Gallery.qmd

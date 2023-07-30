@@ -8,5 +8,6 @@ Welcome to my website made for everyone who wants to learn about modern tools fo
 Most of my articles are written in **spanish** because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet.
 :::
 
-<!-- [about](about.qmd)
+<!-- Ideas for
+[about](about.qmd)
 [about](about.qmd#section) -->
