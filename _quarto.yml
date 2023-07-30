@@ -29,13 +29,13 @@ website:
     background: primary
     left:
       - text: "Home"
-        file: Index.qmd
+        file: index.qmd
       - sidebar:blogs
       - text: "Gallery"
         file: Gallery.qmd
       - sidebar:research
       - text: "Sobre mí"
-        file: About.qmd
+        file: about.qmd
   sidebar:
     - id: blogs
       title: "Blogs"

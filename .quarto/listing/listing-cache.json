@@ -6,14 +6,14 @@
     "Blog2.qmd": [
       "Blogs2/b*/*.qmd"
     ],
+    "Blog3.qmd": [
+      "Blogs3/b*/*.qmd"
+    ],
     "Gallery.qmd": [
       "Gallery/g*/*.qmd"
     ],
     "Research.qmd": [
       "Research/r*/*.qmd"
-    ],
-    "Blog3.qmd": [
-      "Blogs3/b*/*.qmd"
     ]
   }
 }

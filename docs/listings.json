@@ -12,6 +12,12 @@
     "items": []
   },
   {
+    "listing": "/Blog3.html",
+    "items": [
+      "/Blogs3/b_1/b1_Topic1.html"
+    ]
+  },
+  {
     "listing": "/Gallery.html",
     "items": [
       "/Gallery/g_1/g1_Topic1.html",
@@ -23,12 +29,6 @@
     "items": [
       "/Research/r_1/r1_Topic1.html",
       "/Research/r_2/r2_Topic2.html"
-    ]
-  },
-  {
-    "listing": "/Blog3.html",
-    "items": [
-      "/Blogs3/b_1/b1_Topic1.html"
     ]
   }
 ]
