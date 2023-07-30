@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.280">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sergio Jácobo">
-<meta name="dcterms.date" content="2022-09-16">
-<meta name="description" content="Working">
+<meta name="dcterms.date" content="2023-01-16">
+<meta name="description" content="Working…">
 
-<title>Sergio’s Blog - New topic</title>
+<title>Sergio’s Blog - Manejo de tablas en \(\LaTeX\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,16 +65,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Sergio’s Blog - New topic">
-<meta property="og:description" content="Working">
+<meta property="og:title" content="Sergio’s Blog - Manejo de tablas en \(\LaTeX\)">
+<meta property="og:description" content="Working...">
 <meta property="og:image" content="2_cover.jpg">
 <meta property="og:site-name" content="Sergio's Blog">
 <meta name="twitter:title" content="Sergio’s Blog">
-<meta name="twitter:description" content="Working">
+<meta name="twitter:description" content="Sergio's Blog">
 <meta name="twitter:image" content="2_cover.jpg">
 <meta name="twitter:creator" content="@JacoboZavaleta">
+<meta name="twitter:site" content="@JacoboZavaleta">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -98,14 +100,17 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">Home</a>
+    <a class="nav-link" href="../../Index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blogs</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Blogs</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-blogs">    
         <li>
     <a class="dropdown-item" href="../../Blog1.html">
- <span class="dropdown-text">Blog about Research writing</span></a>
+ <span class="dropdown-text">Blog about research writing</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../Blog2.html">
@@ -114,10 +119,13 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../gallery.html">Gallery</a>
+    <a class="nav-link" href="../../Gallery.html">
+ <span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="button" data-bs-toggle="dropdown" aria-expanded="false">Research</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
         <li>
     <a class="dropdown-item" href="../../Research.html">
@@ -126,7 +134,8 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">Sobre mí</a>
+    <a class="nav-link" href="../../About.html">
+ <span class="menu-text">Sobre mí</span></a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -151,16 +160,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#working" id="toc-working" class="nav-link active" data-scroll-target="#working">Working …</a></li>
+  <li><a href="#modificar-el-tamaño-de-tablas" id="toc-modificar-el-tamaño-de-tablas" class="nav-link active" data-scroll-target="#modificar-el-tamaño-de-tablas">Modificar el tamaño de tablas</a>
+  <ul class="collapse">
+  <li><a href="#dimensiones-en-latex" id="toc-dimensiones-en-latex" class="nav-link" data-scroll-target="#dimensiones-en-latex">Dimensiones en <span class="math inline">\(\LaTeX\)</span></a>
+  <ul class="collapse">
+  <li><a href="#en-una-columna" id="toc-en-una-columna" class="nav-link" data-scroll-target="#en-una-columna">En una columna</a></li>
+  <li><a href="#en-dos-columnas" id="toc-en-dos-columnas" class="nav-link" data-scroll-target="#en-dos-columnas">En dos columnas</a></li>
+  </ul></li>
+  <li><a href="#ajustando-al-ancho-de-la-hoja" id="toc-ajustando-al-ancho-de-la-hoja" class="nav-link" data-scroll-target="#ajustando-al-ancho-de-la-hoja">Ajustando al ancho de la hoja</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">New topic</h1>
+<h1 class="title">Manejo de tablas en <span class="math inline">\(\LaTeX\)</span></h1>
   <div class="quarto-categories">
     <div class="quarto-category">Latex</div>
   </div>
@@ -168,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Working
+    Working…
   </div>
 </div>
 
@@ -185,25 +202,173 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2022</p>
+      <p class="date">January 16, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
 
 </header>
 
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-left page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><img src="2_cover.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">About the topic 1</figcaption><p></p>
+<p></p><figcaption class="figure-caption margin-caption">About the topic 2</figcaption><p></p>
 </figure>
 </div>
-<section id="working" class="level1">
-<h1>Working …</h1>
+<section id="modificar-el-tamaño-de-tablas" class="level1 page-columns page-full">
+<h1>Modificar el tamaño de tablas</h1>
+<p>Muchas veces el contenido de una tabla sobrepasa los límites de la hoja como el ancho del formato utilizado en una o dos columnas. Para ello, existen múltiples maneras de adaptar el extenso contenido de una celda en múltiples lineas utilizando el entorno básico <code>\begin{tabular}...\end{tabular}</code>. Sin embargo, resulta tedioso realizar el mismo tratamiento para cada tabla y ni que decir en diversos archivos. Así que una solución práctica es dejar que <span class="math inline">\(\LaTeX\)</span> calcule el ancho de las columnas de forma automática y se ajuste al contenido deseado, definiendo el tipo de alineación de las columnas y ancho máximo de la tabla. Para ello, se recomienda el uso del entorno <code>\begin{tabularx}…\end{tabularx}</code> luego de cargar el paquete <code>\usepackage{tabularx}</code> en el encabezado del archivo <code>.tex</code>.</p>
+<p>Pero antes de presentar los ejemplos, es necesario mostrar las diferencias entre la terminología utilizada por <span class="math inline">\(\LaTeX\)</span> para determinar la longitud de una línea de texto (<code>\textwidth</code>) y columna (<code>\linwidth</code>) cuando se utiliza una configuración en una o dos columnas, incluido en un entorno de lista.</p>
+<section id="dimensiones-en-latex" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="dimensiones-en-latex">Dimensiones en <span class="math inline">\(\LaTeX\)</span></h2>
+<ol type="1">
+<li><code>\textwidth</code> es el ancho constante del bloque total de texto.</li>
+<li><code>\linewidth</code> es el ancho actual de la línea de texto dentro de una columna.</li>
+<li><code>\hsize</code> es el ancho de la actual línea antes de saltar a la siguiente línea.</li>
+<li><code>\columnwidth</code> es el ancho de una sola columna de texto (que coincide a <code>\textwidth</code> en un documento de una sola columna).</li>
+</ol>
+<section id="en-una-columna" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="en-una-columna">En una columna</h3>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/20.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Utilizando una configuración <code>oneside</code> o <code>onecolumn</code></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="en-dos-columnas" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="en-dos-columnas">En dos columnas</h3>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/10.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Utilizando una configuración <code>twoside</code> o <code>twocolumn</code></figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="ajustando-al-ancho-de-la-hoja" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="ajustando-al-ancho-de-la-hoja">Ajustando al ancho de la hoja</h2>
+<p>Utilizando el entorno de tablas por defecto <code>\begin{tabular}...\end{tabular}</code>, el resultado es el siguiente</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla0" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/30.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;1: Caso por defecto</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En un formato de una sola columna, el ancho de la tabla anterior puede modificarse utilizando el paquete en las Tablas <a href="#fig-tabla1">Figure&nbsp;2</a>, <a href="#fig-tabla2">Figure&nbsp;3</a> y <a href="#fig-tabla3">Figure&nbsp;4</a>.</p>
+<ol type="1">
+<li>Al ancho total de una línea de texto.</li>
+<li>A la mitad de la ancho de una línea de texto.</li>
+<li>Cuidado!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla.</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/40.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;2: Caso 1</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-tabla2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/50.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;3: Caso 2</figcaption><p></p>
+</figure>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla3" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/60.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;4: Caso 3</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En un formato de dos columnas, el ancho de la tabla riginal pueden modificarse en las Tablas 1.5, 1.6, 1.7, 1.8, 1.9 y 1.10 en las <a href="#fig-tabla4">Figure&nbsp;5</a>, <a href="#fig-tabla5">Figure&nbsp;6</a>, <a href="#fig-tabla6">Figure&nbsp;7</a>, <a href="#fig-tabla7">Figure&nbsp;8</a>, <a href="#fig-tabla8">Figure&nbsp;9</a> y <a href="#fig-tabla9">Figure&nbsp;10</a> respectivamente.</p>
+<ol type="1">
+<li>Al ancho total de una línea de texto.</li>
+<li>A la mitad de la ancho de una línea de texto. 3, Cuidado!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla.</li>
+<li>..</li>
+<li>..</li>
+<li>..</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla4" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/70.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;5: Caso 1</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla5" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/80.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;6: Caso 2</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla6" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/90.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;7: Caso 3</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla7" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/100.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;8: Caso 4</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla8" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/110.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;9: Caso 5</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-tabla9" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="image/120.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure&nbsp;10: Caso 6</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ::: {#fig-elephant} -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ"></iframe> -->
+<!-- Elephant -->
+<!-- ::: -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -339,7 +504,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -361,7 +528,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -397,24 +581,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
@@ -425,7 +627,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">
         <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../about.html">About</a>
+    <a class="nav-link" href="../../About.html">About</a>
   </li>  
 </ul>
       </div>

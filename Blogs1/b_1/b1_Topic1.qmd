@@ -2,7 +2,6 @@
 title: Trabajo colaborativo en la nube utilizando Overleaf y Zotero
 author: Sergio Jácobo
 description: Breve introducción al manejo de Latex Online y manejo de referencias bibliográficas.
-author: "Sergio Jácobo"
 date: last-modified
 categories: 
     - "Latex"

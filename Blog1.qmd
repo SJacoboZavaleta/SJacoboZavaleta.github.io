@@ -1,5 +1,5 @@
 ---
-title: "Blog about Research writing"
+title: "Blog about research writing"
 listing:
     id: id_Blog1
     contents: "Blogs1/b*/*.qmd"

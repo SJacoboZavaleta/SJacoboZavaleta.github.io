@@ -17,7 +17,7 @@ website:
     left: "Built with [Quarto](https://quarto.org) y [Cyborg](https://bootswatch.com/cyborg/) theme"
     center: 
       - text: "About"
-        file: about.qmd
+        file: About.qmd
     right:
       - icon: github
         href: https://github.com/SJacoboZavaleta
@@ -29,20 +29,13 @@ website:
     background: primary
     left:
       - text: "Home"
-        file: index.qmd
+        file: Index.qmd
       - sidebar:blogs
       - text: "Gallery"
-        file: gallery.qmd
+        file: Gallery.qmd
       - sidebar:research
       - text: "Sobre mí"
-        file: about.qmd
-  open-graph: true
-  twitter-card:
-    title: Sergio's Blog
-    description: Sergio's Blog
-    site: "@JacoboZavaleta"
-    creator: "@JacoboZavaleta"
-
+        file: About.qmd
   sidebar:
     - id: blogs
       title: "Blogs"
@@ -52,11 +45,18 @@ website:
       contents:
         - Blog1.qmd
         - Blog2.qmd
+        - Blog3.qmd
         
     - id: research
       title: "Research"
       contents:
         - Research.qmd
+  open-graph: true
+  twitter-card:
+    title: Sergio's Blog
+    description: Sergio's Blog
+    site: "@JacoboZavaleta"
+    creator: "@JacoboZavaleta"
 
 format:
   html:
@@ -66,6 +66,3 @@ format:
       dark: [ciborg, theme-dark.scss]
     css: styles.css
     toc: true
-
-
-

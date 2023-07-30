@@ -1,21 +1,21 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "About.html",
+    "href": "About.html",
     "title": "Sergio Jácobo",
     "section": "",
     "text": "Sergio Jácobo is a Mechatronics Enginner and his research interests include design of clinical robots and biomedical applications based on Artifitial Intelligence using Machine Learning. When not innovating on data platforms, Sergio enjoys spending time warching films and writing code."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
+    "objectID": "About.html#education",
+    "href": "About.html#education",
     "title": "Sergio Jácobo",
     "section": "Education",
     "text": "Education\nNational University of Trujillo, Trujillo | Trujillo, Peru Bach. in Mechatronics Engineering | May 2014 - Dec 2018"
   },
   {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
+    "objectID": "About.html#experience",
+    "href": "About.html#experience",
     "title": "Sergio Jácobo",
     "section": "Experience",
     "text": "Experience\nCorpotation Tecnobiomédica Healthcare del Perú SAC | Auxiliar in Maintainance | Nov 2020 - Apr 2021\nNorsac SAC | Auxiliar in Maintainance | May 2019 - Nov 2018"
@@ -23,16 +23,16 @@
   {
     "objectID": "Blog1.html",
     "href": "Blog1.html",
-    "title": "Blog about Research writing",
+    "title": "Blog about research writing",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nTrabajo colaborativo en la nube utilizando Overleaf y Zotero\n\n\n\n\n\n\n\nLatex\n\n\nOverleaf\n\n\nZotero\n\n\n\n\nBreve introducción al manejo de Latex Online y manejo de referencias bibliográficas.\n\n\n\n\n\n\nSeptember 16, 2022\n\n\nSergio Jácobo\n\n\n\n\n\n\n  \n\n\n\n\nNew topic\n\n\n\n\n\n\n\nLatex\n\n\n\n\nWorking\n\n\n\n\n\n\nSeptember 16, 2022\n\n\nSergio Jácobo\n\n\n\n\n\n\nNo matching items"
+    "text": "Here’s a list of short articles, tutorials and guides related to research writing.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nNew last topic\n\n\n\n\n\n\n\nLatex\n\n\n\n\nWorking\n\n\n\n\n\n\nJanuary 15, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\n  \n\n\n\n\nTrabajo colaborativo en la nube utilizando Overleaf y Zotero\n\n\n\n\n\n\n\nLatex\n\n\nOverleaf\n\n\nZotero\n\n\n\n\nBreve introducción al manejo de Latex Online y manejo de referencias bibliográficas.\n\n\n\n\n\n\nJanuary 15, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\n  \n\n\n\n\nManejo de tablas en \\(\\LaTeX\\)\n\n\n\n\n\n\n\nLatex\n\n\n\n\nWorking…\n\n\n\n\n\n\nJanuary 16, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Blog2.html",
     "href": "Blog2.html",
-    "title": "Blog about Topic 2",
+    "title": "Blog about Latex",
     "section": "",
-    "text": "No matching items"
+    "text": "Still working …\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Blogs1/b_1/b1_Topic1.html",
@@ -79,29 +79,92 @@
   {
     "objectID": "Blogs1/b_2/b2_Topic2.html",
     "href": "Blogs1/b_2/b2_Topic2.html",
-    "title": "New topic",
+    "title": "Manejo de tablas en \\(\\LaTeX\\)",
     "section": "",
-    "text": "Working …"
+    "text": "About the topic 2"
+  },
+  {
+    "objectID": "Blogs1/b_last/blast_TopicLast.html",
+    "href": "Blogs1/b_last/blast_TopicLast.html",
+    "title": "New last topic",
+    "section": "",
+    "text": "About the last topic\n\n\n\nWorking …"
   },
   {
     "objectID": "Gallery.html",
     "href": "Gallery.html",
     "title": "My gallery",
     "section": "",
-    "text": "No matching items"
+    "text": "Still working …\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nNew topic\n\n\n\nLatex\n\n\n\nWorking\n\n\n\nSergio Jácobo\n\n\nJanuary 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew topic\n\n\n\nLatex\n\n\n\nWorking\n\n\n\nSergio Jácobo\n\n\nJanuary 15, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "Index.html",
+    "href": "Index.html",
     "title": "Hello new visitor !!! 🐈",
     "section": "",
-    "text": "Important\n\n\n\nMost of my articles are written in spanish because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet."
+    "text": "Welcome to my website made for everyone who wants to learn about modern tools for an efficient writting of research manuscripts: \\(\\LaTeX\\), Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using Quarto.\n\n\n\n\n\n\nImportant\n\n\n\nMost of my articles are written in spanish because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet."
   },
   {
     "objectID": "Research.html",
     "href": "Research.html",
     "title": "My researches",
     "section": "",
-    "text": "No matching items"
+    "text": "Still working …\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\nNew topic\n\n\n\nLatex\n\n\n\nWorking\n\n\n\nSergio Jácobo\n\n\nJanuary 15, 2023\n\n\n\n\n\n\n\n\n\n\n\nNew topic\n\n\n\nLatex\n\n\n\nWorking\n\n\n\nSergio Jácobo\n\n\nJanuary 15, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Blogs1/b_2/b2_Topic2.html#al-ancho-de-la-hoja",
+    "href": "Blogs1/b_2/b2_Topic2.html#al-ancho-de-la-hoja",
+    "title": "Manejo de tablas en \\(\\LaTeX\\)",
+    "section": "Al ancho de la hoja",
+    "text": "Al ancho de la hoja\nMuchas veces el contenido de una tabla sobrepasa los límites de la hoja como el ancho del formato utilizado en una o dos columnas. Para ello, existen múltiples maneras de adaptar el extenso contenido de una celda en múltiples lineas utilizando el entorno básico \\begin{tabular}...\\end{tabular}. Sin embargo, resulta tedioso realizar el mismo tratamiento para cada tabla y ni que decir en diversos archivos. Así que una solución práctica es dejar que \\(\\LaTeX\\) calcule el ancho de las columnas de forma automática y se ajuste al contenido deseado, definiendo el tipo de alineación de las columnas y ancho máximo de la tabla. Para ello, se recomienda el uso del entorno \\begin{tabularx}…\\end{tabularx} luego de cargar el paquete \\usepackage{tabularx} en el encabezado del archivo .tex.\n\\usepackage{tabularx}\n...\n\\begin{table}\n  \\centering\n  \\caption{The table's title}\n  \\begin{tabularx}\n    \\toprule\n    Caso  & Edad  & Sexo  & Tóxico & Conducta Suicida \\\\\n    \\midrule\n    1     & 19    & Masculino & Raticida & Suicidio \\\\\n    2     & 14    & Femenino & Indeterminado & Suicidio \\\\\n    3     & 16    & Femenino & Indeterminado & Suicidio \\\\\n    4     & 26    & Masculino & Raticida & Intento de suicidio \\\\\n    5     & 18    & Masculino & Órgano fosforado & Intento de suicidio \\\\\n    6     & 50    & Masculino & Órgano fosforado y etanol & Intento de suicidio \\\\\n    \\bottomrule\n  \\end{tabularx}\n  \\label{tab:label1}\n\\end{table}\n\\begin{tabular}{ll}\nA & B \\\\\nA & B \\\\\n\\end{tabular}"
+  },
+  {
+    "objectID": "Blogs1/b_2/b2_Topic2.html#dimensiones-en-latex",
+    "href": "Blogs1/b_2/b2_Topic2.html#dimensiones-en-latex",
+    "title": "Manejo de tablas en \\(\\LaTeX\\)",
+    "section": "Dimensiones en \\(\\LaTeX\\)",
+    "text": "Dimensiones en \\(\\LaTeX\\)\n\n\\textwidth es el ancho constante del bloque total de texto.\n\\linewidth es el ancho actual de la línea de texto dentro de una columna.\n\\hsize es el ancho de la actual línea antes de saltar a la siguiente línea.\n\\columnwidth es el ancho de una sola columna de texto (que coincide a \\textwidth en un documento de una sola columna).\n\n\nEn una columna\n\n\n\nUtilizando una configuración oneside o onecolumn\n\n\n\n\nEn dos columnas\n\n\n\nUtilizando una configuración twoside o twocolumn"
+  },
+  {
+    "objectID": "Blogs1/b_2/b2_Topic2.html#ajustando-al-ancho-de-la-hoja",
+    "href": "Blogs1/b_2/b2_Topic2.html#ajustando-al-ancho-de-la-hoja",
+    "title": "Manejo de tablas en \\(\\LaTeX\\)",
+    "section": "Ajustando al ancho de la hoja",
+    "text": "Ajustando al ancho de la hoja\nUtilizando el entorno de tablas por defecto \\begin{tabular}...\\end{tabular}, el resultado es el siguiente\n\n\n\n\n\nFigure 1: Caso por defecto\n\n\n\n\nEn un formato de una sola columna, el ancho de la tabla anterior puede modificarse utilizando el paquete en las Tablas Figure 2, Figure 3 y Figure 4.\n\nAl ancho total de una línea de texto.\nA la mitad de la ancho de una línea de texto.\nCuidado!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla.\n\n\n\n\n\n\nFigure 2: Caso 1\n\n\n\n\n\n\n\nFigure 3: Caso 2\n\n\n\n\n\n\n\nFigure 4: Caso 3\n\n\n\n\nEn un formato de dos columnas, el ancho de la tabla riginal pueden modificarse en las Tablas 1.5, 1.6, 1.7, 1.8, 1.9 y 1.10 en las Figure 5, Figure 6, Figure 7, Figure 8, Figure 9 y Figure 10 respectivamente.\n\nAl ancho total de una línea de texto.\nA la mitad de la ancho de una línea de texto. 3, Cuidado!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla.\n..\n..\n..\n\n\n\n\n\n\nFigure 5: Caso 1\n\n\n\n\n\n\n\n\n\nFigure 6: Caso 2\n\n\n\n\n\n\n\n\n\nFigure 7: Caso 3\n\n\n\n\n\n\n\n\n\nFigure 8: Caso 4\n\n\n\n\n\n\n\n\n\nFigure 9: Caso 5\n\n\n\n\n\n\n\n\n\nFigure 10: Caso 6"
+  },
+  {
+    "objectID": "Blogs3/b_1/b1_Topic1.html",
+    "href": "Blogs3/b_1/b1_Topic1.html",
+    "title": "Selección de alimentos según su composición nutricionl",
+    "section": "",
+    "text": "setwd(\"D:/Developments/ParaGitHub/SergioWeb/SergioWeb/Blogs3/b_1\")"
+  },
+  {
+    "objectID": "Blogs3/b_1/b1_Topic1.html#código",
+    "href": "Blogs3/b_1/b1_Topic1.html#código",
+    "title": "Selección de alimentos según su composición nutricionl",
+    "section": "Código",
+    "text": "Código\n\n#setwd(\"Ruta/a/tu/proyecto/\") # Comentar antes de renderizar la aplicación\n\nlibrary(shiny)\nlibrary(DT) # Manejo de tablas en formato Data Frame\n\n1alimentos = read.csv(\"alimentos.csv\")\ncolnames(alimentos) = c(\"COD\",\"NUM\",\"ALIMENTO\",\"ENERCKCAL\",\"ENERCKJ\",\"WATER\",\"PROCNT\",\"FAT\",\"CHOCDF\",\"ZN\",\"K\",\"P\",\"FE\",\"VITA\",\"ACFOLIC\",\"VITC\",\"NA\")\nalimentos = alimentos[,c(\"COD\",\"NUM\", \"ALIMENTO\", \"ENERCKCAL\", \"ENERCKJ\", \"WATER\", \"PROCNT\", \"FAT\", \"CHOCDF\",\"ZN\",\"K\",\"P\",\"FE\",\"VITA\",\"ACFOLIC\",\"VITC\",\"NA\")]\n\n2codigo = c(\"A\",\"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\", \"J\", \"K\", \"L\", \"Q\", \"T\", \"U\", \"S\")\ncategoria = c(\"Cereales y derivados\", \"Verduras, hortalizas y derivados\", \"Frutas y derivados\", \"Grasas, aceites y oleaginosas\",\"Pescados y mariscos\", \"Carnes y derivados\", \"Leche y derivados\", \"Bebidas (alcohólicas y analcohólicas)\", \"Huevos y derivados\",\"Productos azucarados\", \"Misceláneos\", \"Alimentos infantiles\", \"Leguminosas y derivados\", \"Tubérculos, raíces y derivados\",\"Alimentos preparados\")\ncodigoGrupo = data.frame(codigo,categoria)\ncolnames(codigoGrupo) = c(\"Código\", \"Categoría\")\n\n3ui &lt;- fluidPage(\n  titlePanel(\"TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017\"),\n  h2(tags$a(\"Centro Nacional de Alimentación y Nutrición, 2017, Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.\",href=\"https://web.ins.gob.pe/es/alimentacion-y-nutricion/ciencia-y-tecnologia-de-alimentos/tabla-de-composicion-de-alimentos\")),\n  h3(\"Modified and intended for daily use of diet planning by Nutrionist Rosa Zavaleta Gavidia\"),\n  tabsetPanel(\n    tabPanel(\"Tabla\",\n      h3(\"Composición en 100 g de alimento !\"),\n      numericInput(\"proportion\",\"Nueva composición (gramos)?\", value=100, min=1, max=500),\n      DT::dataTableOutput('foodTable'),\n      verbatimTextOutput(\"dataConversion\")\n    ),\n    tabPanel(\"Códigos y grupos\", tableOutput('codigoGrupos')),\n    tabPanel(\"Extras\")\n  ),\n  hr(),\n  tags$div(class = \"header\", checked=NA,\n           tags$h5(\"App built with R Shiny. Did you like it? If so\"),\n           tags$a(href = \"shiny.rstudio.com/tutorial\", \"Click Here to learn more!\")\n  )\n)\n\n4server &lt;- function(input, output, session) {\n5  getComposition &lt;- reactive({\n    proportionConversion = input$proportion\n    idx = input$foodTable_rows_selected\n    alimentos[idx,c(\"PROCNT\", \"FAT\",\"CHOCDF\",\"ZN\",\"K\",\"P\",\"FE\",\"VITA\",\"ACFOLIC\",\"VITC\",\"NA\")]*proportionConversion/100})\n  \n6  output$foodTable = DT::renderDataTable(alimentos, options = list(pageLength=15),server=FALSE, selection=\"single\")\n7  output$dataConversion = renderPrint({getComposition()})\n8  output$codigoGrupos = renderTable(codigoGrupo)\n}\n\n9shinyApp(ui, server)\n\n\n1\n\nCargar alimentos.csv, seleccionar datos requeridos y modificar sus atributos (nombre de columnas)\n\n2\n\nCrear tabla secundaria de alimentos según código por grupo nutricional (Opcional)\n\n3\n\nImplementar la interfaz de usuario de la aplicación Shiny llamando a fluidPage. Incluido una entrada de texto para la nueva composición deseada.\n\n4\n\nImplementar la función server que define la lógica del programa\n\n5\n\nDefinir la función para manipular la fila seleccionada de la tabla principal (composición de alimento deseada)\n\n6\n\nRenderizar la tabla principal de alimentos\n\n7\n\nRenderizar los datos de salida para la nueva composición\n\n8\n\nRenderizar la tabla secundaria para códigos por grupo de tipo alimento\n\n9\n\nImplementar la aplicación llamando a shinyApp"
+  },
+  {
+    "objectID": "Blogs3/b_1/b1_Topic1.html#explicación",
+    "href": "Blogs3/b_1/b1_Topic1.html#explicación",
+    "title": "Selección de alimentos según su composición nutricionl",
+    "section": "Explicación",
+    "text": "Explicación\n\n\n\n\n\n\n\n\n\n\n\nMás allá de esta guía"
+  },
+  {
+    "objectID": "Blog3.html",
+    "href": "Blog3.html",
+    "title": "Blog about R/Shinny",
+    "section": "",
+    "text": "Here’s a list of short projects, tutorials and guides related to R programming including Shinny Apps.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nSelección de alimentos según su composición nutricionl\n\n\n\n\n\n\n\nR\n\n\nShinnyApp\n\n\nPosit\n\n\n\n\nBasado en la Tabla Peruana de Composición de Alimentos\n\n\n\n\n\n\nJuly 29, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Blogs3/b_1/b1_Topic1.html#uso",
+    "href": "Blogs3/b_1/b1_Topic1.html#uso",
+    "title": "Selección de alimentos según su composición nutricionl",
+    "section": "Uso",
+    "text": "Uso\nIr a la Aplicación ⏩\n\n\n\n\n\n\nMás allá de esta guía\n\n\n\nRevisar la página oficial para obtener las Tablas de Composición completas"
   }
 ]

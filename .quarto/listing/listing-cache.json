@@ -10,7 +10,10 @@
       "Gallery/g*/*.qmd"
     ],
     "Research.qmd": [
-      "Gallery/g*/*.qmd"
+      "Research/r*/*.qmd"
+    ],
+    "Blog3.qmd": [
+      "Blogs3/b*/*.qmd"
     ]
   }
 }

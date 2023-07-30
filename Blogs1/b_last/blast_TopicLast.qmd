@@ -1,0 +1,12 @@
+---
+title: New last topic
+author: Sergio Jácobo
+description: Working
+date: last-modified
+categories: "Latex"
+reading-time: true
+image: last_cover.jpg
+---
+![About the last topic](last_cover.jpg){fig-align="left"}
+
+# Working ...

@@ -1,0 +1,18 @@
+---
+title: "Blog about R/Shinny"
+listing:
+    id: id_Blog3
+    contents: "Blogs3/b*/*.qmd"
+    type: default
+    sort: "date"
+    max-items: 15
+    image-align: left
+    image-placeholder: "Figures/noFigureMessage.jpg"
+    date-format: long
+    categories: true
+    sort-ui: [title, date]
+---
+Here's a list of short projects, tutorials and guides related to R programming including Shinny Apps.
+
+::: {#id_Blog3}
+:::

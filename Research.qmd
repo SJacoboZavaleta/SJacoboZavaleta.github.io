@@ -5,7 +5,7 @@ date: last-modified
 date-format: short
 listing:
     id: id_research
-    contents: "Gallery/g*/*.qmd"
+    contents: "Research/r*/*.qmd"
     type: grid
     sort: "date"
     max-items: 15
