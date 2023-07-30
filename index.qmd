@@ -1,5 +1,5 @@
 ---
-title: "Hello new visitor !!! 🐈"
+title: "Hello new visitor !!! 🐈 😺"
 ---
 
 Welcome to my website made for everyone who wants to learn about modern tools for an efficient writting of research manuscripts: $\LaTeX$, Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using [Quarto](https://quarto.org/docs/websites).
