@@ -1,5 +1,5 @@
 ---
-title: Selección de alimentos según su composición nutricionl
+title: Selección de alimentos según su composición nutricional
 author: Sergio Jácobo
 description: Basado en la Tabla Peruana de Composición de Alimentos
 date: last-modified
@@ -8,7 +8,7 @@ categories:
     - "ShinnyApp"
     - "Posit"
 reading-time: true
-image: images\logoZoteroOverleaf.png
+image: images\thumbnail.png
 number-sections: false
 cap-location : margin
 fig-cap-location :  margin
