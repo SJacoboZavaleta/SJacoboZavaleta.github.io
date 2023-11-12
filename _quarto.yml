@@ -4,7 +4,8 @@ project:
 
 website:
   title: "Sergio's Blog"
-  description: "Personal things"
+  site-url: https://sergiojacobo.app
+  description: "This is Sergio's personal Blog"
   page-navigation: true
   reader-mode: true
   search:
@@ -51,6 +52,7 @@ website:
       title: "Research"
       contents:
         - Research.qmd
+  cookie-consent: true
   open-graph: true
   twitter-card:
     title: Sergio's Blog

@@ -2,7 +2,7 @@
 title: "Blog about Latex"
 listing:
     id: id_Blog2
-    contents: "Blogs2/b*/*.qmd"
+    contents: "Blogs/Blogs2/b*/*.qmd"
     type: default
     sort: "date"
     max-items: 15

@@ -2,7 +2,7 @@
 title: "Blog about R/Shinny"
 listing:
     id: id_Blog3
-    contents: "Blogs3/b*/*.qmd"
+    contents: "Blogs/Blogs3/b*/*.qmd"
     type: default
     sort: "date"
     max-items: 15

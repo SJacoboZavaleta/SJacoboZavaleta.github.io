@@ -2,7 +2,7 @@
 title: "Blog about research writing"
 listing:
     id: id_Blog1
-    contents: "Blogs1/b*/*.qmd"
+    contents: "Blogs/Blogs1/b*/*.qmd"
     type: default
     sort: "date"
     max-items: 15
@@ -10,7 +10,8 @@ listing:
     image-placeholder: "Figures/noFigureMessage.jpg"
     date-format: long
     categories: true
-    sort-ui: [title, date]
+    sort-ui: true
+    filter-ui: true
 ---
 Here's a list of short articles, tutorials and guides related to research writing.
 

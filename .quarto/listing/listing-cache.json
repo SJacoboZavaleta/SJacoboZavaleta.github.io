@@ -1,13 +1,16 @@
 {
   "listingMap": {
     "Blog1.qmd": [
-      "Blogs1/b*/*.qmd"
+      "Blogs1/b*/*.qmd",
+      "Blogs/Blogs1/b*/*.qmd"
     ],
     "Blog2.qmd": [
-      "Blogs2/b*/*.qmd"
+      "Blogs2/b*/*.qmd",
+      "Blogs/Blogs2/b*/*.qmd"
     ],
     "Blog3.qmd": [
-      "Blogs3/b*/*.qmd"
+      "Blogs3/b*/*.qmd",
+      "Blogs/Blogs3/b*/*.qmd"
     ],
     "Gallery.qmd": [
       "Gallery/g*/*.qmd"
