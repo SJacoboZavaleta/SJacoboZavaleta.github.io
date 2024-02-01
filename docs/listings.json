@@ -30,5 +30,12 @@
       "/Research/r_1/r1_Topic1.html",
       "/Research/r_2/r2_Topic2.html"
     ]
+  },
+  {
+    "listing": "/Blog4.html",
+    "items": [
+      "/Blogs/Blogs4/b_2/b2_Topic1.html",
+      "/Blogs/Blogs4/b_1/b1_Topic1.html"
+    ]
   }
 ]

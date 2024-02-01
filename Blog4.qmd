@@ -1,8 +1,8 @@
 ---
-title: "R/Shinny"
+title: "Robotics"
 listing:
-    id: id_Blog3
-    contents: "Blogs/Blogs3/b*/*.qmd"
+    id: id_Blog4
+    contents: "Blogs/Blogs4/b*/*.qmd"
     type: default
     sort: "date"
     max-items: 15
@@ -12,7 +12,8 @@ listing:
     categories: true
     sort-ui: [title, date]
 ---
-Here's a list of short projects, tutorials and guides related to R programming including Shinny Apps.
 
-::: {#id_Blog3}
+Here's a list of Robotics notes.
+
+::: {#id_Blog4}
 :::

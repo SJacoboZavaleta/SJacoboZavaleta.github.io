@@ -1,5 +1,5 @@
 ---
-title: "Blog about Latex"
+title: "Latex"
 listing:
     id: id_Blog2
     contents: "Blogs/Blogs2/b*/*.qmd"

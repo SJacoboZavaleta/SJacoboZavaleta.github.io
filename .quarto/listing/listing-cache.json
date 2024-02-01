@@ -17,6 +17,9 @@
     ],
     "Research.qmd": [
       "Research/r*/*.qmd"
+    ],
+    "Blog4.qmd": [
+      "Blogs/Blogs4/b*/*.qmd"
     ]
   }
 }

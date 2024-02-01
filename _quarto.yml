@@ -35,7 +35,7 @@ website:
       - text: "Gallery"
         file: Gallery.qmd
       - sidebar:research
-      - text: "Sobre mí"
+      - text: "About this web"
         file: about.qmd
   sidebar:
     - id: blogs
@@ -47,6 +47,7 @@ website:
         - Blog1.qmd
         - Blog2.qmd
         - Blog3.qmd
+        - Blog4.qmd
         
     - id: research
       title: "Research"

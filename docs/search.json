@@ -2,7 +2,7 @@
   {
     "objectID": "Blog1.html",
     "href": "Blog1.html",
-    "title": "Blog about research writing",
+    "title": "Research writing",
     "section": "",
     "text": "Here’s a list of short articles, tutorials and guides related to research writing.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nNew last topic\n\n\n\n\n\n\n\nLatex\n\n\n\n\nWorking\n\n\n\n\n\n\nJanuary 15, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\n  \n\n\n\n\nTrabajo colaborativo en la nube utilizando Overleaf y Zotero\n\n\n\n\n\n\n\nLatex\n\n\nOverleaf\n\n\nZotero\n\n\n\n\nBreve introducción al manejo de Latex Online y manejo de referencias bibliográficas.\n\n\n\n\n\n\nJanuary 15, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\n  \n\n\n\n\nManejo de tablas en \\(\\LaTeX\\)\n\n\n\n\n\n\n\nLatex\n\n\n\n\nWorking…\n\n\n\n\n\n\nJanuary 16, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\nNo matching items"
   },
@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "Sergio Jácobo",
     "section": "",
-    "text": "Sergio Jácobo is a Mechatronics Enginner and his research interests include design of clinical robots and biomedical applications based on Artifitial Intelligence using Machine Learning. When not innovating on data platforms, Sergio enjoys spending time warching films and writing code."
+    "text": "Welcome to my website made for everyone who wants to learn about modern tools for an efficient writting of research manuscripts: \\(\\LaTeX\\), Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using Quarto.\n\n\n\n\n\n\nImportant\n\n\n\nMost of my articles are written in spanish because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet."
   },
   {
     "objectID": "about.html#education",
@@ -30,14 +30,14 @@
   {
     "objectID": "Blog2.html",
     "href": "Blog2.html",
-    "title": "Blog about Latex",
+    "title": "Latex",
     "section": "",
     "text": "Still working …\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Blog3.html",
     "href": "Blog3.html",
-    "title": "Blog about R/Shinny",
+    "title": "R/Shinny",
     "section": "",
     "text": "Here’s a list of short projects, tutorials and guides related to R programming including Shinny Apps.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nSelección de alimentos según su composición nutricional\n\n\n\n\n\n\n\nR\n\n\nShinnyApp\n\n\nPosit\n\n\n\n\nBasado en la Tabla Peruana de Composición de Alimentos\n\n\n\n\n\n\nAugust 13, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\nNo matching items"
   },
@@ -149,9 +149,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Hello new visitor !!! 😺",
+    "title": "Sergio Jácobo Zavaleta",
     "section": "",
-    "text": "Welcome to my website made for everyone who wants to learn about modern tools for an efficient writting of research manuscripts: \\(\\LaTeX\\), Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using Quarto.\n\n\n\n\n\n\nImportant\n\n\n\nMost of my articles are written in spanish because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet."
+    "text": "Sergio Jácobo is a Mechatronics Enginner and his research interests include design of clinical robots and biomedical applications based on Artifitial Intelligence using Machine Learning. When not innovating on data platforms, Sergio enjoys spending time warching films and writing code."
   },
   {
     "objectID": "docs/about.html",
@@ -236,5 +236,89 @@
     "title": "Trabajo colaborativo en la nube utilizando Overleaf y Zotero",
     "section": "Notas",
     "text": "Notas\n\n\nLas etiquetas usadas por Zotero se utilizan únicamente para crear el enlace y llamar la cita requerida durante la redacción de documentos. No confundir con el estilo visual de las citas que se aprecian en el documento final. El formato de las etiquetas es para un uso interno y de ayuda memotécnica, ordenada y sencilla a la hora de buscar un autor particular dentro de toda una biblioteca.↩︎"
+  },
+  {
+    "objectID": "Blogs/Blogs4/b_1/b1_Topic1.html",
+    "href": "Blogs/Blogs4/b_1/b1_Topic1.html",
+    "title": "Fundamentos Dinámicos",
+    "section": "",
+    "text": "Notar que:\n\nSistema de referencia normalmente se abrevia como “frame”.\n\n\n\n\\[\n\\begin{aligned}\n\\bar{r}=\\bar{R}+{\\bar{r}}^{'}\\\\\n\\bar{r}^{'}=\\bar{r}-{\\bar{R}}\\\\\n\\end{aligned}\n\\]\nPero \\(\\bar{V}\\) es una constante.\n\\[\n\\begin{aligned}\n\\bar{R}(t)=\\bar{R_0}-{\\bar{V}t}\\\\\n\\frac{d\\bar{r}^{'}}{dt} = \\frac{d\\bar{r}}{dt} - \\frac{d\\bar{R}}{dt}\\\\\n\\bar{v}^{'}=\\bar{v}-{\\bar{V}}\\\\\n\\frac{d\\bar{v}^{'}}{dt} = \\frac{d\\bar{v}}{dt} - \\frac{d\\bar{V}}{dt}\\\\\n\\bar{a}^{'} = \\bar{a}\n\\end{aligned}\n\\]\nLuego, aplicando la primera Ley de Newton se cumple que:\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}\\\\\n\\bar{F}^{'} & = m\\bar{a}^{'} = m\\bar{a}\\\\\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nPero que pasa si \\(\\bar{V}\\) no es una constante?\n\n\n\n\n\n\nImportante\n\n\n\nEl sistema de referencia \\(S^{'}\\) tiene una aceleración \\(\\bar{A}\\) relativa a S.\n\n\n\\[\n\\begin{aligned}\n\\bar{a} & = \\bar{a} - \\bar{A}\\\\\n\\end{aligned}\n\\]\nPor lo tanto,\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}^{'}\\\\\n& = m\\bar{a} - m\\bar{A}\\\\\n& = \\bar{F}_\\text{físico} - \\bar{F}_\\text{ficticio}\\\\\n\\end{aligned}\n\\]\nDonde:\n\n\\(\\bar{F}_\\text{físico}\\) es la fuerza físicamente aplicada al cuerpo.\n\n\\(\\bar{F}_\\text{ficticio}\\). Dado un observador en el sistema de referencia o frame \\(S^{'}\\) que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales (\\(S^{'}\\)).\n\n\n\n\n\n\n\nTip\n\n\n\nConsiderando el moviendo de rotación “circular” de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis."
+  },
+  {
+    "objectID": "Blog4.html",
+    "href": "Blog4.html",
+    "title": "Robotics",
+    "section": "",
+    "text": "Here’s a list of Robotics notes.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nFundamentos Robóticos\n\n\n\n\n\n\n\nRobotics\n\n\nDynamics\n\n\nKinematics\n\n\n\n\nNotas sobre la teoría básica. Basados principalmente en el libro Modern Robotics de Kevin M. Lynch y Frank C. Park.\n\n\n\n\n\n\nNovember 12, 2023\n\n\nSergio Jácobo\n\n\n\n\n\n\n  \n\n\n\n\nFundamentos Dinámicos\n\n\n\n\n\n\n\nRobotics\n\n\nDynamics\n\n\nKinematics\n\n\n\n\nNotas sobre la teoría básica.\n\n\n\n\n\n\nJanuary 31, 2024\n\n\nSergio Jácobo\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Blogs/Blogs4/b_2/b2_Topic1.html",
+    "href": "Blogs/Blogs4/b_2/b2_Topic1.html",
+    "title": "Fundamentos Robóticos",
+    "section": "",
+    "text": "Grados de libertad\nNotas claves:\n\nGrados de libertad : Degree of Freedom en inglés se abrevia como DOF, dof, Dof, etc.\nEspacio de configuración: Configuration Space en ingés se abrevia com C-space. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.\n\nDimensiones del espacio comunes de un cuerpo rígido:\n\nEn el espacio: 6\n\nPosición del cuerpo: Las coordenadas \\(x,y,z\\)\nOrientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.\n\nEn el plano: 3\n\n\n\n\nMovimiento de Cuerpos Rígidos\n\nRepresentación implícita: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.\nSistema de referencia conectada a un cuerpo en movimiento: Se considera esta referencia, por ejemplo el frame \\(\\{b\\}\\), de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.\n\n\n\nRotación de matrices\n\n6 Restricciones en matrices de rotación \\(R\\): Ortogonalidad de vectores\n\nRestriciones en las columnas: Los vectores unitarios deben ser unitarios: 3\nEl producto punto de alguno de dos de los vectores columna debe ser ser 0: 3\nEn consecuencia, se cumple que:\n\n\\(R^{T}R = I\\) lo que conlleva a \\(det(R) = 1\\) (regla de la mano derecha)\nLo que se agrupa en el conjunto de matrices reales 3x3 denominado Special orthogonal group SO(3)\nAlgunas propiedades relevantes:\n\nInversa: \\(R^{-1} = R^{T} \\in SO(3)\\)\n\n\\(R_{ab}R_{ba}=R_{aa}=I\\) Por lo tanto la inversa de \\(R_{ab}\\) es también \\(R_{ba}\\).\n\nCierre: \\(R_1 R_2 \\in SO(3)\\)\nFinalmente: \\(x \\in \\mathbb{R} \\left \\| Rx \\right \\| = \\left \\| x \\right \\|\\)"
+  },
+  {
+    "objectID": "Blogs/Blogs4/b_1/b1_Topic1.html#sistema-de-referencia-inercial-inertial-reference-frame",
+    "href": "Blogs/Blogs4/b_1/b1_Topic1.html#sistema-de-referencia-inercial-inertial-reference-frame",
+    "title": "Fundamentos Dinámicos",
+    "section": "",
+    "text": "\\[\n\\begin{aligned}\n\\bar{r}=\\bar{R}+{\\bar{r}}^{'}\\\\\n\\bar{r}^{'}=\\bar{r}-{\\bar{R}}\\\\\n\\end{aligned}\n\\]\nPero \\(\\bar{V}\\) es una constante.\n\\[\n\\begin{aligned}\n\\bar{R}(t)=\\bar{R_0}-{\\bar{V}t}\\\\\n\\frac{d\\bar{r}^{'}}{dt} = \\frac{d\\bar{r}}{dt} - \\frac{d\\bar{R}}{dt}\\\\\n\\bar{v}^{'}=\\bar{v}-{\\bar{V}}\\\\\n\\frac{d\\bar{v}^{'}}{dt} = \\frac{d\\bar{v}}{dt} - \\frac{d\\bar{V}}{dt}\\\\\n\\bar{a}^{'} = \\bar{a}\n\\end{aligned}\n\\]\nLuego, aplicando la primera Ley de Newton se cumple que:\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}\\\\\n\\bar{F}^{'} & = m\\bar{a}^{'} = m\\bar{a}\\\\\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "Blogs/Blogs4/b_1/b1_Topic1.html#sistema-de-referencia-no-inercial-non-inertial-reference-frame",
+    "href": "Blogs/Blogs4/b_1/b1_Topic1.html#sistema-de-referencia-no-inercial-non-inertial-reference-frame",
+    "title": "Fundamentos Dinámicos",
+    "section": "",
+    "text": "Pero que pasa si \\(\\bar{V}\\) no es una constante?\n\n\n\n\n\n\nImportante\n\n\n\nEl sistema de referencia \\(S^{'}\\) tiene una aceleración \\(\\bar{A}\\) relativa a S.\n\n\n\\[\n\\begin{aligned}\n\\bar{a} & = \\bar{a} - \\bar{A}\\\\\n\\end{aligned}\n\\]\nPor lo tanto,\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}^{'}\\\\\n& = m\\bar{a} - m\\bar{A}\\\\\n& = \\bar{F}_\\text{físico} - \\bar{F}_\\text{ficticio}\\\\\n\\end{aligned}\n\\]\nDonde:\n\n\\(\\bar{F}_\\text{físico}\\) es la fuerza físicamente aplicada al cuerpo.\n\n\\(\\bar{F}_\\text{ficticio}\\). Dado un observador en el sistema de referencia o frame \\(S^{'}\\) que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales (\\(S^{'}\\)).\n\n\n\n\n\n\n\nTip\n\n\n\nConsiderando el moviendo de rotación “circular” de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Education",
+    "text": "Education\nUniversidad Nacional de Trujillo, Trujillo, Peru | April 2014 - December 2018 Program: Bachelor of Science in Mechatronics Engineering\n\nThesis title: Modelamiento y simulacion de un robot clınico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutanea de mama.\n\nThird-class rank."
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Experience",
+    "text": "Experience\n\nCorpotation Tecnobiomédica Healthcare del Perú SAC | Auxiliar in Maintainance | Nov 2020 - Apr 2021\nNorsac SAC | Auxiliar in Maintainance | May 2019 - Nov 2018"
+  },
+  {
+    "objectID": "index.html#publications",
+    "href": "index.html#publications",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Publications",
+    "text": "Publications\n\nJ´acobo-Zavaleta, S., & Zavaleta, J. (2023a). Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/tla.2023.10068849\n\nJ´acobo-Zavaleta, S., & Zavaleta, J. (2023b). A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/TLA.2023.10068845\n\nZavaleta, A., ˜Nuflo-V´asquez, S., Alarc´on-Turiani, V., & J´acobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Per´u. Norte M´edico, 1 (5), 27–30. Link.\n\nJ´acobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). Deep learning y enfermedades oculares. Norte M´edico, 3 (2). Link.\n\nZavaleta de Los R´ıos, V., J´acobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). Microbiota intestinal y las enfermedades neurodegenerativas. Norte M´edico, 1 (2). Link."
+  },
+  {
+    "objectID": "index.html#profesional-experience",
+    "href": "index.html#profesional-experience",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Profesional Experience",
+    "text": "Profesional Experience\n\nCorporaci´on Tecnobiom´edica Healthcare del Per´u SAC. — Medical equipments, Lima, Peru\nMaintenance Assistant of biomedical equipment (Full-time)\nNovember 2020 - April 2021\n\nProgrammed and adapted preventive maintenance plans of old and out of date equipments based on user’s experience.\n\nNorsac SAC. — Textile Industry, Trujillo, Peru\nMaintenance Assistant (Full-time)\nMay - November 2019\n\nFormulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.\n\nProvided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.\n\nReduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan."
+  },
+  {
+    "objectID": "index.html#research-experience",
+    "href": "index.html#research-experience",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Research experience",
+    "text": "Research experience\n\nNational researcher Lima, Peru Enabled and registered in the National Scientific Register (RENACYT). Code: P0153371\nApril 2023 - Present\nTechnological projects about prevention and assistant in patients with COVID-19 Trujillo\nFunded by the Universidad Nacional de Trujillo\nMarch - October 2019\n\nCollaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.\n\nThe initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use."
+  },
+  {
+    "objectID": "index.html#honours-and-awards",
+    "href": "index.html#honours-and-awards",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Honours and Awards",
+    "text": "Honours and Awards\n\nRecognition for technological projects about prevention and assistant in patients with COVID-19\nUniversidad Nacional de Trujillo, October 2020\nThird place in Final Merit List of Undergraduate Program\nUniversidad Nacional de Trujillo, December 2018\nRecognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”\nJos´e Faustino S´anchez Carri´on High School, December 2010"
+  },
+  {
+    "objectID": "index.html#extra-curricular-activities",
+    "href": "index.html#extra-curricular-activities",
+    "title": "Sergio Jácobo Zavaleta",
+    "section": "Extra Curricular Activities",
+    "text": "Extra Curricular Activities\n\nVoluntarism\n\nInvited reviewer\nIEEE Latin America Transactions journal. October 2022 - Present\nCollaborated in reviewing research papers for submission process.\n\nCitizen monitor\nEscuela Nacional de Control - Contralor´ıa General de la Rep´ublica del Per´u. January 2022 - Present.\nMonitored public-financed projects to report evidence of incidents of non-compliance.\n\n\n\nProvision of services\n\nExamination monitor\nMinister of Education, Cajamarca, Per´u, November 2022 - Present.\nCollaborated and moderated teacher evaluation processes for service examination."
   }
 ]

@@ -2,25 +2,11 @@
 title: "Sergio Jácobo"
 about:
   template: trestles
-  image: "Figures/sergio.png"
-  links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com/JacoboZavaleta
-    - icon: github
-      text: Github
-      href: https://www.github.com/SJacoboZavaleta
+  image: "Figures/sergio_bw.jpeg"
 ---
 
-Sergio Jácobo is a Mechatronics Enginner and his research interests include design of clinical robots and biomedical applications based on Artifitial Intelligence using Machine Learning. When not innovating on data platforms, Sergio enjoys spending  time warching films and writing code.
+Welcome to my website made for everyone who wants to learn about modern tools for an efficient writting of research manuscripts: $\LaTeX$, Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using [Quarto](https://quarto.org/docs/websites).
 
-## Education
-
-National University of Trujillo, Trujillo | Trujillo, Peru
-Bach. in Mechatronics Engineering | May 2014 - Dec 2018
-
-## Experience
-
-Corpotation Tecnobiomédica Healthcare del Perú SAC | Auxiliar in Maintainance | Nov 2020 - Apr 2021
-
-Norsac SAC | Auxiliar in Maintainance | May 2019 - Nov 2018
+::: callout-important
+Most of my articles are written in **spanish** because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet.
+:::
