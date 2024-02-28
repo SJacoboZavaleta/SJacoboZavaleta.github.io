@@ -151,7 +151,7 @@
     "href": "index.html",
     "title": "Sergio Jácobo Zavaleta",
     "section": "",
-    "text": "Sergio Jácobo is a Mechatronics Enginner and his research interests include design of clinical robots and biomedical applications based on Artifitial Intelligence using Machine Learning. When not innovating on data platforms, Sergio enjoys spending time warching films and writing code."
+    "text": "Sergio Jácobo is a passionate Mechatronics Engineer driven to design innovative clinical robots and biomedical devices. With expertise in artificial intelligence and machine learning, he develops cutting-edge solutions to improve healthcare. His academic research on robotics and medical imaging has been published in peer-reviewed journals.\nOutside of work, Sergio applies his programming skills to build apps and explore new technologies. He also enjoys unwinding through films, books, and outdoor activities like hiking and cycling. With a lifelong curiosity for learning, he actively seeks new challenges that combine his interests in engineering, computer science, and helping others."
   },
   {
     "objectID": "docs/about.html",
@@ -277,7 +277,7 @@
     "href": "index.html#education",
     "title": "Sergio Jácobo Zavaleta",
     "section": "Education",
-    "text": "Education\nUniversidad Nacional de Trujillo, Trujillo, Peru | April 2014 - December 2018 Program: Bachelor of Science in Mechatronics Engineering\n\nThesis title: Modelamiento y simulacion de un robot clınico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutanea de mama.\n\nThird-class rank."
+    "text": "Education\nBachelor of Science in Mechatronics Engineering\nUniversidad Nacional de Trujillo, Trujillo, Peru\nApril 2014 - December 2018\n\nThesis title: Modelamiento y simulacion de un robot clınico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutanea de mama.\n\nThird-class rank."
   },
   {
     "objectID": "index.html#experience",
@@ -291,34 +291,34 @@
     "href": "index.html#publications",
     "title": "Sergio Jácobo Zavaleta",
     "section": "Publications",
-    "text": "Publications\n\nJ´acobo-Zavaleta, S., & Zavaleta, J. (2023a). Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/tla.2023.10068849\n\nJ´acobo-Zavaleta, S., & Zavaleta, J. (2023b). A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/TLA.2023.10068845\n\nZavaleta, A., ˜Nuflo-V´asquez, S., Alarc´on-Turiani, V., & J´acobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Per´u. Norte M´edico, 1 (5), 27–30. Link.\n\nJ´acobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). Deep learning y enfermedades oculares. Norte M´edico, 3 (2). Link.\n\nZavaleta de Los R´ıos, V., J´acobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). Microbiota intestinal y las enfermedades neurodegenerativas. Norte M´edico, 1 (2). Link."
+    "text": "Publications\n\nJácobo-Zavaleta, S., & Zavaleta, J. (2023a). Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/tla.2023.10068849\n\nJácobo-Zavaleta, S., & Zavaleta, J. (2023b). A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/TLA.2023.10068845\n\nZavaleta, A., Ñuflo-Vásquez, S., Alarcón-Turiani, V., & Jácobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Perú. Norte Médico, 1 (5), 27–30. Link.\n\nJácobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). Deep learning y enfermedades oculares. Norte Médico, 3 (2). Link.\n\nZavaleta de Los Ríos, V., Jácobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). Microbiota intestinal y las enfermedades neurodegenerativas. Norte Médico, 1 (2). Link."
   },
   {
     "objectID": "index.html#profesional-experience",
     "href": "index.html#profesional-experience",
     "title": "Sergio Jácobo Zavaleta",
     "section": "Profesional Experience",
-    "text": "Profesional Experience\n\nCorporaci´on Tecnobiom´edica Healthcare del Per´u SAC. — Medical equipments, Lima, Peru\nMaintenance Assistant of biomedical equipment (Full-time)\nNovember 2020 - April 2021\n\nProgrammed and adapted preventive maintenance plans of old and out of date equipments based on user’s experience.\n\nNorsac SAC. — Textile Industry, Trujillo, Peru\nMaintenance Assistant (Full-time)\nMay - November 2019\n\nFormulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.\n\nProvided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.\n\nReduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan."
+    "text": "Profesional Experience\nMaintenance Assistant of biomedical equipment (Full-time) Corporación Tecnobiomédica Healthcare del Perú SAC. — Medical equipments, Lima, Peru\nNovember 2020 - April 2021\n- Programmed and adapted preventive maintenance plans of old and out of date equipments based on user’s experience.\nMaintenance Assistant (Full-time)\nNorsac SAC. — Textile Industry, Trujillo, Peru\nMay 2019 - November 2019\n- Formulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.\n- Provided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.\n- Reduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan."
   },
   {
     "objectID": "index.html#research-experience",
     "href": "index.html#research-experience",
     "title": "Sergio Jácobo Zavaleta",
     "section": "Research experience",
-    "text": "Research experience\n\nNational researcher Lima, Peru Enabled and registered in the National Scientific Register (RENACYT). Code: P0153371\nApril 2023 - Present\nTechnological projects about prevention and assistant in patients with COVID-19 Trujillo\nFunded by the Universidad Nacional de Trujillo\nMarch - October 2019\n\nCollaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.\n\nThe initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use."
+    "text": "Research experience\nNational researcher Lima, Peru\nApril 2023 - Present\nEnabled and registered in the National Scientific Register (RENACYT). Code: P0153371\nTechnological projects about prevention and assistant in patients with COVID-19 Trujillo\nMarch - October 2019\nFunded by the Universidad Nacional de Trujillo\n\nCollaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.\n\nThe initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use."
   },
   {
     "objectID": "index.html#honours-and-awards",
     "href": "index.html#honours-and-awards",
     "title": "Sergio Jácobo Zavaleta",
     "section": "Honours and Awards",
-    "text": "Honours and Awards\n\nRecognition for technological projects about prevention and assistant in patients with COVID-19\nUniversidad Nacional de Trujillo, October 2020\nThird place in Final Merit List of Undergraduate Program\nUniversidad Nacional de Trujillo, December 2018\nRecognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”\nJos´e Faustino S´anchez Carri´on High School, December 2010"
+    "text": "Honours and Awards\n\nRecognition for technological projects about prevention and assistant in patients with COVID-19\nUniversidad Nacional de Trujillo\nOctober 2020\nThird place in Final Merit List of Undergraduate Program\nUniversidad Nacional de Trujillo\nDecember 2018\nRecognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”\nJosé Faustino Sánchez Carrión High School\nDecember 2010"
   },
   {
     "objectID": "index.html#extra-curricular-activities",
     "href": "index.html#extra-curricular-activities",
     "title": "Sergio Jácobo Zavaleta",
     "section": "Extra Curricular Activities",
-    "text": "Extra Curricular Activities\n\nVoluntarism\n\nInvited reviewer\nIEEE Latin America Transactions journal. October 2022 - Present\nCollaborated in reviewing research papers for submission process.\n\nCitizen monitor\nEscuela Nacional de Control - Contralor´ıa General de la Rep´ublica del Per´u. January 2022 - Present.\nMonitored public-financed projects to report evidence of incidents of non-compliance.\n\n\n\nProvision of services\n\nExamination monitor\nMinister of Education, Cajamarca, Per´u, November 2022 - Present.\nCollaborated and moderated teacher evaluation processes for service examination."
+    "text": "Extra Curricular Activities\n\nIndependent Tutor\n\nPrivate Maths and English tutor\n\n\n\nVoluntarism\n\nCitizen monitor\nEscuela Nacional de Control - Contraloría General de la República del Perú.\nJanuary 2022 - Present\nMonitored public-financed projects to report evidence of incidents of non-compliance.\n\n\n\nProvision of services\n\nExamination monitor\nMinister of Education, Cajamarca, Perú.\nNovember 2022 - Present\nCollaborated and moderated teacher evaluation processes for service examination."
   }
 ]
