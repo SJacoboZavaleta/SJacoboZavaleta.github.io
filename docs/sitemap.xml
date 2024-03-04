@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sergiojacobo.app/Blog1.html</loc>
-    <lastmod>2024-02-01T01:52:29.643Z</lastmod>
+    <lastmod>2024-03-04T19:36:34.226Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/docs/about.html</loc>
@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://sergiojacobo.app/index.html</loc>
-    <lastmod>2024-02-28T02:20:20.522Z</lastmod>
+    <lastmod>2024-03-04T19:38:40.084Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/about.html</loc>
-    <lastmod>2024-02-01T02:30:28.413Z</lastmod>
+    <lastmod>2024-03-04T19:38:59.296Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blogs/Blogs3/b_1/b1_Topic1.html</loc>
@@ -22,11 +22,11 @@
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blog3.html</loc>
-    <lastmod>2024-02-01T01:52:31.439Z</lastmod>
+    <lastmod>2024-03-04T19:17:17.668Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blogs/Blogs1/b_1/b1_Topic1.html</loc>
-    <lastmod>2023-08-13T23:59:14.421Z</lastmod>
+    <lastmod>2024-02-28T14:23:42.433Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blogs/Blogs4/b_1/b1_Topic1.html</loc>
@@ -34,11 +34,11 @@
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blog4.html</loc>
-    <lastmod>2024-02-01T01:37:02.950Z</lastmod>
+    <lastmod>2024-03-04T19:17:25.611Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blog2.html</loc>
-    <lastmod>2024-02-01T01:52:25.255Z</lastmod>
+    <lastmod>2024-03-04T19:14:09.508Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.app/Blogs/Blogs4/b_2/b2_Topic1.html</loc>
@@ -47,5 +47,29 @@
   <url>
     <loc>https://sergiojacobo.app/Gallery.html</loc>
     <lastmod>2024-02-01T02:31:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.app/Blogs/Blogs1/b_1/b1_1_Topic1.html</loc>
+    <lastmod>2024-02-28T15:05:18.505Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.app/Blogs/Blogs1/b_1/b1_1.html</loc>
+    <lastmod>2024-02-28T15:06:49.332Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.app/Blogs/Blogs1/b_2/b1_2.html</loc>
+    <lastmod>2024-03-04T19:36:35.437Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.app/Blogs/Blogs3/b_1/b3_1.html</loc>
+    <lastmod>2024-02-28T15:45:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.app/Blogs/Blogs4/b_1/b4_1.html</loc>
+    <lastmod>2024-02-28T15:36:15.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.app/Blogs/Blogs4/b_2/b4_2.html</loc>
+    <lastmod>2024-02-28T15:36:15.897Z</lastmod>
   </url>
 </urlset>

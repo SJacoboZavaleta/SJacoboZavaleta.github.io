@@ -26,7 +26,7 @@ navbar: true
 ---
 
 ```{r, echo=FALSE}
-setwd("D:/Developments/ParaGitHub/SergioWeb/SergioWeb/Blogs/Blogs3/b_1")
+setwd(paste(getwd(),"/Blogs/Blogs3/b_1/",sep=""))
 ```
 
 [![Inicio de la aplicación online](images/1.png){fig-align="center"}](https://sergiojacobozavaleta.shinyapps.io/rosaapp/)
