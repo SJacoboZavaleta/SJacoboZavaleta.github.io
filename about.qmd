@@ -1,5 +1,6 @@
 ---
-title: "Sergio Jácobo"
+title: "Sergio Jácobo Zavaleta"
+subtitle: "Mechatronics Engineer [ORCID](https://orcid.org/0000-0001-5084-8032)"
 about:
   template: trestles
   image: "Figures/sergio_bw.jpeg"
