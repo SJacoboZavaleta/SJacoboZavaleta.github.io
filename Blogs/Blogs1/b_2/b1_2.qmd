@@ -7,6 +7,7 @@ categories: "Latex"
 reading-time: true
 image: 2_cover.jpg
 fig-cap-location: margin
+lang: es
 ---
 
 ![Pixebay Content License](2_cover.jpg){fig-align="left"}

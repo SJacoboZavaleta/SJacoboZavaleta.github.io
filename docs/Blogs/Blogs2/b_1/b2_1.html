@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Albert Rapp">
+<meta name="author" content="Sergio Jácobo">
+<meta name="description" content="Paso a paso para completar el formato latex de la Revista Norte Médico.">
 
-<title>Sergio's Blog – b2_1</title>
+<title>Sergio’s Blog - Guía didáctica de Latex para publicación en Revista Peruana</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -53,16 +54,16 @@ ul.task-list li input[type="checkbox"] {
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -82,13 +83,20 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Sergio’s Blog - Guía didáctica de Latex para publicación en Revista Peruana">
+<meta property="og:description" content="Paso a paso para completar el formato latex de la Revista Norte Médico.">
+<meta property="og:image" content="https://sergiojacobo.app/Blogs/Blogs2/b_1/cover.jpg">
+<meta property="og:site-name" content="Sergio's Blog">
 <meta name="twitter:title" content="Sergio’s Blog">
 <meta name="twitter:description" content="Sergio’s Blog">
+<meta name="twitter:image" content="https://sergiojacobo.app/Blogs/Blogs2/b_1/cover.jpg">
 <meta name="twitter:creator" content="@JacoboZavaleta">
 <meta name="twitter:site" content="@JacoboZavaleta">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -105,8 +113,8 @@ cookieconsent.run({
     <span class="navbar-title">Sergio’s Blog</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -126,7 +134,7 @@ cookieconsent.run({
   </li>  
         <li>
     <a class="dropdown-item" href="../../../Blog2.html" rel="" target="">
- <span class="dropdown-text">Aprende a Crear Reportes Profesionales con LaTeX</span></a>
+ <span class="dropdown-text">Learning LaTeX</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../../Blog3.html" rel="" target="">
@@ -159,8 +167,8 @@ cookieconsent.run({
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
@@ -175,15 +183,219 @@ cookieconsent.run({
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito-de-la-plantilla-de-la-revista" id="toc-propósito-de-la-plantilla-de-la-revista" class="nav-link active" data-scroll-target="#propósito-de-la-plantilla-de-la-revista">Propósito de la plantilla de la Revista</a></li>
+  <li><a href="#vista-previa-de-la-plantilla" id="toc-vista-previa-de-la-plantilla" class="nav-link" data-scroll-target="#vista-previa-de-la-plantilla">Vista previa de la plantilla</a></li>
+  <li><a href="#consideracions-esenciales-para-envio-del-formato" id="toc-consideracions-esenciales-para-envio-del-formato" class="nav-link" data-scroll-target="#consideracions-esenciales-para-envio-del-formato">Consideracions esenciales para envio del formato</a>
+  <ul class="collapse">
+  <li><a href="#manejo-de-ecuaciones" id="toc-manejo-de-ecuaciones" class="nav-link" data-scroll-target="#manejo-de-ecuaciones">Manejo de Ecuaciones</a></li>
+  <li><a href="#manejo-de-tablas" id="toc-manejo-de-tablas" class="nav-link" data-scroll-target="#manejo-de-tablas">Manejo de Tablas</a></li>
+  <li><a href="#manejo-de-figuras-y-gráficas" id="toc-manejo-de-figuras-y-gráficas" class="nav-link" data-scroll-target="#manejo-de-figuras-y-gráficas">Manejo de Figuras y Gráficas</a></li>
+  <li><a href="#manejo-de-bibliografía" id="toc-manejo-de-bibliografía" class="nav-link" data-scroll-target="#manejo-de-bibliografía">Manejo de Bibliografía</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Guía didáctica de Latex para publicación en Revista Peruana</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Latex</div>
+    <div class="quarto-category">Zotero</div>
+    <div class="quarto-category">Excel</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Paso a paso para completar el formato latex de la Revista <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">Norte Médico</a>.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sergio Jácobo </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">5 de marzo de 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="norteMedicopage.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Página princial de Norte Médico</figcaption>
+</figure>
+</div>
+<section id="propósito-de-la-plantilla-de-la-revista" class="level2">
+<h2 class="anchored" data-anchor-id="propósito-de-la-plantilla-de-la-revista">Propósito de la plantilla de la Revista</h2>
+<p>El propósito de la plantilla de la revista es facilitar y agilizar el proceso de edición de los artículos mediante el uso de un formato basado en código <span class="math inline">\(\LaTeX\)</span>. Aunque su correcto manejo requiere cierto conocimiento de instrucciones básicas, este artículo proporciona una guía didáctica destinada a usuarios no familiarizados con <span class="math inline">\(\LaTeX\)</span>. El objetivo es que estos usuarios puedan faciliar la edición de la plantilla por parte de la Revista utilizando herramientas ampliamente disponibles, lo que garantiza un envío exitoso de sus artículos para revisión y publicación.</p>
+</section>
+<section id="vista-previa-de-la-plantilla" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="vista-previa-de-la-plantilla">Vista previa de la plantilla</h2>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura1" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;1: Ejemplo de publicación</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="consideracions-esenciales-para-envio-del-formato" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="consideracions-esenciales-para-envio-del-formato">Consideracions esenciales para envio del formato</h2>
+<section id="manejo-de-ecuaciones" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="manejo-de-ecuaciones">Manejo de Ecuaciones</h3>
+<p>Para escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.</p>
+<section id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word">Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word</h4>
+<p>En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver <a href="#fig-figura11">Figura&nbsp;2</a>). Luego, asegurándose de que esté activada la opción <code>latex</code>, se selecciona la ecuación deseada y se copia (<code>control + C</code>) para pegarla posteriormente en su destino (<code>control + V</code>).</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura11" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;2: Usando recursos en línea</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="método-2-utilizando-un-editior-de-ecuaciones-en-línea" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="método-2-utilizando-un-editior-de-ecuaciones-en-línea">Método 2: Utilizando un editior de ecuaciones en Línea</h4>
+<p>En este método, se utiliza el recurso web en línea <a href="https://equationeditor.atomurl.net/">Equation Editor</a>. Después de ingresar la ecuación deseada (ver <a href="#fig-figura12">Figura&nbsp;3</a>), se presiona el botón <code>Save to LaTeX</code>, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura12" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- #### Símbolos matemáticos
+Para escribir correctamente los distntios símbolos matemáticos es necesario utilizar las sentencias de código o instrucciones correctas en base a la siguiente lista. Algunas fuentes son:
+- https://mathvault.ca/wp-content/uploads/Comprehensive-List-of-Mathematical-Symbols.pdf  
+- https://ctan.dcc.uchile.cl/info/symbols/comprehensive/symbols-a4.pdf  
+- https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf -->
+</section>
+</section>
+<section id="manejo-de-tablas" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="manejo-de-tablas">Manejo de Tablas</h3>
+<!-- Utilizando el paquete [Excel2Latex](ctan.org/pkg/excel2latex) -->
+<p>Las tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:</p>
+<ul>
+<li><p><strong>Crear la Tabla con Espacios de Celdas Respetados:</strong> Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver <a href="#fig-figura31">Figura&nbsp;4</a>).</p></li>
+<li><p><strong>Utilizar Líneas Horizontales para Presentar la Información:</strong> Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver <a href="#fig-figura32">Figura&nbsp;5</a>).</p></li>
+<li><p><strong>Posibilidad de Combinar Celdas o Columnas:</strong> Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver <a href="#fig-figura32">Figura&nbsp;5</a>).</p></li>
+<li><p><strong>Preferencia por Tablas en Blanco y Negro:</strong> Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.</p></li>
+</ul>
+<p>A continuación, se incluyen ejemplos visuales que ilustran estas pautas:</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura31" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;4: Tabla simple en una hoja de Excel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura32" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;5: Tabla más elaborada en una hoja de Excel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Estas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.</p>
+</section>
+<section id="manejo-de-figuras-y-gráficas" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="manejo-de-figuras-y-gráficas">Manejo de Figuras y Gráficas</h3>
+<p>El manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:</p>
+<section id="de-fuentes-externas" class="level4">
+<h4 class="anchored" data-anchor-id="de-fuentes-externas">De Fuentes Externas</h4>
+<p>Todas las imágenes se deben enviar incrustadas en el documento, indicando siempre <strong>título o descripcion</strong> y <strong>su fuente bibliográfica</strong>. Además, se recomienda enviar el archivo original de las imágenes por <strong>separado (archivo original en .jpg o .png)</strong>, indicando siempre el orden de las figuras.</p>
+</section>
+<section id="generadas-utilizando-microsoft-excel" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="generadas-utilizando-microsoft-excel">Generadas Utilizando Microsoft Excel</h4>
+<ol type="1">
+<li>Cada gráfica se debe organizar en su propia hoja de Excel, indicando <strong>Indicando siempre el título de la misma</strong> (ver <a href="#fig-figura41">Figura&nbsp;6</a>).</li>
+<li>Si la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver <a href="#fig-figura42">Figura&nbsp;7</a>).</li>
+<li>Para las gráficas creadas en Microsoft Excel (<strong>formato .xlsx</strong>), se deben seguir estos pasos para garantizar una calidad alta:
+<ul>
+<li>Guardar la imagen seleccionando clic derecho y luego guardar imagen.</li>
+<li>Elegir el destino de almacenamiento y seleccionar entre los <strong>formatos .png o .svg</strong> (ver <a href="#fig-figura43">Figura&nbsp;8</a>).</li>
+<li>También se puede enviar el archivo original en formato .xlsx.</li>
+</ul></li>
+</ol>
+<p>A continuación, se presentan ejemplos visuales que ilustran estos procesos:</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura41" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;6: Figura única en un hoja de Excel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura42" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;7: Figura única creada a partir de una tabla de Excel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-figura43" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption margin-caption">Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Siguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores.</p>
+</section>
+</section>
+<section id="manejo-de-bibliografía" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-bibliografía">Manejo de Bibliografía</h3>
+<p>Para la bibliografía se utiliza el programa administrador de citas conocido como Zotero.</p>
 
 
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -355,12 +567,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

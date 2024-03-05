@@ -8,7 +8,7 @@ categories:
     - "Dynamics"
     - "Kinematics"
 reading-time: true
-image: images\logoZoteroOverleaf.png
+image: images\cover.jpg
 number-sections: false
 cap-location : margin
 fig-cap-location :  margin
