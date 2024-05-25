@@ -1,0 +1,2618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Third Foundation</title>
+<link>https://github.com/blogs/</link>
+<atom:link href="https://github.com/blogs/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<image>
+<url>https://github.com/images/Logo_ThirdFoundation150px</url>
+<title>Third Foundation</title>
+<link>https://github.com/blogs/</link>
+</image>
+<generator>quarto-1.4.551</generator>
+<lastBuildDate>Sat, 25 May 2024 04:56:37 GMT</lastBuildDate>
+<item>
+  <title>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://github.com/blogs/posts/2023/quarto/01/b3_1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="a-quien-va-dirigido" class="level1">
+<h1>A quien va dirigido?</h1>
+<p>A todas los profesionales en nutrición que desean planificar o programar sus dietas nutricionales en base a la composición nutricional de diversos alimentos en la cocina peruana según la cantidad deseada.</p>
+</section>
+<section id="implementación" class="level1">
+<h1>Implementación</h1>
+<blockquote class="blockquote">
+<p>Versión 2 ✅:</p>
+<ul>
+<li>Se incluyeron alimentos compuestos como platos de entrada y almuerzo.<br>
+</li>
+<li>Se incluyó la tabla de anexos de codigos de componentes.<br>
+</li>
+<li>Se centró el contenido de las tablas.</li>
+<li>Se mejoró la salida luego de seleccionar cada tabla principal y se incluyó una opción de copiado.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Versión 1 <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i>:</p>
+<ul>
+<li><p>Es posible calcular cualquier composición en base a la cantidad ingresada por el usuario en gramos.</p></li>
+<li><p>Solo se incluyeron alimentos individuales y no compuestos.</p></li>
+</ul>
+</blockquote>
+<section id="el-código" class="level2">
+<h2 class="anchored" data-anchor-id="el-código">El Código</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-1" style="background: #f1f3f5;"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">setwd</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ruta/a/tu/proyecto/"</span>)</span>
+<span id="annotated-cell-1-2"></span>
+<span id="annotated-cell-1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(shiny)</span>
+<span id="annotated-cell-1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(DT) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Manejo de tablas en formato Data Frame</span></span>
+<span id="annotated-cell-1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(shinyjs)</span>
+<span id="annotated-cell-1-6"></span>
+<span id="annotated-cell-1-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cargar datos para alimentos individuales</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-8" class="code-annotation-target">alimentos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"alimentos.csv"</span>)</span>
+<span id="annotated-cell-1-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(alimentos) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-10">                         <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>,</span>
+<span id="annotated-cell-1-11">                         <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>)</span>
+<span id="annotated-cell-1-12">alimentos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> alimentos[,<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-13">                          <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>)]</span>
+<span id="annotated-cell-1-14"></span>
+<span id="annotated-cell-1-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cargar datos para alimentos compuestos</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-16" class="code-annotation-target">platos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"alimentosCompuestos.csv"</span>)</span>
+<span id="annotated-cell-1-17"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(platos) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-18">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOAVL"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FIBTG"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ASH"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"THIA"</span>,</span>
+<span id="annotated-cell-1-19">                      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RIBF"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NIA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ESTRATO"</span>)</span>
+<span id="annotated-cell-1-20">platos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> platos[,<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>,</span>
+<span id="annotated-cell-1-21">                          <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>)]</span>
+<span id="annotated-cell-1-22"></span>
+<span id="annotated-cell-1-23"></span>
+<span id="annotated-cell-1-24"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Creamos tablas de Anexo</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-25" class="code-annotation-target">codigo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"A"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"B"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"D"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"E"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"F"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"G"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"H"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"J"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"L"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Q"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"T"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"U"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SS"</span>)</span>
+<span id="annotated-cell-1-26">categoria <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cereales y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Verduras, hortalizas y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Frutas y derivados"</span>, </span>
+<span id="annotated-cell-1-27">               <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Grasas, aceites y oleaginosas"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Pescados y mariscos"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Carnes y derivados"</span>, </span>
+<span id="annotated-cell-1-28">               <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Leche y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bebidas (alcohólicas y analcohólicas)"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Huevos y derivados"</span>,</span>
+<span id="annotated-cell-1-29">               <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Productos azucarados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Misceláneos"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos infantiles"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Leguminosas y derivados"</span>, </span>
+<span id="annotated-cell-1-30">               <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tubérculos, raíces y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos preparados (entrada)"</span>,</span>
+<span id="annotated-cell-1-31">               <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos preparados (segundo)"</span>)</span>
+<span id="annotated-cell-1-32">codigoGrupo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(codigo, categoria)</span>
+<span id="annotated-cell-1-33"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(codigoGrupo) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Código"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Categoría"</span>)</span>
+<span id="annotated-cell-1-34"></span>
+<span id="annotated-cell-1-35"></span>
+<span id="annotated-cell-1-36"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cargas coódigos de componentes - Anexo</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-37" class="code-annotation-target">anexoCodigo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"anexosCodigoComponentes.csv"</span>)</span>
+<span id="annotated-cell-1-38"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(anexoCodigo) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Identificador INFOODS"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Unidad"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Comentario"</span>)</span>
+<span id="annotated-cell-1-39"></span>
+<span id="annotated-cell-1-40"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Definir interfaz</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-41" class="code-annotation-target">ui <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fluidPage</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-42" class="code-annotation-target">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">includeCSS</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"styles.css"</span>),</span>
+<span id="annotated-cell-1-43">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">titlePanel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"</span>),</span>
+<span id="annotated-cell-1-44">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h2</span>(tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">a</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima."</span>,</span>
+<span id="annotated-cell-1-45">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">href=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos"</span>)),</span>
+<span id="annotated-cell-1-46">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h3</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."</span>),</span>
+<span id="annotated-cell-1-47">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h3</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">class =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold-text"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Nota: Composición en 100 g de alimento"</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-48" class="code-annotation-target">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">numericInput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"proportion"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Nueva composición (gramos)?"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">value =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">min =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">max =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-49" class="code-annotation-target">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">useShinyjs</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-50" class="code-annotation-target">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabsetPanel</span>(</span>
+<span id="annotated-cell-1-51">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabPanel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos individuales"</span>,</span>
+<span id="annotated-cell-1-52">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dataTableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'foodTable1'</span>),</span>
+<span id="annotated-cell-1-53">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h4</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">class =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold-text"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componentes seleccionados:"</span>),</span>
+<span id="annotated-cell-1-54">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"selectedData1"</span>),</span>
+<span id="annotated-cell-1-55">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">actionButton</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"copyButton1"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Copiar datos seleccionados"</span>)</span>
+<span id="annotated-cell-1-56">    ),</span>
+<span id="annotated-cell-1-57">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabPanel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos en platos"</span>,</span>
+<span id="annotated-cell-1-58">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dataTableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'foodTable2'</span>),</span>
+<span id="annotated-cell-1-59">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h4</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componentes seleccionados:"</span>),</span>
+<span id="annotated-cell-1-60">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"selectedData2"</span>),</span>
+<span id="annotated-cell-1-61">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">actionButton</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"copyButton2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Copiar datos seleccionados"</span>)</span>
+<span id="annotated-cell-1-62">    ),</span>
+<span id="annotated-cell-1-63">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabPanel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Códigos y grupos"</span>,</span>
+<span id="annotated-cell-1-64">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'codigoGrupos'</span>),</span>
+<span id="annotated-cell-1-65">             <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'codigoComponentes'</span>)</span>
+<span id="annotated-cell-1-66">    )</span>
+<span id="annotated-cell-1-67">  ),</span>
+<span id="annotated-cell-1-68">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hr</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-1-69" class="code-annotation-target">  tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">div</span>(</span>
+<span id="annotated-cell-1-70">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">class =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"footer"</span>,</span>
+<span id="annotated-cell-1-71">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"text-align: center; background-color: #333; color: #fff; padding: 20px;"</span>,</span>
+<span id="annotated-cell-1-72">    tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h4</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"¿Te ha gustado esta App?"</span>),</span>
+<span id="annotated-cell-1-73">    tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">p</span>(</span>
+<span id="annotated-cell-1-74">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"¡Esta aplicación ha sido desarrollada con "</span>,</span>
+<span id="annotated-cell-1-75">      tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">a</span>(</span>
+<span id="annotated-cell-1-76">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">href =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://shiny.rstudio.com/"</span>,</span>
+<span id="annotated-cell-1-77">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"color: #ffcc00; font-weight: bold;"</span>,</span>
+<span id="annotated-cell-1-78">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R Shiny"</span></span>
+<span id="annotated-cell-1-79">      ),</span>
+<span id="annotated-cell-1-80">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"!"</span></span>
+<span id="annotated-cell-1-81">    ),</span>
+<span id="annotated-cell-1-82">    tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">p</span>(</span>
+<span id="annotated-cell-1-83">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, "</span>,</span>
+<span id="annotated-cell-1-84">      tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">a</span>(</span>
+<span id="annotated-cell-1-85">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">href =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://shiny.rstudio.com/tutorial/"</span>,</span>
+<span id="annotated-cell-1-86">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"color: #ffcc00; font-weight: bold;"</span>,</span>
+<span id="annotated-cell-1-87">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"haz clic aquí"</span></span>
+<span id="annotated-cell-1-88">      ),</span>
+<span id="annotated-cell-1-89">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" para acceder al tutorial oficial."</span></span>
+<span id="annotated-cell-1-90">    ),</span>
+<span id="annotated-cell-1-91">    tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">p</span>(</span>
+<span id="annotated-cell-1-92">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"¡Comienza a explorar el poder de Shiny hoy mismo!"</span>,</span>
+<span id="annotated-cell-1-93">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"font-weight: bold;"</span></span>
+<span id="annotated-cell-1-94">    )</span>
+<span id="annotated-cell-1-95">  )</span>
+<span id="annotated-cell-1-96">)</span>
+<span id="annotated-cell-1-97"></span>
+<span id="annotated-cell-1-98"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Definir server</span></span>
+<span id="annotated-cell-1-99">server <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(input, output, session) {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-1-100" class="code-annotation-target">  getComposition <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(input_table) {</span>
+<span id="annotated-cell-1-101">    proportionConversion <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>proportion</span>
+<span id="annotated-cell-1-102">    idx <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> input[[input_table]]</span>
+<span id="annotated-cell-1-103">    selectedRow <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> alimentos[idx, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>)]</span>
+<span id="annotated-cell-1-104">    selectedRow <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> selectedRow <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> proportionConversion <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="annotated-cell-1-105">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rownames</span>(selectedRow) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NULL</span></span>
+<span id="annotated-cell-1-106">    selectedRow</span>
+<span id="annotated-cell-1-107">  }</span>
+<span id="annotated-cell-1-108">  </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-1-109" class="code-annotation-target">  output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderDataTable</span>(</span>
+<span id="annotated-cell-1-110">    alimentos, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">server =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">selection =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"single"</span>,</span>
+<span id="annotated-cell-1-111">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">options =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-112">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pageLength =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>,</span>
+<span id="annotated-cell-1-113">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columnDefs =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-114">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-115">          <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">targets =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"_all"</span>,</span>
+<span id="annotated-cell-1-116">          <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">className =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dt-center"</span></span>
+<span id="annotated-cell-1-117">        )</span>
+<span id="annotated-cell-1-118">      )</span>
+<span id="annotated-cell-1-119">    )</span>
+<span id="annotated-cell-1-120">  )</span>
+<span id="annotated-cell-1-121">  </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-1-122" class="code-annotation-target">  output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>selectedData1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>({</span>
+<span id="annotated-cell-1-123">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable1_rows_selected"</span>)</span>
+<span id="annotated-cell-1-124">  })</span>
+<span id="annotated-cell-1-125">  </span>
+<span id="annotated-cell-1-126">  output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderDataTable</span>(</span>
+<span id="annotated-cell-1-127">    platos,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">server =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">selection =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"single"</span>,</span>
+<span id="annotated-cell-1-128">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">options =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-129">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pageLength =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>,</span>
+<span id="annotated-cell-1-130">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columnDefs =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-131">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-132">          <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">targets =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"_all"</span>,</span>
+<span id="annotated-cell-1-133">          <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">className =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dt-center"</span></span>
+<span id="annotated-cell-1-134">        )</span>
+<span id="annotated-cell-1-135">      )</span>
+<span id="annotated-cell-1-136">    )</span>
+<span id="annotated-cell-1-137">  )</span>
+<span id="annotated-cell-1-138">  </span>
+<span id="annotated-cell-1-139">  output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>selectedData2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>({</span>
+<span id="annotated-cell-1-140">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable2_rows_selected"</span>)</span>
+<span id="annotated-cell-1-141">  })</span>
+<span id="annotated-cell-1-142">  </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-1-143" class="code-annotation-target">  output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>codigoGrupos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>(codigoGrupo)</span>
+<span id="annotated-cell-1-144">  </span>
+<span id="annotated-cell-1-145">  output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>codigoComponentes <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>(anexoCodigo)</span>
+<span id="annotated-cell-1-146">  </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-1-147" class="code-annotation-target">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">observeEvent</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>copyButton1, {</span>
+<span id="annotated-cell-1-148">    selectedData <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable1_rows_selected"</span>)</span>
+<span id="annotated-cell-1-149">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable1_rows_selected) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>) {</span>
+<span id="annotated-cell-1-150">      clipboard <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">apply</span>(selectedData, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, paste, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">collapse=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" "</span>)</span>
+<span id="annotated-cell-1-151">      <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">writeClipboard</span>(clipboard)</span>
+<span id="annotated-cell-1-152">      shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Datos copiados al portapapeles"</span>)</span>
+<span id="annotated-cell-1-153">    } <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">else</span> {</span>
+<span id="annotated-cell-1-154">      shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Selecciona una fila para copiar los datos"</span>)</span>
+<span id="annotated-cell-1-155">    }</span>
+<span id="annotated-cell-1-156">  })</span>
+<span id="annotated-cell-1-157">  </span>
+<span id="annotated-cell-1-158">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">observeEvent</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>copyButton2, {</span>
+<span id="annotated-cell-1-159">    selectedData <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable2_rows_selected"</span>)</span>
+<span id="annotated-cell-1-160">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable2_rows_selected) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>) {</span>
+<span id="annotated-cell-1-161">      clipboard <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">apply</span>(selectedData, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, paste, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">collapse=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" "</span>)</span>
+<span id="annotated-cell-1-162">      <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">writeClipboard</span>(clipboard)</span>
+<span id="annotated-cell-1-163">      shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Datos copiados al portapapeles"</span>)</span>
+<span id="annotated-cell-1-164">    } <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">else</span> {</span>
+<span id="annotated-cell-1-165">      shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Selecciona una fila para copiar los datos"</span>)</span>
+<span id="annotated-cell-1-166">    }</span>
+<span id="annotated-cell-1-167">  })</span>
+<span id="annotated-cell-1-168">}</span>
+<span id="annotated-cell-1-169"></span>
+<span id="annotated-cell-1-170"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ejecutar la aplicación Shiny</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-1-171" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">shinyApp</span>(ui, server)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="8,11,13" data-code-annotation="1">Cargar tabla de alimentos individuales (<code>alimentos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="16,19,21" data-code-annotation="2">Cargar tabla de alimentos compustos (<code>alimentosCompuestos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre columnas).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="25,31,33" data-code-annotation="3">Crear tabla de anexos para alimentos según código por grupo nutricional (<em>Opcional</em>).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="37,38" data-code-annotation="4">Crear tabla de anexos para alimentos según código de componentes nutricional (<em>Opcional</em>).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="41" data-code-annotation="5">Implementar la interfaz de usuario de la aplicación Shiny llamando a <code>fluidPage</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="42" data-code-annotation="6">Incluir ciertos estilos de contenido (archivo css).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="48" data-code-annotation="7">Definir una entrada de texto para la nueva composición de alimentos deseada.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="49" data-code-annotation="8">Complemento para mostrar ayudas visuales (mensajes).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="50" data-code-annotation="9">Mostrar múltiples tablas mediante mediante pestañas separadas con <code>tabPanel()</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="69" data-code-annotation="10">Agregar un pie de nota con detalles de la aplicación.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="100" data-code-annotation="11">Implementar la función <code>server</code> que define la lógica del programa. Definir la función para manipular la fila seleccionada de las tablas de composición.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="109,126" data-code-annotation="12">Renderizar las tablas principales de alimentos. Para centrar todo el contenido de las tablas se creó un estilo css <code>dt-center</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="122,139" data-code-annotation="13">Renderizar los datos de componentes de interés <strong>(salida)</strong>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="143,145" data-code-annotation="14">Renderizar las tablas de Anexos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="147,158" data-code-annotation="15">Evento que permite copiar los datos seleccionados al portapapeles. Utilizando el paso 8.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="16">16</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="171" data-code-annotation="16">Implementar la aplicación llamando a <code>shinyApp</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="el-demo" class="level2">
+<h2 class="anchored" data-anchor-id="el-demo">El demo ⏩</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ttps://sergiojacobozavaleta.shinyapps.io/rosaapp/"><img src="https://github.com/blogs/posts/2023/quarto/01/images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></a></p>
+<figcaption>Aplicación Shiny</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Más allá de esta guía
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Revisar la página oficial para obtener las <a href="https://web.ins.gob.pe/es/alimentacion-y-nutricion/ciencia-y-tecnologia-de-alimentos/tabla-de-composicion-de-alimentos">Tablas de Composición completas</a></p>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2024 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2024. <em>“Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana (4ta Edición)”</em> Third Foundation, 24 de mayo, 2024. <a href="link">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>ShinnyApp</category>
+  <category>Posit</category>
+  <guid>https://github.com/blogs/posts/2023/quarto/01/b3_1.html</guid>
+  <pubDate>Sat, 25 May 2024 04:56:37 GMT</pubDate>
+  <media:content url="https://github.com/blogs/posts/2023/quarto/01/images/thumbnail.png" medium="image" type="image/png" height="103" width="144"/>
+</item>
+<item>
+  <title>Guía didáctica de LaTeX para publicación en Revista Peruana</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://github.com/blogs/posts/2023/research/03/b1_3.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/03/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<figcaption>Foto de <a href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash%22">Annie Spratt</a> en <a href="https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+</figure>
+</div>
+<section id="propósito-de-la-plantilla-de-la-revista" class="level1">
+<h1>Propósito de la plantilla de la Revista</h1>
+<p>Este artiículo facilita y agiliza el proceso de edición de los artículos mediante el uso de un formato basado en código <img src="https://latex.codecogs.com/png.latex?%5CLaTeX">. Aunque su correcto manejo requiere cierto conocimiento de instrucciones básicas, este artículo proporciona una guía didáctica destinada a usuarios no familiarizados con <img src="https://latex.codecogs.com/png.latex?%5CLaTeX">. El objetivo es que estos usuarios puedan faciliar la edición de la plantilla por parte de la Revista utilizando herramientas ampliamente disponibles, lo que garantiza un envío exitoso de sus artículos para revisión y publicación.</p>
+<p>En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">revista universitaria Norte Médico</a> de la Universidad Nacional de Cajamarca.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/03/images/norteMedicopage.png" class="img-fluid figure-img"></p>
+<figcaption>Página princial de la revista Norte Médico</figcaption>
+</figure>
+</div>
+</section>
+<section id="vista-previa-de-la-plantilla" class="level1">
+<h1>Vista previa de la plantilla</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/1_revistaVistaPrevia.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Ejemplo de publicación en Norte Médico
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="consideracions-esenciales-para-envio-del-formato" class="level1">
+<h1>Consideracions esenciales para envio del formato</h1>
+<section id="manejo-de-ecuaciones" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-ecuaciones">Manejo de Ecuaciones</h2>
+<p>Para escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.</p>
+<section id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word" class="level3">
+<h3 class="anchored" data-anchor-id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word">Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word</h3>
+<p>En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver Figura&nbsp;2). Luego, asegurándose de que esté activada la opción <code>latex</code>, se selecciona la ecuación deseada y se copia (<code>control + C</code>) para pegarla posteriormente en su destino (<code>control + V</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/1_10_EditorEcuacionesOffline.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura11" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Usando recursos en línea
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="método-2-utilizando-un-editior-de-ecuaciones-en-línea" class="level3">
+<h3 class="anchored" data-anchor-id="método-2-utilizando-un-editior-de-ecuaciones-en-línea">Método 2: Utilizando un editior de ecuaciones en Línea</h3>
+<p>En este método, se utiliza el recurso web en línea <a href="https://equationeditor.atomurl.net/">Equation Editor</a>. Después de ingresar la ecuación deseada (ver Figura&nbsp;3), se presiona el botón <code>Save to LaTeX</code>, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/1_20_EditorEcuacionesOnline.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura12" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- #### Símbolos matemáticos
+Para escribir correctamente los distntios símbolos matemáticos es necesario utilizar las sentencias de código o instrucciones correctas en base a la siguiente lista. Algunas fuentes son:
+- https://mathvault.ca/wp-content/uploads/Comprehensive-List-of-Mathematical-Symbols.pdf  
+- https://ctan.dcc.uchile.cl/info/symbols/comprehensive/symbols-a4.pdf  
+- https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf -->
+</section>
+</section>
+<section id="manejo-de-tablas" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-tablas">Manejo de Tablas</h2>
+<!-- Utilizando el paquete [Excel2Latex](ctan.org/pkg/excel2latex) -->
+<p>Las tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:</p>
+<ul>
+<li><p><strong>Crear la Tabla con Espacios de Celdas Respetados:</strong> Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver Figura&nbsp;4).</p></li>
+<li><p><strong>Utilizar Líneas Horizontales para Presentar la Información:</strong> Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver Figura&nbsp;5).</p></li>
+<li><p><strong>Posibilidad de Combinar Celdas o Columnas:</strong> Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver Figura&nbsp;5).</p></li>
+<li><p><strong>Preferencia por Tablas en Blanco y Negro:</strong> Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.</p></li>
+</ul>
+<p>A continuación, se incluyen ejemplos visuales que ilustran estas pautas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/3_10_Tabla1.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura31" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Tabla simple en una hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/3_20_Tabla2.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura32" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Tabla más elaborada en una hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Estas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.</p>
+<section id="manejo-de-figuras-y-gráficas" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-figuras-y-gráficas">Manejo de Figuras y Gráficas</h3>
+<p>El manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:</p>
+</section>
+<section id="de-fuentes-externas" class="level3">
+<h3 class="anchored" data-anchor-id="de-fuentes-externas">De Fuentes Externas</h3>
+<p>Todas las imágenes se deben enviar incrustadas en el documento, indicando siempre <strong>título o descripcion</strong> y <strong>su fuente bibliográfica</strong>. Además, se recomienda enviar el archivo original de las imágenes por <strong>separado (archivo original en .jpg o .png)</strong>, indicando siempre el orden de las figuras.</p>
+</section>
+<section id="generadas-utilizando-microsoft-excel" class="level3">
+<h3 class="anchored" data-anchor-id="generadas-utilizando-microsoft-excel">Generadas Utilizando Microsoft Excel</h3>
+<ol type="1">
+<li>Cada gráfica se debe organizar en su propia hoja de Excel, indicando <strong>Indicando siempre el título de la misma</strong> (ver Figura&nbsp;6).</li>
+<li>Si la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver Figura&nbsp;7).</li>
+<li>Para las gráficas creadas en Microsoft Excel (<strong>formato .xlsx</strong>), se deben seguir estos pasos para garantizar una calidad alta:
+<ul>
+<li>Guardar la imagen seleccionando clic derecho y luego guardar imagen.</li>
+<li>Elegir el destino de almacenamiento y seleccionar entre los <strong>formatos .png o .svg</strong> (ver Figura&nbsp;8).</li>
+<li>También se puede enviar el archivo original en formato .xlsx.</li>
+</ul></li>
+</ol>
+<p>A continuación, se presentan ejemplos visuales que ilustran estos procesos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/4_10_SoloFigura_excel.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura41" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Figura única en un hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/4_20_Tabla2ConFigura.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura42" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Figura única creada a partir de una tabla de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/4_30_GuardarTablasExcel.png"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-figura43" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/03/images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Siguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores.</p>
+</section>
+</section>
+<section id="manejo-de-bibliografía" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-bibliografía">Manejo de Bibliografía</h2>
+<p>Para la bibliografía se utiliza el programa administrador de citas conocido como Zotero. Ver la siguiente <a href="../../../../../blogs/posts/2023/research/01/b1_1.html#b1_1-introduccionGestorReferencia">guía</a>.</p>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2023 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicación en Revista Peruana”</em>, Third Foundation, 10 de marzo, 2023. <a href="link">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Latex</category>
+  <category>Zotero</category>
+  <category>Excel</category>
+  <guid>https://github.com/blogs/posts/2023/research/03/b1_3.html</guid>
+  <pubDate>Sat, 25 May 2024 04:56:15 GMT</pubDate>
+  <media:content url="https://github.com/blogs/posts/2023/research/03/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://github.com/blogs/posts/2023/research/01/b1_1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="img-fluid figure-img"></p>
+<figcaption>Imagen subida por Kaitlyn Baker bajo Licencia Unsplash</figcaption>
+</figure>
+</div>
+<section id="a-quien-va-dirigido" class="level1">
+<h1>¿A quien va dirigido?</h1>
+<p>La presente guía tiene como objetivo presentar un flujo de trabajo para la generación de reportes universitarios, literarios, científicos y más de alta calidad, bajo la modalidad colaborativa en la nube utilizando la plataforma web <strong>Overleaf</strong> y el administrador de referencias <strong>Zotero</strong>. Esta guía es útil para nuevos usuarios que desean comenzar en el mundo de o buscan una alternativa práctica y open-source a editores de texto comerciales. Siendo su principal ventaja, centrarse menos en la <em>forma</em> del documento y más en el <em>fondo</em> del mismo. Pero sobre todo, para todos aquellos estudiantes y profesionales que prefieren aprender lo básico en idioma español.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/logoZoteroOverleaf.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="b1_1-introduccionGestorReferencia" class="level1">
+<h1>Gestor de Referencias</h1>
+<p>En esta oportunidad, se recomienda el uso de <a href="https://www.zotero.org">Zotero</a> <img src="https://github.com/blogs/posts/2023/research/01/icons/zotero.png" class="img-fluid" width="20"> por la evidente ventaja y flexibilidad sobre otros programas en el mercado gracias a la gran cantidad de <a href="https://www.zotero.org/support/plugins">plugins</a> o extensiones que mejoran, simplifican y enlazan el manejo de referencias bibliográficas, tanto para editar libros, páginas web, blogs, etc.</p>
+<ol type="1">
+<li><p>Crearse una cuenta de forma gratuita en su página oficial.</p></li>
+<li><p>Descargar el programa e instalar según tu sistema operativo de preferencia. La pantalla principal se verá así.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/2_inicio.png" class="img-fluid figure-img" width="730"></p>
+<figcaption>Paso 2. Ventana principal de Zotero</figcaption>
+</figure>
+</div></li>
+<li><p>Descargar e instalar el plugin <code>Zotero Better Bibtex</code> <a href="https://retorque.re/zotero-better-bibtex/">más reciente</a> (desde Github) para el control y creación de etiquetas automáticas (identificador que deberás escribir para especificar una referencia particular) para citar de forma fácil y ordenada durante la redacción de documentos.</p>
+<ol type="i">
+<li><p>Ir a la pestaña de <strong>Herramientas</strong>, luego a <strong>Complementos</strong> que abrirá una nueva ventana.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_1_zoteroConfiguracion.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Paso i. Ir a complementos</figcaption>
+</figure>
+</div></li>
+<li><p>Ir a <strong>Configuración</strong> ⚙️ y escoger instalar desde un archivo (<em>install Add-on From File</em>). Buscar y seleccionar el archivo previamente descargado (por ejemplo <code>zotero-better-bibtex-6.7.1.xpi</code>). Reiniciar el programa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_2_instalarPlugin.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Paso ii. Instalar plugin</figcaption>
+</figure>
+</div></li>
+<li><p>Repetir el paso 1 y el plugin ahora debe aparecer instalado así.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_3_bibtexPlugin.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Paso iii. Verificar plugin instalado</figcaption>
+</figure>
+</div></li>
+<li><p>Ahora lo más importante es modificar la configuración por defecto de las etiquetas de citación (<em>citation key</em>). Término que tal vez te resulte familiar si tienes experiencia con , Markdown, Rmarkdown o Quarto. En cualquier caso, una etiqueta es la palabra clave por el que identificarás una fuente específica a la hora de relacionar y crear una cita para algún documento científico, libro, página web, etc. Dependiendo del formato de etiqueta que desees por comodidad, el parámetro a modificar será diferente. Por conveniencia, se utiliza el formato APA compuesto por el primer apellido del autor principal y el año de publicación<sup>1</sup>.</p></li>
+<li><p>Ir a la pestaña <strong>Editar</strong> y luego a <strong>Preferencias</strong> que abrirá una nueva ventana. Ir a la opción <strong>Better BibTex</strong> y a la subpestaña <strong>Citation keys</strong>.</p>
+<blockquote class="blockquote">
+<p>En el espacio <em>New citation key format</em> modificar a <code>auth.capitalize+year</code> .</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/5_editarCitationKey.png" class="img-fluid figure-img" width="520"></p>
+<figcaption>Paso v. Formato de etiquetas</figcaption>
+</figure>
+</div></li>
+<li><p>En este punto, cualquier archivo nuevo que se agregue a tu biblioteca, estará asociado a una etiqueta reconocible para su fácil manejo y memorización a la hora de buscar alguna cita. En caso de repetirse citas, el plugin tiene la capacidad de diferenciarlos por letras al final de la etiqueta según su antiguedad, por ejemplo, Cryan2019a, Cryan2019b, etc.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/6_nuevaEtiqueta.png" class="img-fluid figure-img" width="310"></p>
+<figcaption>Paso vi. Etiquetas</figcaption>
+</figure>
+</div></li>
+</ol></li>
+<li><p>Armar tu biblioteca Zotero</p>
+<p>Antes de explicar como agregar nuevas fuentes, es necesario saber dos aspectos importantes:</p>
+<ul>
+<li><p>Tu biblioteca puede organizarse como cualquier organizador de archivos: Carpetas y subcarpetas 📁.</p></li>
+<li><p>Existen dos bibliotecas principales: <strong>Mi biblioteca</strong> y <strong>Bibliotecas de grupo.</strong> La primera es para tu manejo personal y los documentos agregados solo podrán ser manipulados por ti. Por el contrario, los de tipo grupal pueden compartirse con otros usuarios de Zotero, incluso con privilegios de modificación (agregar notas 📔, adjuntar archivos 🔗, comentar 📝, etc.). En pocas palabras, investigación colaborativa 🧑‍🤝‍🧑.</p></li>
+</ul>
+<ol type="a">
+<li><p>Desde la aplicación de escritorio 🖥️</p>
+<ol type="A">
+<li><p>Método 1 (<strong>El mejor método 😃</strong>): La forma más elegante es buscar los códigos de la publicación como DOI, ISBN, PMID, arXiv, etc. En el caso de artículos científicos, el código está casi siempre en la página de publicación. Solo basta con copiar, pegar, presionar enter y voilà : Toda la información ha sido agregado. Si tienes suerte (o mejor dicho si la publicación es <em>open-access</em>), el archivo pdf aparecerá como adjunto <img src="https://github.com/blogs/posts/2023/research/01/icons/pdf.png" class="img-fluid" width="20" alt="pdf">. Sino adjuntarlo de forma manual <code>click derecho a tu cita agregada -&gt; Añadir adjunto -&gt;  Añadir copia guardada</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/4_1_metodo1_1.png" class="img-fluid figure-img" width="560"></p>
+<figcaption>Paso A. Busqueda de archivos por código DOI</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/4_1_metodo1_2.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso A. Archivo pdf correctamente agregado.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_añadirPDF.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso A. Adjutando pdf al archivo.</figcaption>
+</figure>
+</div></li>
+<li><p>Método 2 (<strong>Cuando no tienes opción 😑</strong>): El ingreso se realiza de forma manual y según el tipo de fuente bibliográfica (revista, libro, etc.), los datos requeridos pueden variar (<strong>al menos un autor y el título son necesarios</strong>).</p></li>
+</ol></li>
+<li><p>Desde tu navegador de búsqueda 🌐</p>
+<p>La magia de utilizar una extensión (<em>add-on)</em> desde tu navegador favorito, es que <a href="https://www.zotero.org/download/">Zotero Connector</a> permite guardar la información de la página web con un solo click (utilizando metadata) a tu biblioteca.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/4_2_metodo2.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso b. Método 2 para añadir referencias</figcaption>
+</figure>
+</div></li>
+</ol></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para un guardado correcto de los datos, utilizar la extensión desde la página oficial o repositorio de preferencia del artículo científico. Por ejemplo, SAGE, IEEE, Scielo, etc.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Manteniendo la carpeta de interés seleccionada desde la aplicación de Zotero mientras se activa la extensión en el navegador, el nuevo documento es automáticamente guardado en dicha carpeta. Caso contrario, se selecciona la ubicación desde la misma extensión.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En las nuevas versiones de Zotero, las etiquetas de citación (“Citation key”) pueden permanecer fijas en todo momento y no seguir la regla por defecto o definida en el punto 3. Esto puede ocurrir quizas por el cambio en el siguiente parámetro: <code>0 seconds</code> <img src="https://github.com/blogs/posts/2023/research/01/images/5_errorCitacionFija.png" class="img-fluid quarto-figure quarto-figure-center" width="650" alt="Configuración del complemento Better Bibtex"></p>
+</div>
+</div>
+<section id="exportación-de-las-referencias" class="level2">
+<h2 class="anchored" data-anchor-id="exportación-de-las-referencias">Exportación de las referencias</h2>
+<p>Zotero ofrece la ventaja de exportar las referencias en diferentes formatos, debidamente estructurados en un simple paso. Para su uso con Overleaf, es necesario el uso de ficheros <code>.bib</code> compatibles con . El plugin <strong>Better Bibtex</strong> ayuda justamente en la correcta exportación de las referencias, sobre todo, a la hora de manejar las tildes y diéresis en el nombre de los autores y títulos en el idioma español.</p>
+<ul>
+<li><strong>Método 1</strong>: Selección parcial. Seleccionar los elementos deseados, click derecho y <strong>Exportar elementos</strong>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_exportarFiles.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Método 1</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Método 2</strong>: Selección de una carpeta completa. Dirigirse al panel izquierdo y seleccionar la carpeta de interés (por ejemplo ScrewTheory). Todos los elementos dentro de ella serán exportados.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_exportarFolder.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Método 2</figcaption>
+</figure>
+</div>
+<p>Finalmente, una ventana con algunos ajustes pueden seleccionarse si es necesario. Por recomendación, dejar sin marcar todas las opciones, y dar <strong>OK</strong>. Un archivo <code>.bib</code> será creado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_exportarSettings.png" class="img-fluid figure-img" width="350"></p>
+<figcaption>Modificar exportación de referencias</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="entorno-colaborativo-para-creación-de-documentos" class="level1">
+<h1>Entorno colaborativo para creación de documentos</h1>
+<p>Si bien existen múltiples editores o aplicaciones web de moda para escribir documentos de forma colaborativa en tiempo real como <a href="https://docs.google.com/">GoogleDocs</a>, <a href="https://www.office.com/">Microsoft Office 365</a>, <a href="https://jupyter.org">Jupyter</a>, la mayoría de ellos siguen el estilo de redacción <em>“What you see, what you get”</em> , que en otras palabras, la configuración y personalización de los estilos de texto se realizan mediante la interfaz del programa al presionar botones (por ejemplo, la clásica justificación de texto en Microsoft Word que todos hemos realizado alguna vez). Sin embargo, existen otros editores que utilizan código plano mediante instrucciones específicas (algunas palabras claves que hay que memorizarse 😢) que pueden realizar lo mismo o incluso, mayor personalización.</p>
+<p>Tal es el caso de los editores que trabajan como entornos para la preparación de artículos científicos. Si bien su uso desde una aplicación de escritorio implica la instalación de algunos programas, editores y paquetes desde un <a href="https://www.ctan.org/">super repositorio</a>, en esta oportunidad, se recomienda el uso de editores <em>online</em> que se encargan de todo ese trabajo aburrido y concentrarte principalmente en escribir <img src="https://github.com/blogs/posts/2023/research/01/icons/typeWriter.png" class="img-fluid" width="20" alt="typewriter">, que es para lo que estamos aquí. Así, la mejor opción que te recomiendo es comenzar con <strong>Overleaf</strong>, ya que cuenta con más de 15 000 plantillas, desde como hacer un currículum vitae profesional hasta utilizar los formatos de publicación de las revistas indexadas más conocidas. En cualquier caso, la creación de una nueva plantilla establece la configuración mínima reproducible para generar tu documento en formato pdf (curiosamente es el único formato que puede exportarse pero el más utilizado para compartir en la nube ☁️😂☁️).</p>
+<ol type="a">
+<li><p>Crearse una cuenta desde la <a href="https://www.overleaf.com/">página oficial</a>. Por recomendación, utilizar el mismo correo electrónico de su cuenta Zotero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_inicio.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso a. Ventana principal de Overleaf</figcaption>
+</figure>
+</div></li>
+<li><p>Escoger alguna plantilla para comenzar a escribir. Una vez seleccionada, se abrirá el entorno de edición. Para seleccionar otra plantilla, ir a <code>Templates</code> o si prefieres escoger alguno otro previamente creado, ir a <code>Projects</code> o presionar <img src="https://github.com/blogs/posts/2023/research/01/icons/home.png" class="img-fluid" width="20" alt="home">.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_templates.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso b. Biblioteca de plantillas</figcaption>
+</figure>
+</div></li>
+<li><p>El editor se compone de cuatro paneles principales según:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_recompile_chat_mod.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso c.&nbsp;Paneles del editor Overleaf</figcaption>
+</figure>
+</div>
+<p>Donde,</p>
+<ol type="1">
+<li><p><strong>El administrador de archivos.</strong> Contiene distintos ficheros para la creación del documento, como el fichero base (.tex), los distintos estilos de la plantilla si existen (<code>.cls</code>, ⚠️ no modificar a menos que tengas conocimiento previo), el archivo de referencias (<code>.bib</code>), figuras, etc.</p></li>
+<li><p><strong>El editor de documentos</strong>. Todo el texto deseado se escribe dentro de los límites definidos por las sentencias <code>\begin{document} … \end{document}</code>.</p></li>
+<li><p><strong>Salida del documento.</strong> El documento es creado por la compilación del código y su exportación en formato pdf, al presionar el botón superior derecho <strong>Recompile</strong>.</p></li>
+<li><p><strong>Chat.</strong> Para la comunicación entre colaboradores.</p></li>
+</ol></li>
+</ol>
+<section id="subir-archivos-al-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="subir-archivos-al-proyecto">Subir archivos al “proyecto”</h2>
+<p>Desde el botón <img src="https://github.com/blogs/posts/2023/research/01/icons/upload.png" class="img-fluid" width="20"> puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo <code>.bib</code> contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_subirArchivos.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Ventana para subir y enlazar archivos a Overleaf</figcaption>
+</figure>
+</div>
+</section>
+<section id="compartir-plantilla" class="level2">
+<h2 class="anchored" data-anchor-id="compartir-plantilla">Compartir plantilla</h2>
+<p>Para trabajar de forma conjunta y redactar el reporte en tiempo real, basta con activar la opción de compartir la plantilla desde el bóton <strong>Share</strong> <img src="https://github.com/blogs/posts/2023/research/01/icons/share.png" class="img-fluid" width="20"> para invitar a otros usuarios de Overleaf (necesario) con permisos de visualización o modificación según prefieras.</p>
+<ul>
+<li>La ventana que se abre tiene por defecto la opción de <em>compartido general</em> apagado y puede activarse desde la opción <em>Turn on link sharing</em>. Solo colaboradores invitados por correo electrónico podrán acceder al proyecto en Overleaf según los permisos otorgados.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_compartirArchivo2.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Ventana para invitar a colaboradores de trabajo</figcaption>
+</figure>
+</div>
+<ul>
+<li>Caso contrario, puede compartirse como cualquier archivo en la nube mediante dos tipos de enlace para visualización o edición.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_compartirArchivo.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Ventana para compartir un documento con permisos</figcaption>
+</figure>
+</div>
+</section>
+<section id="manejo-de-referencias-.bib" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-referencias-.bib">Manejo de referencias <code>.bib</code></h2>
+<ul>
+<li><p>Por defecto, la mayoría de plantillas utilizan el siguiente código, donde el archivo de referencias <code>.bib</code> es indicado dentro de <code>\bibliography{}</code>. Y el estilo de citas y bibliografía dentro de <code>\bibliographystyle{}</code>.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Área de encabezados y modificación de plantilla</span></span>
+<span id="cb1-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Inicio de reporte</span></span>
+<span id="cb1-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Fin de reporte</span></span>
+<span id="cb1-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\bibliographystyle</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">apalike</span>}</span>
+<span id="cb1-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\bibliography</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">biblio.bib</span>}</span>
+<span id="cb1-7"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}    </span></code></pre></div></li>
+<li><p>De forma alterna, el archivo de referencias <code>.bib</code> puede también indicarse dentro de <code>\addbibresource{}</code>. Y el estilo de citas y bibliografías dentro de <code>\usepackage{style=apa}{biblatex}</code>.</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Área de encabezados y modificación de plantilla</span></span>
+<span id="cb2-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\usepackage</span>[backend=biber,style=apa,sortcites=true,natbib=true, url=true]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">biblatex</span>}</span>
+<span id="cb2-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\DeclareLanguageMapping</span>{spanish}{spanish-apa}</span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\addbibresource</span>{biblio.bib}</span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span>
+<span id="cb2-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Inicio de reporte</span></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Fin de reporte</span></span>
+<span id="cb2-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span>
+<span id="cb2-10"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}  </span></code></pre></div></li>
+</ul>
+<p>Las referencias exportadas por Zotero (<code>biblio.bib</code>) pueden modificarse según sea necesario. Nótese los elementos de dos artículos de tipo <span class="citation" data-cites="article">@article</span> con sus etiquetas <code>Abbasi2019</code> y <code>Acharya2018</code> respectivamente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_bib.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>Detalle de un archivo <code>.bib</code></figcaption>
+</figure>
+</div>
+</section>
+<section id="sentencias-necesarias" class="level2">
+<h2 class="anchored" data-anchor-id="sentencias-necesarias">Sentencias necesarias</h2>
+<table class="table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Código</th>
+<th style="text-align: center;">Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\section</span>{Título 1}</span>
+<span id="cb3-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\subsection</span>{Título 2}</span>
+<span id="cb3-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\subsubsection</span>{Título 3}</span>
+<span id="cb3-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\subsubsection</span>{Título 4}</span></code></pre></div></td>
+<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/1_titulos.png" class="img-fluid" width="190"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\centering</span></span>
+<span id="cb4-3">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\includegraphics</span>[width="valor"]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">cat.jpg</span>}</span>
+<span id="cb4-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\caption</span>{A cat.}</span>
+<span id="cb4-5">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\label</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fig:etiqueta1</span>}</span>
+<span id="cb4-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span></code></pre></div>
+<p>Donde “valor” puede ser:</p>
+<blockquote class="blockquote">
+<ul>
+<li><p>Ancho máximo de la hoja para escribir: \textwidth.</p></li>
+<li><p>Ancho máximo de una columna: \linewidth.</p></li>
+<li><p>Ancho por unidades métricas: 2cm, 20mm, 40em, 1in.</p></li>
+</ul>
+</blockquote></td>
+<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/3_figuraSimple.png" class="img-fluid" width="240"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para leer más sobre \linewdith y \textwidth y sus diferencias, revisar <a href="https://tex.stackexchange.com/questions/16942/difference-between-textwidth-linewidth-and-hsize">aquí</a>.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\documentclass</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">article</span>}</span>
+<span id="cb5-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\usepackage</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">subfig</span>}</span>
+<span id="cb5-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span>
+<span id="cb5-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span>
+<span id="cb5-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\centering</span></span>
+<span id="cb5-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\subfloat</span>[Un lemur.]{<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\includegraphics</span>[width=0.4<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\linewidth</span>]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">lemur.jpg</span>}}</span>
+<span id="cb5-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\subfloat</span>[Un lobo.]{<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\includegraphics</span>[width=0.4<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\linewidth</span>]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fox.jpg</span>}}</span>
+<span id="cb5-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\caption</span>{Animales random.}</span>
+<span id="cb5-9">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\label</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fig:etiqueta2</span>}</span>
+<span id="cb5-10"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span>
+<span id="cb5-11"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span></code></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></p>
+</figure>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">table</span>}</span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\centering</span></span>
+<span id="cb6-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tabular</span>}{l|r}</span>
+<span id="cb6-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\hline</span></span>
+<span id="cb6-5">  Variable <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> Cantidad <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\hline</span></span>
+<span id="cb6-7">  Presión <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> 0.5 kPa <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-8">  Fuerza <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> 2 N <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-9">  Masa <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> 5 kg<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\hline</span></span>
+<span id="cb6-11"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tabular</span>}</span>
+<span id="cb6-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\caption</span>{Ejemplo de una tabla.}</span>
+<span id="cb6-13"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\label</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tab:Tabla1</span>}</span>
+<span id="cb6-14"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">table</span>}</span></code></pre></div></td>
+<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/4_tablas.png" class="img-fluid" width="234"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">equation</span>}</span>
+<span id="cb7-2"><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">  F = G</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\left</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">[{</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\frac</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{{{m_1}{m_2}}}{{{r^2}}}}</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\right</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb7-3"><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">  </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\label</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{eq:Eq1}</span></span>
+<span id="cb7-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">equation</span>}</span></code></pre></div>
+<p><img src="https://latex.codecogs.com/png.latex?F%20=%20G%5Cleft%5B%20%7B%5Cfrac%7B%7B%7Bm_1%7D%7Bm_2%7D%7D%7D%7B%7B%7Br%5E2%7D%7D%7D%7D%20%5Cright%5D"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para crear las ecuaciones de forma rápida y fácil se recomienda el uso páginas web gratis para escribir de forma gráfica (símbolos, texto, etc.) como <a href="https://latex.codecogs.com/eqneditor/editor.php">latex.codecogs</a>, <a href="https://latexeditor.lagrida.com/">latexeditor</a>, <a href="https://www.latex4technics.com/">latex4technics</a> y más; o en forma <em>offline</em>, con programas como <a href="https://www.wiris.com/en/mathtype/">MathType</a> para insertar el código directamente entre los entornos de ecuaciones <code>\begin{equation} … \end{equation}</code> o a nivel del texto usando <code>$ … $</code> o <code>\( … \)</code>. Por ejemplo, esta ecuación de aquí <img src="https://latex.codecogs.com/png.latex?%5Csum%20a%5E%7Bi%7D%20+%20%5Cepsilon"> se escribe como <code>$\sum a^{i} + \epsilon$</code>.</p>
+<p>Mayor información acerca de los entornos de ecuaciones, símbolos matemáticos (<img src="https://latex.codecogs.com/png.latex?%5Calpha,%20%5Cgamma,%20%5Cpm">, etc.) y sus ejemplos pueden encontrarse en esta corta pero útil <a href="http://tug.ctan.org/info/short-math-guide/short-math-guide.pdf">guía</a> (en inglés).</p>
+</div>
+</div>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 55%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>}</span>
+<span id="cb8-2">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Monday</span>
+<span id="cb8-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Tuesday</span>
+<span id="cb8-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>}</span>
+<span id="cb8-5"></span>
+<span id="cb8-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">itemize</span>}</span>
+<span id="cb8-7">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Twitter</span>
+<span id="cb8-8">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Discord</span>
+<span id="cb8-9"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">itemize</span>}</span></code></pre></div></td>
+<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/5_listas.png" class="img-fluid" width="125"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\section</span>{Como referenciar una figura, una tabla y citar}</span>
+<span id="cb9-2">Realizando una referencia cruzada a la Figura <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\ref</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fig:Figura1</span>}. A la Tabla <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\ref</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tab:Tabla1</span>}.</span></code></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/7_referenciasCruzada.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="465"></p>
+</figure>
+</div>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\section</span>{Como citar y agregar una lista de referencias}</span>
+<span id="cb10-2">Aquí va una cita textual <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\cite</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Abbasi2019</span>} y otra de tipo indirecta <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">\citep</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Anwar2020</span>} en formato APA7.</span>
+<span id="cb10-3"></span>
+<span id="cb10-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span></code></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/01/images/8_referencias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="653"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Más allá de esta guía
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Overleaf ofrece las herramientas básicas para un trabajo colaborativo en la nube, con las ventajas de crear reportes de alta calidad en de forma sencilla, sin tener que preocuparte por su instalación y actualización de paquetes (códigos específicos para modificar el formato como figuras, colores, formas geométricas, encabezados, bloques de código de programación, anexos, tablas, etc.), y aumentar la productividad de tu escritura. Y que junto al gestor de referencias de Zotero, puede obtenerse un fácil guardado, modificación y exportación de referencias bibliográficas correctamente formateadas para su trabajo desde Overleaf o con cualquier otro editor disponible.</p>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2023 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2023. <em>“Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube”</em>, Third Foundation, 10 de marzo, 2023. <a href="link">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Las etiquetas usadas por Zotero se utilizan únicamente para crear el enlace y llamar la cita requerida durante la redacción de documentos. No confundir con el estilo visual de las citas que se aprecian en el documento final. El formato de las etiquetas es para un uso interno y de ayuda memotécnica, ordenada y sencilla a la hora de buscar un autor particular dentro de toda una biblioteca.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Latex</category>
+  <category>Overleaf</category>
+  <category>Zotero</category>
+  <guid>https://github.com/blogs/posts/2023/research/01/b1_1.html</guid>
+  <pubDate>Sat, 25 May 2024 04:56:00 GMT</pubDate>
+  <media:content url="https://github.com/blogs/posts/2023/research/01/images/thumbnail.png" medium="image" type="image/png" height="58" width="144"/>
+</item>
+<item>
+  <title>Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://github.com/blogs/posts/2023/robotics/01/b2_1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="sistemas-de-referencia-reference-frames" class="level1">
+<h1>Sistemas de Referencia (<em>Reference Frames</em>)</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/robotics/01/images/referenceFrame.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Notar que:</p>
+<ul>
+<li>Sistema de referencia normalmente se abrevia como “<em>frame</em>”.</li>
+</ul>
+<section id="sistema-de-referencia-inercial-inertial-reference-frame" class="level2">
+<h2 class="anchored" data-anchor-id="sistema-de-referencia-inercial-inertial-reference-frame">Sistema de Referencia Inercial (<em>Inertial Reference Frame</em>)</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7Br%7D=%5Cbar%7BR%7D+%7B%5Cbar%7Br%7D%7D%5E%7B'%7D%5C%5C%0A%5Cbar%7Br%7D%5E%7B'%7D=%5Cbar%7Br%7D-%7B%5Cbar%7BR%7D%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Pero <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BV%7D"> es una constante.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7BR%7D(t)=%5Cbar%7BR_0%7D-%7B%5Cbar%7BV%7Dt%7D%5C%5C%0A%5Cfrac%7Bd%5Cbar%7Br%7D%5E%7B'%7D%7D%7Bdt%7D%20=%20%5Cfrac%7Bd%5Cbar%7Br%7D%7D%7Bdt%7D%20-%20%5Cfrac%7Bd%5Cbar%7BR%7D%7D%7Bdt%7D%5C%5C%0A%5Cbar%7Bv%7D%5E%7B'%7D=%5Cbar%7Bv%7D-%7B%5Cbar%7BV%7D%7D%5C%5C%0A%5Cfrac%7Bd%5Cbar%7Bv%7D%5E%7B'%7D%7D%7Bdt%7D%20=%20%5Cfrac%7Bd%5Cbar%7Bv%7D%7D%7Bdt%7D%20-%20%5Cfrac%7Bd%5Cbar%7BV%7D%7D%7Bdt%7D%5C%5C%0A%5Cbar%7Ba%7D%5E%7B'%7D%20=%20%5Cbar%7Ba%7D%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Luego, aplicando la primera Ley de Newton se cumple que:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7BF%7D%20&amp;%20=%20m%5Cbar%7Ba%7D%5C%5C%0A%5Cbar%7BF%7D%5E%7B'%7D%20&amp;%20=%20m%5Cbar%7Ba%7D%5E%7B'%7D%20=%20m%5Cbar%7Ba%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+</section>
+<section id="sistema-de-referencia-no-inercial-non-inertial-reference-frame" class="level2">
+<h2 class="anchored" data-anchor-id="sistema-de-referencia-no-inercial-non-inertial-reference-frame">Sistema de Referencia no Inercial (<em>Non-Inertial Reference Frame</em>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/robotics/01/images/paste-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Pero que pasa si <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BV%7D"> no es una constante?</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El sistema de referencia <img src="https://latex.codecogs.com/png.latex?S%5E%7B'%7D"> tiene una aceleración <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BA%7D"> relativa a S.</p>
+</div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7Ba%7D%20&amp;%20=%20%5Cbar%7Ba%7D%20-%20%5Cbar%7BA%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Por lo tanto,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7BF%7D%20&amp;%20=%20m%5Cbar%7Ba%7D%5E%7B'%7D%5C%5C%0A&amp;%20=%20m%5Cbar%7Ba%7D%20-%20m%5Cbar%7BA%7D%5C%5C%0A&amp;%20=%20%5Cbar%7BF%7D_%5Ctext%7Bf%C3%ADsico%7D%20-%20%5Cbar%7BF%7D_%5Ctext%7Bficticio%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Donde:</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?%5Cbar%7BF%7D_%5Ctext%7Bf%C3%ADsico%7D"> es la fuerza físicamente aplicada al cuerpo.<br>
+</li>
+<li><img src="https://latex.codecogs.com/png.latex?%5Cbar%7BF%7D_%5Ctext%7Bficticio%7D">. Dado un observador en el sistema de referencia o frame <img src="https://latex.codecogs.com/png.latex?S%5E%7B'%7D"> que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales (<img src="https://latex.codecogs.com/png.latex?S%5E%7B'%7D">).</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Considerando el moviendo de rotación “circular” de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis.</p>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2023 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial”</em> Third Foundation, 10 de marzo, 2023. <a href="link">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Robotics</category>
+  <category>Dynamics</category>
+  <category>Kinematics</category>
+  <guid>https://github.com/blogs/posts/2023/robotics/01/b2_1.html</guid>
+  <pubDate>Sat, 25 May 2024 04:55:36 GMT</pubDate>
+  <media:content url="https://github.com/blogs/posts/2023/robotics/01/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://github.com/blogs/posts/2023/robotics/02/b2_2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="grados-de-libertad" class="level1">
+<h1>Grados de libertad</h1>
+<p>Notas claves:</p>
+<ul>
+<li>Grados de libertad : <strong><em>Degree of Freedom</em></strong> en inglés se abrevia como <strong>DOF</strong>, <strong>dof</strong>, <strong>Dof</strong>, etc.</li>
+<li>Espacio de configuración: <strong><em>Configuration Space</em></strong> en ingés se abrevia com <em>C-space</em>. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.<br>
+</li>
+<li>Dimensiones del espacio comunes de un <strong>cuerpo rígido:</strong>
+<ul>
+<li>En el espacio: 6
+<ul>
+<li>Posición del cuerpo: Las coordenadas <img src="https://latex.codecogs.com/png.latex?x,y,z"></li>
+<li>Orientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.</li>
+</ul></li>
+<li>En el plano: 3</li>
+</ul></li>
+</ul>
+</section>
+<section id="movimiento-de-cuerpos-rígidos" class="level1">
+<h1>Movimiento de Cuerpos Rígidos</h1>
+<ul>
+<li><p><strong>Representación implícita</strong>: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.</p></li>
+<li><p><strong>Sistema de referencia conectada a un cuerpo en movimiento:</strong> Se considera esta referencia, por ejemplo el frame <img src="https://latex.codecogs.com/png.latex?%5C%7Bb%5C%7D">, de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.</p></li>
+</ul>
+</section>
+<section id="rotación-de-matrices" class="level1">
+<h1>Rotación de matrices</h1>
+<ul>
+<li><p>6 Restricciones en matrices de rotación <img src="https://latex.codecogs.com/png.latex?R">: Ortogonalidad de vectores</p>
+<ul>
+<li>Restriciones en las columnas: Los vectores unitarios deben ser unitarios: 3</li>
+<li>El producto punto de alguno de dos de los vectores columna debe ser ser 0: 3</li>
+<li>En consecuencia, se cumple que:
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?R%5E%7BT%7DR%20=%20I"> lo que conlleva a <img src="https://latex.codecogs.com/png.latex?det(R)%20=%201"> (regla de la mano derecha)</li>
+<li>Lo que se agrupa en el conjunto de matrices reales 3x3 denominado <strong>Special orthogonal group SO(3)</strong></li>
+<li>Algunas propiedades relevantes:
+<ul>
+<li>Inversa: <img src="https://latex.codecogs.com/png.latex?R%5E%7B-1%7D%20=%20R%5E%7BT%7D%20%5Cin%20SO(3)">
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?R_%7Bab%7DR_%7Bba%7D=R_%7Baa%7D=I"> Por lo tanto la inversa de <img src="https://latex.codecogs.com/png.latex?R_%7Bab%7D"> es también <img src="https://latex.codecogs.com/png.latex?R_%7Bba%7D">.</li>
+</ul></li>
+<li>Cierre: <img src="https://latex.codecogs.com/png.latex?R_1%20R_2%20%5Cin%20SO(3)"></li>
+<li>Finalmente: <img src="https://latex.codecogs.com/png.latex?x%20%5Cin%20%5Cmathbb%7BR%7D%20%5Cleft%20%5C%7C%20Rx%20%5Cright%20%5C%7C%20=%20%5Cleft%20%5C%7C%20x%20%5Cright%20%5C%7C"></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2023 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido”</em>, Third Foundation, 24 de mayo, 2024. <a href="link">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Robotics</category>
+  <category>Dynamics</category>
+  <category>Kinematics</category>
+  <guid>https://github.com/blogs/posts/2023/robotics/02/b2_2.html</guid>
+  <pubDate>Sat, 25 May 2024 04:55:25 GMT</pubDate>
+  <media:content url="https://github.com/blogs/posts/2023/robotics/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Eficiencia en LaTeX: Manejo de Tablas Simplificado</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://github.com/blogs/posts/2023/research/02/b1_2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/02/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<figcaption>Imagen de <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pexels</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pixabay</a></figcaption>
+</figure>
+</div>
+<section id="modificar-el-tamaño-de-tablas" class="level1">
+<h1>Modificar el tamaño de tablas</h1>
+<p>Muchas veces el contenido de una tabla sobrepasa los límites de la hoja como el ancho del formato utilizado en una o dos columnas. Para ello, existen múltiples maneras de adaptar el extenso contenido de una celda en múltiples lineas utilizando el entorno básico <code>\begin{tabular}...\end{tabular}</code>. Sin embargo, resulta tedioso realizar el mismo tratamiento para cada tabla y ni que decir en diversos archivos. Así que una solución práctica es dejar que <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"> calcule el ancho de las columnas de forma automática y se ajuste al contenido deseado, definiendo el tipo de alineación de las columnas y ancho máximo de la tabla. Para ello, se recomienda el uso del entorno <code>\begin{tabularx}…\end{tabularx}</code> luego de cargar el paquete <code>\usepackage{tabularx}</code> en el encabezado del archivo <code>.tex</code>.</p>
+<p>Pero antes de presentar los ejemplos, es necesario mostrar las diferencias entre la terminología utilizada para definir la longitud de una línea de texto (<code>\textwidth</code>) y columna (<code>\linewidth</code>) cuando se utiliza una configuración en una o dos columnas, incluido en un entorno de lista.</p>
+<section id="dimensiones-en-latex" class="level2">
+<h2 class="anchored" data-anchor-id="dimensiones-en-latex">Dimensiones en <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"></h2>
+<ol type="1">
+<li><code>\textwidth</code> es el ancho constante del bloque total de texto.</li>
+<li><code>\linewidth</code> es el ancho actual de la línea de texto dentro de un entorno (i.e.&nbsp;una columna de tabla).</li>
+<li><code>\hsize</code> es el ancho de la actual línea antes de saltar a la siguiente línea.</li>
+<li><code>\columnwidth</code> es el ancho de una sola columna de texto (que coincide a <code>\textwidth</code> en un documento de una sola columna).</li>
+</ol>
+<section id="en-una-columna" class="level3">
+<h3 class="anchored" data-anchor-id="en-una-columna">En una columna</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/02/images/20.png" class="img-fluid figure-img"></p>
+<figcaption>Utilizando una configuración <code>oneside</code> o <code>onecolumn</code></figcaption>
+</figure>
+</div>
+</section>
+<section id="en-dos-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="en-dos-columnas">En dos columnas</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/blogs/posts/2023/research/02/images/10.png" class="img-fluid figure-img"></p>
+<figcaption>Utilizando una configuración <code>twoside</code> o <code>twocolumn</code></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="ajustando-al-ancho-de-la-hoja" class="level2">
+<h2 class="anchored" data-anchor-id="ajustando-al-ancho-de-la-hoja">Ajustando al ancho de la hoja</h2>
+<section id="una-sola-columna" class="level3">
+<h3 class="anchored" data-anchor-id="una-sola-columna">Una sola columna</h3>
+<p>Utilizando el entorno de tablas por defecto <code>\begin{tabular}...\end{tabular}</code>, el resultado es el siguiente:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla0" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/02/images/30.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Caso por defecto
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>\begin{table}[h]
+  \centering
+  \caption{Casos de conducta suicida}
+  \begin{tabular}{ccccc}
+    \toprule
+    Caso  &amp; Edad  &amp; Sexo  &amp; Tóxico &amp; Conducta Suicida \\
+    \midrule
+    1     &amp; 19    &amp; Masculino &amp; Raticida &amp; Suicidio \\
+    2     &amp; 14    &amp; Femenino &amp; Indeterminado &amp; Suicidio \\
+    3     &amp; 16    &amp; Femenino &amp; Indeterminado &amp; Suicidio \\
+    4     &amp; 26    &amp; Masculino &amp; Raticida &amp; Intento de suicidio \\
+    5     &amp; 18    &amp; Masculino &amp; Órgano fosforado &amp; Intento de suicidio \\
+    6     &amp; 50    &amp; Masculino &amp; Órgano fosforado y etanol &amp; Intento de suicidio \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:Tabla0}
+\end{table}</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En la sentencia <code>\begin{tabular}{ccccc}</code>, cada valor de <code>c</code> indica la alineación ordenada de las columnas. En este caso, la tabla tiene cinco columnas con el contenido centrado <code>c</code>. Otros valores como <code>l</code> y <code>r</code> indican una alineación a la izquierda y derecha respectivamente.</p>
+</div>
+</div>
+<p>Por otro lado, el ancho de la tabla anterior puede modificarse de forma intuitiva utilizando el <a href="https://ctan.org/pkg/tabularx">paquete</a> <code>tabularx</code> que trabaja con el espaciado horizontal.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A diferencia de las alineaciones <code>c</code>, <code>l</code> y <code>r</code>, tabularx ofrece una nueva alineación por defecto <code>X</code> que permite justificar el contenido de la columna. Siendo muy útil para contenidos extensos.</p>
+</div>
+</div>
+<p>Para ello se modifica el entorno de tabla <code>\begin{tabular}...\end{tabular}</code> por <code>\begin{tabularx}...\end{tabularx}</code>.</p>
+<ol type="1">
+<li><strong>Al ancho total de una línea de texto.</strong> Para ello se utiliza el comando <code>\begin{tabularx}{\linewidth}{cccXX}</code>. Donde <code>{\textwidth}</code> indica que el ancho máximo de la tabla es el ancho total de la hoja (configuración de una columna) según se aprecia en la Tabla Figura&nbsp;2.<br>
+</li>
+<li><strong>A la mitad de la ancho de una línea de texto.</strong> Para ello se especifica la proporción deseada respecto del ancho base <code>\textwidth</code>. La Tabla Figura&nbsp;3 utiliza un ancho reducido al 80% de la tabla anterior definiendo <code>\begin{tabularx}{0.8\textwidth}{cccXX}</code>.<br>
+</li>
+<li><strong>Cuidado</strong>!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla. La tabla Figura&nbsp;4 muestra una reducción del 50% según <code>\begin{tabularx}{0.5\textwidth}{cccXX}</code>.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/02/images/40.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Caso 1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-tabla2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/02/images/50.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Caso 2
+</figcaption>
+</figure>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/02/images/60.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Caso 3
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="dos-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="dos-columnas">Dos columnas</h3>
+<p>En un formato de dos columnas, el ancho de cada tabla esta restringido al ancho de cada columna definida por <code>\linewidth</code>.</p>
+<ol type="1">
+<li><p><strong>Utilizando la configuración de centrado X para columnas con contenido extenso.</strong> En la Figura 1.5, la configuración de centrado de columnas <em>centro-centro-centro-X-X</em> ordena el contenido de las columnsas por defecto. No obstante existe superposición de contenido entre celdas contiguas. Haciendo uso del siguiente comando <code>\begin{tabularx}{\linewidth}{cccXX}</code>.<br>
+</p></li>
+<li><p><strong>Modificando la separación entre columnas.</strong> Es posible modificar el espacio entre columnas por defecto y ajustar más el contenido de la Tabla 1.6 de ser necesario. Haciendo uso del siguiente comando <code>\setlength\tabcolsep{0.7mm}</code>.<br>
+</p></li>
+<li><p><strong>Creación de nuevos argumentos para el control y alineación de columnas.</strong> La distribución del contenido de las columnas puede mejorarse aun más si se combina con la creación de nuevos argumentos para ajustar el contenido. Así, utilizando el comando <code>\newcolumntype{nombre}[argumento]{Definición}</code> se definieron tres alineaciones automáticas basadas en <code>X</code> utilizando los criterios de centrado (<code>\centering</code>), a la derecha (<code>\raggedleft</code>) e izquierda (<code>\raggedright</code>). Así, la configuración para la Figura 1.7 fue <code>\begin{tabularx}{\linewidth}{cccXC{1}}</code>. Donde las nuevas alineaciones se definieron como:</p>
+<pre><code> ```
+ \newcolumntype{L}[1]{&gt;{\hsize=#1\hsize\raggedright\arraybackslash}X}
+ \newcolumntype{R}[1]{&gt;{\hsize=#1\hsize\raggedleft\arraybackslash}X}
+ \newcolumntype{C}[1]{&gt;{\hsize=#1\hsize\centering\arraybackslash}X}
+ ```</code></pre>
+<p>Donde el parámetro <code>C{1}</code> indica la proporción respecto del ancho base de la columna. En este caso, el valor <code>1</code> indica el ancho por defecto.<br>
+</p></li>
+<li><p>Utilizando la configuración <code>\begin{tabularx}{\linewidth}{cccC{1}C{1}}</code> en la Tabla 1.8.<br>
+</p></li>
+<li><p>Utilizando la configuración <code>\begin{tabularx}{\linewidth}{cccR{1}R{1}}</code>en la Tabla 1.9.</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/02/images/700.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan con respecto de una hoja A4.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li><strong>Modificando el propio ancho de la columna.</strong> Utilizando el comando <code>\begin{tabularx}{\linewidth}{L{1} L{0.7} R{0.7} C{1.6}}</code>. Por lo tanto, la cuarta columna se adapta mejor un contenido más extenso a comparación con las otras columnas.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla9" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://github.com/blogs/posts/2023/research/02/images/120.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Caso 6
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2023 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2023. <em>“Eficiencia en LaTeX: Manejo de Tablas Simplificado”</em>, Third Foundation, 24 de mayo, 2024. <a href="link">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>Latex</category>
+  <guid>https://github.com/blogs/posts/2023/research/02/b1_2.html</guid>
+  <pubDate>Sat, 25 May 2024 04:55:12 GMT</pubDate>
+  <media:content url="https://github.com/blogs/posts/2023/research/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>
