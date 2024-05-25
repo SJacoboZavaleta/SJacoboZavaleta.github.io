@@ -1,0 +1,24 @@
+---
+title: "404 - Página no encontrada"
+toc: false
+navbar: false
+---
+
+<body class="no-footer">
+
+## ¡Oops! (｡•́︿•̀｡) 
+La página que estás buscando no pudo ser encontrada. Es posible que haya sido movida o eliminada.
+
+## ¿Qué puedes hacer?
+
+- **Revisar la URL**: Asegúrate de que la dirección web esté escrita correctamente.
+- **Buscar en nuestro sitio**: Utiliza la barra de búsqueda para encontrar lo que necesitas.
+- **Volver a la página principal**: [Página principal](index.qmd)
+
+Si necesitas más ayuda, no dudes en [contactarme](contact.qmd).
+
+¡Gracias por tu comprensión!
+
+</body>
+
+

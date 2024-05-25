@@ -1,1 +1,1 @@
-Sitemap: https://github.com/sitemap.xml
+Sitemap: https://sjacobozavaleta.github.io/sitemap.xml

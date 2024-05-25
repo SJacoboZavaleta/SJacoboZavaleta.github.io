@@ -10,9 +10,6 @@ lang: es
 description: | 
   A showcase for ideas in several fields in robotics, research writing, programming, and so forth since a modern perspective aimed to students and enthusiasts.
 image: images/Logo_ThirdFoundation.png
-include-in-header: 
-  - text: |
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 listing:
   - id: latest-content
     contents: 
@@ -89,7 +86,7 @@ Bienvenido a este nuevo proyecto dedicado a proporcionar información valiosa y 
 ::: {.listing-block}
 <a href="latest-content.qmd">
 
-## Latest content 
+## Último contenido 
 </a>
 
 ::: {#latest-content}

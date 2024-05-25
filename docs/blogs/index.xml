@@ -6,20 +6,20 @@
       version="2.0">
 <channel>
 <title>Third Foundation</title>
-<link>https://github.com/blogs/</link>
-<atom:link href="https://github.com/blogs/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://sjacobozavaleta.github.io/blogs/</link>
+<atom:link href="https://sjacobozavaleta.github.io/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>https://github.com/images/Logo_ThirdFoundation150px</url>
+<url>https://sjacobozavaleta.github.io/images/Logo_ThirdFoundation150px</url>
 <title>Third Foundation</title>
-<link>https://github.com/blogs/</link>
+<link>https://sjacobozavaleta.github.io/blogs/</link>
 </image>
 <generator>quarto-1.4.551</generator>
 <lastBuildDate>Sat, 25 May 2024 04:56:37 GMT</lastBuildDate>
 <item>
   <title>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/blogs/posts/2023/quarto/01/b3_1.html</link>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/b3_1.html</link>
   <description><![CDATA[ 
 
 
@@ -1058,7 +1058,7 @@ font-style: inherit;">shinyApp</span>(ui, server)</span><div class="code-annotat
 <h2 class="anchored" data-anchor-id="el-demo">El demo ⏩</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ttps://sergiojacobozavaleta.shinyapps.io/rosaapp/"><img src="https://github.com/blogs/posts/2023/quarto/01/images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></a></p>
+<p><a href="ttps://sergiojacobozavaleta.shinyapps.io/rosaapp/"><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></a></p>
 <figcaption>Aplicación Shiny</figcaption>
 </figure>
 </div>
@@ -1079,7 +1079,7 @@ Más allá de esta guía
 <div class="grid">
 <div class="g-col-12 g-col-md-12">
 <div class="bio-footer">
-<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<img src="https://sjacobozavaleta.github.io/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
 <div class="p-footer">
 <p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
 </div>
@@ -1113,14 +1113,14 @@ Jácobo-Zavaleta, Sergio. 2024. <em>“Guía Nutricional con Shiny: Selección d
   <category>R</category>
   <category>ShinnyApp</category>
   <category>Posit</category>
-  <guid>https://github.com/blogs/posts/2023/quarto/01/b3_1.html</guid>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/b3_1.html</guid>
   <pubDate>Sat, 25 May 2024 04:56:37 GMT</pubDate>
-  <media:content url="https://github.com/blogs/posts/2023/quarto/01/images/thumbnail.png" medium="image" type="image/png" height="103" width="144"/>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/images/thumbnail.png" medium="image" type="image/png" height="103" width="144"/>
 </item>
 <item>
   <title>Guía didáctica de LaTeX para publicación en Revista Peruana</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/blogs/posts/2023/research/03/b1_3.html</link>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/b1_3.html</link>
   <description><![CDATA[ 
 
 
@@ -1129,7 +1129,7 @@ Jácobo-Zavaleta, Sergio. 2024. <em>“Guía Nutricional con Shiny: Selección d
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/03/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/thumbnail.jpg" class="img-fluid figure-img"></p>
 <figcaption>Foto de <a href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash%22">Annie Spratt</a> en <a href="https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
@@ -1139,7 +1139,7 @@ Jácobo-Zavaleta, Sergio. 2024. <em>“Guía Nutricional con Shiny: Selección d
 <p>En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">revista universitaria Norte Médico</a> de la Universidad Nacional de Cajamarca.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/03/images/norteMedicopage.png" class="img-fluid figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/norteMedicopage.png" class="img-fluid figure-img"></p>
 <figcaption>Página princial de la revista Norte Médico</figcaption>
 </figure>
 </div>
@@ -1158,7 +1158,7 @@ font-style: inherit;">"images/1_revistaVistaPrevia.png"</span>)</span></code></p
 <div id="fig-figura1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;1: Ejemplo de publicación en Norte Médico
@@ -1188,7 +1188,7 @@ font-style: inherit;">"images/1_10_EditorEcuacionesOffline.png"</span>)</span></
 <div id="fig-figura11" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;2: Usando recursos en línea
@@ -1213,7 +1213,7 @@ font-style: inherit;">"images/1_20_EditorEcuacionesOnline.png"</span>)</span></c
 <div id="fig-figura12" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word
@@ -1252,7 +1252,7 @@ font-style: inherit;">"images/3_10_Tabla1.png"</span>)</span></code></pre></div>
 <div id="fig-figura31" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4: Tabla simple en una hoja de Excel
@@ -1273,7 +1273,7 @@ font-style: inherit;">"images/3_20_Tabla2.png"</span>)</span></code></pre></div>
 <div id="fig-figura32" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;5: Tabla más elaborada en una hoja de Excel
@@ -1316,7 +1316,7 @@ font-style: inherit;">"images/4_10_SoloFigura_excel.png"</span>)</span></code></
 <div id="fig-figura41" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;6: Figura única en un hoja de Excel
@@ -1337,7 +1337,7 @@ font-style: inherit;">"images/4_20_Tabla2ConFigura.png"</span>)</span></code></p
 <div id="fig-figura42" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;7: Figura única creada a partir de una tabla de Excel
@@ -1358,7 +1358,7 @@ font-style: inherit;">"images/4_30_GuardarTablasExcel.png"</span>)</span></code>
 <div id="fig-figura43" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/03/images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel
@@ -1377,7 +1377,7 @@ Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada
 <div class="grid">
 <div class="g-col-12 g-col-md-12">
 <div class="bio-footer">
-<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<img src="https://sjacobozavaleta.github.io/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
 <div class="p-footer">
 <p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
 </div>
@@ -1411,14 +1411,14 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
   <category>Latex</category>
   <category>Zotero</category>
   <category>Excel</category>
-  <guid>https://github.com/blogs/posts/2023/research/03/b1_3.html</guid>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/b1_3.html</guid>
   <pubDate>Sat, 25 May 2024 04:56:15 GMT</pubDate>
-  <media:content url="https://github.com/blogs/posts/2023/research/03/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/blogs/posts/2023/research/01/b1_1.html</link>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/b1_1.html</link>
   <description><![CDATA[ 
 
 
@@ -1427,7 +1427,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
 
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="img-fluid figure-img"></p>
 <figcaption>Imagen subida por Kaitlyn Baker bajo Licencia Unsplash</figcaption>
 </figure>
 </div>
@@ -1436,19 +1436,19 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
 <p>La presente guía tiene como objetivo presentar un flujo de trabajo para la generación de reportes universitarios, literarios, científicos y más de alta calidad, bajo la modalidad colaborativa en la nube utilizando la plataforma web <strong>Overleaf</strong> y el administrador de referencias <strong>Zotero</strong>. Esta guía es útil para nuevos usuarios que desean comenzar en el mundo de o buscan una alternativa práctica y open-source a editores de texto comerciales. Siendo su principal ventaja, centrarse menos en la <em>forma</em> del documento y más en el <em>fondo</em> del mismo. Pero sobre todo, para todos aquellos estudiantes y profesionales que prefieren aprender lo básico en idioma español.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/logoZoteroOverleaf.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/logoZoteroOverleaf.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
 </figure>
 </div>
 </section>
 <section id="b1_1-introduccionGestorReferencia" class="level1">
 <h1>Gestor de Referencias</h1>
-<p>En esta oportunidad, se recomienda el uso de <a href="https://www.zotero.org">Zotero</a> <img src="https://github.com/blogs/posts/2023/research/01/icons/zotero.png" class="img-fluid" width="20"> por la evidente ventaja y flexibilidad sobre otros programas en el mercado gracias a la gran cantidad de <a href="https://www.zotero.org/support/plugins">plugins</a> o extensiones que mejoran, simplifican y enlazan el manejo de referencias bibliográficas, tanto para editar libros, páginas web, blogs, etc.</p>
+<p>En esta oportunidad, se recomienda el uso de <a href="https://www.zotero.org">Zotero</a> <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/icons/zotero.png" class="img-fluid" width="20"> por la evidente ventaja y flexibilidad sobre otros programas en el mercado gracias a la gran cantidad de <a href="https://www.zotero.org/support/plugins">plugins</a> o extensiones que mejoran, simplifican y enlazan el manejo de referencias bibliográficas, tanto para editar libros, páginas web, blogs, etc.</p>
 <ol type="1">
 <li><p>Crearse una cuenta de forma gratuita en su página oficial.</p></li>
 <li><p>Descargar el programa e instalar según tu sistema operativo de preferencia. La pantalla principal se verá así.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/2_inicio.png" class="img-fluid figure-img" width="730"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/2_inicio.png" class="img-fluid figure-img" width="730"></p>
 <figcaption>Paso 2. Ventana principal de Zotero</figcaption>
 </figure>
 </div></li>
@@ -1457,21 +1457,21 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
 <li><p>Ir a la pestaña de <strong>Herramientas</strong>, luego a <strong>Complementos</strong> que abrirá una nueva ventana.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_1_zoteroConfiguracion.png" class="img-fluid figure-img" width="550"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/3_1_zoteroConfiguracion.png" class="img-fluid figure-img" width="550"></p>
 <figcaption>Paso i. Ir a complementos</figcaption>
 </figure>
 </div></li>
 <li><p>Ir a <strong>Configuración</strong> ⚙️ y escoger instalar desde un archivo (<em>install Add-on From File</em>). Buscar y seleccionar el archivo previamente descargado (por ejemplo <code>zotero-better-bibtex-6.7.1.xpi</code>). Reiniciar el programa.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_2_instalarPlugin.png" class="img-fluid figure-img" width="550"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/3_2_instalarPlugin.png" class="img-fluid figure-img" width="550"></p>
 <figcaption>Paso ii. Instalar plugin</figcaption>
 </figure>
 </div></li>
 <li><p>Repetir el paso 1 y el plugin ahora debe aparecer instalado así.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_3_bibtexPlugin.png" class="img-fluid figure-img" width="500"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/3_3_bibtexPlugin.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Paso iii. Verificar plugin instalado</figcaption>
 </figure>
 </div></li>
@@ -1482,14 +1482,14 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/5_editarCitationKey.png" class="img-fluid figure-img" width="520"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/5_editarCitationKey.png" class="img-fluid figure-img" width="520"></p>
 <figcaption>Paso v. Formato de etiquetas</figcaption>
 </figure>
 </div></li>
 <li><p>En este punto, cualquier archivo nuevo que se agregue a tu biblioteca, estará asociado a una etiqueta reconocible para su fácil manejo y memorización a la hora de buscar alguna cita. En caso de repetirse citas, el plugin tiene la capacidad de diferenciarlos por letras al final de la etiqueta según su antiguedad, por ejemplo, Cryan2019a, Cryan2019b, etc.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/6_nuevaEtiqueta.png" class="img-fluid figure-img" width="310"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/6_nuevaEtiqueta.png" class="img-fluid figure-img" width="310"></p>
 <figcaption>Paso vi. Etiquetas</figcaption>
 </figure>
 </div></li>
@@ -1503,22 +1503,22 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
 <ol type="a">
 <li><p>Desde la aplicación de escritorio 🖥️</p>
 <ol type="A">
-<li><p>Método 1 (<strong>El mejor método 😃</strong>): La forma más elegante es buscar los códigos de la publicación como DOI, ISBN, PMID, arXiv, etc. En el caso de artículos científicos, el código está casi siempre en la página de publicación. Solo basta con copiar, pegar, presionar enter y voilà : Toda la información ha sido agregado. Si tienes suerte (o mejor dicho si la publicación es <em>open-access</em>), el archivo pdf aparecerá como adjunto <img src="https://github.com/blogs/posts/2023/research/01/icons/pdf.png" class="img-fluid" width="20" alt="pdf">. Sino adjuntarlo de forma manual <code>click derecho a tu cita agregada -&gt; Añadir adjunto -&gt;  Añadir copia guardada</code>.</p>
+<li><p>Método 1 (<strong>El mejor método 😃</strong>): La forma más elegante es buscar los códigos de la publicación como DOI, ISBN, PMID, arXiv, etc. En el caso de artículos científicos, el código está casi siempre en la página de publicación. Solo basta con copiar, pegar, presionar enter y voilà : Toda la información ha sido agregado. Si tienes suerte (o mejor dicho si la publicación es <em>open-access</em>), el archivo pdf aparecerá como adjunto <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/icons/pdf.png" class="img-fluid" width="20" alt="pdf">. Sino adjuntarlo de forma manual <code>click derecho a tu cita agregada -&gt; Añadir adjunto -&gt;  Añadir copia guardada</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/4_1_metodo1_1.png" class="img-fluid figure-img" width="560"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/4_1_metodo1_1.png" class="img-fluid figure-img" width="560"></p>
 <figcaption>Paso A. Busqueda de archivos por código DOI</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/4_1_metodo1_2.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/4_1_metodo1_2.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Paso A. Archivo pdf correctamente agregado.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_añadirPDF.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_añadirPDF.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Paso A. Adjutando pdf al archivo.</figcaption>
 </figure>
 </div></li>
@@ -1528,7 +1528,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Guía didáctica de Latex para publicaci�
 <p>La magia de utilizar una extensión (<em>add-on)</em> desde tu navegador favorito, es que <a href="https://www.zotero.org/download/">Zotero Connector</a> permite guardar la información de la página web con un solo click (utilizando metadata) a tu biblioteca.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/4_2_metodo2.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/4_2_metodo2.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Paso b. Método 2 para añadir referencias</figcaption>
 </figure>
 </div></li>
@@ -1570,7 +1570,7 @@ Precaución
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En las nuevas versiones de Zotero, las etiquetas de citación (“Citation key”) pueden permanecer fijas en todo momento y no seguir la regla por defecto o definida en el punto 3. Esto puede ocurrir quizas por el cambio en el siguiente parámetro: <code>0 seconds</code> <img src="https://github.com/blogs/posts/2023/research/01/images/5_errorCitacionFija.png" class="img-fluid quarto-figure quarto-figure-center" width="650" alt="Configuración del complemento Better Bibtex"></p>
+<p>En las nuevas versiones de Zotero, las etiquetas de citación (“Citation key”) pueden permanecer fijas en todo momento y no seguir la regla por defecto o definida en el punto 3. Esto puede ocurrir quizas por el cambio en el siguiente parámetro: <code>0 seconds</code> <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/5_errorCitacionFija.png" class="img-fluid quarto-figure quarto-figure-center" width="650" alt="Configuración del complemento Better Bibtex"></p>
 </div>
 </div>
 <section id="exportación-de-las-referencias" class="level2">
@@ -1581,7 +1581,7 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_exportarFiles.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_exportarFiles.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Método 1</figcaption>
 </figure>
 </div>
@@ -1590,14 +1590,14 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_exportarFolder.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_exportarFolder.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Método 2</figcaption>
 </figure>
 </div>
 <p>Finalmente, una ventana con algunos ajustes pueden seleccionarse si es necesario. Por recomendación, dejar sin marcar todas las opciones, y dar <strong>OK</strong>. Un archivo <code>.bib</code> será creado.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_exportarSettings.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_exportarSettings.png" class="img-fluid figure-img" width="350"></p>
 <figcaption>Modificar exportación de referencias</figcaption>
 </figure>
 </div>
@@ -1606,26 +1606,26 @@ Precaución
 <section id="entorno-colaborativo-para-creación-de-documentos" class="level1">
 <h1>Entorno colaborativo para creación de documentos</h1>
 <p>Si bien existen múltiples editores o aplicaciones web de moda para escribir documentos de forma colaborativa en tiempo real como <a href="https://docs.google.com/">GoogleDocs</a>, <a href="https://www.office.com/">Microsoft Office 365</a>, <a href="https://jupyter.org">Jupyter</a>, la mayoría de ellos siguen el estilo de redacción <em>“What you see, what you get”</em> , que en otras palabras, la configuración y personalización de los estilos de texto se realizan mediante la interfaz del programa al presionar botones (por ejemplo, la clásica justificación de texto en Microsoft Word que todos hemos realizado alguna vez). Sin embargo, existen otros editores que utilizan código plano mediante instrucciones específicas (algunas palabras claves que hay que memorizarse 😢) que pueden realizar lo mismo o incluso, mayor personalización.</p>
-<p>Tal es el caso de los editores que trabajan como entornos para la preparación de artículos científicos. Si bien su uso desde una aplicación de escritorio implica la instalación de algunos programas, editores y paquetes desde un <a href="https://www.ctan.org/">super repositorio</a>, en esta oportunidad, se recomienda el uso de editores <em>online</em> que se encargan de todo ese trabajo aburrido y concentrarte principalmente en escribir <img src="https://github.com/blogs/posts/2023/research/01/icons/typeWriter.png" class="img-fluid" width="20" alt="typewriter">, que es para lo que estamos aquí. Así, la mejor opción que te recomiendo es comenzar con <strong>Overleaf</strong>, ya que cuenta con más de 15 000 plantillas, desde como hacer un currículum vitae profesional hasta utilizar los formatos de publicación de las revistas indexadas más conocidas. En cualquier caso, la creación de una nueva plantilla establece la configuración mínima reproducible para generar tu documento en formato pdf (curiosamente es el único formato que puede exportarse pero el más utilizado para compartir en la nube ☁️😂☁️).</p>
+<p>Tal es el caso de los editores que trabajan como entornos para la preparación de artículos científicos. Si bien su uso desde una aplicación de escritorio implica la instalación de algunos programas, editores y paquetes desde un <a href="https://www.ctan.org/">super repositorio</a>, en esta oportunidad, se recomienda el uso de editores <em>online</em> que se encargan de todo ese trabajo aburrido y concentrarte principalmente en escribir <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/icons/typeWriter.png" class="img-fluid" width="20" alt="typewriter">, que es para lo que estamos aquí. Así, la mejor opción que te recomiendo es comenzar con <strong>Overleaf</strong>, ya que cuenta con más de 15 000 plantillas, desde como hacer un currículum vitae profesional hasta utilizar los formatos de publicación de las revistas indexadas más conocidas. En cualquier caso, la creación de una nueva plantilla establece la configuración mínima reproducible para generar tu documento en formato pdf (curiosamente es el único formato que puede exportarse pero el más utilizado para compartir en la nube ☁️😂☁️).</p>
 <ol type="a">
 <li><p>Crearse una cuenta desde la <a href="https://www.overleaf.com/">página oficial</a>. Por recomendación, utilizar el mismo correo electrónico de su cuenta Zotero.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_inicio.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_inicio.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Paso a. Ventana principal de Overleaf</figcaption>
 </figure>
 </div></li>
-<li><p>Escoger alguna plantilla para comenzar a escribir. Una vez seleccionada, se abrirá el entorno de edición. Para seleccionar otra plantilla, ir a <code>Templates</code> o si prefieres escoger alguno otro previamente creado, ir a <code>Projects</code> o presionar <img src="https://github.com/blogs/posts/2023/research/01/icons/home.png" class="img-fluid" width="20" alt="home">.</p>
+<li><p>Escoger alguna plantilla para comenzar a escribir. Una vez seleccionada, se abrirá el entorno de edición. Para seleccionar otra plantilla, ir a <code>Templates</code> o si prefieres escoger alguno otro previamente creado, ir a <code>Projects</code> o presionar <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/icons/home.png" class="img-fluid" width="20" alt="home">.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_templates.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_templates.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Paso b. Biblioteca de plantillas</figcaption>
 </figure>
 </div></li>
 <li><p>El editor se compone de cuatro paneles principales según:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_recompile_chat_mod.png" class="img-fluid figure-img" width="750"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_recompile_chat_mod.png" class="img-fluid figure-img" width="750"></p>
 <figcaption>Paso c.&nbsp;Paneles del editor Overleaf</figcaption>
 </figure>
 </div>
@@ -1639,23 +1639,23 @@ Precaución
 </ol>
 <section id="subir-archivos-al-proyecto" class="level2">
 <h2 class="anchored" data-anchor-id="subir-archivos-al-proyecto">Subir archivos al “proyecto”</h2>
-<p>Desde el botón <img src="https://github.com/blogs/posts/2023/research/01/icons/upload.png" class="img-fluid" width="20"> puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo <code>.bib</code> contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.</p>
+<p>Desde el botón <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/icons/upload.png" class="img-fluid" width="20"> puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo <code>.bib</code> contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_subirArchivos.png" class="img-fluid figure-img" width="550"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_subirArchivos.png" class="img-fluid figure-img" width="550"></p>
 <figcaption>Ventana para subir y enlazar archivos a Overleaf</figcaption>
 </figure>
 </div>
 </section>
 <section id="compartir-plantilla" class="level2">
 <h2 class="anchored" data-anchor-id="compartir-plantilla">Compartir plantilla</h2>
-<p>Para trabajar de forma conjunta y redactar el reporte en tiempo real, basta con activar la opción de compartir la plantilla desde el bóton <strong>Share</strong> <img src="https://github.com/blogs/posts/2023/research/01/icons/share.png" class="img-fluid" width="20"> para invitar a otros usuarios de Overleaf (necesario) con permisos de visualización o modificación según prefieras.</p>
+<p>Para trabajar de forma conjunta y redactar el reporte en tiempo real, basta con activar la opción de compartir la plantilla desde el bóton <strong>Share</strong> <img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/icons/share.png" class="img-fluid" width="20"> para invitar a otros usuarios de Overleaf (necesario) con permisos de visualización o modificación según prefieras.</p>
 <ul>
 <li>La ventana que se abre tiene por defecto la opción de <em>compartido general</em> apagado y puede activarse desde la opción <em>Turn on link sharing</em>. Solo colaboradores invitados por correo electrónico podrán acceder al proyecto en Overleaf según los permisos otorgados.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_compartirArchivo2.png" class="img-fluid figure-img" width="500"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_compartirArchivo2.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>Ventana para invitar a colaboradores de trabajo</figcaption>
 </figure>
 </div>
@@ -1664,7 +1664,7 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_compartirArchivo.png" class="img-fluid figure-img" width="550"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_compartirArchivo.png" class="img-fluid figure-img" width="550"></p>
 <figcaption>Ventana para compartir un documento con permisos</figcaption>
 </figure>
 </div>
@@ -1741,7 +1741,7 @@ font-style: inherit;">document</span>}  </span></code></pre></div></li>
 <p>Las referencias exportadas por Zotero (<code>biblio.bib</code>) pueden modificarse según sea necesario. Nótese los elementos de dos artículos de tipo <span class="citation" data-cites="article">@article</span> con sus etiquetas <code>Abbasi2019</code> y <code>Acharya2018</code> respectivamente.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/o_bib.png" class="img-fluid figure-img" width="700"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/o_bib.png" class="img-fluid figure-img" width="700"></p>
 <figcaption>Detalle de un archivo <code>.bib</code></figcaption>
 </figure>
 </div>
@@ -1773,7 +1773,7 @@ font-style: inherit;">\subsubsection</span>{Título 3}</span>
 <span id="cb3-4"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">\subsubsection</span>{Título 4}</span></code></pre></div></td>
-<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/1_titulos.png" class="img-fluid" width="190"></td>
+<td style="text-align: center;"><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/1_titulos.png" class="img-fluid" width="190"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><span class="kw" style="color: #003B4F;
@@ -1810,7 +1810,7 @@ font-style: inherit;">figure</span>}</span></code></pre></div>
 <li><p>Ancho por unidades métricas: 2cm, 20mm, 40em, 1in.</p></li>
 </ul>
 </blockquote></td>
-<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/3_figuraSimple.png" class="img-fluid" width="240"></td>
+<td style="text-align: center;"><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/3_figuraSimple.png" class="img-fluid" width="240"></td>
 </tr>
 </tbody>
 </table>
@@ -1888,7 +1888,7 @@ background-color: null;
 font-style: inherit;">document</span>}</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></p>
 </figure>
 </div>
 <table class="table">
@@ -1958,7 +1958,7 @@ background-color: null;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">table</span>}</span></code></pre></div></td>
-<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/4_tablas.png" class="img-fluid" width="234"></td>
+<td style="text-align: center;"><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/4_tablas.png" class="img-fluid" width="234"></td>
 </tr>
 </tbody>
 </table>
@@ -2049,7 +2049,7 @@ background-color: null;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">itemize</span>}</span></code></pre></div></td>
-<td style="text-align: center;"><img src="https://github.com/blogs/posts/2023/research/01/images/5_listas.png" class="img-fluid" width="125"></td>
+<td style="text-align: center;"><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/5_listas.png" class="img-fluid" width="125"></td>
 </tr>
 </tbody>
 </table>
@@ -2067,7 +2067,7 @@ background-color: null;
 font-style: inherit;">tab:Tabla1</span>}.</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/7_referenciasCruzada.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="465"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/7_referenciasCruzada.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="465"></p>
 </figure>
 </div>
 <div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><span class="kw" style="color: #003B4F;
@@ -2088,7 +2088,7 @@ background-color: null;
 font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/01/images/8_referencias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="653"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/8_referencias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="653"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2108,7 +2108,7 @@ Más allá de esta guía
 <div class="grid">
 <div class="g-col-12 g-col-md-12">
 <div class="bio-footer">
-<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<img src="https://sjacobozavaleta.github.io/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
 <div class="p-footer">
 <p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
 </div>
@@ -2148,14 +2148,14 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Overleaf y Zotero: Potenciando el Trabajo
   <category>Latex</category>
   <category>Overleaf</category>
   <category>Zotero</category>
-  <guid>https://github.com/blogs/posts/2023/research/01/b1_1.html</guid>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/b1_1.html</guid>
   <pubDate>Sat, 25 May 2024 04:56:00 GMT</pubDate>
-  <media:content url="https://github.com/blogs/posts/2023/research/01/images/thumbnail.png" medium="image" type="image/png" height="58" width="144"/>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/thumbnail.png" medium="image" type="image/png" height="58" width="144"/>
 </item>
 <item>
   <title>Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/blogs/posts/2023/robotics/01/b2_1.html</link>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/01/b2_1.html</link>
   <description><![CDATA[ 
 
 
@@ -2166,7 +2166,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Overleaf y Zotero: Potenciando el Trabajo
 <h1>Sistemas de Referencia (<em>Reference Frames</em>)</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/robotics/01/images/referenceFrame.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/01/images/referenceFrame.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>Notar que:</p>
@@ -2185,7 +2185,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Overleaf y Zotero: Potenciando el Trabajo
 <h2 class="anchored" data-anchor-id="sistema-de-referencia-no-inercial-non-inertial-reference-frame">Sistema de Referencia no Inercial (<em>Non-Inertial Reference Frame</em>)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/robotics/01/images/paste-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/01/images/paste-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>Pero que pasa si <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BV%7D"> no es una constante?</p>
@@ -2228,7 +2228,7 @@ Tip
 <div class="grid">
 <div class="g-col-12 g-col-md-12">
 <div class="bio-footer">
-<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<img src="https://sjacobozavaleta.github.io/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
 <div class="p-footer">
 <p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
 </div>
@@ -2262,14 +2262,14 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Dinámica: Sistemas de Ref
   <category>Robotics</category>
   <category>Dynamics</category>
   <category>Kinematics</category>
-  <guid>https://github.com/blogs/posts/2023/robotics/01/b2_1.html</guid>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/01/b2_1.html</guid>
   <pubDate>Sat, 25 May 2024 04:55:36 GMT</pubDate>
-  <media:content url="https://github.com/blogs/posts/2023/robotics/01/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/01/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/blogs/posts/2023/robotics/02/b2_2.html</link>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/02/b2_2.html</link>
   <description><![CDATA[ 
 
 
@@ -2328,7 +2328,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Dinámica: Sistemas de Ref
 <div class="grid">
 <div class="g-col-12 g-col-md-12">
 <div class="bio-footer">
-<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<img src="https://sjacobozavaleta.github.io/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
 <div class="p-footer">
 <p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
 </div>
@@ -2361,14 +2361,14 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Robótica: Grados de Liber
   <category>Robotics</category>
   <category>Dynamics</category>
   <category>Kinematics</category>
-  <guid>https://github.com/blogs/posts/2023/robotics/02/b2_2.html</guid>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/02/b2_2.html</guid>
   <pubDate>Sat, 25 May 2024 04:55:25 GMT</pubDate>
-  <media:content url="https://github.com/blogs/posts/2023/robotics/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Eficiencia en LaTeX: Manejo de Tablas Simplificado</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/blogs/posts/2023/research/02/b1_2.html</link>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/b1_2.html</link>
   <description><![CDATA[ 
 
 
@@ -2377,7 +2377,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Robótica: Grados de Liber
 
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/02/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/thumbnail.jpg" class="img-fluid figure-img"></p>
 <figcaption>Imagen de <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pexels</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pixabay</a></figcaption>
 </figure>
 </div>
@@ -2397,7 +2397,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Robótica: Grados de Liber
 <h3 class="anchored" data-anchor-id="en-una-columna">En una columna</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/02/images/20.png" class="img-fluid figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/20.png" class="img-fluid figure-img"></p>
 <figcaption>Utilizando una configuración <code>oneside</code> o <code>onecolumn</code></figcaption>
 </figure>
 </div>
@@ -2406,7 +2406,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Robótica: Grados de Liber
 <h3 class="anchored" data-anchor-id="en-dos-columnas">En dos columnas</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/blogs/posts/2023/research/02/images/10.png" class="img-fluid figure-img"></p>
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/10.png" class="img-fluid figure-img"></p>
 <figcaption>Utilizando una configuración <code>twoside</code> o <code>twocolumn</code></figcaption>
 </figure>
 </div>
@@ -2422,7 +2422,7 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Entendiendo la Robótica: Grados de Liber
 <div id="fig-tabla0" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/02/images/30.png" class="img-fluid figure-img" style="width:80.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/30.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;1: Caso por defecto
@@ -2488,7 +2488,7 @@ Importante
 <div id="fig-tabla1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/02/images/40.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/40.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;2: Caso 1
@@ -2500,7 +2500,7 @@ Figura&nbsp;2: Caso 1
 <div id="fig-tabla2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/02/images/50.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/50.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;3: Caso 2
@@ -2512,7 +2512,7 @@ Figura&nbsp;3: Caso 2
 <div id="fig-tabla3" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/02/images/60.png" class="img-fluid figure-img" style="width:50.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/60.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4: Caso 3
@@ -2547,7 +2547,7 @@ Figura&nbsp;4: Caso 3
 <div id="fig-tabla4" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/02/images/700.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/700.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan con respecto de una hoja A4.
@@ -2564,7 +2564,7 @@ Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan c
 <div id="fig-tabla9" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/blogs/posts/2023/research/02/images/120.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/120.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;6: Caso 6
@@ -2577,7 +2577,7 @@ Figura&nbsp;6: Caso 6
 <div class="grid">
 <div class="g-col-12 g-col-md-12">
 <div class="bio-footer">
-<img src="https://github.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<img src="https://sjacobozavaleta.github.io/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
 <div class="p-footer">
 <p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about-me.html">sitio web</a>.</p>
 </div>
@@ -2610,9 +2610,9 @@ Jácobo-Zavaleta, Sergio. 2023. <em>“Eficiencia en LaTeX: Manejo de Tablas Sim
 
  ]]></description>
   <category>Latex</category>
-  <guid>https://github.com/blogs/posts/2023/research/02/b1_2.html</guid>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/b1_2.html</guid>
   <pubDate>Sat, 25 May 2024 04:55:12 GMT</pubDate>
-  <media:content url="https://github.com/blogs/posts/2023/research/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

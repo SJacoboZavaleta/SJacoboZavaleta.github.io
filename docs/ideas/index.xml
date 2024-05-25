@@ -6,20 +6,20 @@
       version="2.0">
 <channel>
 <title>Third Foundation</title>
-<link>https://github.com/ideas/</link>
-<atom:link href="https://github.com/ideas/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://sjacobozavaleta.github.io/ideas/</link>
+<atom:link href="https://sjacobozavaleta.github.io/ideas/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>https://github.com/images/Logo_ThirdFoundation150px</url>
+<url>https://sjacobozavaleta.github.io/images/Logo_ThirdFoundation150px</url>
 <title>Third Foundation</title>
-<link>https://github.com/ideas/</link>
+<link>https://sjacobozavaleta.github.io/ideas/</link>
 </image>
 <generator>quarto-1.4.551</generator>
 <lastBuildDate>Fri, 24 May 2024 22:52:40 GMT</lastBuildDate>
 <item>
   <title>En construcción</title>
   <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://github.com/ideas/posts/2024/01/i1.html</link>
+  <link>https://sjacobozavaleta.github.io/ideas/posts/2024/01/i1.html</link>
   <description><![CDATA[ 
 
 
@@ -34,9 +34,9 @@
 
  ]]></description>
   <category>Idea</category>
-  <guid>https://github.com/ideas/posts/2024/01/i1.html</guid>
+  <guid>https://sjacobozavaleta.github.io/ideas/posts/2024/01/i1.html</guid>
   <pubDate>Fri, 24 May 2024 22:52:40 GMT</pubDate>
-  <media:content url="https://github.com/images/noPreview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://sjacobozavaleta.github.io/images/noPreview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

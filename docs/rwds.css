@@ -1117,3 +1117,8 @@ pre code:not(.sourceCode) {
   font-size: 1.125rem;
   line-height: 1.6;
 }
+
+/* Ocultar footerbar solo en páginas específicas */
+body.no-footer footer {
+  display: none;
+}

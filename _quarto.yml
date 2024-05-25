@@ -7,12 +7,11 @@ website:
   image: images/Logo_ThirdFoundation150px
   favicon: images/ThirdFoundation_favicon.png
   twitter-card:
-    site: "@rwdatasci"
+    creator: "@JacoboZavaleta"
   open-graph: true
-  site-url: https://github.com/
-  repo-url: https://github.com/
-  repo-actions: [edit, issue]
-  #google-analytics: "G-1TTWB7YTR6"
+  site-url: https://sjacobozavaleta.github.io/
+  repo-url: https://github.com/SJacoboZavaleta/SJacoboZavaleta.github.io
+  google-analytics: "G-Z04NPGMGNV"
   navbar:
     toggle-position: right
     background: "#028391"

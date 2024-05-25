@@ -1,6 +1,6 @@
 ---
 pagetitle: Publicaciones recientes
-title: Últimos contenidos
+title: Último contenido
 subtitle: Revise alguno de estos artículos 
 title-block-banner: true
 sidebar: false
