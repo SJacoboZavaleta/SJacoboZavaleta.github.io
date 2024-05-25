@@ -3,12 +3,16 @@ project:
   output-dir: docs
 
 website:
-  title: "Third Foundation"
+  title: "Third Foundation: Una bóveda en la web"
   image: images/Logo_ThirdFoundation150px
   favicon: images/ThirdFoundation_favicon.png
   twitter-card:
-    creator: "@JacoboZavaleta"
-  open-graph: true
+    site: "@JacoboZavaleta"
+    image: images/twitter-card.png
+    image-alt: "Third Foundation logo"
+  open-graph:
+    image: images/twitter-card.png
+    image-alt: "Third Foundation logo"
   site-url: https://sjacobozavaleta.github.io/
   repo-url: https://github.com/SJacoboZavaleta/SJacoboZavaleta.github.io
   google-analytics: "G-Z04NPGMGNV"
