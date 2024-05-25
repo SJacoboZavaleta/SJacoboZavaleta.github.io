@@ -1,0 +1,25 @@
+---
+title: "Third Foundation"
+subtitle: Una bóveda en la web
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: true
+---
+Welcome to my website made for everyone who wants to learn about modern tools for an efficient writing of research manuscripts: $\LaTeX$, Zotero, Rmarkdown, Python and R. The importance of this tools also stands out for writing books, blogs and websites with ease like this one made by using [Quarto](https://quarto.org/docs/websites).
+
+Please note that Data Science in a Box uses a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
+
+## License {.unnumbered}
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />This online work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>.
+Visit [here](https://github.com/rstudio-education/datascience-box/blob/master/LICENSE.md) for more information about the license.
+
+## Acknowledements {.unnumbered}
+Huge thanks to the #rstats and #quarto education community who have made numerous suggestions for this resource available in the web.
+
+This website is built with [Quarto](https://quarto.org), the lovely icons by [icons8](http://icons8.com/), and none of this would be possible without the beautiful template by [Real World Data Science](https://realworlddatascience.net/).
+
+::: callout-important
+Most of my articles are written in **spanish** because of detailed but awesome information about these topics is not widespread for new hispanoamerican students yet.
+:::

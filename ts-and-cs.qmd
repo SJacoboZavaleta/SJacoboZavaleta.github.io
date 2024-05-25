@@ -1,0 +1,52 @@
+---
+title: "Términos y condiciones"
+page-layout: article
+sidebar: false
+toc: true
+title-block-banner: true
+---
+## Términos y Condiciones
+
+1. Introducción
+   - Estos Términos y Condiciones rigen el uso de la página web "The Third Foundation" (en adelante, "el Sitio Web") y los servicios ofrecidos en el mismo.
+   - Al acceder y utilizar el Sitio Web, aceptas cumplir con estos Términos y Condiciones sin reservas.
+
+2. Propiedad Intelectual
+   - Todo el contenido presente en el Sitio Web, incluyendo pero no limitado a textos, imágenes, diseños, códigos y otros materiales, es propiedad intelectual de "The Third Foundation" o de su respectivo propietario.
+   - La reproducción, distribución, modificación, transmisión o utilización del contenido queda restringida al reconocimiento de autoría bajo la licencia [Creative Commons Attribution-ShareAlike 4.0 International](/LICENCE_CC.md).
+
+3. Precisión del Contenido
+   - Si bien se ha realizado un esfuerzo razonable para garantizar la precisión del contenido, no se otorga ninguna garantía expresa o implícita sobre la exactitud, confiabilidad o integridad de la información presentada.
+   - En caso de detectar cualquier error o imprecisión, se procederá a corregirlo a la brevedad posible.
+
+4. Enlaces a Sitios Externos
+   - El Sitio Web puede contener enlaces a sitios web de terceros. Estos enlaces se proporcionan únicamente para tu comodidad y no implican una aprobación o asociación con dichos sitios.
+   - No se asume responsabilidad alguna por el contenido, políticas de privacidad o prácticas de cualquier sitio web de terceros.
+
+5. Derechos de Autor y Citas
+   - En caso de haber utilizado material de terceros con derechos de autor, se ha hecho el esfuerzo por citarlo correctamente siguiendo las buenas prácticas de redacción científica.
+   - Si se detecta alguna omisión o error en las citas, se procederá a corregirlo a la brevedad posible.
+
+6. Limitación de Responsabilidad
+   - "The Third Foundation" no será responsable por ningún daño directo, indirecto, incidental, especial o consecuente que surja del uso o la imposibilidad de usar el Sitio Web o su contenido.
+
+7. Política de Notificación y Eliminación
+   - Si eres titular de derechos y consideras que hemos publicado material sin tu permiso o que no está cubierto por una limitación o excepción de la ley, contáctanos por escrito proporcionando:
+     1. Tus datos de contacto.
+     2. Los detalles bibliográficos completos del material.
+     3. La URL exacta donde encontraste el material.
+     4. Prueba de que eres el titular de los derechos y una declaración de que, bajo pena de perjurio, eres el titular de los derechos o un representante autorizado.
+   - Una vez recibida la notificación, se invocará el procedimiento de "Notificación y Eliminación" como sigue:
+     1. Acusaremos recibo de tu queja por correo electrónico o carta y haremos una evaluación inicial de su validez y plausibilidad.
+     2. Tras recibir una queja válida, el material será retirado temporalmente del Sitio Web a la espera de una solución acordada.
+     3. Contactaremos al contribuyente que depositó el material, si corresponde, y se le notificará que el material está sujeto a una queja, bajo qué alegaciones, y se le alentará a resolver las quejas.
+     4. Se alentará al reclamante y al contribuyente a resolver el problema de manera rápida y amistosa, con los siguientes posibles resultados:
+        - El material se reemplaza en el Sitio Web sin cambios.
+        - El material se reemplaza en el Sitio Web con cambios.
+        - El material se elimina permanentemente del Sitio Web.
+     5. Si el contribuyente y el reclamante no pueden llegar a un acuerdo, el material permanecerá inaccesible a través del Sitio Web hasta que se alcance una resolución.
+
+8. Modificaciones
+   - Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigencia una vez publicadas en el Sitio Web.
+
+Si tienes alguna duda o sugerencia respecto a estos Términos y Condiciones, no dudes en comunicarte con nosotros.

@@ -1,0 +1,240 @@
+---
+pagetitle: "Third Foundation"
+page-layout: custom
+section-divs: false
+editor: source
+sidebar: false
+search: false
+repo-actions: false
+lang: es
+description: | 
+  A showcase for ideas in several fields in robotics, research writing, programming, and so forth since a modern perspective aimed to students and enthusiasts.
+image: images/Logo_ThirdFoundation.png
+include-in-header: 
+  - text: |
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+listing:
+  - id: latest-content
+    contents: 
+    - /blogs
+    - /ideas
+    - "!index.qmd"
+    # - "!b3_1.qmd" Articulo que debe ignorarse ya que esta en el banner principal
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+  - id: ideas
+    contents: 
+    - /ideas
+    - "!index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+toc: false
+---
+<!-- ::: {.content-container}
+::: {.top-story .purple-background}
+<a href="/ideas/posts/2024/05/14/ai-series-2.qmd">
+
+::: grid
+::: {.g-col-12 .g-col-lg-4 .top-story-text}
+While AI algorithms can pose a number of challenges in terms of the size and sophistication of the algorithms, ethical issues can be the hardest and most important aspect to get right. Olivia Varley-Winter looks at why ethical considerations need to come first when working with AI and what this means. 
+:::
+::: {.g-col-12 .g-col-lg-8 .top-story-img}
+![](ideas/posts/2024/05/14/images/Eleanor_Roosevelt-991724.jpg)
+:::
+:::
+
+</a>
+
+:::
+::: -->
+
+<!-- <div class="animate-title" style="justify-content: center; align-items: center; text-align: center;">
+  <h1>The cat and the hat.</h1>
+</div> -->
+
+<!-- <div class="animate__animated animate__bounce" style="display: flex; justify-content: center; align-items: center; height: 20vh; text-align: center;">
+  <h1>Bienvenido a The Third Foundation</h1>
+</div> -->
+
+::: {.content-container}
+```{=html}
+<div class="center">
+  <div class="typewriter">
+  
+    <h1 class="custom-font">Third Foundation</h1>
+  </div>
+</div>
+```
+:::
+
+::: {.header-text} 
+::: {.content-container}
+::: {.header-block}
+Bienvenido a este nuevo proyecto dedicado a proporcionar información valiosa y servir como una vitrina de ideas en varios campos como la robótica, redacción de investigaciones, programación y más, desde una perspectiva moderna dirigida a estudiantes y entusiastas. Al igual que la *Primera y Segunda Fundación* en las novelas de [Isaac Asimov](https://es.wikipedia.org/wiki/Isaac_Asimov), este espacio (*Bóveda*) busca recopilar diversos proyectos y fundamentos impulsado por el rápido crecimiento de la IA en los últimos años en la web.
+:::
+:::
+:::
+
+::: {.content-container}
+::: {.listing-block}
+<a href="latest-content.qmd">
+
+## Latest content 
+</a>
+
+::: {#latest-content}
+:::
+
+:::
+:::
+
+::: {.pullout-text}
+::: {.pullout-container}
+::: {.pullout-block .black-background}
+![](images/blue-quote.png){width="100px"}
+
+## But can I do it? Won’t the Laws of Robotics hold me back. No, they will not hold me back. I know they won’t.
+
+## There is something far more important to me than they are, something that dictates my actions beyond anything they can do to stop me.
+
+## I want to be a writer.
+El Robot Cal (CL-123X) en *Gold The Final Science Fiction Collection*, **Isaac Asimov (1983)**
+
+::: {.button}
+[Léelo completo en Novel12](https://novel12.com/243245/gold-the-final-science-fiction-collection-.htm)
+:::
+
+:::
+:::
+:::
+
+<!-- ::: {.content-container}
+::: {.listing-block}
+<a href="viewpoints/index.qmd">
+
+## Viewpoints 
+</a>
+
+::: {#viewpoints}
+:::
+
+:::
+::: -->
+
+<!-- ::: {.content-container}
+::: {.listing-block}
+<a href="case-studies/index.qmd">
+
+## Case Studies
+</a> 
+
+::: {#case-studies}
+:::
+
+:::
+::: -->
+
+::: {.pullout-text}
+::: {.pullout-container}
+::: {.pullout-block .black-background}
+![](images/orange-quote.png){width="100px"}
+
+## Mis (Ebling Mis) said, in a hoarse whisper, “I am convinced the Second Foundation can win, if it is not caught prematurely by the Mule. It has kept itself secret; the secrecy must be upheld; it has a purpose. You must go there; your information is vital . . . may make all the difference. Do you hear me?”
+
+## Toran cried in near-agony, “Yes, yes! Tell us how to get there, Ebling? Where is it?” “I can tell you,” said the faint voice.
+
+## He never did [Bayta lifted her blaster and shot].
+*Fundación e Imperio* - **Isaac Asimov (1952)**
+
+::: {.button}
+[Léelo completo en Novel12](https://novel12.com/241030/foundation-and-empire.htm)
+:::
+
+:::
+:::
+:::
+
+::: {.content-container}
+::: {.listing-block}
+<a href="ideas/index.qmd">
+
+## Ideas
+</a> 
+
+::: {#ideas}
+:::
+
+:::
+:::
+
+<!-- ::: {.content-container}
+::: {.listing-block}
+<a href="careers/index.qmd">
+
+## Careers 
+</a>
+
+::: {#careers}
+:::
+
+:::
+::: -->
+
+::: {.footer-text}
+::: {.footer-container .blue-background}
+::: {.footer-block}
+::: grid
+::: {.g-col-12 .g-col-md-2}
+### Publicado por
+![](images/logo_ThirdFoundation_white.png){fig-align="left"}
+:::
+<!-- ::: {.g-col-12 .g-col-md-2}
+### Our partners
+[![](images/asa-footer-new.png){fig-align="left"}](https://www.amstat.org/)
+::: -->
+<!-- ::: {.g-col-12 .g-col-md-2}
+### With support from 
+[![](images/ati-footer-new.png){fig-align="left"}](https://www.turing.ac.uk/)
+::: -->
+::: {.g-col-12 .g-col-md-2}
+:::
+::: {.g-col-12 .g-col-md-2}
+:::
+::: {.g-col-12 .g-col-md-2}
+:::
+::: {.g-col-12 .g-col-md-2}
+:::
+::: {.g-col-12 .g-col-md-2}
+### Sobre
+[La página](about-ttf.qmd)\
+[El autor](about-me.qmd)
+:::
+<!-- ::: {.g-col-12 .g-col-md-2}
+### Contribute
+[Call for contributions](/contributor-docs/call-for-contributions.qmd)\
+[Contributor guidelines](/contributor-docs/contributor-guidelines.qmd)\
+[Style guide](/contributor-docs/style-guide.qmd)
+::: -->
+
+
+<!-- ::: {.g-col-12 .g-col-md-12}
+### Our partners
+logos to go here
+
+Remember, images used as thumbnails for article listings must be set to 991px(w) x 724px(h).
+::: -->
+
+:::
+:::
+:::
+:::

@@ -1,0 +1,108 @@
+---
+title: "Sergio Augusto Antenor Jácobo Zavaleta"
+subtitle: Ingeniero Mecatrónico [ORCID](https://orcid.org/0000-0001-5084-8032)
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: true
+about:
+    template: trestles
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          url: https://www.linkedin.com/in/sjacobozavaleta/
+        - icon: twitter
+          text: Twitter
+          url: https://twitter.com/JacoboZavaleta
+        - icon: github
+          text: Github
+          url: https://www.github.com/SJacoboZavaleta
+        - icon: instagram
+          text: Instagram
+          url: https://www.instagram.com/sergiojacobozavaleta/
+        - text: "{{< fa envelope >}} Email"
+          url: mailto:sjacobo@unitru.edu.pe
+        - text: "{{< ai orcid >}} ORCID 0000-0003-3131-0864"
+          url: https://orcid.org/0000-0001-5084-8032
+        - text: "{{< ai google-scholar >}} Google Scholar"
+          url: https://scholar.google.com/citations?user=NsiUPU0AAAAJ&hl=es
+image: images/sergio-about.jpg
+---
+
+Sergio Jácobo is a passionate Mechatronics Engineer driven to design innovative clinical robots and biomedical devices. With expertise in artificial intelligence and machine learning, he develops cutting-edge solutions to improve healthcare. His academic research on robotics and medical imaging has been published in peer-reviewed journals. 
+
+Outside of work, Sergio applies his programming skills to build apps and explore new technologies. He also enjoys unwinding through films, books, and outdoor activities like hiking and cycling. With a lifelong curiosity for learning, he actively seeks new challenges that combine his interests in engineering, computer science, and helping others.
+
+## Education
+ 
+**Bachelor of Science in Mechatronics Engineering**  
+Universidad Nacional de Trujillo, Trujillo, Peru  
+*April 2014 - December 2018* 
+
+- Thesis title: [Modelamiento y simulacion de un robot clınico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutanea de mama](https://hdl.handle.net/20.500.14414/18226).  
+- Third-class rank.
+
+## Profesional Experience
+
+**Maintenance Assistant of biomedical equipment (Full-time)** 
+Corporación Tecnobiomédica Healthcare del Perú SAC. — Medical equipments, Lima, Peru  
+*November 2020 - April 2021*  
+- Programmed and adapted preventive maintenance plans of old and out of date equipments based on user's experience.  
+
+**Maintenance Assistant (Full-time)**  
+Norsac SAC. — Textile Industry, Trujillo, Peru  
+*May 2019 - November 2019*  
+  - Formulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.  
+  - Provided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.  
+  - Reduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan.
+
+## Research experience
+
+**National researcher Lima, Peru**  
+*April 2023 - Present*  
+Enabled and registered in the National Scientific Register (RENACYT). Code: P0153371  
+
+
+**Technological projects about prevention and assistant in patients with COVID-19 Trujillo**  
+*March - October 2019*  
+Funded by the Universidad Nacional de Trujillo  
+  
+- Collaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.  
+- The initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use.
+
+## Publications
+- Jácobo-Zavaleta, S., & Zavaleta, J. (2023a). *Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study*. IEEE Latin America Transactions, 21 (3). [Link](https://latamt.ieeer9.org/index.php/transactions/article/view/7442). https://doi.org/10.1109/tla.2023.10068849  
+- Jácobo-Zavaleta, S., & Zavaleta, J. (2023b). *A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study*. IEEE Latin America Transactions, 21 (3). [Link](https://latamt.ieeer9.org/index.php/transactions/article/view/7300). https://doi.org/10.1109/TLA.2023.10068845  
+- Zavaleta, A., Ñuflo-Vásquez, S., Alarcón-Turiani, V., & Jácobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Perú. Norte Médico, 1 (5), 27–30. [Link](https://revistas.unc.edu.pe/index.php/nortemedico/article/view/118).  
+- Jácobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). *Deep learning y enfermedades oculares*. Norte Médico, 3 (2). Link.  
+- Zavaleta de Los Ríos, V., Jácobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). *Microbiota intestinal y las enfermedades neurodegenerativas*. Norte Médico, 1 (2). [Link](https://revistas.unc.edu.pe/index.php/nortemedico/article/view/118).
+
+## Honours and Awards
+- **Recognition for technological projects about prevention and assistant in patients with COVID-19**  
+Universidad Nacional de Trujillo  
+*October 2020*
+-  **Third place in Final Merit List of Undergraduate Program**  
+Universidad Nacional de Trujillo  
+*December 2018*
+- **Recognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”**  
+José Faustino Sánchez Carrión High School  
+*December 2010*
+
+## Extra Curricular Activities
+
+### Independent Tutor  
+- **Private Maths and English tutor**
+
+### Voluntarism
+- **Citizen monitor**  
+    Escuela Nacional de Control - Contraloría General de la República del Perú.  
+    *January 2022 - Present*  
+    Monitored public-financed projects to report evidence of incidents of non-compliance.
+
+### Provision of services
+- **Examination monitor**  
+    Minister of Education, Cajamarca, Perú.  
+    *November 2022 - Present*  
+    Collaborated and moderated teacher evaluation processes for service examination. 
+
+

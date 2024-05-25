@@ -1,0 +1,20 @@
+---
+title: "En construcción"
+author: Sergio Jácobo
+description: "Sin ideas 😥"
+date: last-modified
+categories: "Idea"
+lang: es
+number-sections: false
+highlight-style: atom-one
+code-block-bg: true
+code-block-border-left: "#9ef8f5"
+code-overflow: wrap
+toc: true
+image: ../../../../../images/noPreview.jpg
+image-alt: "Foto de Mulyadi en Unsplash"
+language: 
+    section-title-footnotes: Notas
+---
+
+# Idea 1

@@ -1,0 +1,18 @@
+---
+pagetitle: Blogs | Biblioteca Galáctica
+title: Posts
+subtitle: Artículos en Robótica, redación para investigación y aplicaciones de Quarto.
+search: false
+repo-actions: false
+listing:
+  contents: 
+  - posts
+  - "!index.qmd"
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  page-size: 30
+  feed: true
+---

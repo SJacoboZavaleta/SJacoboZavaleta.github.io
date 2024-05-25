@@ -1,0 +1,77 @@
+project:
+  type: website
+
+website:
+  title: "Third Foundation"
+  image: images/Logo_ThirdFoundation150px
+  favicon: images/ThirdFoundation_favicon.png
+  twitter-card:
+    site: "@rwdatasci"
+  open-graph: true
+  site-url: https://github.com/
+  repo-url: https://github.com/
+  repo-actions: [edit, issue]
+  #google-analytics: "G-1TTWB7YTR6"
+  navbar:
+    toggle-position: right
+    background: "#028391"
+    logo: images/Logo_ThirdFoundation150px.png
+    logo-alt: "Third Foundation logo"
+    title: false
+    collapse-below: lg
+    right:
+      - blogs/index.qmd
+      - ideas/index.qmd
+      - text: "Sobre tTF"
+        menu:
+        - text: "La página"
+          href: about-ttf.qmd
+        - text: "El autor"
+          href: about-me.qmd
+      - contact.qmd
+
+  sidebar:
+    - title: "Sobre tTF"
+      contents:
+        - about-ttf.qmd
+        - about-me.qmd
+        - LICENCE.md
+    - title: "Contacto"
+      contents:
+        - contact.qmd
+
+  page-navigation: true
+
+  back-to-top-navigation: false
+
+  page-footer:
+    background: "#000000"
+    left: |
+      Copyright &copy; 2024 Sergio Jácobo |<br>
+      Esta página fue creada con [![](/images/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org) y la plantilla de [Real World Data Science](https://realworlddatascience.net/).
+    center:
+      - href: https://www.github.com/SJacoboZavaleta
+        icon: github
+        aria-label: GitHub
+      - href: https://www.linkedin.com/in/sjacobozavaleta/
+        icon: linkedin
+        aria-label: LinkedIn
+      - href: https://twitter.com/JacoboZavaleta
+        icon: twitter-x
+        aria-label: Twitter/X
+    right: |
+      [Términos y Condiciones](/ts-and-cs.qmd) <br>
+      [Código de Conducta](/CODE_OF_CONDUCT.md)
+
+format:
+  html:
+    theme: [lux, rwds.scss]
+    css: rwds.css
+    toc: true
+    grid:
+      sidebar-width: 0px
+      body-width: 1000px
+      margin-width: 250px
+
+execute:
+  freeze: auto

@@ -1,0 +1,20 @@
+---
+title: "Contacto"
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: true
+---
+## Contacto personal
+
+- **Email:** [sergio.zavaleta.cc@gmail.com](mailto:sergio.zavaleta.cc@gmail.com)
+
+- **GitHub:** [@SJacoboZavaleta](https://www.github.com/SJacoboZavaleta)
+
+- **LinkedIn:** [sjacobozavaleta](https://www.linkedin.com/in/sjacobozavaleta/)
+
+- **X:** [@JacoboZavaleta](https://twitter.com/JacoboZavaleta)
+
+## Contacto académico
+
+- **Email:** [sjacobo@unitru.edu.pe](mailto:sjacobo@unitru.edu.pe)
