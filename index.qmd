@@ -9,7 +9,7 @@ repo-actions: false
 lang: es
 description: | 
   A showcase for ideas in several fields in robotics, research writing, programming, and so forth since a modern perspective aimed to students and enthusiasts.
-image: images/Logo_ThirdFoundation.png
+image: images/twitter-card.png
 listing:
   - id: latest-content
     contents: 
