@@ -434,15 +434,15 @@
   </url>
   <url>
     <loc>https://sjacobozavaleta.github.io/latest-content.html</loc>
-    <lastmod>2024-05-25T16:45:42.069Z</lastmod>
+    <lastmod>2024-05-25T16:45:42.000Z</lastmod>
   </url>
   <url>
     <loc>https://sjacobozavaleta.github.io/index.html</loc>
-    <lastmod>2024-05-25T23:06:10.411Z</lastmod>
+    <lastmod>2024-07-08T00:45:42.567Z</lastmod>
   </url>
   <url>
     <loc>https://sjacobozavaleta.github.io/blogs/index.html</loc>
-    <lastmod>2024-05-22T17:33:00.204Z</lastmod>
+    <lastmod>2024-05-22T17:33:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://sjacobozavaleta.github.io/blogs/posts/2023/research/03/b1_3.html</loc>
@@ -459,5 +459,9 @@
   <url>
     <loc>https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/b3_1.html</loc>
     <lastmod>2024-05-25T04:56:37.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/b1_1.html</loc>
+    <lastmod>2024-07-08T00:44:22.238Z</lastmod>
   </url>
 </urlset>

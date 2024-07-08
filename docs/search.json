@@ -2066,5 +2066,75 @@
     "title": "Evaluating artificial intelligence: How data science and statistics can make sense of AI models",
     "section": "Closing thoughts: What would you say to the AI Safety Summit?",
     "text": "Closing thoughts: What would you say to the AI Safety Summit?\nAndrew Garrett: If you were at the AI Safety Summit and you could make one point very succinctly, what would it be?\nMartin Goodson: You’re focusing on the wrong things.\nMark Levene: What’s important is to have an interdisciplinary team that will advise the government, rather than to build these institutes, and that this team should be independent and a team which will change over time, and it needs to be inclusive.\nMihaela van der Schaar: AI safety is complex, and we need to realise that people need to have the right expertise to be able to really understand the risks. And there is risk, as I mentioned before, of potential collusion, where people are both building the AI and saying it’s safe, and we need to separate these two worlds.\nDetlef Nauck: Focus on the data, not the models. That’s what’s important to build AI.\n\nDiscover more Viewpoints\n\n\n\n\n\nCopyright and licence\n\n© 2023 Royal Statistical Society\n\n\nImages by Wes Cockx & Google DeepMind / Better Images of AI / AI large language models / Licenced by CC-BY 4.0.\n\n\n\nHow to cite\n\nTarran, Brian. 2023. “Evaluating artificial intelligence: How data science and statistics can make sense of AI models.” Real World Data Science, December 6, 2023. URL"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "",
+    "text": "Ruta de trabajo para utilizar archivos URDF"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#utilizando-un-plugin-para-exportacion",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#utilizando-un-plugin-para-exportacion",
+    "title": "Usando archivos URDF para crear tu robot",
+    "section": "Utilizando un Plugin para Exportacion",
+    "text": "Utilizando un Plugin para Exportacion\nExisten múltiples"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#consideraciones-cad",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#consideraciones-cad",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Consideraciones CAD",
+    "text": "Consideraciones CAD\nYa sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como “top-down” y “bottom-up”) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o “links” y “joints” como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:\n\n\n\n\n\n\n\n\nG\n\n\ncluster_0\n\nCAD\n\n\ncluster_1\n\nURDF\n\n\n\nRaiz\n\nRaiz\n\n\n\nComponente 1\n\nComponente 1\n\n\n\nRaiz-&gt;Componente 1\n\n\n\n\n\nComponente 2\n\nComponente 2\n\n\n\nRaiz-&gt;Componente 2\n\n\n\n\n\nCuerpo 1\n\nCuerpo 1\n\n\n\nComponente 1-&gt;Cuerpo 1\n\n\n\n\n\nCuerpo 2\n\nCuerpo 2\n\n\n\nComponente 1-&gt;Cuerpo 2\n\n\n\n\n\nCuerpo 3\n\nCuerpo 3\n\n\n\nComponente 1-&gt;Cuerpo 3\n\n\n\n\n\nCuerpo 4\n\nCuerpo 4\n\n\n\nComponente 2-&gt;Cuerpo 4\n\n\n\n\n\nCuerpo 5\n\nCuerpo 5\n\n\n\nComponente 2-&gt;Cuerpo 5\n\n\n\n\n\nCuerpo 6\n\nCuerpo 6\n\n\n\nComponente 2-&gt;Cuerpo 6\n\n\n\n\n\nBody 4, 5, 6\n\nBody 4, 5, 6\n\n\n\nBody 1, 2 y 3\n\nBody 1, 2 y 3\n\n\n\nLink 1\n\nLink 1\n\n\n\nLink 1-&gt;Body 1, 2 y 3\n\n\n\n\n\nLink 2\n\nLink 2\n\n\n\nLink 1-&gt;Link 2\n\n\nJoint 1\n\n\n\nLink 2-&gt;Body 4, 5, 6\n\n\n\n\n\n\n\n\nFigura 4: Relación entre los elementos entre los archivos CAD y URDF\n\n\n\n\n\nLa Figura 4 ejemplifica que es necesario que en Fusion 360, las partes principales del robot se definan como componentes, creados a partir de subpartes (cuerpos). Manteniendo esta relación en todo momento, se garantiza y facilita la definición de links y joints de forma correcta.\nEn esta oportunidad, se utilizó como ejemplo el robot colaborativo UR5 de Universal Robots a lo largo de todo el post. Así, en la Figura 5 se aprecia la jerarquía de los componentes y cuerpos creados durante el dibujo. Por ejemplo, el segundo eslabón se compone de 9 subpartes (de tipo “body” en Fusion 360), evitando la anidación de componentes en todo momento.\n\n\n\n\n\n\nFigura 5: Ruta de trabajo para utilizar archivos URDF"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#correcion-de-formato",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#correcion-de-formato",
+    "title": "Usando archivos URDF para crear tu robot",
+    "section": "Correcion de formato",
+    "text": "Correcion de formato"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#correcion-de-rutas",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#correcion-de-rutas",
+    "title": "Usando archivos URDF para crear tu robot",
+    "section": "Correcion de rutas",
+    "text": "Correcion de rutas"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#para-coppeliasim",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#para-coppeliasim",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Para CoppeliaSim",
+    "text": "Para CoppeliaSim\n\nDirigirse a la opción de importación según Modules -&gt; Importers -&gt; URDF importer.\nSeleccionar la opción Convex hull of non-convex collision links para mejorar el rendimiento de simulación según la Figura 6.\n\n\n\n\n\n\n\nFigura 6: Opciones de URDF importer\n\n\n\n\nFinalmente, el resultado se aprecia en la siguiente figura. Nótese la jerarquía de los elementos del robot, de forma secuencial, correspondiente a un robot de cadena abierta como el robot cooperativo UR5 en la Figura 7.\n\n\n\n\n\n\n\nFigura 7: Vista de CoppeliaSim\n\n\n\nPor otro lado, CoppeliaSim ofrece una gran cantidad de robots comerciales incluidos en el programa para arrastrar al espacio de trabajo y comenzar a trabajar. Esto reduce el tiempo de creación del modelo cuando se pretende utilizar algún robot comercial disponible, como Sawyer, Kuka LBR4, Franka Emika Panda, etc. La Figura 8 muestra la simulación cinemática por defecto luego de importar el robot desde el panel navegador de robots.\n\n\n\n\n\n\nFigura 8: Simulación del robot UR5 integrado en CoppeliaSim\n\n\n\n¡Y ahí lo tienes! Siguiendo estos sencillos pasos, puedes crear y exportar tus propios archivos URDF desde Fusion 360, y usarlos para simular tus robots en CoppeliaSim o cualquier otro simulador compatible con URDF. ¡Feliz simulación!"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#consideraciones-cad-1",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#consideraciones-cad-1",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Consideraciones CAD",
+    "text": "Consideraciones CAD\nPara generar correctamente el archivo URDF, se requiere: - Los eslabones del robot deben definirse como componentes. - El componente base debe renombrarse como base_link.\n- Cada componente debe contener únicamente cuerpos simples. No utilizar componentes anidados.\n- Cuando se definen las relaciones de articulación (joint): 1. Se selecciona primero el eslabón hijo (child link) como Componente 1. 2. Luego, el eslabón padre (parent link) como Componente 2. 3. Verificar que el movimiento del grado de libertad (por ejemplo, de rotación o traslación) siga el eje de rotación +Z."
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#configuración-básica",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#configuración-básica",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Configuración básica",
+    "text": "Configuración básica\nLa relación entre elementos se aprecia de forma intuitiva en la Figura 1. Un ejemplo de código básico y su representación gráfica se aprecian en la Figura 2.\n\n\n\n\n\n\n\n\nDetalle de un eslabón\n\n\n\n\n\n\n\nRelación eslabón-articulación\n\n\n\n\n\n\n\n\n\nRelación entre eslabones\n\n\n\n\n\n\nFigura 1: Representación de links, joints y sus orígenes utilizados en URDF\n\n\n\n\n\n\n\n\n 1 &lt;robot name=\"test_robot\"&gt;\n 2   &lt;link name=\"link1\" /&gt;\n 3   &lt;link name=\"link2\" /&gt;\n 4   &lt;link name=\"link3\" /&gt;\n 5   &lt;link name=\"link4\" /&gt;\n 6 \n 7   &lt;joint name=\"joint1\" type=\"continuous\"&gt;\n 8     &lt;parent link=\"link1\"/&gt;\n 9     &lt;child link=\"link2\"/&gt;\n10     &lt;origin xyz=\"5 3 0\" rpy=\"0 0 0\" /&gt;\n11     &lt;axis xyz=\"-0.9 0.15 0\" /&gt;\n12   &lt;/joint&gt;\n13 \n14   &lt;joint name=\"joint2\" type=\"continuous\"&gt;\n15     &lt;parent link=\"link1\"/&gt;\n16     &lt;child link=\"link3\"/&gt;\n17     &lt;origin xyz=\"-2 5 0\" rpy=\"0 0 1.57\" /&gt;\n18     &lt;axis xyz=\"-0.707 0.707 0\" /&gt;\n19   &lt;/joint&gt;\n20 \n21   &lt;joint name=\"joint3\" type=\"continuous\"&gt;\n22     &lt;parent link=\"link3\"/&gt;\n23     &lt;child link=\"link4\"/&gt;\n24     &lt;origin xyz=\"5 0 0\" rpy=\"0 0 -1.57\" /&gt;\n25     &lt;axis xyz=\"0.707 -0.707 0\" /&gt;\n26   &lt;/joint&gt;\n27 &lt;/robot&gt;\n\n\n\n\n\nVisualización con Graphviz\n\n\n\n\n\n\nFigura 2: Formato URDF y su representación gráfica de los elementos del robot\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nPara una descripción más detallada sobre el formato URDF y su configuración, se recomienda visitar la documentación URDF en ROS o algunas notas."
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#aplicaciones",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#aplicaciones",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Aplicaciones",
+    "text": "Aplicaciones\n\n\n\n\n\n\n\n\nEn Omniverse\n\n\n\n\n\n\n\nEn Rviz\n\n\n\n\n\n\nFigura 3: Ejemplos de robots importados como URDF"
+  },
+  {
+    "objectID": "blogs/posts/2024/robotics/01/b1_1.html#modificando-nuestro-archivo",
+    "href": "blogs/posts/2024/robotics/01/b1_1.html#modificando-nuestro-archivo",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Modificando nuestro archivo",
+    "text": "Modificando nuestro archivo\n\nDentro del conjunto de la carpeta exportada, centrarse en las carpetas \\urdf y \\meshes que contienen el archivo URDF y los archivos de modelo 3D.\nCambiar la extensión del archivo URDF de .xacro por .urdf.\nVerificar que el nombre de los archivos mesh (formato STL) referenciados dentro del archivo URDF coincidan con sus archivos en la carpeta \\meshes. Si no, corregir.\nCorregir todos los enlaces de referencia en los entornos &lt;geometry&gt; del archivo URDF:\n\nDel siguiente código:\n\n\n&lt;geometry&gt;\n &lt;mesh filename=\"file://$(find UR5_description)/meshes/base_link.stl\" scale=\"0.001 0.001 0.001\"/&gt;\n&lt;/geometry&gt;\n\nReemplazar así:\n\n&lt;geometry&gt;\n  &lt;mesh filename=\"package://meshes/base_link.stl\" scale=\"0.001 0.001 0.001\"/&gt;\n&lt;/geometry&gt;\n\n\n\n\n\n\n\nTip\n\n\n\nPara verificar si nuestro archivo URDF se creó correctamente antes de importarlo a algún simulador, podemos utilizar un visualizador como RViz en Ubuntu. Sin embargo, para los usuarios de Windows, la aplicación urdf-loaders de gkjohnson nos permite visualizar y manipular de forma intuitiva el resultado de nuestro robot en línea. Incluso, viene un ejemplo de un robot hexápodo ATHLETE. Para nuestro"
   }
 ]

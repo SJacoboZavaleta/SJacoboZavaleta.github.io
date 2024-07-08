@@ -5,17 +5,702 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Third Foundation</title>
+<title>Third Foundation: Una bóveda en la web</title>
 <link>https://sjacobozavaleta.github.io/latest-content.html</link>
 <atom:link href="https://sjacobozavaleta.github.io/latest-content.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
 <url>https://sjacobozavaleta.github.io/images/Logo_ThirdFoundation150px</url>
-<title>Third Foundation</title>
+<title>Third Foundation: Una bóveda en la web</title>
 <link>https://sjacobozavaleta.github.io/latest-content.html</link>
 </image>
-<generator>quarto-1.4.551</generator>
-<lastBuildDate>Sat, 25 May 2024 04:56:37 GMT</lastBuildDate>
+<generator>quarto-1.5.45</generator>
+<lastBuildDate>Mon, 08 Jul 2024 00:44:22 GMT</lastBuildDate>
+<item>
+  <title>Desde Fusion 360 a URDF: Construye y Simula tu Robot</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/b1_1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/logos_URDF_pathway.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Ruta de trabajo para utilizar archivos URDF</figcaption>
+</figure>
+</div>
+<section id="qué-es-urdf" class="level1">
+<h1>¿Qué es URDF?</h1>
+<p>El formato unificado de descripción de robótica (URDF) es un tipo de archivo XML que incluye la descripción física de un robot. Es básicamente un modelo 3D con información sobre articulaciones, motores, masa, etc. Estos archivos se ejecutan a través del Sistema Operativo de Robots (ROS). Los datos del archivo informan al operador humano sobre el aspecto y las capacidades del robot antes de que comiencen a operarlo.</p>
+<p>Estos archivos también se utilizan en simuladores para probar el comportamiento del robot antes de su despliegue en el mundo real, o en la creación de un gemelo digital para la visualización en tiempo real y bidireccional del estado de un dispositivo robótico.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Muchos fabricantes de robots tienen modelos URDF de sus dispositivos disponibles para descargar. Pero si no es el caso, se tendrá que crear desde cero. La solución más práctica es generarlo a partir de un dibujo CAD 3D, dado que permite crear formas y relaciones mecánicas complejas, manteniendo una relación eslabón-articulación completamente referenciada y necesaria en el archivo URDF.</p>
+</div>
+</div>
+<section id="configuración-básica" class="level2">
+<h2 class="anchored" data-anchor-id="configuración-básica">Configuración básica</h2>
+<p>La relación entre elementos se aprecia de forma intuitiva en la Figura&nbsp;1. Un ejemplo de código básico y su representación gráfica se aprecian en la Figura&nbsp;2.</p>
+<div id="fig-rosURDF" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rosURDF-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/link.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Detalle de un eslabón</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/joint.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Relación eslabón-articulación</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/joint_link.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Relación entre eslabones</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rosURDF-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Representación de links, joints y sus orígenes utilizados en URDF
+</figcaption>
+</figure>
+</div>
+<div id="fig-ejemplo-urdf" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemplo-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"> 1 &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">robot</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"test_robot"</span>&gt;</span>
+<span id="cb1-2"> 2   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link1"</span> /&gt;</span>
+<span id="cb1-3"> 3   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link2"</span> /&gt;</span>
+<span id="cb1-4"> 4   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link3"</span> /&gt;</span>
+<span id="cb1-5"> 5   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link4"</span> /&gt;</span>
+<span id="cb1-6"> 6 </span>
+<span id="cb1-7"> 7   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"joint1"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"continuous"</span>&gt;</span>
+<span id="cb1-8"> 8     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">parent</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link1"</span>/&gt;</span>
+<span id="cb1-9"> 9     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">child</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link2"</span>/&gt;</span>
+<span id="cb1-10">10     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">origin</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5 3 0"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> rpy=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0 0 0"</span> /&gt;</span>
+<span id="cb1-11">11     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">axis</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-0.9 0.15 0"</span> /&gt;</span>
+<span id="cb1-12">12   &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span>&gt;</span>
+<span id="cb1-13">13 </span>
+<span id="cb1-14">14   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"joint2"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"continuous"</span>&gt;</span>
+<span id="cb1-15">15     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">parent</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link1"</span>/&gt;</span>
+<span id="cb1-16">16     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">child</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link3"</span>/&gt;</span>
+<span id="cb1-17">17     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">origin</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-2 5 0"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> rpy=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0 0 1.57"</span> /&gt;</span>
+<span id="cb1-18">18     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">axis</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-0.707 0.707 0"</span> /&gt;</span>
+<span id="cb1-19">19   &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span>&gt;</span>
+<span id="cb1-20">20 </span>
+<span id="cb1-21">21   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"joint3"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"continuous"</span>&gt;</span>
+<span id="cb1-22">22     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">parent</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link3"</span>/&gt;</span>
+<span id="cb1-23">23     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">child</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link4"</span>/&gt;</span>
+<span id="cb1-24">24     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">origin</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5 0 0"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> rpy=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0 0 -1.57"</span> /&gt;</span>
+<span id="cb1-25">25     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">axis</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.707 -0.707 0"</span> /&gt;</span>
+<span id="cb1-26">26   &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span>&gt;</span>
+<span id="cb1-27">27 &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">robot</span>&gt;</span></code></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/graphiz.png" class="img-fluid figure-img" style="width:65.0%"></p>
+<figcaption>Visualización con Graphviz</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemplo-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Formato URDF y su representación gráfica de los elementos del robot
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para una descripción más detallada sobre el formato URDF y su configuración, se recomienda visitar la <a href="https://wiki.ros.org/urdf/Tutorials/Create%20your%20own%20urdf%20file">documentación URDF en ROS</a> o algunas <a href="https://abedgnu.github.io/Notes-ROS/chapters/ROS/10_robot_modeling/urdf.html">notas</a>.</p>
+</div>
+</div>
+</section>
+<section id="aplicaciones" class="level2">
+<h2 class="anchored" data-anchor-id="aplicaciones">Aplicaciones</h2>
+<div id="fig-aplicaciones" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aplicaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/urdf_franka.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://docs.omniverse.nvidia.com/kit/docs/omniverse-urdf-importer/latest/index.html">En Omniverse</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/urdf_rviz.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><a href="https://discourse.ros.org/t/urdf-viz-urdf-file-viewer/2472">En Rviz</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aplicaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Ejemplos de robots importados como URDF
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="creando-tu-robot" class="level1">
+<h1>Creando tu robot</h1>
+<section id="consideraciones-cad" class="level2">
+<h2 class="anchored" data-anchor-id="consideraciones-cad">Consideraciones CAD</h2>
+<p>Ya sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como <em>“top-down”</em> y <em>“bottom-up”</em>) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o <em>“links”</em> y <em>“joints”</em> como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-cad-urdf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cad-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 961.00 262.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 258.6)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-258.6 957,-258.6 957,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<polygon fill="#03aed2" stroke="#03aed2" points="8,-8 8,-246.6 673,-246.6 673,-8 8,-8"></polygon>
+<text text-anchor="middle" x="340.5" y="-230" font-family="Helvetica,Arial,sans-serif" font-size="14.00">CAD</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1</title>
+<polygon fill="#feffd2" stroke="#feffd2" points="681,-8 681,-246.6 945,-246.6 945,-8 681,-8"></polygon>
+<text text-anchor="middle" x="813" y="-230" font-family="Helvetica,Arial,sans-serif" font-size="14.00">URDF</text>
+</g>
+<!-- Raiz -->
+<g id="node1" class="node">
+<title>Raiz</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="356" cy="-195.8" rx="28.97" ry="18"></ellipse>
+<text text-anchor="middle" x="356" y="-191.6" font-family="Helvetica,sans-serif" font-size="14.00">Raiz</text>
+</g>
+<!-- Componente 1 -->
+<g id="node2" class="node">
+<title>Componente 1</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="216" cy="-107" rx="67.76" ry="18"></ellipse>
+<text text-anchor="middle" x="216" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Componente 1</text>
+</g>
+<!-- Raiz&#45;&gt;Componente 1 -->
+<g id="edge1" class="edge">
+<title>Raiz-&gt;Componente 1</title>
+<path fill="none" stroke="black" d="M336.24,-182.55C313.89,-168.69 277.11,-145.89 250.1,-129.14"></path>
+<polygon fill="black" stroke="black" points="251.69,-126.01 241.35,-123.72 248,-131.96 251.69,-126.01"></polygon>
+</g>
+<!-- Componente 2 -->
+<g id="node3" class="node">
+<title>Componente 2</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="452" cy="-107" rx="67.76" ry="18"></ellipse>
+<text text-anchor="middle" x="452" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Componente 2</text>
+</g>
+<!-- Raiz&#45;&gt;Componente 2 -->
+<g id="edge2" class="edge">
+<title>Raiz-&gt;Componente 2</title>
+<path fill="none" stroke="black" d="M371.85,-180.47C386.63,-167.1 408.93,-146.94 426.26,-131.27"></path>
+<polygon fill="black" stroke="black" points="428.76,-133.73 433.83,-124.43 424.07,-128.54 428.76,-133.73"></polygon>
+</g>
+<!-- Cuerpo 1 -->
+<g id="node4" class="node">
+<title>Cuerpo 1</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="63" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 1</text>
+</g>
+<!-- Componente 1&#45;&gt;Cuerpo 1 -->
+<g id="edge3" class="edge">
+<title>Componente 1-&gt;Cuerpo 1</title>
+<path fill="none" stroke="black" d="M183.93,-91.12C159.76,-79.9 126.55,-64.49 101.04,-52.65"></path>
+<polygon fill="black" stroke="black" points="102.22,-49.34 91.68,-48.31 99.28,-55.69 102.22,-49.34"></polygon>
+</g>
+<!-- Cuerpo 2 -->
+<g id="node5" class="node">
+<title>Cuerpo 2</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="174" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="174" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 2</text>
+</g>
+<!-- Componente 1&#45;&gt;Cuerpo 2 -->
+<g id="edge4" class="edge">
+<title>Componente 1-&gt;Cuerpo 2</title>
+<path fill="none" stroke="black" d="M206.05,-89.17C200.97,-80.6 194.7,-69.99 189.05,-60.44"></path>
+<polygon fill="black" stroke="black" points="191.99,-58.53 183.88,-51.71 185.96,-62.09 191.99,-58.53"></polygon>
+</g>
+<!-- Cuerpo 3 -->
+<g id="node6" class="node">
+<title>Cuerpo 3</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="285" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="285" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 3</text>
+</g>
+<!-- Componente 1&#45;&gt;Cuerpo 3 -->
+<g id="edge5" class="edge">
+<title>Componente 1-&gt;Cuerpo 3</title>
+<path fill="none" stroke="black" d="M232.35,-89.17C241.24,-80.02 252.38,-68.56 262.12,-58.54"></path>
+<polygon fill="black" stroke="black" points="264.78,-60.83 269.24,-51.22 259.76,-55.95 264.78,-60.83"></polygon>
+</g>
+<!-- Cuerpo 4 -->
+<g id="node7" class="node">
+<title>Cuerpo 4</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="396" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="396" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 4</text>
+</g>
+<!-- Componente 2&#45;&gt;Cuerpo 4 -->
+<g id="edge6" class="edge">
+<title>Componente 2-&gt;Cuerpo 4</title>
+<path fill="none" stroke="black" d="M438.73,-89.17C431.82,-80.42 423.25,-69.55 415.6,-59.85"></path>
+<polygon fill="black" stroke="black" points="418.12,-57.39 409.18,-51.71 412.62,-61.72 418.12,-57.39"></polygon>
+</g>
+<!-- Cuerpo 5 -->
+<g id="node8" class="node">
+<title>Cuerpo 5</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="507" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="507" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 5</text>
+</g>
+<!-- Componente 2&#45;&gt;Cuerpo 5 -->
+<g id="edge7" class="edge">
+<title>Componente 2-&gt;Cuerpo 5</title>
+<path fill="none" stroke="black" d="M465.03,-89.17C471.82,-80.42 480.24,-69.55 487.75,-59.85"></path>
+<polygon fill="black" stroke="black" points="490.7,-61.75 494.06,-51.71 485.17,-57.47 490.7,-61.75"></polygon>
+</g>
+<!-- Cuerpo 6 -->
+<g id="node9" class="node">
+<title>Cuerpo 6</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="618" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="618" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 6</text>
+</g>
+<!-- Componente 2&#45;&gt;Cuerpo 6 -->
+<g id="edge8" class="edge">
+<title>Componente 2-&gt;Cuerpo 6</title>
+<path fill="none" stroke="black" d="M486.4,-91.29C513.15,-79.84 550.32,-63.95 578.33,-51.97"></path>
+<polygon fill="black" stroke="black" points="580.01,-55.06 587.83,-47.9 577.26,-48.62 580.01,-55.06"></polygon>
+</g>
+<!-- Body 4, 5, 6 -->
+<g id="node10" class="node">
+<title>Body 4, 5, 6</title>
+<ellipse fill="#f3b95f" stroke="#f3b95f" cx="878" cy="-34" rx="58.54" ry="18"></ellipse>
+<text text-anchor="middle" x="878" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Body 4, 5, 6</text>
+</g>
+<!-- Body 1, 2 y 3 -->
+<g id="node11" class="node">
+<title>Body 1, 2 y 3</title>
+<ellipse fill="#f3b95f" stroke="#f3b95f" cx="752" cy="-107" rx="63.2" ry="18"></ellipse>
+<text text-anchor="middle" x="752" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Body 1, 2 y 3</text>
+</g>
+<!-- Link 1 -->
+<g id="node12" class="node">
+<title>Link 1</title>
+<polygon fill="#ff7d29" stroke="#ff7d29" points="845,-213.8 791,-213.8 791,-177.8 845,-177.8 845,-213.8"></polygon>
+<text text-anchor="middle" x="818" y="-191.6" font-family="Helvetica,sans-serif" font-size="14.00">Link 1</text>
+</g>
+<!-- Link 1&#45;&gt;Body 1, 2 y 3 -->
+<g id="edge11" class="edge">
+<title>Link 1-&gt;Body 1, 2 y 3</title>
+<path fill="none" stroke="black" d="M804.96,-177.65C795.23,-164.85 781.78,-147.16 770.87,-132.82"></path>
+<polygon fill="black" stroke="black" points="773.63,-130.66 764.79,-124.82 768.05,-134.9 773.63,-130.66"></polygon>
+</g>
+<!-- Link 2 -->
+<g id="node13" class="node">
+<title>Link 2</title>
+<polygon fill="#ffbf78" stroke="#ffbf78" points="885,-125 833.21,-107 885,-89 936.79,-107 885,-125"></polygon>
+<text text-anchor="middle" x="885" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Link 2</text>
+</g>
+<!-- Link 1&#45;&gt;Link 2 -->
+<g id="edge10" class="edge">
+<title>Link 1-&gt;Link 2</title>
+<path fill="none" stroke="black" d="M831.24,-177.65C841.88,-163.86 856.91,-144.39 868.37,-129.55"></path>
+<polygon fill="black" stroke="black" points="871.3,-131.47 874.64,-121.42 865.76,-127.2 871.3,-131.47"></polygon>
+<text text-anchor="middle" x="875.86" y="-147.2" font-family="Cambria,sans-serif" font-size="14.00">Joint 1</text>
+</g>
+<!-- Link 2&#45;&gt;Body 4, 5, 6 -->
+<g id="edge9" class="edge">
+<title>Link 2-&gt;Body 4, 5, 6</title>
+<path fill="none" stroke="black" d="M883.38,-89.53C882.59,-81.52 881.62,-71.68 880.72,-62.57"></path>
+<polygon fill="black" stroke="black" points="884.18,-61.98 879.71,-52.37 877.21,-62.66 884.18,-61.98"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cad-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Relación entre los elementos entre los archivos CAD y URDF
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La Figura&nbsp;4 ejemplifica que es necesario que en Fusion 360, las partes principales del robot se definan como <strong>componentes</strong>, creados a partir de subpartes (<strong>cuerpos</strong>). Manteniendo esta relación en todo momento, se garantiza y facilita la definición de links y joints de forma correcta.</p>
+<p>En esta oportunidad, se utilizó como ejemplo el robot colaborativo <strong>UR5</strong> de <a href="https://www.universal-robots.com/products/ur5-robot/">Universal Robots</a> a lo largo de todo el post. Así, en la Figura&nbsp;5 se aprecia la jerarquía de los componentes y cuerpos creados durante el dibujo. Por ejemplo, el segundo eslabón se compone de 9 subpartes (de tipo <em>“body”</em> en Fusion 360), evitando la anidación de componentes en todo momento.</p>
+<div id="fig-robotCad" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-robotCad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/fusion2.png" class="img-fluid quarto-figure quarto-figure-left figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-robotCad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Ruta de trabajo para utilizar archivos URDF
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="exportando-un-archivo-urdf" class="level1">
+<h1>Exportando un archivo URDF</h1>
+<p>Luego de realizar nuestro dibujo CAD, se recomienda utilizar un plugin para generar de forma automática y bajo la mesa, todo el código necesario para la descripción gráfica de nuestro robot. Esto nos permite centrarnos principalmente en lo importante durante el modelado. Sin embargo, dado que cada plugin disponible depende del software utilizado, como Solidworks, FreeCAD o Fusion360.</p>
+<p>Para ello, se utilizó el plugin <a href="https://github.com/dheena2k2/fusion2urdf-ros2">dheena2k2/fusion2urdf-ros2</a> para generar archivos URDF orientado a ROS2, el mismo que se basó en otro plugin de <a href="https://github.com/dheena2k2/fusion2urdf-ros2">syuntoku14/fusion2urdf</a> orientado a ROS1.</p>
+<section id="consideraciones-cad-1" class="level2">
+<h2 class="anchored" data-anchor-id="consideraciones-cad-1">Consideraciones CAD</h2>
+<p>Para generar correctamente el archivo URDF, se requiere: - Los eslabones del robot deben definirse como componentes. - El componente base debe renombrarse como <code>base_link</code>.<br>
+- Cada componente debe contener únicamente cuerpos simples. No utilizar componentes anidados.<br>
+- Cuando se definen las relaciones de articulación (joint): 1. Se selecciona primero el eslabón hijo (child link) como Componente 1. 2. Luego, el eslabón padre (parent link) como Componente 2. 3. Verificar que el movimiento del grado de libertad (por ejemplo, de rotación o traslación) siga el eje de rotación +Z.</p>
+</section>
+<section id="modificando-nuestro-archivo" class="level2">
+<h2 class="anchored" data-anchor-id="modificando-nuestro-archivo">Modificando nuestro archivo</h2>
+<ol type="1">
+<li>Dentro del conjunto de la carpeta exportada, centrarse en las carpetas <code>\urdf</code> y <code>\meshes</code> que contienen el archivo URDF y los archivos de modelo 3D.</li>
+<li>Cambiar la extensión del archivo URDF de <code>.xacro</code> por <code>.urdf</code>.</li>
+<li>Verificar que el nombre de los archivos <em>mesh</em> (formato STL) referenciados dentro del archivo URDF coincidan con sus archivos en la carpeta <code>\meshes</code>. Si no, corregir.</li>
+<li>Corregir todos los enlaces de referencia en los entornos <code>&lt;geometry&gt;</code> del archivo URDF:
+<ol type="1">
+<li>Del siguiente código:<br>
+</li>
+</ol>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1">&lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span>
+<span id="cb2-2"> &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">mesh</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> filename=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"file://$(find UR5_description)/meshes/base_link.stl"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> scale=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.001 0.001 0.001"</span>/&gt;</span>
+<span id="cb2-3">&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span></code></pre></div>
+<ol start="2" type="1">
+<li>Reemplazar así:</li>
+</ol>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb3-1">&lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span>
+<span id="cb3-2">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">mesh</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> filename=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"package://meshes/base_link.stl"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> scale=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.001 0.001 0.001"</span>/&gt;</span>
+<span id="cb3-3">&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span></code></pre></div></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para verificar si nuestro archivo URDF se creó correctamente antes de importarlo a algún simulador, podemos utilizar un visualizador como RViz en Ubuntu. Sin embargo, para los usuarios de Windows, la aplicación <a href="https://gkjohnson.github.io/urdf-loaders/javascript/example/bundle/index.html">urdf-loaders</a> de <a href="https://github.com/gkjohnson/urdf-loaders/">gkjohnson</a> nos permite visualizar y manipular de forma intuitiva el resultado de nuestro robot en línea. Incluso, viene un ejemplo de un robot hexápodo ATHLETE. Para nuestro</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/visorURDF.jpeg" class="img-fluid quarto-figure quarto-figure-center" style="width:45.0%" alt="Robot ATHLETE"> <img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/visorURDF_ur5.jpeg" class="img-fluid quarto-figure quarto-figure-center" style="width:45.0%" alt="Robot UR5"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="importando-a-tu-simulador" class="level1">
+<h1>Importando a tu simulador</h1>
+<p>Finalmente, dependiendo del simulador a utilizar, se requerirán ciertos parámetros o configuraciones para importar correctamente el robot en formato URDF. En cualquier caso, se debe verificar siempre la relación entre links y joints y cómo reaccionan al movimiento de los joints.</p>
+<section id="para-coppeliasim" class="level2">
+<h2 class="anchored" data-anchor-id="para-coppeliasim">Para CoppeliaSim</h2>
+<ol type="1">
+<li>Dirigirse a la opción de importación según <code>Modules -&gt; Importers -&gt; URDF importer</code>.</li>
+<li>Seleccionar la opción <code>Convex hull of non-convex collision links</code> para mejorar el rendimiento de simulación según la Figura&nbsp;6.</li>
+</ol>
+<div id="fig-urdfImporter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-urdfImporter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/coppeliaSim_1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-urdfImporter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Opciones de URDF importer
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Finalmente, el resultado se aprecia en la siguiente figura. Nótese la jerarquía de los elementos del robot, de forma secuencial, correspondiente a un robot de cadena abierta como el robot cooperativo UR5 en la Figura&nbsp;7.</li>
+</ol>
+<div id="fig-coppeliaSimWithRobot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coppeliaSimWithRobot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/coppeliaSim_2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coppeliaSimWithRobot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Vista de CoppeliaSim
+</figcaption>
+</figure>
+</div>
+<p>Por otro lado, CoppeliaSim ofrece una gran cantidad de robots comerciales incluidos en el programa para arrastrar al espacio de trabajo y comenzar a trabajar. Esto reduce el tiempo de creación del modelo cuando se pretende utilizar algún robot comercial disponible, como Sawyer, Kuka LBR4, Franka Emika Panda, etc. La Figura&nbsp;8 muestra la simulación cinemática por defecto luego de importar el robot desde el panel navegador de robots.</p>
+<div id="fig-ur5-coppelia-incluido" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ur5-coppelia-incluido-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/UR5.gif" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ur5-coppelia-incluido-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Simulación del robot UR5 integrado en CoppeliaSim
+</figcaption>
+</figure>
+</div>
+<p>¡Y ahí lo tienes! Siguiendo estos sencillos pasos, puedes crear y exportar tus propios archivos URDF desde Fusion 360, y usarlos para simular tus robots en CoppeliaSim o cualquier otro simulador compatible con URDF. ¡Feliz simulación!</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>URDF</category>
+  <category>CAD</category>
+  <category>ROS</category>
+  <category>CoppeliaSim</category>
+  <guid>https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/b1_1.html</guid>
+  <pubDate>Mon, 08 Jul 2024 00:44:22 GMT</pubDate>
+  <media:content url="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/01/images/thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</title>
   <dc:creator>Sergio Jácobo</dc:creator>
@@ -661,11 +1346,13 @@ font-style: inherit;"># Definir server</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(input, output, session) {</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-1-100" class="code-annotation-target">  getComposition <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(input_table) {</span>
 <span id="annotated-cell-1-101">    proportionConversion <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -877,6 +1564,7 @@ background-color: null;
 font-style: inherit;">"foodTable1_rows_selected"</span>)</span>
 <span id="annotated-cell-1-149">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">length</span>(input<span class="sc" style="color: #5E5E5E;
@@ -909,6 +1597,7 @@ background-color: null;
 font-style: inherit;">"Datos copiados al portapapeles"</span>)</span>
 <span id="annotated-cell-1-153">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="annotated-cell-1-154">      shinyjs<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -934,6 +1623,7 @@ background-color: null;
 font-style: inherit;">"foodTable2_rows_selected"</span>)</span>
 <span id="annotated-cell-1-160">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">length</span>(input<span class="sc" style="color: #5E5E5E;
@@ -966,6 +1656,7 @@ background-color: null;
 font-style: inherit;">"Datos copiados al portapapeles"</span>)</span>
 <span id="annotated-cell-1-164">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="annotated-cell-1-165">      shinyjs<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1678,6 +2369,7 @@ background-color: null;
 font-style: inherit;">% Área de encabezados y modificación de plantilla</span></span>
 <span id="cb1-2"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">document</span>}</span>
@@ -1699,6 +2391,7 @@ background-color: null;
 font-style: inherit;">biblio.bib</span>}</span>
 <span id="cb1-7"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">document</span>}    </span></code></pre></div></li>
@@ -1720,6 +2413,7 @@ font-style: inherit;">\addbibresource</span>{biblio.bib}</span>
 <span id="cb2-5"></span>
 <span id="cb2-6"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">document</span>}</span>
@@ -1734,6 +2428,7 @@ background-color: null;
 font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span>
 <span id="cb2-10"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">document</span>}  </span></code></pre></div></li>
@@ -1763,21 +2458,26 @@ font-style: inherit;">document</span>}  </span></code></pre></div></li>
 <tr class="odd">
 <td style="text-align: left;"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\section</span>{Título 1}</span>
 <span id="cb3-2"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\subsection</span>{Título 2}</span>
 <span id="cb3-3"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\subsubsection</span>{Título 3}</span>
 <span id="cb3-4"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\subsubsection</span>{Título 4}</span></code></pre></div></td>
 <td style="text-align: center;"><img src="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/1_titulos.png" class="img-fluid" width="190"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">figure</span>}</span>
@@ -1794,11 +2494,13 @@ background-color: null;
 font-style: inherit;">\caption</span>{A cat.}</span>
 <span id="cb4-5">  <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\label</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">fig:etiqueta1</span>}</span>
 <span id="cb4-6"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">figure</span>}</span></code></pre></div>
@@ -1839,11 +2541,13 @@ background-color: null;
 font-style: inherit;">subfig</span>}</span>
 <span id="cb5-3"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">document</span>}</span>
 <span id="cb5-4"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">figure</span>}</span>
@@ -1873,16 +2577,19 @@ background-color: null;
 font-style: inherit;">\caption</span>{Animales random.}</span>
 <span id="cb5-9">  <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\label</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">fig:etiqueta2</span>}</span>
 <span id="cb5-10"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">figure</span>}</span>
 <span id="cb5-11"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">document</span>}</span></code></pre></div>
@@ -1900,6 +2607,7 @@ font-style: inherit;">document</span>}</span></code></pre></div>
 <tr class="odd">
 <td><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">table</span>}</span>
@@ -1908,6 +2616,7 @@ background-color: null;
 font-style: inherit;">\centering</span></span>
 <span id="cb6-3"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">tabular</span>}{l|r}</span>
@@ -1942,6 +2651,7 @@ background-color: null;
 font-style: inherit;">\hline</span></span>
 <span id="cb6-11"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">tabular</span>}</span>
@@ -1950,11 +2660,13 @@ background-color: null;
 font-style: inherit;">\caption</span>{Ejemplo de una tabla.}</span>
 <span id="cb6-13"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\label</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">tab:Tabla1</span>}</span>
 <span id="cb6-14"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">table</span>}</span></code></pre></div></td>
@@ -1964,6 +2676,7 @@ font-style: inherit;">table</span>}</span></code></pre></div></td>
 </table>
 <div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">equation</span>}</span>
@@ -1991,6 +2704,7 @@ background-color: null;
 font-style: inherit;">{eq:Eq1}</span></span>
 <span id="cb7-4"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">equation</span>}</span></code></pre></div>
@@ -2018,6 +2732,7 @@ Tip
 <tr class="odd">
 <td><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">enumerate</span>}</span>
@@ -2029,12 +2744,14 @@ background-color: null;
 font-style: inherit;">\item</span> Tuesday</span>
 <span id="cb8-4"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">enumerate</span>}</span>
 <span id="cb8-5"></span>
 <span id="cb8-6"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">itemize</span>}</span>
@@ -2046,6 +2763,7 @@ background-color: null;
 font-style: inherit;">\item</span> Discord</span>
 <span id="cb8-9"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\end</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">itemize</span>}</span></code></pre></div></td>
@@ -2055,13 +2773,16 @@ font-style: inherit;">itemize</span>}</span></code></pre></div></td>
 </table>
 <div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\section</span>{Como referenciar una figura, una tabla y citar}</span>
 <span id="cb9-2">Realizando una referencia cruzada a la Figura <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\ref</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">fig:Figura1</span>}. A la Tabla <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\ref</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">tab:Tabla1</span>}.</span></code></pre></div>
@@ -2072,13 +2793,16 @@ font-style: inherit;">tab:Tabla1</span>}.</span></code></pre></div>
 </div>
 <div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\section</span>{Como citar y agregar una lista de referencias}</span>
 <span id="cb10-2">Aquí va una cita textual <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\cite</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">Abbasi2019</span>} y otra de tipo indirecta <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">\citep</span>{<span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">Anwar2020</span>} en formato APA7.</span>
