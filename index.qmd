@@ -16,6 +16,7 @@ listing:
     - /blogs
     - /ideas
     - "!index.qmd"
+    - "!/blogs/posts/2024/robotics/02/b1_2.qmd"
     # - "!b3_1.qmd" Articulo que debe ignorarse ya que esta en el banner principal
     sort: "date desc"
     type: grid
@@ -37,23 +38,23 @@ listing:
     feed: false
 toc: false
 ---
-<!-- ::: {.content-container}
-::: {.top-story .purple-background}
-<a href="/ideas/posts/2024/05/14/ai-series-2.qmd">
+::: {.content-container}
+::: {.top-story .orange-background}
+<a href="/blogs/posts/2024/robotics/02/b1_2.qmd">
 
 ::: grid
 ::: {.g-col-12 .g-col-lg-4 .top-story-text}
-While AI algorithms can pose a number of challenges in terms of the size and sophistication of the algorithms, ethical issues can be the hardest and most important aspect to get right. Olivia Varley-Winter looks at why ethical considerations need to come first when working with AI and what this means. 
+Aprende a desarrollar una impresionante aplicación 3D para visualizar robots en URDF usando Three.js. Descubre cómo construir un visor interactivo con un ejemplo real del robot UR5 de Universal Robotics. ¡Empieza a transformar tus modelos en experiencias visuales impactantes!
 :::
 ::: {.g-col-12 .g-col-lg-8 .top-story-img}
-![](ideas/posts/2024/05/14/images/Eleanor_Roosevelt-991724.jpg)
+![](/blogs/posts/2024/robotics/02/images/thumbnail.png)
 :::
 :::
 
 </a>
 
 :::
-::: -->
+:::
 
 <!-- <div class="animate-title" style="justify-content: center; align-items: center; text-align: center;">
   <h1>The cat and the hat.</h1>

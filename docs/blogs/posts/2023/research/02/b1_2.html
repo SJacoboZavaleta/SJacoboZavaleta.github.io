@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sergio Jácobo">
 <meta name="description" content="Aprende a manejar tablas en \LaTeX de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta esencial para tus publicaciones.">
 
-<title>Third Foundation - Eficiencia en LaTeX: Manejo de Tablas Simplificado</title>
+<title>Eficiencia en LaTeX: Manejo de Tablas Simplificado – Third Foundation: Una bóveda en la web</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z04NPGMGNV"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Z04NPGMGNV', { 'anonymize_ip': true});
+</script>
 <!-- Thank you to Ben Ruijl for the progress bar code!
 
 Ben is on GitHub here: https://github.com/benruijl
@@ -77,16 +86,16 @@ And you can see the original code here: https://github.com/quarto-dev/quarto-cli
 
 
 
-<meta property="og:title" content="Third Foundation - Eficiencia en LaTeX: Manejo de Tablas Simplificado">
+<meta property="og:title" content="Third Foundation: Una bóveda en la web - Eficiencia en LaTeX: Manejo de Tablas Simplificado">
 <meta property="og:description" content="Aprende a manejar tablas en \(\LaTeX\) de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta esencial para tus publicaciones.">
-<meta property="og:image" content="https://github.com/blogs/posts/2023/research/02/images/thumbnail.jpg">
-<meta property="og:site_name" content="Third Foundation">
-<meta property="og:image:alt" content="Imagen de Computadora portátil, Macbook y Reflexión.">
-<meta name="twitter:title" content="Third Foundation - Eficiencia en LaTeX: Manejo de Tablas Simplificado">
+<meta property="og:image" content="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/thumbnail.jpg">
+<meta property="og:site_name" content="Third Foundation: Una bóveda en la web">
+<meta property="og:image:alt" content="Third Foundation logo">
+<meta name="twitter:title" content="Third Foundation: Una bóveda en la web - Eficiencia en LaTeX: Manejo de Tablas Simplificado">
 <meta name="twitter:description" content="Aprende a manejar tablas en \(\LaTeX\) de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta esencial para tus publicaciones.">
-<meta name="twitter:image" content="https://github.com/blogs/posts/2023/research/02/images/thumbnail.jpg">
-<meta name="twitter:site" content="@rwdatasci">
-<meta name="twitter:image:alt" content="Imagen de Computadora portátil, Macbook y Reflexión.">
+<meta name="twitter:image" content="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/images/thumbnail.jpg">
+<meta name="twitter:image:alt" content="Third Foundation logo">
+<meta name="twitter:site" content="@JacoboZavaleta">
 <meta name="twitter:card" content="summary_large_image">
 </head><body class="nav-fixed"><div id="progress-bar" style="width: 0%; height:4px; background-color: #01204E; position: fixed; top: 0px; z-index: 2000;"></div>
 
@@ -123,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -168,7 +177,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -182,7 +191,7 @@ window.Quarto = {
 <span class="menu-text">Ideas</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sobre-ttf" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sobre-ttf" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Sobre tTF</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-sobre-ttf">    
@@ -202,7 +211,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -236,7 +245,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 de mayo de 2024</p>
+        <p class="date">11 de julio de 2024</p>
       </div>
     </div>
     
@@ -266,7 +275,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/edit/main/blogs/posts/2023/research/02/b1_2.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -319,7 +328,7 @@ window.Quarto = {
 <p>Utilizando el entorno de tablas por defecto <code>\begin{tabular}...\end{tabular}</code>, el resultado es el siguiente:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-tabla0" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tabla0" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/30.png" class="img-fluid figure-img" style="width:80.0%">
@@ -385,7 +394,7 @@ Importante
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-tabla1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tabla1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/40.png" class="img-fluid figure-img" style="width:100.0%">
@@ -397,7 +406,7 @@ Figura&nbsp;2: Caso 1
 </div>
 </div>
 </div>
-<div id="fig-tabla2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tabla2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/50.png" class="img-fluid figure-img" style="width:70.0%">
@@ -409,7 +418,7 @@ Figura&nbsp;3: Caso 2
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-tabla3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tabla3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/60.png" class="img-fluid figure-img" style="width:50.0%">
@@ -444,7 +453,7 @@ Figura&nbsp;4: Caso 3
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-tabla4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tabla4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/700.png" class="img-fluid figure-img" style="width:100.0%">
@@ -461,7 +470,7 @@ Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan c
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-tabla9" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tabla9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/120.png" class="img-fluid figure-img" style="width:70.0%">
@@ -496,7 +505,7 @@ Figura&nbsp;6: Caso 6
 <dl>
 <dt>Como citar</dt>
 <dd>
-Jácobo-Zavaleta, Sergio. 2023. <em>“Eficiencia en LaTeX: Manejo de Tablas Simplificado”</em>, Third Foundation, 24 de mayo, 2024. <a href="link">URL</a>
+Jácobo-Zavaleta, Sergio. 2024. <em>“Eficiencia en LaTeX: Manejo de Tablas Simplificado”</em>, Third Foundation, 24 de mayo, 2024. <a href="https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/b1_2.html">URL</a>
 </dd>
 </dl>
 </div>
@@ -544,18 +553,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -587,15 +585,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/github\.com\/");
+      var filterRegex = new RegExp("https:\/\/sjacobozavaleta\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -945,7 +965,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/edit/main/blogs/posts/2023/research/02/b1_2.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p><a href="../../../../../ts-and-cs.html">Términos y Condiciones</a> <br> <a href="../../../../../CODE_OF_CONDUCT.html">Código de Conducta</a></p>
 </div>

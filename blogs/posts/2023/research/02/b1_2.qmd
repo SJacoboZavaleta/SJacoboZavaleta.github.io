@@ -160,7 +160,7 @@ Copyright y licencia
 
 ::: {.g-col-12 .g-col-md-6}
 Como citar  
-:   Jácobo-Zavaleta, Sergio. 2023. *"Eficiencia en LaTeX: Manejo de Tablas Simplificado"*, Third Foundation, 24 de mayo, 2024. [URL](link)
+:   Jácobo-Zavaleta, Sergio. 2024. *"Eficiencia en LaTeX: Manejo de Tablas Simplificado"*, Third Foundation, 24 de mayo, 2024. [URL](https://sjacobozavaleta.github.io/blogs/posts/2023/research/02/b1_2.html)
 :::
 
 :::

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sergio Jácobo">
 <meta name="description" content="Guía Básica para LaTeX Online y Gestión de Referencias con Zotero">
 
-<title>Third Foundation - Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube</title>
+<title>Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube – Third Foundation: Una bóveda en la web</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -103,6 +103,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z04NPGMGNV"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Z04NPGMGNV', { 'anonymize_ip': true});
+</script>
 <!-- Thank you to Ben Ruijl for the progress bar code!
 
 Ben is on GitHub here: https://github.com/benruijl
@@ -111,20 +120,20 @@ And you can see the original code here: https://github.com/quarto-dev/quarto-cli
 
 
 
-<meta property="og:title" content="Third Foundation - Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube">
+<meta property="og:title" content="Third Foundation: Una bóveda en la web - Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube">
 <meta property="og:description" content="Guía Básica para LaTeX Online y Gestión de Referencias con Zotero">
-<meta property="og:image" content="https://github.com/blogs/posts/2023/research/01/images/thumbnail.png">
-<meta property="og:site_name" content="Third Foundation">
+<meta property="og:image" content="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/thumbnail.png">
+<meta property="og:site_name" content="Third Foundation: Una bóveda en la web">
+<meta property="og:image:alt" content="Third Foundation logo">
 <meta property="og:image:height" content="1799">
 <meta property="og:image:width" content="4482">
-<meta property="og:image:alt" content="A young man sits in front of a computer keyboard, surrounded by monitors and books and with computer cables covering various surfaces.">
-<meta name="twitter:title" content="Third Foundation - Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube">
+<meta name="twitter:title" content="Third Foundation: Una bóveda en la web - Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube">
 <meta name="twitter:description" content="Guía Básica para LaTeX Online y Gestión de Referencias con Zotero">
-<meta name="twitter:image" content="https://github.com/blogs/posts/2023/research/01/images/thumbnail.png">
-<meta name="twitter:site" content="@rwdatasci">
+<meta name="twitter:image" content="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/images/thumbnail.png">
+<meta name="twitter:image:alt" content="Third Foundation logo">
+<meta name="twitter:site" content="@JacoboZavaleta">
 <meta name="twitter:image-height" content="1799">
 <meta name="twitter:image-width" content="4482">
-<meta name="twitter:image:alt" content="A young man sits in front of a computer keyboard, surrounded by monitors and books and with computer cables covering various surfaces.">
 <meta name="twitter:card" content="summary_large_image">
 </head><body class="nav-fixed"><div id="progress-bar" style="width: 0%; height:4px; background-color: #01204E; position: fixed; top: 0px; z-index: 2000;"></div>
 
@@ -161,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -206,7 +215,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -220,7 +229,7 @@ window.Quarto = {
 <span class="menu-text">Ideas</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sobre-ttf" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sobre-ttf" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Sobre tTF</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-sobre-ttf">    
@@ -240,7 +249,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -276,7 +285,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 de mayo de 2024</p>
+        <p class="date">11 de julio de 2024</p>
       </div>
     </div>
     
@@ -305,7 +314,7 @@ window.Quarto = {
   <li><a href="#sentencias-necesarias" id="toc-sentencias-necesarias" class="nav-link" data-scroll-target="#sentencias-necesarias">Sentencias necesarias</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/edit/main/blogs/posts/2023/research/01/b1_1.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -591,7 +600,7 @@ Precaución
 </section>
 <section id="sentencias-necesarias" class="level2">
 <h2 class="anchored" data-anchor-id="sentencias-necesarias">Sentencias necesarias</h2>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 58%">
 <col style="width: 41%">
@@ -658,7 +667,7 @@ Tip
 <p><img src="images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
 <col style="width: 54%">
@@ -702,7 +711,7 @@ Tip
 <p>Mayor información acerca de los entornos de ecuaciones, símbolos matemáticos (<span class="math inline">\(\alpha, \gamma, \pm\)</span>, etc.) y sus ejemplos pueden encontrarse en esta corta pero útil <a href="http://tug.ctan.org/info/short-math-guide/short-math-guide.pdf">guía</a> (en inglés).</p>
 </div>
 </div>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 55%">
@@ -774,7 +783,7 @@ Más allá de esta guía
 <dl>
 <dt>Como citar</dt>
 <dd>
-Jácobo-Zavaleta, Sergio. 2023. <em>“Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube”</em>, Third Foundation, 10 de marzo, 2023. <a href="link">URL</a>
+Jácobo-Zavaleta, Sergio. 2023. <em>“Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube”</em>, Third Foundation, 10 de marzo, 2023. <a href="https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/b1_1.html">URL</a>
 </dd>
 </dl>
 </div>
@@ -827,18 +836,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -870,15 +868,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/github\.com\/");
+      var filterRegex = new RegExp("https:\/\/sjacobozavaleta\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1228,7 +1248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/edit/main/blogs/posts/2023/research/01/b1_1.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p><a href="../../../../../ts-and-cs.html">Términos y Condiciones</a> <br> <a href="../../../../../CODE_OF_CONDUCT.html">Código de Conducta</a></p>
 </div>

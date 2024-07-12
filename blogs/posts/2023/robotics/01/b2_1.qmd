@@ -117,7 +117,7 @@ Copyright y licencia
 
 ::: {.g-col-12 .g-col-md-6}
 Como citar  
-:   Jácobo-Zavaleta, Sergio. 2023. *"Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial"* Third Foundation, 10 de marzo, 2023. [URL](link)
+:   Jácobo-Zavaleta, Sergio. 2023. *"Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial"* Third Foundation, 10 de marzo, 2023. [URL](https://sjacobozavaleta.github.io/blogs/posts/2023/robotics/01/b2_1.html)
 :::
 
 :::

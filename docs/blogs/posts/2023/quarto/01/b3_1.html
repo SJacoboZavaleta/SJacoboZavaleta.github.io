@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sergio Jácobo">
 <meta name="description" content="Basado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.">
 
-<title>Third Foundation - Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</title>
+<title>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición) – Third Foundation: Una bóveda en la web</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -122,20 +122,20 @@ And you can see the original code here: https://github.com/quarto-dev/quarto-cli
 
 
 
-<meta property="og:title" content="Third Foundation - Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)">
+<meta property="og:title" content="Third Foundation: Una bóveda en la web - Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)">
 <meta property="og:description" content="Basado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.">
 <meta property="og:image" content="https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/images/thumbnail.png">
-<meta property="og:site_name" content="Third Foundation">
+<meta property="og:site_name" content="Third Foundation: Una bóveda en la web">
+<meta property="og:image:alt" content="Third Foundation logo">
 <meta property="og:image:height" content="895">
 <meta property="og:image:width" content="1254">
-<meta property="og:image:alt" content="Portada del Tablas Peruanas de composición de Alimentos por el Ministerio de Salud del Perú">
-<meta name="twitter:title" content="Third Foundation - Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)">
+<meta name="twitter:title" content="Third Foundation: Una bóveda en la web - Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)">
 <meta name="twitter:description" content="Basado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.">
 <meta name="twitter:image" content="https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/images/thumbnail.png">
-<meta name="twitter:creator" content="@JacoboZavaleta">
+<meta name="twitter:image:alt" content="Third Foundation logo">
+<meta name="twitter:site" content="@JacoboZavaleta">
 <meta name="twitter:image-height" content="895">
 <meta name="twitter:image-width" content="1254">
-<meta name="twitter:image:alt" content="Portada del Tablas Peruanas de composición de Alimentos por el Ministerio de Salud del Perú">
 <meta name="twitter:card" content="summary_large_image">
 </head><body class="nav-fixed"><div id="progress-bar" style="width: 0%; height:4px; background-color: #01204E; position: fixed; top: 0px; z-index: 2000;"></div>
 
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function() {
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="menu-text">Ideas</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sobre-ttf" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sobre-ttf" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Sobre tTF</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-sobre-ttf">    
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">24 de mayo de 2024</p>
+        <p class="date">11 de julio de 2024</p>
       </div>
     </div>
     
@@ -602,7 +602,7 @@ Más allá de esta guía
 <dl>
 <dt>Como citar</dt>
 <dd>
-Jácobo-Zavaleta, Sergio. 2024. <em>“Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana (4ta Edición)”</em> Third Foundation, 24 de mayo, 2024. <a href="link">URL</a>
+Jácobo-Zavaleta, Sergio. 2024. <em>“Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana (4ta Edición)”</em> Third Foundation, 24 de mayo, 2024. <a href="https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/b3_1.html">URL</a>
 </dd>
 </dl>
 </div>
@@ -649,18 +649,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -692,7 +681,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/sjacobozavaleta\.github\.io\/");
@@ -700,7 +711,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

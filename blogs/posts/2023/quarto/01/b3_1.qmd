@@ -267,7 +267,7 @@ Copyright y licencia
 
 ::: {.g-col-12 .g-col-md-6}
 Como citar  
-:   Jácobo-Zavaleta, Sergio. 2024. *"Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana (4ta Edición)"* Third Foundation, 24 de mayo, 2024. [URL](link)
+:   Jácobo-Zavaleta, Sergio. 2024. *"Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana (4ta Edición)"* Third Foundation, 24 de mayo, 2024. [URL](https://sjacobozavaleta.github.io/blogs/posts/2023/quarto/01/b3_1.html)
 :::
 
 :::

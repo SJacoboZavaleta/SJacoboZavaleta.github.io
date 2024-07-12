@@ -346,7 +346,7 @@ Copyright y licencia
 
 ::: {.g-col-12 .g-col-md-6}
 Como citar  
-:   Jácobo-Zavaleta, Sergio. 2023. *"Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube"*, Third Foundation, 10 de marzo, 2023. [URL](link)
+:   Jácobo-Zavaleta, Sergio. 2023. *"Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube"*, Third Foundation, 10 de marzo, 2023. [URL](https://sjacobozavaleta.github.io/blogs/posts/2023/research/01/b1_1.html)
 :::
 
 :::
