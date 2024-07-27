@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">11 de julio de 2024</p>
+        <p class="date">27 de julio de 2024</p>
       </div>
     </div>
     
@@ -325,234 +325,250 @@ document.addEventListener("DOMContentLoaded", function() {
 <span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar datos para alimentos individuales</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>alimentos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"alimentos.csv"</span>)</span>
-<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(alimentos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"COD"</span>,<span class="st">"NUM"</span>,<span class="st">"ALIMENTO"</span>,<span class="st">"ENERCKCAL"</span>,<span class="st">"ENERCKJ"</span>,<span class="st">"WATER"</span>,<span class="st">"PROCNT"</span>,</span>
-<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"FAT"</span>,<span class="st">"CHOCDF"</span>,<span class="st">"ZN"</span>,<span class="st">"K"</span>,<span class="st">"P"</span>,<span class="st">"FE"</span>,<span class="st">"VITA"</span>,</span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"ACFOLIC"</span>,<span class="st">"VITC"</span>,<span class="st">"NA"</span>)</span>
-<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a>alimentos <span class="ot">&lt;-</span> alimentos[,<span class="fu">c</span>(<span class="st">"COD"</span>,<span class="st">"NUM"</span>, <span class="st">"ALIMENTO"</span>, <span class="st">"ENERCKCAL"</span>, <span class="st">"ENERCKJ"</span>, <span class="st">"WATER"</span>, <span class="st">"PROCNT"</span>,</span>
-<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>,<span class="st">"ZN"</span>,<span class="st">"K"</span>,<span class="st">"P"</span>,<span class="st">"FE"</span>,<span class="st">"VITA"</span>,<span class="st">"ACFOLIC"</span>,<span class="st">"VITC"</span>,<span class="st">"NA"</span>)]</span>
-<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar datos para alimentos compuestos</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-16" class="code-annotation-target"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>platos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"alimentosCompuestos.csv"</span>)</span>
-<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(platos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"COD"</span>,<span class="st">"NUM"</span>,<span class="st">"ALIMENTO"</span>,<span class="st">"ENERCKCAL"</span>,<span class="st">"ENERCKJ"</span>,<span class="st">"WATER"</span>,<span class="st">"PROCNT"</span>,</span>
-<span id="annotated-cell-1-18"><a href="#annotated-cell-1-18" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"FAT"</span>,<span class="st">"CHOCDF"</span>,<span class="st">"CHOAVL"</span>,<span class="st">"FIBTG"</span>,<span class="st">"ASH"</span>,<span class="st">"CA"</span>,<span class="st">"P"</span>,<span class="st">"ZN"</span>,<span class="st">"FE"</span>,<span class="st">"VITA"</span>,<span class="st">"THIA"</span>,</span>
-<span id="annotated-cell-1-19"><a href="#annotated-cell-1-19" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"RIBF"</span>,<span class="st">"NIA"</span>,<span class="st">"VITC"</span>,<span class="st">"ACFOLIC"</span>,<span class="st">"NA"</span>,<span class="st">"K"</span>,<span class="st">"ESTRATO"</span>)</span>
-<span id="annotated-cell-1-20"><a href="#annotated-cell-1-20" aria-hidden="true" tabindex="-1"></a>platos <span class="ot">&lt;-</span> platos[,<span class="fu">c</span>(<span class="st">"COD"</span>,<span class="st">"NUM"</span>, <span class="st">"ALIMENTO"</span>, <span class="st">"ENERCKCAL"</span>, <span class="st">"ENERCKJ"</span>, <span class="st">"WATER"</span>, <span class="st">"PROCNT"</span>, <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>,</span>
-<span id="annotated-cell-1-21"><a href="#annotated-cell-1-21" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"ZN"</span>,<span class="st">"K"</span>,<span class="st">"P"</span>,<span class="st">"FE"</span>,<span class="st">"VITA"</span>,<span class="st">"ACFOLIC"</span>,<span class="st">"VITC"</span>,<span class="st">"NA"</span>)]</span>
-<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos tablas de Anexo</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-25" class="code-annotation-target"><a href="#annotated-cell-1-25" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span>, <span class="st">"J"</span>, <span class="st">"K"</span>, <span class="st">"L"</span>, <span class="st">"Q"</span>, <span class="st">"T"</span>, <span class="st">"U"</span>, <span class="st">"SE"</span>, <span class="st">"SS"</span>)</span>
-<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26" aria-hidden="true" tabindex="-1"></a>categoria <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cereales y derivados"</span>, <span class="st">"Verduras, hortalizas y derivados"</span>, <span class="st">"Frutas y derivados"</span>, </span>
-<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Grasas, aceites y oleaginosas"</span>,<span class="st">"Pescados y mariscos"</span>, <span class="st">"Carnes y derivados"</span>, </span>
-<span id="annotated-cell-1-28"><a href="#annotated-cell-1-28" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Leche y derivados"</span>, <span class="st">"Bebidas (alcohólicas y analcohólicas)"</span>, <span class="st">"Huevos y derivados"</span>,</span>
-<span id="annotated-cell-1-29"><a href="#annotated-cell-1-29" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Productos azucarados"</span>, <span class="st">"Misceláneos"</span>, <span class="st">"Alimentos infantiles"</span>, <span class="st">"Leguminosas y derivados"</span>, </span>
-<span id="annotated-cell-1-30"><a href="#annotated-cell-1-30" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Tubérculos, raíces y derivados"</span>, <span class="st">"Alimentos preparados (entrada)"</span>,</span>
-<span id="annotated-cell-1-31"><a href="#annotated-cell-1-31" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Alimentos preparados (segundo)"</span>)</span>
-<span id="annotated-cell-1-32"><a href="#annotated-cell-1-32" aria-hidden="true" tabindex="-1"></a>codigoGrupo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(codigo, categoria)</span>
-<span id="annotated-cell-1-33"><a href="#annotated-cell-1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(codigoGrupo) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Código"</span>, <span class="st">"Categoría"</span>)</span>
-<span id="annotated-cell-1-34"><a href="#annotated-cell-1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-35"><a href="#annotated-cell-1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-36"><a href="#annotated-cell-1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargas coódigos de componentes - Anexo</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-37" class="code-annotation-target"><a href="#annotated-cell-1-37" aria-hidden="true" tabindex="-1"></a>anexoCodigo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"anexosCodigoComponentes.csv"</span>)</span>
-<span id="annotated-cell-1-38"><a href="#annotated-cell-1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(anexoCodigo) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Componente"</span>,<span class="st">"Identificador INFOODS"</span>,<span class="st">"Unidad"</span>,<span class="st">"Comentario"</span>)</span>
-<span id="annotated-cell-1-39"><a href="#annotated-cell-1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-40"><a href="#annotated-cell-1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir interfaz</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-41" class="code-annotation-target"><a href="#annotated-cell-1-41" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-42" class="code-annotation-target"><a href="#annotated-cell-1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">includeCSS</span>(<span class="st">"styles.css"</span>),</span>
-<span id="annotated-cell-1-43"><a href="#annotated-cell-1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"</span>),</span>
-<span id="annotated-cell-1-44"><a href="#annotated-cell-1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(tags<span class="sc">$</span><span class="fu">a</span>(<span class="st">"Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima."</span>,</span>
-<span id="annotated-cell-1-45"><a href="#annotated-cell-1-45" aria-hidden="true" tabindex="-1"></a>            <span class="at">href=</span><span class="st">"https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos"</span>)),</span>
-<span id="annotated-cell-1-46"><a href="#annotated-cell-1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h3</span>(<span class="st">"Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."</span>),</span>
-<span id="annotated-cell-1-47"><a href="#annotated-cell-1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h3</span>(<span class="at">class =</span> <span class="st">"bold-text"</span>, <span class="st">"Nota: Composición en 100 g de alimento"</span>),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-48" class="code-annotation-target"><a href="#annotated-cell-1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">numericInput</span>(<span class="st">"proportion"</span>,<span class="st">"Nueva composición (gramos)?"</span>, <span class="at">value =</span> <span class="dv">100</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">500</span>),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-49" class="code-annotation-target"><a href="#annotated-cell-1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">useShinyjs</span>(),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-50" class="code-annotation-target"><a href="#annotated-cell-1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
-<span id="annotated-cell-1-51"><a href="#annotated-cell-1-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Alimentos individuales"</span>,</span>
-<span id="annotated-cell-1-52"><a href="#annotated-cell-1-52" aria-hidden="true" tabindex="-1"></a>             <span class="fu">dataTableOutput</span>(<span class="st">'foodTable1'</span>),</span>
-<span id="annotated-cell-1-53"><a href="#annotated-cell-1-53" aria-hidden="true" tabindex="-1"></a>             <span class="fu">h4</span>(<span class="at">class =</span> <span class="st">"bold-text"</span>, <span class="st">"Componentes seleccionados:"</span>),</span>
-<span id="annotated-cell-1-54"><a href="#annotated-cell-1-54" aria-hidden="true" tabindex="-1"></a>             <span class="fu">tableOutput</span>(<span class="st">"selectedData1"</span>),</span>
-<span id="annotated-cell-1-55"><a href="#annotated-cell-1-55" aria-hidden="true" tabindex="-1"></a>             <span class="fu">actionButton</span>(<span class="st">"copyButton1"</span>, <span class="st">"Copiar datos seleccionados"</span>)</span>
-<span id="annotated-cell-1-56"><a href="#annotated-cell-1-56" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="annotated-cell-1-57"><a href="#annotated-cell-1-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Alimentos en platos"</span>,</span>
-<span id="annotated-cell-1-58"><a href="#annotated-cell-1-58" aria-hidden="true" tabindex="-1"></a>             <span class="fu">dataTableOutput</span>(<span class="st">'foodTable2'</span>),</span>
-<span id="annotated-cell-1-59"><a href="#annotated-cell-1-59" aria-hidden="true" tabindex="-1"></a>             <span class="fu">h4</span>(<span class="st">"Componentes seleccionados:"</span>),</span>
-<span id="annotated-cell-1-60"><a href="#annotated-cell-1-60" aria-hidden="true" tabindex="-1"></a>             <span class="fu">tableOutput</span>(<span class="st">"selectedData2"</span>),</span>
-<span id="annotated-cell-1-61"><a href="#annotated-cell-1-61" aria-hidden="true" tabindex="-1"></a>             <span class="fu">actionButton</span>(<span class="st">"copyButton2"</span>, <span class="st">"Copiar datos seleccionados"</span>)</span>
-<span id="annotated-cell-1-62"><a href="#annotated-cell-1-62" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="annotated-cell-1-63"><a href="#annotated-cell-1-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Códigos y grupos"</span>,</span>
-<span id="annotated-cell-1-64"><a href="#annotated-cell-1-64" aria-hidden="true" tabindex="-1"></a>             <span class="fu">tableOutput</span>(<span class="st">'codigoGrupos'</span>),</span>
-<span id="annotated-cell-1-65"><a href="#annotated-cell-1-65" aria-hidden="true" tabindex="-1"></a>             <span class="fu">tableOutput</span>(<span class="st">'codigoComponentes'</span>)</span>
-<span id="annotated-cell-1-66"><a href="#annotated-cell-1-66" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="annotated-cell-1-67"><a href="#annotated-cell-1-67" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="annotated-cell-1-68"><a href="#annotated-cell-1-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hr</span>(),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-1-69" class="code-annotation-target"><a href="#annotated-cell-1-69" aria-hidden="true" tabindex="-1"></a>  tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="annotated-cell-1-70"><a href="#annotated-cell-1-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="st">"footer"</span>,</span>
-<span id="annotated-cell-1-71"><a href="#annotated-cell-1-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="st">"text-align: center; background-color: #333; color: #fff; padding: 20px;"</span>,</span>
-<span id="annotated-cell-1-72"><a href="#annotated-cell-1-72" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">h4</span>(<span class="st">"¿Te ha gustado esta App?"</span>),</span>
-<span id="annotated-cell-1-73"><a href="#annotated-cell-1-73" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">p</span>(</span>
-<span id="annotated-cell-1-74"><a href="#annotated-cell-1-74" aria-hidden="true" tabindex="-1"></a>      <span class="st">"¡Esta aplicación ha sido desarrollada con "</span>,</span>
-<span id="annotated-cell-1-75"><a href="#annotated-cell-1-75" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="annotated-cell-1-76"><a href="#annotated-cell-1-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">href =</span> <span class="st">"https://shiny.rstudio.com/"</span>,</span>
-<span id="annotated-cell-1-77"><a href="#annotated-cell-1-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">style =</span> <span class="st">"color: #ffcc00; font-weight: bold;"</span>,</span>
-<span id="annotated-cell-1-78"><a href="#annotated-cell-1-78" aria-hidden="true" tabindex="-1"></a>        <span class="st">"R Shiny"</span></span>
-<span id="annotated-cell-1-79"><a href="#annotated-cell-1-79" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="annotated-cell-1-80"><a href="#annotated-cell-1-80" aria-hidden="true" tabindex="-1"></a>      <span class="st">"!"</span></span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(alimentos) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"COD"</span>, <span class="st">"NUM"</span>, <span class="st">"ALIMENTO"</span>, <span class="st">"ENERCKCAL"</span>, <span class="st">"ENERCKJ"</span>, <span class="st">"WATER"</span>, <span class="st">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>, <span class="st">"ZN"</span>, <span class="st">"K"</span>, <span class="st">"P"</span>, <span class="st">"FE"</span>, <span class="st">"VITA"</span>,</span>
+<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ACFOLIC"</span>, <span class="st">"VITC"</span>, <span class="st">"NA"</span></span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a>alimentos <span class="ot">&lt;-</span> alimentos[, <span class="fu">c</span>(</span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"COD"</span>, <span class="st">"NUM"</span>, <span class="st">"ALIMENTO"</span>, <span class="st">"ENERCKCAL"</span>, <span class="st">"ENERCKJ"</span>, <span class="st">"WATER"</span>, <span class="st">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-16"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>, <span class="st">"ZN"</span>, <span class="st">"K"</span>, <span class="st">"P"</span>, <span class="st">"FE"</span>, <span class="st">"VITA"</span>, <span class="st">"ACFOLIC"</span>, <span class="st">"VITC"</span>, <span class="st">"NA"</span></span>
+<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17" aria-hidden="true" tabindex="-1"></a>)]</span>
+<span id="annotated-cell-1-18"><a href="#annotated-cell-1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-19"><a href="#annotated-cell-1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar datos para alimentos compuestos</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-20" class="code-annotation-target"><a href="#annotated-cell-1-20" aria-hidden="true" tabindex="-1"></a>platos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"alimentosCompuestos.csv"</span>)</span>
+<span id="annotated-cell-1-21"><a href="#annotated-cell-1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(platos) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"COD"</span>, <span class="st">"NUM"</span>, <span class="st">"ALIMENTO"</span>, <span class="st">"ENERCKCAL"</span>, <span class="st">"ENERCKJ"</span>, <span class="st">"WATER"</span>, <span class="st">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>, <span class="st">"CHOAVL"</span>, <span class="st">"FIBTG"</span>, <span class="st">"ASH"</span>, <span class="st">"CA"</span>, <span class="st">"P"</span>, <span class="st">"ZN"</span>, <span class="st">"FE"</span>, <span class="st">"VITA"</span>, <span class="st">"THIA"</span>,</span>
+<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RIBF"</span>, <span class="st">"NIA"</span>, <span class="st">"VITC"</span>, <span class="st">"ACFOLIC"</span>, <span class="st">"NA"</span>, <span class="st">"K"</span>, <span class="st">"ESTRATO"</span></span>
+<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26" aria-hidden="true" tabindex="-1"></a>platos <span class="ot">&lt;-</span> platos[, <span class="fu">c</span>(</span>
+<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"COD"</span>, <span class="st">"NUM"</span>, <span class="st">"ALIMENTO"</span>, <span class="st">"ENERCKCAL"</span>, <span class="st">"ENERCKJ"</span>, <span class="st">"WATER"</span>, <span class="st">"PROCNT"</span>, <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>,</span>
+<span id="annotated-cell-1-28"><a href="#annotated-cell-1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ZN"</span>, <span class="st">"K"</span>, <span class="st">"P"</span>, <span class="st">"FE"</span>, <span class="st">"VITA"</span>, <span class="st">"ACFOLIC"</span>, <span class="st">"VITC"</span>, <span class="st">"NA"</span></span>
+<span id="annotated-cell-1-29"><a href="#annotated-cell-1-29" aria-hidden="true" tabindex="-1"></a>)]</span>
+<span id="annotated-cell-1-30"><a href="#annotated-cell-1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-31"><a href="#annotated-cell-1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-32"><a href="#annotated-cell-1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos tablas de Anexo</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-33" class="code-annotation-target"><a href="#annotated-cell-1-33" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>, <span class="st">"H"</span>, <span class="st">"J"</span>, <span class="st">"K"</span>, <span class="st">"L"</span>, <span class="st">"Q"</span>, <span class="st">"T"</span>, <span class="st">"U"</span>, <span class="st">"SE"</span>, <span class="st">"SS"</span>)</span>
+<span id="annotated-cell-1-34"><a href="#annotated-cell-1-34" aria-hidden="true" tabindex="-1"></a>categoria <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="annotated-cell-1-35"><a href="#annotated-cell-1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cereales y derivados"</span>, <span class="st">"Verduras, hortalizas y derivados"</span>, <span class="st">"Frutas y derivados"</span>,</span>
+<span id="annotated-cell-1-36"><a href="#annotated-cell-1-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Grasas, aceites y oleaginosas"</span>, <span class="st">"Pescados y mariscos"</span>, <span class="st">"Carnes y derivados"</span>,</span>
+<span id="annotated-cell-1-37"><a href="#annotated-cell-1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Leche y derivados"</span>, <span class="st">"Bebidas (alcohólicas y analcohólicas)"</span>, <span class="st">"Huevos y derivados"</span>,</span>
+<span id="annotated-cell-1-38"><a href="#annotated-cell-1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Productos azucarados"</span>, <span class="st">"Misceláneos"</span>, <span class="st">"Alimentos infantiles"</span>, <span class="st">"Leguminosas y derivados"</span>,</span>
+<span id="annotated-cell-1-39"><a href="#annotated-cell-1-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tubérculos, raíces y derivados"</span>, <span class="st">"Alimentos preparados (entrada)"</span>,</span>
+<span id="annotated-cell-1-40"><a href="#annotated-cell-1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Alimentos preparados (segundo)"</span></span>
+<span id="annotated-cell-1-41"><a href="#annotated-cell-1-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-1-42"><a href="#annotated-cell-1-42" aria-hidden="true" tabindex="-1"></a>codigoGrupo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(codigo, categoria)</span>
+<span id="annotated-cell-1-43"><a href="#annotated-cell-1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(codigoGrupo) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Código"</span>, <span class="st">"Categoría"</span>)</span>
+<span id="annotated-cell-1-44"><a href="#annotated-cell-1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-45"><a href="#annotated-cell-1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-46"><a href="#annotated-cell-1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargas coódigos de componentes - Anexo</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-47" class="code-annotation-target"><a href="#annotated-cell-1-47" aria-hidden="true" tabindex="-1"></a>anexoCodigo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"anexosCodigoComponentes.csv"</span>)</span>
+<span id="annotated-cell-1-48"><a href="#annotated-cell-1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(anexoCodigo) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Componente"</span>, <span class="st">"Identificador INFOODS"</span>, <span class="st">"Unidad"</span>, <span class="st">"Comentario"</span>)</span>
+<span id="annotated-cell-1-49"><a href="#annotated-cell-1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-50"><a href="#annotated-cell-1-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir interfaz</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-51" class="code-annotation-target"><a href="#annotated-cell-1-51" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-52" class="code-annotation-target"><a href="#annotated-cell-1-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">includeCSS</span>(<span class="st">"styles.css"</span>),</span>
+<span id="annotated-cell-1-53"><a href="#annotated-cell-1-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">"TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"</span>),</span>
+<span id="annotated-cell-1-54"><a href="#annotated-cell-1-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h2</span>(tags<span class="sc">$</span><span class="fu">a</span>(<span class="st">"Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima."</span>,</span>
+<span id="annotated-cell-1-55"><a href="#annotated-cell-1-55" aria-hidden="true" tabindex="-1"></a>        <span class="at">href =</span> <span class="st">"https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos"</span></span>
+<span id="annotated-cell-1-56"><a href="#annotated-cell-1-56" aria-hidden="true" tabindex="-1"></a>    )),</span>
+<span id="annotated-cell-1-57"><a href="#annotated-cell-1-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="st">"Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."</span>),</span>
+<span id="annotated-cell-1-58"><a href="#annotated-cell-1-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h3</span>(<span class="at">class =</span> <span class="st">"bold-text"</span>, <span class="st">"Nota: Composición en 100 g de alimento"</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-59" class="code-annotation-target"><a href="#annotated-cell-1-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">numericInput</span>(<span class="st">"proportion"</span>, <span class="st">"Nueva composición (gramos)?"</span>, <span class="at">value =</span> <span class="dv">100</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">500</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-60" class="code-annotation-target"><a href="#annotated-cell-1-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">useShinyjs</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-61" class="code-annotation-target"><a href="#annotated-cell-1-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabsetPanel</span>(</span>
+<span id="annotated-cell-1-62"><a href="#annotated-cell-1-62" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabPanel</span>(</span>
+<span id="annotated-cell-1-63"><a href="#annotated-cell-1-63" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Alimentos individuales"</span>,</span>
+<span id="annotated-cell-1-64"><a href="#annotated-cell-1-64" aria-hidden="true" tabindex="-1"></a>            <span class="fu">dataTableOutput</span>(<span class="st">"foodTable1"</span>),</span>
+<span id="annotated-cell-1-65"><a href="#annotated-cell-1-65" aria-hidden="true" tabindex="-1"></a>            <span class="fu">h4</span>(<span class="at">class =</span> <span class="st">"bold-text"</span>, <span class="st">"Componentes seleccionados:"</span>),</span>
+<span id="annotated-cell-1-66"><a href="#annotated-cell-1-66" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tableOutput</span>(<span class="st">"selectedData1"</span>),</span>
+<span id="annotated-cell-1-67"><a href="#annotated-cell-1-67" aria-hidden="true" tabindex="-1"></a>            <span class="fu">actionButton</span>(<span class="st">"copyButton1"</span>, <span class="st">"Copiar datos seleccionados"</span>)</span>
+<span id="annotated-cell-1-68"><a href="#annotated-cell-1-68" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="annotated-cell-1-69"><a href="#annotated-cell-1-69" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabPanel</span>(</span>
+<span id="annotated-cell-1-70"><a href="#annotated-cell-1-70" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Alimentos en platos"</span>,</span>
+<span id="annotated-cell-1-71"><a href="#annotated-cell-1-71" aria-hidden="true" tabindex="-1"></a>            <span class="fu">dataTableOutput</span>(<span class="st">"foodTable2"</span>),</span>
+<span id="annotated-cell-1-72"><a href="#annotated-cell-1-72" aria-hidden="true" tabindex="-1"></a>            <span class="fu">h4</span>(<span class="st">"Componentes seleccionados:"</span>),</span>
+<span id="annotated-cell-1-73"><a href="#annotated-cell-1-73" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tableOutput</span>(<span class="st">"selectedData2"</span>),</span>
+<span id="annotated-cell-1-74"><a href="#annotated-cell-1-74" aria-hidden="true" tabindex="-1"></a>            <span class="fu">actionButton</span>(<span class="st">"copyButton2"</span>, <span class="st">"Copiar datos seleccionados"</span>)</span>
+<span id="annotated-cell-1-75"><a href="#annotated-cell-1-75" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="annotated-cell-1-76"><a href="#annotated-cell-1-76" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabPanel</span>(</span>
+<span id="annotated-cell-1-77"><a href="#annotated-cell-1-77" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Códigos y grupos"</span>,</span>
+<span id="annotated-cell-1-78"><a href="#annotated-cell-1-78" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tableOutput</span>(<span class="st">"codigoGrupos"</span>),</span>
+<span id="annotated-cell-1-79"><a href="#annotated-cell-1-79" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tableOutput</span>(<span class="st">"codigoComponentes"</span>)</span>
+<span id="annotated-cell-1-80"><a href="#annotated-cell-1-80" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="annotated-cell-1-81"><a href="#annotated-cell-1-81" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="annotated-cell-1-82"><a href="#annotated-cell-1-82" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">p</span>(</span>
-<span id="annotated-cell-1-83"><a href="#annotated-cell-1-83" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, "</span>,</span>
-<span id="annotated-cell-1-84"><a href="#annotated-cell-1-84" aria-hidden="true" tabindex="-1"></a>      tags<span class="sc">$</span><span class="fu">a</span>(</span>
-<span id="annotated-cell-1-85"><a href="#annotated-cell-1-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">href =</span> <span class="st">"https://shiny.rstudio.com/tutorial/"</span>,</span>
-<span id="annotated-cell-1-86"><a href="#annotated-cell-1-86" aria-hidden="true" tabindex="-1"></a>        <span class="at">style =</span> <span class="st">"color: #ffcc00; font-weight: bold;"</span>,</span>
-<span id="annotated-cell-1-87"><a href="#annotated-cell-1-87" aria-hidden="true" tabindex="-1"></a>        <span class="st">"haz clic aquí"</span></span>
-<span id="annotated-cell-1-88"><a href="#annotated-cell-1-88" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="annotated-cell-1-89"><a href="#annotated-cell-1-89" aria-hidden="true" tabindex="-1"></a>      <span class="st">" para acceder al tutorial oficial."</span></span>
-<span id="annotated-cell-1-90"><a href="#annotated-cell-1-90" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="annotated-cell-1-91"><a href="#annotated-cell-1-91" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">p</span>(</span>
-<span id="annotated-cell-1-92"><a href="#annotated-cell-1-92" aria-hidden="true" tabindex="-1"></a>      <span class="st">"¡Comienza a explorar el poder de Shiny hoy mismo!"</span>,</span>
-<span id="annotated-cell-1-93"><a href="#annotated-cell-1-93" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="st">"font-weight: bold;"</span></span>
-<span id="annotated-cell-1-94"><a href="#annotated-cell-1-94" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="annotated-cell-1-95"><a href="#annotated-cell-1-95" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="annotated-cell-1-96"><a href="#annotated-cell-1-96" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="annotated-cell-1-97"><a href="#annotated-cell-1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-98"><a href="#annotated-cell-1-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir server</span></span>
-<span id="annotated-cell-1-99"><a href="#annotated-cell-1-99" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-1-100" class="code-annotation-target"><a href="#annotated-cell-1-100" aria-hidden="true" tabindex="-1"></a>  getComposition <span class="ot">&lt;-</span> <span class="cf">function</span>(input_table) {</span>
-<span id="annotated-cell-1-101"><a href="#annotated-cell-1-101" aria-hidden="true" tabindex="-1"></a>    proportionConversion <span class="ot">&lt;-</span> input<span class="sc">$</span>proportion</span>
-<span id="annotated-cell-1-102"><a href="#annotated-cell-1-102" aria-hidden="true" tabindex="-1"></a>    idx <span class="ot">&lt;-</span> input[[input_table]]</span>
-<span id="annotated-cell-1-103"><a href="#annotated-cell-1-103" aria-hidden="true" tabindex="-1"></a>    selectedRow <span class="ot">&lt;-</span> alimentos[idx, <span class="fu">c</span>(<span class="st">"PROCNT"</span>, <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>,<span class="st">"ZN"</span>,<span class="st">"K"</span>,<span class="st">"P"</span>,<span class="st">"FE"</span>,<span class="st">"VITA"</span>,<span class="st">"ACFOLIC"</span>,<span class="st">"VITC"</span>,<span class="st">"NA"</span>)]</span>
-<span id="annotated-cell-1-104"><a href="#annotated-cell-1-104" aria-hidden="true" tabindex="-1"></a>    selectedRow <span class="ot">&lt;-</span> selectedRow <span class="sc">*</span> proportionConversion <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="annotated-cell-1-105"><a href="#annotated-cell-1-105" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(selectedRow) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="annotated-cell-1-106"><a href="#annotated-cell-1-106" aria-hidden="true" tabindex="-1"></a>    selectedRow</span>
-<span id="annotated-cell-1-107"><a href="#annotated-cell-1-107" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="annotated-cell-1-108"><a href="#annotated-cell-1-108" aria-hidden="true" tabindex="-1"></a>  </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-1-109" class="code-annotation-target"><a href="#annotated-cell-1-109" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>foodTable1 <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>(</span>
-<span id="annotated-cell-1-110"><a href="#annotated-cell-1-110" aria-hidden="true" tabindex="-1"></a>    alimentos, <span class="at">server =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"single"</span>,</span>
-<span id="annotated-cell-1-111"><a href="#annotated-cell-1-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="annotated-cell-1-112"><a href="#annotated-cell-1-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">pageLength =</span> <span class="dv">15</span>,</span>
-<span id="annotated-cell-1-113"><a href="#annotated-cell-1-113" aria-hidden="true" tabindex="-1"></a>      <span class="at">columnDefs =</span> <span class="fu">list</span>(</span>
-<span id="annotated-cell-1-114"><a href="#annotated-cell-1-114" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(</span>
-<span id="annotated-cell-1-115"><a href="#annotated-cell-1-115" aria-hidden="true" tabindex="-1"></a>          <span class="at">targets =</span> <span class="st">"_all"</span>,</span>
-<span id="annotated-cell-1-116"><a href="#annotated-cell-1-116" aria-hidden="true" tabindex="-1"></a>          <span class="at">className =</span> <span class="st">"dt-center"</span></span>
-<span id="annotated-cell-1-117"><a href="#annotated-cell-1-117" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="annotated-cell-1-118"><a href="#annotated-cell-1-118" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="annotated-cell-1-119"><a href="#annotated-cell-1-119" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="annotated-cell-1-120"><a href="#annotated-cell-1-120" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="annotated-cell-1-121"><a href="#annotated-cell-1-121" aria-hidden="true" tabindex="-1"></a>  </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-1-122" class="code-annotation-target"><a href="#annotated-cell-1-122" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>selectedData1 <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
-<span id="annotated-cell-1-123"><a href="#annotated-cell-1-123" aria-hidden="true" tabindex="-1"></a>    <span class="fu">getComposition</span>(<span class="st">"foodTable1_rows_selected"</span>)</span>
-<span id="annotated-cell-1-124"><a href="#annotated-cell-1-124" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="annotated-cell-1-125"><a href="#annotated-cell-1-125" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="annotated-cell-1-126"><a href="#annotated-cell-1-126" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>foodTable2 <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>(</span>
-<span id="annotated-cell-1-127"><a href="#annotated-cell-1-127" aria-hidden="true" tabindex="-1"></a>    platos,<span class="at">server =</span> <span class="cn">FALSE</span>,<span class="at">selection =</span> <span class="st">"single"</span>,</span>
-<span id="annotated-cell-1-128"><a href="#annotated-cell-1-128" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="annotated-cell-1-129"><a href="#annotated-cell-1-129" aria-hidden="true" tabindex="-1"></a>      <span class="at">pageLength =</span> <span class="dv">15</span>,</span>
-<span id="annotated-cell-1-130"><a href="#annotated-cell-1-130" aria-hidden="true" tabindex="-1"></a>      <span class="at">columnDefs =</span> <span class="fu">list</span>(</span>
-<span id="annotated-cell-1-131"><a href="#annotated-cell-1-131" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(</span>
-<span id="annotated-cell-1-132"><a href="#annotated-cell-1-132" aria-hidden="true" tabindex="-1"></a>          <span class="at">targets =</span> <span class="st">"_all"</span>,</span>
-<span id="annotated-cell-1-133"><a href="#annotated-cell-1-133" aria-hidden="true" tabindex="-1"></a>          <span class="at">className =</span> <span class="st">"dt-center"</span></span>
+<span id="annotated-cell-1-82"><a href="#annotated-cell-1-82" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hr</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-1-83" class="code-annotation-target"><a href="#annotated-cell-1-83" aria-hidden="true" tabindex="-1"></a>    tags<span class="sc">$</span><span class="fu">div</span>(</span>
+<span id="annotated-cell-1-84"><a href="#annotated-cell-1-84" aria-hidden="true" tabindex="-1"></a>        <span class="at">class =</span> <span class="st">"footer"</span>,</span>
+<span id="annotated-cell-1-85"><a href="#annotated-cell-1-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">style =</span> <span class="st">"text-align: center; background-color: #333; color: #fff; padding: 20px;"</span>,</span>
+<span id="annotated-cell-1-86"><a href="#annotated-cell-1-86" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">h4</span>(<span class="st">"¿Te ha gustado esta App?"</span>),</span>
+<span id="annotated-cell-1-87"><a href="#annotated-cell-1-87" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">p</span>(</span>
+<span id="annotated-cell-1-88"><a href="#annotated-cell-1-88" aria-hidden="true" tabindex="-1"></a>            <span class="st">"¡Esta aplicación ha sido desarrollada con "</span>,</span>
+<span id="annotated-cell-1-89"><a href="#annotated-cell-1-89" aria-hidden="true" tabindex="-1"></a>            tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="annotated-cell-1-90"><a href="#annotated-cell-1-90" aria-hidden="true" tabindex="-1"></a>                <span class="at">href =</span> <span class="st">"https://shiny.rstudio.com/"</span>,</span>
+<span id="annotated-cell-1-91"><a href="#annotated-cell-1-91" aria-hidden="true" tabindex="-1"></a>                <span class="at">style =</span> <span class="st">"color: #ffcc00; font-weight: bold;"</span>,</span>
+<span id="annotated-cell-1-92"><a href="#annotated-cell-1-92" aria-hidden="true" tabindex="-1"></a>                <span class="st">"R Shiny"</span></span>
+<span id="annotated-cell-1-93"><a href="#annotated-cell-1-93" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="annotated-cell-1-94"><a href="#annotated-cell-1-94" aria-hidden="true" tabindex="-1"></a>            <span class="st">"!"</span></span>
+<span id="annotated-cell-1-95"><a href="#annotated-cell-1-95" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="annotated-cell-1-96"><a href="#annotated-cell-1-96" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">p</span>(</span>
+<span id="annotated-cell-1-97"><a href="#annotated-cell-1-97" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, "</span>,</span>
+<span id="annotated-cell-1-98"><a href="#annotated-cell-1-98" aria-hidden="true" tabindex="-1"></a>            tags<span class="sc">$</span><span class="fu">a</span>(</span>
+<span id="annotated-cell-1-99"><a href="#annotated-cell-1-99" aria-hidden="true" tabindex="-1"></a>                <span class="at">href =</span> <span class="st">"https://shiny.rstudio.com/tutorial/"</span>,</span>
+<span id="annotated-cell-1-100"><a href="#annotated-cell-1-100" aria-hidden="true" tabindex="-1"></a>                <span class="at">style =</span> <span class="st">"color: #ffcc00; font-weight: bold;"</span>,</span>
+<span id="annotated-cell-1-101"><a href="#annotated-cell-1-101" aria-hidden="true" tabindex="-1"></a>                <span class="st">"haz clic aquí"</span></span>
+<span id="annotated-cell-1-102"><a href="#annotated-cell-1-102" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="annotated-cell-1-103"><a href="#annotated-cell-1-103" aria-hidden="true" tabindex="-1"></a>            <span class="st">" para acceder al tutorial oficial."</span></span>
+<span id="annotated-cell-1-104"><a href="#annotated-cell-1-104" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="annotated-cell-1-105"><a href="#annotated-cell-1-105" aria-hidden="true" tabindex="-1"></a>        tags<span class="sc">$</span><span class="fu">p</span>(</span>
+<span id="annotated-cell-1-106"><a href="#annotated-cell-1-106" aria-hidden="true" tabindex="-1"></a>            <span class="st">"¡Comienza a explorar el poder de Shiny hoy mismo!"</span>,</span>
+<span id="annotated-cell-1-107"><a href="#annotated-cell-1-107" aria-hidden="true" tabindex="-1"></a>            <span class="at">style =</span> <span class="st">"font-weight: bold;"</span></span>
+<span id="annotated-cell-1-108"><a href="#annotated-cell-1-108" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="annotated-cell-1-109"><a href="#annotated-cell-1-109" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="annotated-cell-1-110"><a href="#annotated-cell-1-110" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-1-111"><a href="#annotated-cell-1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-112"><a href="#annotated-cell-1-112" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir server</span></span>
+<span id="annotated-cell-1-113"><a href="#annotated-cell-1-113" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-1-114" class="code-annotation-target"><a href="#annotated-cell-1-114" aria-hidden="true" tabindex="-1"></a>    getComposition <span class="ot">&lt;-</span> <span class="cf">function</span>(input_table) {</span>
+<span id="annotated-cell-1-115"><a href="#annotated-cell-1-115" aria-hidden="true" tabindex="-1"></a>        proportionConversion <span class="ot">&lt;-</span> input<span class="sc">$</span>proportion</span>
+<span id="annotated-cell-1-116"><a href="#annotated-cell-1-116" aria-hidden="true" tabindex="-1"></a>        idx <span class="ot">&lt;-</span> input[[input_table]]</span>
+<span id="annotated-cell-1-117"><a href="#annotated-cell-1-117" aria-hidden="true" tabindex="-1"></a>        selectedRow <span class="ot">&lt;-</span> alimentos[idx, <span class="fu">c</span>(<span class="st">"PROCNT"</span>, <span class="st">"FAT"</span>, <span class="st">"CHOCDF"</span>, <span class="st">"ZN"</span>, <span class="st">"K"</span>, <span class="st">"P"</span>, <span class="st">"FE"</span>, <span class="st">"VITA"</span>, <span class="st">"ACFOLIC"</span>, <span class="st">"VITC"</span>, <span class="st">"NA"</span>)]</span>
+<span id="annotated-cell-1-118"><a href="#annotated-cell-1-118" aria-hidden="true" tabindex="-1"></a>        selectedRow <span class="ot">&lt;-</span> selectedRow <span class="sc">*</span> proportionConversion <span class="sc">/</span> <span class="dv">100</span></span>
+<span id="annotated-cell-1-119"><a href="#annotated-cell-1-119" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rownames</span>(selectedRow) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="annotated-cell-1-120"><a href="#annotated-cell-1-120" aria-hidden="true" tabindex="-1"></a>        selectedRow</span>
+<span id="annotated-cell-1-121"><a href="#annotated-cell-1-121" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="annotated-cell-1-122"><a href="#annotated-cell-1-122" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-1-123" class="code-annotation-target"><a href="#annotated-cell-1-123" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>foodTable1 <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>(</span>
+<span id="annotated-cell-1-124"><a href="#annotated-cell-1-124" aria-hidden="true" tabindex="-1"></a>        alimentos,</span>
+<span id="annotated-cell-1-125"><a href="#annotated-cell-1-125" aria-hidden="true" tabindex="-1"></a>        <span class="at">server =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"single"</span>,</span>
+<span id="annotated-cell-1-126"><a href="#annotated-cell-1-126" aria-hidden="true" tabindex="-1"></a>        <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="annotated-cell-1-127"><a href="#annotated-cell-1-127" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">15</span>,</span>
+<span id="annotated-cell-1-128"><a href="#annotated-cell-1-128" aria-hidden="true" tabindex="-1"></a>            <span class="at">columnDefs =</span> <span class="fu">list</span>(</span>
+<span id="annotated-cell-1-129"><a href="#annotated-cell-1-129" aria-hidden="true" tabindex="-1"></a>                <span class="fu">list</span>(</span>
+<span id="annotated-cell-1-130"><a href="#annotated-cell-1-130" aria-hidden="true" tabindex="-1"></a>                    <span class="at">targets =</span> <span class="st">"_all"</span>,</span>
+<span id="annotated-cell-1-131"><a href="#annotated-cell-1-131" aria-hidden="true" tabindex="-1"></a>                    <span class="at">className =</span> <span class="st">"dt-center"</span></span>
+<span id="annotated-cell-1-132"><a href="#annotated-cell-1-132" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="annotated-cell-1-133"><a href="#annotated-cell-1-133" aria-hidden="true" tabindex="-1"></a>            )</span>
 <span id="annotated-cell-1-134"><a href="#annotated-cell-1-134" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="annotated-cell-1-135"><a href="#annotated-cell-1-135" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="annotated-cell-1-136"><a href="#annotated-cell-1-136" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="annotated-cell-1-137"><a href="#annotated-cell-1-137" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="annotated-cell-1-138"><a href="#annotated-cell-1-138" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="annotated-cell-1-139"><a href="#annotated-cell-1-139" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>selectedData2 <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
-<span id="annotated-cell-1-140"><a href="#annotated-cell-1-140" aria-hidden="true" tabindex="-1"></a>    <span class="fu">getComposition</span>(<span class="st">"foodTable2_rows_selected"</span>)</span>
-<span id="annotated-cell-1-141"><a href="#annotated-cell-1-141" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="annotated-cell-1-142"><a href="#annotated-cell-1-142" aria-hidden="true" tabindex="-1"></a>  </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-1-143" class="code-annotation-target"><a href="#annotated-cell-1-143" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>codigoGrupos <span class="ot">&lt;-</span> <span class="fu">renderTable</span>(codigoGrupo)</span>
-<span id="annotated-cell-1-144"><a href="#annotated-cell-1-144" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="annotated-cell-1-145"><a href="#annotated-cell-1-145" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>codigoComponentes <span class="ot">&lt;-</span> <span class="fu">renderTable</span>(anexoCodigo)</span>
-<span id="annotated-cell-1-146"><a href="#annotated-cell-1-146" aria-hidden="true" tabindex="-1"></a>  </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-1-147" class="code-annotation-target"><a href="#annotated-cell-1-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(input<span class="sc">$</span>copyButton1, {</span>
-<span id="annotated-cell-1-148"><a href="#annotated-cell-1-148" aria-hidden="true" tabindex="-1"></a>    selectedData <span class="ot">&lt;-</span> <span class="fu">getComposition</span>(<span class="st">"foodTable1_rows_selected"</span>)</span>
-<span id="annotated-cell-1-149"><a href="#annotated-cell-1-149" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(input<span class="sc">$</span>foodTable1_rows_selected) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="annotated-cell-1-150"><a href="#annotated-cell-1-150" aria-hidden="true" tabindex="-1"></a>      clipboard <span class="ot">&lt;-</span> <span class="fu">apply</span>(selectedData, <span class="dv">2</span>, paste, <span class="at">collapse=</span><span class="st">" "</span>)</span>
-<span id="annotated-cell-1-151"><a href="#annotated-cell-1-151" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeClipboard</span>(clipboard)</span>
-<span id="annotated-cell-1-152"><a href="#annotated-cell-1-152" aria-hidden="true" tabindex="-1"></a>      shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Datos copiados al portapapeles"</span>)</span>
-<span id="annotated-cell-1-153"><a href="#annotated-cell-1-153" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="annotated-cell-1-154"><a href="#annotated-cell-1-154" aria-hidden="true" tabindex="-1"></a>      shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Selecciona una fila para copiar los datos"</span>)</span>
-<span id="annotated-cell-1-155"><a href="#annotated-cell-1-155" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="annotated-cell-1-156"><a href="#annotated-cell-1-156" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="annotated-cell-1-157"><a href="#annotated-cell-1-157" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="annotated-cell-1-158"><a href="#annotated-cell-1-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(input<span class="sc">$</span>copyButton2, {</span>
-<span id="annotated-cell-1-159"><a href="#annotated-cell-1-159" aria-hidden="true" tabindex="-1"></a>    selectedData <span class="ot">&lt;-</span> <span class="fu">getComposition</span>(<span class="st">"foodTable2_rows_selected"</span>)</span>
-<span id="annotated-cell-1-160"><a href="#annotated-cell-1-160" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(input<span class="sc">$</span>foodTable2_rows_selected) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="annotated-cell-1-161"><a href="#annotated-cell-1-161" aria-hidden="true" tabindex="-1"></a>      clipboard <span class="ot">&lt;-</span> <span class="fu">apply</span>(selectedData, <span class="dv">2</span>, paste, <span class="at">collapse=</span><span class="st">" "</span>)</span>
-<span id="annotated-cell-1-162"><a href="#annotated-cell-1-162" aria-hidden="true" tabindex="-1"></a>      <span class="fu">writeClipboard</span>(clipboard)</span>
-<span id="annotated-cell-1-163"><a href="#annotated-cell-1-163" aria-hidden="true" tabindex="-1"></a>      shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Datos copiados al portapapeles"</span>)</span>
-<span id="annotated-cell-1-164"><a href="#annotated-cell-1-164" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="annotated-cell-1-165"><a href="#annotated-cell-1-165" aria-hidden="true" tabindex="-1"></a>      shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Selecciona una fila para copiar los datos"</span>)</span>
-<span id="annotated-cell-1-166"><a href="#annotated-cell-1-166" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="annotated-cell-1-167"><a href="#annotated-cell-1-167" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="annotated-cell-1-168"><a href="#annotated-cell-1-168" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="annotated-cell-1-169"><a href="#annotated-cell-1-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-170"><a href="#annotated-cell-1-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutar la aplicación Shiny</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-1-171" class="code-annotation-target"><a href="#annotated-cell-1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-1-135"><a href="#annotated-cell-1-135" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="annotated-cell-1-136"><a href="#annotated-cell-1-136" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-1-137" class="code-annotation-target"><a href="#annotated-cell-1-137" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>selectedData1 <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="annotated-cell-1-138"><a href="#annotated-cell-1-138" aria-hidden="true" tabindex="-1"></a>        <span class="fu">getComposition</span>(<span class="st">"foodTable1_rows_selected"</span>)</span>
+<span id="annotated-cell-1-139"><a href="#annotated-cell-1-139" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="annotated-cell-1-140"><a href="#annotated-cell-1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-141"><a href="#annotated-cell-1-141" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>foodTable2 <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>(</span>
+<span id="annotated-cell-1-142"><a href="#annotated-cell-1-142" aria-hidden="true" tabindex="-1"></a>        platos,</span>
+<span id="annotated-cell-1-143"><a href="#annotated-cell-1-143" aria-hidden="true" tabindex="-1"></a>        <span class="at">server =</span> <span class="cn">FALSE</span>, <span class="at">selection =</span> <span class="st">"single"</span>,</span>
+<span id="annotated-cell-1-144"><a href="#annotated-cell-1-144" aria-hidden="true" tabindex="-1"></a>        <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="annotated-cell-1-145"><a href="#annotated-cell-1-145" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">15</span>,</span>
+<span id="annotated-cell-1-146"><a href="#annotated-cell-1-146" aria-hidden="true" tabindex="-1"></a>            <span class="at">columnDefs =</span> <span class="fu">list</span>(</span>
+<span id="annotated-cell-1-147"><a href="#annotated-cell-1-147" aria-hidden="true" tabindex="-1"></a>                <span class="fu">list</span>(</span>
+<span id="annotated-cell-1-148"><a href="#annotated-cell-1-148" aria-hidden="true" tabindex="-1"></a>                    <span class="at">targets =</span> <span class="st">"_all"</span>,</span>
+<span id="annotated-cell-1-149"><a href="#annotated-cell-1-149" aria-hidden="true" tabindex="-1"></a>                    <span class="at">className =</span> <span class="st">"dt-center"</span></span>
+<span id="annotated-cell-1-150"><a href="#annotated-cell-1-150" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="annotated-cell-1-151"><a href="#annotated-cell-1-151" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="annotated-cell-1-152"><a href="#annotated-cell-1-152" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="annotated-cell-1-153"><a href="#annotated-cell-1-153" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="annotated-cell-1-154"><a href="#annotated-cell-1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-155"><a href="#annotated-cell-1-155" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>selectedData2 <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="annotated-cell-1-156"><a href="#annotated-cell-1-156" aria-hidden="true" tabindex="-1"></a>        <span class="fu">getComposition</span>(<span class="st">"foodTable2_rows_selected"</span>)</span>
+<span id="annotated-cell-1-157"><a href="#annotated-cell-1-157" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="annotated-cell-1-158"><a href="#annotated-cell-1-158" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-1-159" class="code-annotation-target"><a href="#annotated-cell-1-159" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>codigoGrupos <span class="ot">&lt;-</span> <span class="fu">renderTable</span>(codigoGrupo)</span>
+<span id="annotated-cell-1-160"><a href="#annotated-cell-1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-161"><a href="#annotated-cell-1-161" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>codigoComponentes <span class="ot">&lt;-</span> <span class="fu">renderTable</span>(anexoCodigo)</span>
+<span id="annotated-cell-1-162"><a href="#annotated-cell-1-162" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-1-163" class="code-annotation-target"><a href="#annotated-cell-1-163" aria-hidden="true" tabindex="-1"></a>    <span class="fu">observeEvent</span>(input<span class="sc">$</span>copyButton1, {</span>
+<span id="annotated-cell-1-164"><a href="#annotated-cell-1-164" aria-hidden="true" tabindex="-1"></a>        selectedData <span class="ot">&lt;-</span> <span class="fu">getComposition</span>(<span class="st">"foodTable1_rows_selected"</span>)</span>
+<span id="annotated-cell-1-165"><a href="#annotated-cell-1-165" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">length</span>(input<span class="sc">$</span>foodTable1_rows_selected) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="annotated-cell-1-166"><a href="#annotated-cell-1-166" aria-hidden="true" tabindex="-1"></a>            clipboard <span class="ot">&lt;-</span> <span class="fu">apply</span>(selectedData, <span class="dv">2</span>, paste, <span class="at">collapse =</span> <span class="st">" "</span>)</span>
+<span id="annotated-cell-1-167"><a href="#annotated-cell-1-167" aria-hidden="true" tabindex="-1"></a>            <span class="fu">writeClipboard</span>(clipboard)</span>
+<span id="annotated-cell-1-168"><a href="#annotated-cell-1-168" aria-hidden="true" tabindex="-1"></a>            shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Datos copiados al portapapeles"</span>)</span>
+<span id="annotated-cell-1-169"><a href="#annotated-cell-1-169" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="annotated-cell-1-170"><a href="#annotated-cell-1-170" aria-hidden="true" tabindex="-1"></a>            shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Selecciona una fila para copiar los datos"</span>)</span>
+<span id="annotated-cell-1-171"><a href="#annotated-cell-1-171" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="annotated-cell-1-172"><a href="#annotated-cell-1-172" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="annotated-cell-1-173"><a href="#annotated-cell-1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-174"><a href="#annotated-cell-1-174" aria-hidden="true" tabindex="-1"></a>    <span class="fu">observeEvent</span>(input<span class="sc">$</span>copyButton2, {</span>
+<span id="annotated-cell-1-175"><a href="#annotated-cell-1-175" aria-hidden="true" tabindex="-1"></a>        selectedData <span class="ot">&lt;-</span> <span class="fu">getComposition</span>(<span class="st">"foodTable2_rows_selected"</span>)</span>
+<span id="annotated-cell-1-176"><a href="#annotated-cell-1-176" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">length</span>(input<span class="sc">$</span>foodTable2_rows_selected) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="annotated-cell-1-177"><a href="#annotated-cell-1-177" aria-hidden="true" tabindex="-1"></a>            clipboard <span class="ot">&lt;-</span> <span class="fu">apply</span>(selectedData, <span class="dv">2</span>, paste, <span class="at">collapse =</span> <span class="st">" "</span>)</span>
+<span id="annotated-cell-1-178"><a href="#annotated-cell-1-178" aria-hidden="true" tabindex="-1"></a>            <span class="fu">writeClipboard</span>(clipboard)</span>
+<span id="annotated-cell-1-179"><a href="#annotated-cell-1-179" aria-hidden="true" tabindex="-1"></a>            shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Datos copiados al portapapeles"</span>)</span>
+<span id="annotated-cell-1-180"><a href="#annotated-cell-1-180" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="annotated-cell-1-181"><a href="#annotated-cell-1-181" aria-hidden="true" tabindex="-1"></a>            shinyjs<span class="sc">::</span><span class="fu">alert</span>(<span class="st">"Selecciona una fila para copiar los datos"</span>)</span>
+<span id="annotated-cell-1-182"><a href="#annotated-cell-1-182" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="annotated-cell-1-183"><a href="#annotated-cell-1-183" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="annotated-cell-1-184"><a href="#annotated-cell-1-184" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="annotated-cell-1-185"><a href="#annotated-cell-1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-186"><a href="#annotated-cell-1-186" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutar la aplicación Shiny</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-1-187" class="code-annotation-target"><a href="#annotated-cell-1-187" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="8,11,13" data-code-annotation="1">Cargar tabla de alimentos individuales (<code>alimentos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="8,13,17" data-code-annotation="1">Cargar tabla de alimentos individuales (<code>alimentos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="16,19,21" data-code-annotation="2">Cargar tabla de alimentos compustos (<code>alimentosCompuestos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre columnas).</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="20,25,29" data-code-annotation="2">Cargar tabla de alimentos compustos (<code>alimentosCompuestos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre columnas).</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="25,31,33" data-code-annotation="3">Crear tabla de anexos para alimentos según código por grupo nutricional (<em>Opcional</em>).</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="33,41,43" data-code-annotation="3">Crear tabla de anexos para alimentos según código por grupo nutricional (<em>Opcional</em>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="37,38" data-code-annotation="4">Crear tabla de anexos para alimentos según código de componentes nutricional (<em>Opcional</em>).</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="47,48" data-code-annotation="4">Crear tabla de anexos para alimentos según código de componentes nutricional (<em>Opcional</em>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="41" data-code-annotation="5">Implementar la interfaz de usuario de la aplicación Shiny llamando a <code>fluidPage</code>.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="51" data-code-annotation="5">Implementar la interfaz de usuario de la aplicación Shiny llamando a <code>fluidPage</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="42" data-code-annotation="6">Incluir ciertos estilos de contenido (archivo css).</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="52" data-code-annotation="6">Incluir ciertos estilos de contenido (archivo css).</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="48" data-code-annotation="7">Definir una entrada de texto para la nueva composición de alimentos deseada.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="59" data-code-annotation="7">Definir una entrada de texto para la nueva composición de alimentos deseada.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="49" data-code-annotation="8">Complemento para mostrar ayudas visuales (mensajes).</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="60" data-code-annotation="8">Complemento para mostrar ayudas visuales (mensajes).</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="50" data-code-annotation="9">Mostrar múltiples tablas mediante mediante pestañas separadas con <code>tabPanel()</code>.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="61" data-code-annotation="9">Mostrar múltiples tablas mediante mediante pestañas separadas con <code>tabPanel()</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="10">10</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="69" data-code-annotation="10">Agregar un pie de nota con detalles de la aplicación.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="83" data-code-annotation="10">Agregar un pie de nota con detalles de la aplicación.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="11">11</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="100" data-code-annotation="11">Implementar la función <code>server</code> que define la lógica del programa. Definir la función para manipular la fila seleccionada de las tablas de composición.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="114" data-code-annotation="11">Implementar la función <code>server</code> que define la lógica del programa. Definir la función para manipular la fila seleccionada de las tablas de composición.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="12">12</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="109,126" data-code-annotation="12">Renderizar las tablas principales de alimentos. Para centrar todo el contenido de las tablas se creó un estilo css <code>dt-center</code>.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="123,141" data-code-annotation="12">Renderizar las tablas principales de alimentos. Para centrar todo el contenido de las tablas se creó un estilo css <code>dt-center</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="13">13</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="122,139" data-code-annotation="13">Renderizar los datos de componentes de interés <strong>(salida)</strong>.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="137,155" data-code-annotation="13">Renderizar los datos de componentes de interés <strong>(salida)</strong>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="14">14</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="143,145" data-code-annotation="14">Renderizar las tablas de Anexos.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="159,161" data-code-annotation="14">Renderizar las tablas de Anexos.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="15">15</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="147,158" data-code-annotation="15">Evento que permite copiar los datos seleccionados al portapapeles. Utilizando el paso 8.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="163,174" data-code-annotation="15">Evento que permite copiar los datos seleccionados al portapapeles. Utilizando el paso 8.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="16">16</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="171" data-code-annotation="16">Implementar la aplicación llamando a <code>shinyApp</code>.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="187" data-code-annotation="16">Implementar la aplicación llamando a <code>shinyApp</code>.</span>
 </dd>
 </dl>
 </div>
@@ -562,7 +578,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="anchored" data-anchor-id="el-demo">El demo ⏩</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="ttps://sergiojacobozavaleta.shinyapps.io/rosaapp/"><img src="images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></a></p>
+<p><a href="https://sergiojacobozavaleta.shinyapps.io/rosaapp/"><img src="images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></a></p>
 <figcaption>Aplicación Shiny</figcaption>
 </figure>
 </div>
