@@ -52,170 +52,186 @@ library(DT) # Manejo de tablas en formato Data Frame
 library(shinyjs)
 
 # Cargar datos para alimentos individuales
-alimentos <- read.csv("alimentos.csv")# <1>
-colnames(alimentos) <- c("COD","NUM","ALIMENTO","ENERCKCAL","ENERCKJ","WATER","PROCNT",
-                         "FAT","CHOCDF","ZN","K","P","FE","VITA",
-                         "ACFOLIC","VITC","NA")# <1>
-alimentos <- alimentos[,c("COD","NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
-                          "FAT", "CHOCDF","ZN","K","P","FE","VITA","ACFOLIC","VITC","NA")]# <1>
+alimentos <- read.csv("alimentos.csv") # <1>
+colnames(alimentos) <- c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
+    "FAT", "CHOCDF", "ZN", "K", "P", "FE", "VITA",
+    "ACFOLIC", "VITC", "NA"
+) # <1>
+alimentos <- alimentos[, c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
+    "FAT", "CHOCDF", "ZN", "K", "P", "FE", "VITA", "ACFOLIC", "VITC", "NA"
+)] # <1>
 
 # Cargar datos para alimentos compuestos
 platos <- read.csv("alimentosCompuestos.csv") # <2>
-colnames(platos) <- c("COD","NUM","ALIMENTO","ENERCKCAL","ENERCKJ","WATER","PROCNT",
-                      "FAT","CHOCDF","CHOAVL","FIBTG","ASH","CA","P","ZN","FE","VITA","THIA",
-                      "RIBF","NIA","VITC","ACFOLIC","NA","K","ESTRATO") # <2>
-platos <- platos[,c("COD","NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT", "FAT", "CHOCDF",
-                          "ZN","K","P","FE","VITA","ACFOLIC","VITC","NA")]# <2>
+colnames(platos) <- c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
+    "FAT", "CHOCDF", "CHOAVL", "FIBTG", "ASH", "CA", "P", "ZN", "FE", "VITA", "THIA",
+    "RIBF", "NIA", "VITC", "ACFOLIC", "NA", "K", "ESTRATO"
+) # <2>
+platos <- platos[, c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT", "FAT", "CHOCDF",
+    "ZN", "K", "P", "FE", "VITA", "ACFOLIC", "VITC", "NA"
+)] # <2>
 
 
 # Creamos tablas de Anexo
-codigo <- c("A","B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "Q", "T", "U", "SE", "SS")# <3>
-categoria <- c("Cereales y derivados", "Verduras, hortalizas y derivados", "Frutas y derivados", 
-               "Grasas, aceites y oleaginosas","Pescados y mariscos", "Carnes y derivados", 
-               "Leche y derivados", "Bebidas (alcohólicas y analcohólicas)", "Huevos y derivados",
-               "Productos azucarados", "Misceláneos", "Alimentos infantiles", "Leguminosas y derivados", 
-               "Tubérculos, raíces y derivados", "Alimentos preparados (entrada)",
-               "Alimentos preparados (segundo)")# <3>
+codigo <- c("A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "Q", "T", "U", "SE", "SS") # <3>
+categoria <- c(
+    "Cereales y derivados", "Verduras, hortalizas y derivados", "Frutas y derivados",
+    "Grasas, aceites y oleaginosas", "Pescados y mariscos", "Carnes y derivados",
+    "Leche y derivados", "Bebidas (alcohólicas y analcohólicas)", "Huevos y derivados",
+    "Productos azucarados", "Misceláneos", "Alimentos infantiles", "Leguminosas y derivados",
+    "Tubérculos, raíces y derivados", "Alimentos preparados (entrada)",
+    "Alimentos preparados (segundo)"
+) # <3>
 codigoGrupo <- data.frame(codigo, categoria)
-colnames(codigoGrupo) <- c("Código", "Categoría")# <3>
+colnames(codigoGrupo) <- c("Código", "Categoría") # <3>
 
 
 # Cargas coódigos de componentes - Anexo
 anexoCodigo <- read.csv("anexosCodigoComponentes.csv") # <4>
-colnames(anexoCodigo) <- c("Componente","Identificador INFOODS","Unidad","Comentario")# <4>
+colnames(anexoCodigo) <- c("Componente", "Identificador INFOODS", "Unidad", "Comentario") # <4>
 
 # Definir interfaz
-ui <- fluidPage(# <5>
-  includeCSS("styles.css"),# <6>
-  titlePanel("TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"),
-  h2(tags$a("Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima.",
-            href="https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos")),
-  h3("Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."),
-  h3(class = "bold-text", "Nota: Composición en 100 g de alimento"),
-  numericInput("proportion","Nueva composición (gramos)?", value = 100, min = 1, max = 500),# <7>
-  useShinyjs(),# <8>
-  tabsetPanel(# <9>
-    tabPanel("Alimentos individuales",
-             dataTableOutput('foodTable1'),
-             h4(class = "bold-text", "Componentes seleccionados:"),
-             tableOutput("selectedData1"),
-             actionButton("copyButton1", "Copiar datos seleccionados")
+ui <- fluidPage( # <5>
+    includeCSS("styles.css"), # <6>
+    titlePanel("TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"),
+    h2(tags$a("Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima.",
+        href = "https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos"
+    )),
+    h3("Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."),
+    h3(class = "bold-text", "Nota: Composición en 100 g de alimento"),
+    numericInput("proportion", "Nueva composición (gramos)?", value = 100, min = 1, max = 500), # <7>
+    useShinyjs(), # <8>
+    tabsetPanel( # <9>
+        tabPanel(
+            "Alimentos individuales",
+            dataTableOutput("foodTable1"),
+            h4(class = "bold-text", "Componentes seleccionados:"),
+            tableOutput("selectedData1"),
+            actionButton("copyButton1", "Copiar datos seleccionados")
+        ),
+        tabPanel(
+            "Alimentos en platos",
+            dataTableOutput("foodTable2"),
+            h4("Componentes seleccionados:"),
+            tableOutput("selectedData2"),
+            actionButton("copyButton2", "Copiar datos seleccionados")
+        ),
+        tabPanel(
+            "Códigos y grupos",
+            tableOutput("codigoGrupos"),
+            tableOutput("codigoComponentes")
+        )
     ),
-    tabPanel("Alimentos en platos",
-             dataTableOutput('foodTable2'),
-             h4("Componentes seleccionados:"),
-             tableOutput("selectedData2"),
-             actionButton("copyButton2", "Copiar datos seleccionados")
-    ),
-    tabPanel("Códigos y grupos",
-             tableOutput('codigoGrupos'),
-             tableOutput('codigoComponentes')
+    hr(),
+    tags$div( # <10>
+        class = "footer",
+        style = "text-align: center; background-color: #333; color: #fff; padding: 20px;",
+        tags$h4("¿Te ha gustado esta App?"),
+        tags$p(
+            "¡Esta aplicación ha sido desarrollada con ",
+            tags$a(
+                href = "https://shiny.rstudio.com/",
+                style = "color: #ffcc00; font-weight: bold;",
+                "R Shiny"
+            ),
+            "!"
+        ),
+        tags$p(
+            "Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, ",
+            tags$a(
+                href = "https://shiny.rstudio.com/tutorial/",
+                style = "color: #ffcc00; font-weight: bold;",
+                "haz clic aquí"
+            ),
+            " para acceder al tutorial oficial."
+        ),
+        tags$p(
+            "¡Comienza a explorar el poder de Shiny hoy mismo!",
+            style = "font-weight: bold;"
+        )
     )
-  ),
-  hr(),
-  tags$div(# <10>
-    class = "footer",
-    style = "text-align: center; background-color: #333; color: #fff; padding: 20px;",
-    tags$h4("¿Te ha gustado esta App?"),
-    tags$p(
-      "¡Esta aplicación ha sido desarrollada con ",
-      tags$a(
-        href = "https://shiny.rstudio.com/",
-        style = "color: #ffcc00; font-weight: bold;",
-        "R Shiny"
-      ),
-      "!"
-    ),
-    tags$p(
-      "Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, ",
-      tags$a(
-        href = "https://shiny.rstudio.com/tutorial/",
-        style = "color: #ffcc00; font-weight: bold;",
-        "haz clic aquí"
-      ),
-      " para acceder al tutorial oficial."
-    ),
-    tags$p(
-      "¡Comienza a explorar el poder de Shiny hoy mismo!",
-      style = "font-weight: bold;"
-    )
-  )
 )
 
 # Definir server
 server <- function(input, output, session) {
-  getComposition <- function(input_table) {# <11>
-    proportionConversion <- input$proportion
-    idx <- input[[input_table]]
-    selectedRow <- alimentos[idx, c("PROCNT", "FAT", "CHOCDF","ZN","K","P","FE","VITA","ACFOLIC","VITC","NA")]
-    selectedRow <- selectedRow * proportionConversion / 100
-    rownames(selectedRow) <- NULL
-    selectedRow
-  }
-  
-  output$foodTable1 <- renderDataTable(# <12>
-    alimentos, server = FALSE, selection = "single",
-    options = list(
-      pageLength = 15,
-      columnDefs = list(
-        list(
-          targets = "_all",
-          className = "dt-center"
-        )
-      )
-    )
-  )
-  
-  output$selectedData1 <- renderTable({# <13>
-    getComposition("foodTable1_rows_selected")
-  })
-  
-  output$foodTable2 <- renderDataTable(# <12>
-    platos,server = FALSE,selection = "single",
-    options = list(
-      pageLength = 15,
-      columnDefs = list(
-        list(
-          targets = "_all",
-          className = "dt-center"
-        )
-      )
-    )
-  )
-  
-  output$selectedData2 <- renderTable({# <13>
-    getComposition("foodTable2_rows_selected")
-  })
-  
-  output$codigoGrupos <- renderTable(codigoGrupo)# <14>
-  
-  output$codigoComponentes <- renderTable(anexoCodigo)# <14>
-  
-  observeEvent(input$copyButton1, {# <15>
-    selectedData <- getComposition("foodTable1_rows_selected")
-    if (length(input$foodTable1_rows_selected) > 0) {
-      clipboard <- apply(selectedData, 2, paste, collapse=" ")
-      writeClipboard(clipboard)
-      shinyjs::alert("Datos copiados al portapapeles")
-    } else {
-      shinyjs::alert("Selecciona una fila para copiar los datos")
+    getComposition <- function(input_table) { # <11>
+        proportionConversion <- input$proportion
+        idx <- input[[input_table]]
+        selectedRow <- alimentos[idx, c("PROCNT", "FAT", "CHOCDF", "ZN", "K", "P", "FE", "VITA", "ACFOLIC", "VITC", "NA")]
+        selectedRow <- selectedRow * proportionConversion / 100
+        rownames(selectedRow) <- NULL
+        selectedRow
     }
-  })
-  
-  observeEvent(input$copyButton2, {# <15>
-    selectedData <- getComposition("foodTable2_rows_selected")
-    if (length(input$foodTable2_rows_selected) > 0) {
-      clipboard <- apply(selectedData, 2, paste, collapse=" ")
-      writeClipboard(clipboard)
-      shinyjs::alert("Datos copiados al portapapeles")
-    } else {
-      shinyjs::alert("Selecciona una fila para copiar los datos")
-    }
-  })
+
+    output$foodTable1 <- renderDataTable( # <12>
+        alimentos,
+        server = FALSE, selection = "single",
+        options = list(
+            pageLength = 15,
+            columnDefs = list(
+                list(
+                    targets = "_all",
+                    className = "dt-center"
+                )
+            )
+        )
+    )
+
+    output$selectedData1 <- renderTable({ # <13>
+        getComposition("foodTable1_rows_selected")
+    })
+
+    output$foodTable2 <- renderDataTable( # <12>
+        platos,
+        server = FALSE, selection = "single",
+        options = list(
+            pageLength = 15,
+            columnDefs = list(
+                list(
+                    targets = "_all",
+                    className = "dt-center"
+                )
+            )
+        )
+    )
+
+    output$selectedData2 <- renderTable({ # <13>
+        getComposition("foodTable2_rows_selected")
+    })
+
+    output$codigoGrupos <- renderTable(codigoGrupo) # <14>
+
+    output$codigoComponentes <- renderTable(anexoCodigo) # <14>
+
+    observeEvent(input$copyButton1, { # <15>
+        selectedData <- getComposition("foodTable1_rows_selected")
+        if (length(input$foodTable1_rows_selected) > 0) {
+            clipboard <- apply(selectedData, 2, paste, collapse = " ")
+            writeClipboard(clipboard)
+            shinyjs::alert("Datos copiados al portapapeles")
+        } else {
+            shinyjs::alert("Selecciona una fila para copiar los datos")
+        }
+    })
+
+    observeEvent(input$copyButton2, { # <15>
+        selectedData <- getComposition("foodTable2_rows_selected")
+        if (length(input$foodTable2_rows_selected) > 0) {
+            clipboard <- apply(selectedData, 2, paste, collapse = " ")
+            writeClipboard(clipboard)
+            shinyjs::alert("Datos copiados al portapapeles")
+        } else {
+            shinyjs::alert("Selecciona una fila para copiar los datos")
+        }
+    })
 }
 
 # Ejecutar la aplicación Shiny
-shinyApp(ui, server)# <16>
+shinyApp(ui, server) # <16>
 ```
 
 1. Cargar tabla de alimentos individuales (`alimentos.csv`), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).
@@ -237,7 +253,7 @@ shinyApp(ui, server)# <16>
 
 ## El demo ⏩
 
-[![Aplicación Shiny](images/1.png){fig-alt="Aplicación de composición de tablas de alimentos usando Shiny"}](ttps://sergiojacobozavaleta.shinyapps.io/rosaapp/)
+[![Aplicación Shiny](images/1.png){fig-alt="Aplicación de composición de tablas de alimentos usando Shiny"}](https://sergiojacobozavaleta.shinyapps.io/rosaapp/)
 
 ::: callout-tip
 ## Más allá de esta guía
