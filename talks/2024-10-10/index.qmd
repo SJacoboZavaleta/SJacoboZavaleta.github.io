@@ -1,0 +1,66 @@
+---
+title: Robot Intelligence
+description: |
+  What is Robot Intelligence?
+date: 2024-10-10
+author: 
+  - name: Sergio Jácobo-zavaleta
+image: s20_intelligence.png
+image-alt: |
+  An image of various robots with some kind of intelligence features like arms and humanoid faces
+---
+
+```{r libraries}
+library(distilltools)
+```
+
+`r icon_link(
+  icon = "images",
+  text = "slides",
+  url = "https://jacobozavaleta.quarto.pub/s20_intelligence/"
+)`
+`r icon_link(
+  icon = "github",
+  text = "materials",
+  url = "https://github.com/SJacoboZavaleta/uc3m-presentations/tree/main/s20_intelligence"
+)`
+
+
+
+## Overview 
+
+The following topics were covered:
+
+- What does Intelligence mean for a robot?
+  - A draft meaning
+  - Should a robot be intelligent?
+  - Should a robot be autonomous?
+- Commercial Robots
+
+## Event details
+
+**Event:** Course: Intelligent and Autonomous Robots | Master in Robotics and Automation
+
+**Date:**  10th October, 2024
+
+**Time:** 19:00
+
+**Location:** Universidad Carlos III de Madrid
+
+
+## Slides
+
+<iframe class="slide-deck ar4x3" src="https://jacobozavaleta.quarto.pub/s20_intelligence/" title="Slide deck for the presentation">
+</iframe>
+
+Keyboard shortcuts for slideshow (once you've clicked inside it):
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides
+
+- Use <kbd>o</kbd> for an overview of all slides
+
+- Use <kbd>?</kbd> for an overview more keyboard shortcuts
+
+- Click the hamburger menu in the bottom left corner of the slide deck for more options
+
+  - <kbd>f</kbd> to toggle full screen doesn't work from this page. Go to [slides](https://ellakaye.github.io/2024-07-31-diverse/) and use that shortcut from there instead

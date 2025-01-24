@@ -2,34 +2,23 @@
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: true
+freeze: false
 
 # Enable banner style title blocks
 title-block-banner: true
-
-citation: true
-license: CC BY-SA
-
+sidebar: false
+page-layout: article
 open-graph: true
 twitter-card:
     image-width: 600
     image-height: 314
     card-style: summary_large_image
-    creator: "@ellamkaye"
-    site: "@ellamkaye"
-
-toc: true    
-toc-depth: 3
-toc-title: Contents
-
-code-fold: show
-code-summary: "Toggle the code"
-code-tools: true
-
+    creator: "@JacoboZavaleta"
+    site: "@JacoboZavaleta"
+    image: images/twitter-card.png
+    image-alt: "Third Foundation logo"
+toc: false 
 execute:
   echo: true
   message: true
   warning: true
-  
-include-in-header: ../_includes/giscus.html
-include-after-body: ../_includes/div-giscus.html

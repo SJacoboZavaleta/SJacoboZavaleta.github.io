@@ -20,6 +20,7 @@
 /aoc-project /posts/2023-11-29_aoc-project
 /hanukkah-of-data-5784 /posts/2023-12-07_hanukkah-of-data-5784
 /advent-of-code-2023 /posts/2023-12-30_advent-of-code-2023
+/update-2024 /posts/2024-10-03_update-2024
 /draft-awesome-icon /posts/draft-awesome-icon
 /draft-highlighting-qmd /posts/draft-highlighting-qmd
 /testing-callout-blocks /posts/testing-callout-blocks
@@ -31,8 +32,15 @@
 /phd-as-package /talks/2018-08-23_phd-as-package
 /working-with-text-in-r /talks/2019-10-05_working-with-text-in-r
 /how-to-get-help-in-r /talks/2020-10-29_how-to-get-help-in-r
+/sustain-r /talks/2023-04-22_sustain-r
+/warwick-brand /talks/2024-06-10_warwick-brand
+/rainbowr /talks/2024-07-09_rainbowr
+/c-for-r-users /talks/2024-07-10_c-for-r-users
+/diverse-conversation /talks/2024-07-31_diverse-conversation
 /package-template /packages/_package-template
 /aochelpers /packages/aochelpers
+/aperol /packages/aperol
 /BradleyTerryScalable /packages/BradleyTerryScalable
 /distilltools /packages/distilltools
 /EMK /packages/EMK
+/warwickplots /packages/warwickplots

@@ -1,0 +1,66 @@
+---
+title: Robot Intelligence
+description: |
+  A brief review of the State-of-the-art of commercial robots and future ones. 
+date: 2024-09-16
+author: 
+  - name: Sergio Jácobo-zavaleta
+image: s10_autonomy.png
+image-alt: |
+  An image of a classical robot with a human-like face 
+---
+
+```{r libraries}
+library(distilltools)
+```
+
+`r icon_link(
+  icon = "images",
+  text = "slides",
+  url = "https://jacobozavaleta.quarto.pub/10_introRobots/"
+)`
+`r icon_link(
+  icon = "github",
+  text = "materials",
+  url = "https://github.com/SJacoboZavaleta/uc3m-presentations/tree/main/s10_introRobots"
+)`
+
+
+## Overview 
+
+The following topics were covered:
+
+- What does autonomy mean for a robot?
+  - A draft meaning
+  - Should a robot be autonomous?
+- What robots exist today that are autonomous?
+  - State of the art
+  - Effects of high-level autonomy on society
+
+## Event details
+
+**Event:** Course: Intelligent and Autonomous Robots | Master in Robotics and Automation
+
+**Date:**  16th September, 2024
+
+**Time:** 19:00
+
+**Location:** Universidad Carlos III de Madrid
+
+
+## Slides
+
+<iframe class="slide-deck ar4x3" src="https://jacobozavaleta.quarto.pub/10_introRobots/" title="Slide deck for the presentation">
+</iframe>
+
+Keyboard shortcuts for slideshow (once you've clicked inside it):
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides
+
+- Use <kbd>o</kbd> for an overview of all slides
+
+- Use <kbd>?</kbd> for an overview more keyboard shortcuts
+
+- Click the hamburger menu in the bottom left corner of the slide deck for more options
+
+  - <kbd>f</kbd> to toggle full screen doesn't work from this page. Go to [slides](https://ellakaye.github.io/2024-07-31-diverse/) and use that shortcut from there instead

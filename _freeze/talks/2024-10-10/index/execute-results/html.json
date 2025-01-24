@@ -1,0 +1,15 @@
+{
+  "hash": "50ba3b2595c4aad9257f03b6ab7366bb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Robot Intelligence\ndescription: |\n  What is Robot Intelligence?\ndate: 2024-10-10\nauthor: \n  - name: Sergio Jácobo-zavaleta\nimage: s20_intelligence.png\nimage-alt: |\n  An image of various robots with some kind of intelligence features like arms and humanoid faces\n---\n\n::: {.cell}\n\n:::\n\n\n\n\n\n`<a href=\"https://jacobozavaleta.quarto.pub/s20_intelligence/\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fas fa-images\"></i> slides</a>`{=html}\n`<a href=\"https://github.com/SJacoboZavaleta/uc3m-presentations/tree/main/s20_intelligence\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> materials</a>`{=html}\n\n\n\n## Overview \n\nThe following topics were covered:\n\n- What does Intelligence mean for a robot?\n  - A draft meaning\n  - Should a robot be intelligent?\n  - Should a robot be autonomous?\n- Commercial Robots\n\n## Event details\n\n**Event:** Course: Intelligent and Autonomous Robots | Master in Robotics and Automation\n\n**Date:**  10th October, 2024\n\n**Time:** 19:00\n\n**Location:** Universidad Carlos III de Madrid\n\n\n## Slides\n\n<iframe class=\"slide-deck ar4x3\" src=\"https://jacobozavaleta.quarto.pub/s20_intelligence/\" title=\"Slide deck for the presentation\">\n</iframe>\n\nKeyboard shortcuts for slideshow (once you've clicked inside it):\n\n- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides\n\n- Use <kbd>o</kbd> for an overview of all slides\n\n- Use <kbd>?</kbd> for an overview more keyboard shortcuts\n\n- Click the hamburger menu in the bottom left corner of the slide deck for more options\n\n  - <kbd>f</kbd> to toggle full screen doesn't work from this page. Go to [slides](https://ellakaye.github.io/2024-07-31-diverse/) and use that shortcut from there instead",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

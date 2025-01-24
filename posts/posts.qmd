@@ -1,0 +1,115 @@
+---
+pagetitle: Biblioteca Galáctica
+repo-actions: false
+# listing:
+#   id: "blogs-listing"
+#   contents:  
+#   - blogs
+#   - "!posts.qmd"
+#   sort: "date desc"
+#   type: grid
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
+#   feed: true
+page-layout: full
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [La Biblioteca Galáctica]{.second-color}
+:::{.header-banner}
+
+::: light-mode
+![](../images/theThirdFoundation_blog_light.svg){fig-alt="The Third Foundation logo" width=700px}
+:::
+
+::: dark-mode
+![](../images/theThirdFoundation_blog_dark.svg){fig-alt="The Third Foundation logo" width=700px}
+:::
+
+:::
+
+:::{.header-text style="margin-bottom: 20px;"}
+:::{.header-block}
+Bienvenido a este nuevo proyecto dedicado a proporcionar información valiosa y servir como una vitrina de ideas en varios campos como la robótica, redacción de investigaciones, programación y más, desde una perspectiva moderna dirigida a estudiantes y entusiastas. Al igual que la *Primera y Segunda Fundación* en las novelas de [Isaac Asimov]{.bg-color-cyan}, este espacio (*Bóveda*) busca recopilar diversos proyectos y fundamentos impulsado por el rápido crecimiento de la IA en los últimos años en la web.
+:::
+
+:::
+
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Explora mi blog sobre Quarto, donde comparto mis conocimientos y experiencias.</p>
+<div style="margin-top: auto;"><a href="quarto.qmd" class="card-link heading-font">Quarto</a></div>
+</div>
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-second-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Escribo sobre apuntes para una mejor redacción en investigación.</p>
+<div style="margin-top: auto;"><a href="research.qmd" class="card-link second-color-link heading-font">Research</a></div>
+</div>
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-third-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Comparto algunos proyectos e ideas en robótica.</p>
+<div style="margin-top: auto;"><a href="robotics.qmd" class="card-link third-color-link heading-font">Robotics</a></div>
+</div>
+</div>
+:::
+
+:::
+
+
+::: {.pullout-text}
+::: {.pullout-container}
+::: {.pullout-block .black-background}
+![](../images/blue-quote.png){width="100px"}
+
+## But can I do it? Won’t the Laws of Robotics hold me back. No, they will not hold me back. I know they won’t.
+
+## There is something far more important to me than they are, something that dictates my actions beyond anything they can do to stop me.
+
+## I want to be a writer.
+El Robot Cal (CL-123X) en *Gold The Final Science Fiction Collection*, **Isaac Asimov (1983)**
+
+::: {.button}
+[Léelo completo en Novel12](https://novel12.com/243245/gold-the-final-science-fiction-collection-.htm)
+:::
+
+:::
+:::
+:::
+
+
+::: {.pullout-text}
+::: {.pullout-container}
+::: {.pullout-block .black-background}
+![](../images/orange-quote.png){width="100px"}
+
+## Mis (Ebling Mis) said, in a hoarse whisper, “I am convinced the Second Foundation can win, if it is not caught prematurely by the Mule. It has kept itself secret; the secrecy must be upheld; it has a purpose. You must go there; your information is vital . . . may make all the difference. Do you hear me?”
+
+## Toran cried in near-agony, “Yes, yes! Tell us how to get there, Ebling? Where is it?” “I can tell you,” said the faint voice.
+
+## He never did [Bayta lifted her blaster and shot].
+*Fundación e Imperio* - **Isaac Asimov (1952)**
+
+::: {.button}
+[Léelo completo en Novel12](https://novel12.com/241030/foundation-and-empire.htm)
+:::
+
+:::
+:::
+:::

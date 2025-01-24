@@ -1,4 +1,5 @@
 ---
+pagetitle: Contact
 include-in-header: "_includes/fontawesome-2up.html"
 knitr:
   opts_chunk: 
@@ -7,11 +8,11 @@ execute:
   echo: false
 ---
 
-# [I'd love to hear from you!]{.primary}
+# [Let's Connect – I'm Here for You!]{.primary}
 
-You can leave a note about any of my posts, talks or packages using the comment box at the bottom of its page.
+You can leave comments or feedback about any of my blog posts, projects, or other content using the comment section at the bottom of each page.
 
-You can find me on elsewhere online:
+You can also find me on:
 
 ```{r}
 #| echo: false
@@ -19,20 +20,18 @@ library(distilltools)
 ```
 
 `r icon_link(
-  icon = "mastodon",
-  text = "Mastodon",
-  url = "https://fosstodon.org/@ellakaye",
-  rel = "me noopener"
-)`
-`r icon_link(
   icon = "github",
   text = "GitHub",
-  url = "https://github.com/EllaKaye"
+  url = "https://github.com/SJacoboZavaleta"
 )`
 `r icon_link(
   icon = "linkedin",
   text = "LinkedIn",
-  url = "https://www.linkedin.com/in/ellakaye"
+  url = "https://www.linkedin.com/in/sjacobozavaleta/"
 )`
 
-Or, you can drop me an e-mail at [hello @ ellakaye.co.uk]{.heading-font}
+For direct inquiries, feel free to email me at:
+- [100514566@alumnos.uc3m.es](.heading-font)
+- [sjacobo@unitru.edu.pe](.heading-font)
+
+I'm happy to answer questions, discuss topics related to my blog and projects, or chat about your own work in robotics and automation. Looking forward to connecting!

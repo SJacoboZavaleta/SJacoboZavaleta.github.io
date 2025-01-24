@@ -1,0 +1,59 @@
+---
+title: Bachelor Thesis Presentation
+description: |
+    "Modeling and Simulation of a Clinical Robot Assisted by 3D Ultrasound to Improve Needle Insertion Guidance in Percutaneous Breast Biopsy
+date: 2024-09-16
+author: 
+  - name: Sergio Jácobo-zavaleta
+image: s_bachelor_presentation.png
+image-alt: |
+  An image of a novel breast holder for needle insertion
+---
+
+```{r libraries}
+library(distilltools)
+```
+
+`r icon_link(
+  icon = "images",
+  text = "slides",
+  url = "https://sjacobozavaleta.github.io/BachelorThesisPresentation/presentacion.html"
+)`
+`r icon_link(
+  icon = "github",
+  text = "materials",
+  url = "https://github.com/SJacoboZavaleta/BachelorThesisPresentation/tree/main"
+)`
+
+
+## Overview 
+
+Bacherlor Thesis presentation for obtaining the professional title of Ingeniero Mecatrónico.
+
+## Event details
+
+**Event:** Thesis presentation
+
+**Date:**  14th January , 2022
+
+**Time:** 09:00
+
+**Location:** Universidad Nacional de Trujillo
+
+
+## Slides
+
+<iframe class="slide-deck ar4x3" src="https://sjacobozavaleta.github.io/BachelorThesisPresentation/presentacion.html" title="Slide deck for the presentation">
+</iframe>
+
+Keyboard shortcuts for slideshow (once you've clicked inside it):
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides
+
+- Use <kbd>o</kbd> for an overview of all slides
+
+- Use <kbd>?</kbd> for an overview more keyboard shortcuts
+
+- Click the hamburger menu in the bottom left corner of the slide deck for more options
+
+  - <kbd>f</kbd> to toggle full screen doesn't work from this page. Go to [slides](https://ellakaye.github.io/2024-07-31-diverse/) and use that shortcut from there instead

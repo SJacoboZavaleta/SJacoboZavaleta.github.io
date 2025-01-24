@@ -1,0 +1,31 @@
+---
+pagetitle: Biblioteca Galáctica | Quarto
+repo-actions: false
+listing:
+  id: "quarto-listing"
+  contents:  
+  - blogs/2023/quarto/
+  - blogs/2024/quarto/
+  - "!quarto.qmd"
+  - "!research.qmd"
+  - "!robotics.qmd"
+  - "!posts.qmd"
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [Quarto]{.second-color}
+
+:::{#quarto-listing}
+
+:::

@@ -1,50 +1,101 @@
-![](images/ellakaye-profile-2023.jpg){.profile-pic fig-alt="Headshot of Ella Kaye, a woman of around 40 with short brown hair looking slightly off-camera and smiling" fig-align="center" width="33%"}
+---
+pagetitle: Curriculum Vitae
+title: "Curriculum Vitae"
+format:
+  html: default
+  pdf:
+    author: Sergio Jacobo-Zavaleta
+    pdf-engine: weasyprint
+    css: assets/cv.css
+format-links: [pdf]
+---
 
-I am a Research Software Engineer in the [Department of Statistics](https://warwick.ac.uk/fac/sci/statistics/){target="_blank"} at the University of Warwick, working with [Dr Heather Turner](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/turner/){target="_blank"} on her [fellowship](https://society-rse.org/community/rse-fellows/){target="_blank"} "Sustainability and EDI (Equality, Diversity and Inclusion) in the R Project".
+::: {.print-only .contact-block}
+100514566g@alumnos.uc3m.es
+:::
 
-This involves:
+::: {.no-print}
+_Last updated  Oct 10, 2024_
+:::
 
-👩‍💻 Contributing to the {{< fa brands r-project >}} project through code, infrastructure & outreach.
+## Education
+**Master in Robotics and Automation**  
+Carlos III de Madrid, Madrid, Spain  
+[*September 2024 - ongoing*]{.cvdate}
 
-📦 Contributing to packages on the Comprehensive R Archive Network (CRAN).
+**Bachelor of Science in Mechatronics Engineering**  
+Universidad Nacional de Trujillo, Trujillo, Peru  
+[*April 2014 - December 2018*]{.cvdate}
 
-🚀 Capacity-building in R and data science at the University of Warwick.
+- Thesis title: [Modelamiento y simulación de un robot clínico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutánea de mama](https://hdl.handle.net/20.500.14414/18226).  
+- Third-class rank.
 
-💪 Community-building in the R and RSE communities with a focus on EDI.
+## Profesional Experience
 
-Please see my [professional webpage](https://warwick.ac.uk/EllaKaye){target="_blank"} for more details, including links to my teaching resources.
+**Maintenance Assistant of biomedical equipment (Full-time)**  <br>
+Corporación Tecnobiomédica Healthcare del Perú SAC. — Medical equipments, Lima, Peru  
+[*November 2020 - April 2021*]{.cvdate}  
 
-### Previously
+- Programmed and adapted preventive maintenance plans of old and out of date equipments based on user's experience.  
 
-Prior to my current role, my academic path has taken me from a BA in Mathematics and Philosophy (University of Oxford), through an MA in History and Philosophy of Science and Technology (University of Toronto), an MPhil in Mathematics Education (University of Cambridge), an MSc in Applied Statistics (University of Oxford) and the [OxWaSP programme](http://www.oxwasp-cdt.ac.uk){target="_blank"} for postgraduate research in Statistics (University of Warwick). I also have a PGCE in Secondary Mathematics, have taught at secondary school, and worked in market research.
+**Maintenance Assistant (Full-time)**  <br>
+Norsac SAC. — Textile Industry, Trujillo, Peru  
+[*May 2019 - November 2019*]{.cvdate}  
 
-<!-- You can check out my [CV](CV.pdf) for more details. -->
+- Formulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.  
+- Provided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.  
+- Reduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan.
 
-### My {{< fa brands r-project >}} journey
+## Research experience
 
-- 2014: first R course as part of MSc in Applied Statistics
-
-- 2015: first taste of `ggplot2`
-
-- 2016: first [R package](packages/BradleyTerryScalable/index.qmd){target="_blank"}
-
-- 2017: first community involvement (useR!2017, [Oxford R User Group](https://r-oxford.github.io){target="_blank"}, [rainbowR](https://rainbowr.netlify.app){target="_blank"})
-
-- 2020: first [TidyTuesday](https://github.com/rfordatascience/tidytuesday) contribution
-
-- 2021: third time's the charm building a website in R, using [{distill}](https://rstudio.github.io/distill/){target="_blank"}
-
-- 2022: as an RSE, I now get to be both an {{< fa brands r-project >}} enthusiast *and* professional
-
-- 2023: first patch accepted in base R  
+**National researcher Lima, Peru**  <br>
+[*April 2023 - Present*]{.cvdate}  
+Enabled and registered in the National Scientific Register (RENACYT). Code: P0153371  
 
 
-I love R! I have used it in extensively in my research as a statistician for visualising, analysing and modelling data. I have also used it for personal projects and writing [packages](packages.qmd). My enthusiasm for all things RMarkdown (especially {distill}) has now morphed into excitement about [Quarto](https://quarto.org){target="_blank"}. I have particularly enjoyed using it to build this website (my fourth!) [^about-1]
+**Technological projects about prevention and assistant in patients with COVID-19 Trujillo**  <br>
+[*March - October 2019*]{.cvdate}  
+Funded by the Universidad Nacional de Trujillo  
+  
+- Collaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.  
+- The initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use.
 
-[^about-1]: Previous versions were built with blogdown, then hugodown, then distill.
+## Publications
+- Jácobo-Zavaleta, S., & Zavaleta, J. (2023a). *Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study*. IEEE Latin America Transactions, 21 (3). [Link](https://latamt.ieeer9.org/index.php/transactions/article/view/7442). https://doi.org/10.1109/tla.2023.10068849  
+- Jácobo-Zavaleta, S., & Zavaleta, J. (2023b). *A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study*. IEEE Latin America Transactions, 21 (3). [Link](https://latamt.ieeer9.org/index.php/transactions/article/view/7300). https://doi.org/10.1109/TLA.2023.10068845  
+- Zavaleta, A., Ñuflo-Vásquez, S., Alarcón-Turiani, V., & Jácobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Perú. Norte Médico, 1 (5), 27–30. [Link](https://revistas.unc.edu.pe/index.php/nortemedico/article/view/118).  
+- Jácobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). *Deep learning y enfermedades oculares*. Norte Médico, 3 (2). Link.  
+- Zavaleta de Los Ríos, V., Jácobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). *Microbiota intestinal y las enfermedades neurodegenerativas*. Norte Médico, 1 (2). [Link](https://revistas.unc.edu.pe/index.php/nortemedico/article/view/118).
 
-I love the R community! I am a co-founder and co-organiser of [rainbowR](https://rainbowr.netlify.app), a community that supports, promotes and connects LGBTQ+ people who code in the R language. I am the [R Forwards](https://forwards.github.io){target="_blank"} community team co-lead. I am on the organising committee of the [Warwick R User Group](https://www.meetup.com/Warwick-useRs/) and was previously co-organiser of the [Oxford R User Group](https://www.meetup.com/Oxford-R-User-Group/). Here's more on the [communities](community.qmd) that I'm involved with, as well as lots of information about, and links to, groups that you may be interested in getting involved with.
+## Honours and Awards
+- **Recognition for technological projects about prevention and assistant in patients with COVID-19**  <br>
+Universidad Nacional de Trujillo  
+[*October 2020*]{.cvdate}
+-  **Third place in Final Merit List of Undergraduate Program**  <br>
+Universidad Nacional de Trujillo  
+[*December 2018*]{.cvdate}
+- **Recognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”**  <br>
+José Faustino Sánchez Carrión High School  
+[*December 2010*]{.cvdate}
 
-I enjoy sharing what I know/am learning about R with others, particularly by writing blog [posts](posts.qmd) and speaking at [R-Ladies](https://rladies.org) and [R User Group](https://www.meetup.com/pro/r-user-groups/) meetups. Here are some [talks](talks.qmd) I've given. Please [get in touch](contact.qmd) if you'd like me to speak at your group.
+## Extra Curricular Activities
 
-I live in Oxford, UK, with my wife and our two young children.
+### Independent Tutor  
+- **Private Maths and English tutor**
+
+### Voluntarism
+- **Citizen monitor**  
+    Escuela Nacional de Control - Contraloría General de la República del Perú.  
+    [*January 2022 -- Present*]{.cvdate}   
+    Monitored public-financed projects to report evidence of incidents of non-compliance.
+
+### Provision of services
+- **Examination monitor**  
+    Minister of Education, Cajamarca, Perú.  
+    [*November 2022 - Present*]{.cvdate}  
+    Collaborated and moderated teacher evaluation processes for service examination. 
+
+::: {.print-only}
+## References
+Available upon request
+:::

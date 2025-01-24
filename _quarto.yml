@@ -1,66 +1,67 @@
 project:
   type: website
   resources:
-    - "_redirects"
     - "images"
     
 execute:
   freeze: auto
 
 website:
-  title: "Ella Kaye"
-  site-url: https://ellakaye.co.uk
+  title: "Sergio Jacobo"
+  site-url: https://sergiojacobo.com
   description: Personal website, portfolio and blog
-  repo-url: https://github.com/EllaKaye/ellakaye.co.uk
+  repo-url: https://github.com/SJacoboZavaleta/sergiojacobo
   #repo-actions: issue
-  image: images/logo.png
+  image: images/website_logo.png	
   navbar:
     #logo: ELLAKAYE-logo-light.png
-    title: "ELLA<span class='icon-line'></span>KAYE"
+    title: "<span class='icon-line2'></span>Sergio<span class='icon-line3'></span><span class='icon-line'></span>Jacobo"
     right:
       - text: about
         href: about.qmd
-      - text: posts
-        href: posts.qmd
+      - text: blog
+        href: posts/posts.qmd
       - text: talks
         href: talks.qmd
-      - text: packages
-        href: packages.qmd
+      - text: ideas
+        href: ideas/ideas.qmd
       - text: community
         href: community.qmd
       - text: contact
         href: contact.qmd
-      #- icon: github
-      #  href: https://github.com/EllaKaye
-      #- icon: twitter
-      #  href: https://twitter.com/ellamkaye
-  favicon: images/favicon.png
+  favicon: images/ThirdFoundation_favicon.png
   twitter-card: 
-    title: Ella Kaye
-    description: The personal website of Ella Kaye
-    image: images/logo.png
+    title: Sergio Jacobo
+    description: The personal website of Sergio Jacobo
+    image: images/website_logo.png
     image-alt: |
-      A square logo made from Ella Kaye's name - 
-      first name on top of last name in dark gray capital letters, 
-      separated by a horizontal bright pink line, on a very light grey background
+      A square logo made from Sergio Jacobo's name and The Third Foundation's logo.
     image-width: 500
     image-height: 500
     card-style: summary # alternative summary_large_image
-    creator: "@ellamkaye"
-    site: "@ellamkaye"
+    creator: "@JacoboZavaleta"
+    site: "@JacoboZavaleta"
   open-graph: 
-    #description: The personal website of Ella Kaye
-    image: images/logo.png
+    description: The personal website of Sergio Jacobo
+    image: images/website_logo.png
     image-alt: |
-      A square logo made from Ella Kaye's name - 
-      first name on top of last name in dark gray capital letters, 
-      separated by a horizontal bright pink line, on a very light grey background
+      A square logo made from Sergio Jacobo's name and The Third Foundation's logo.
     image-width: 500
     image-height: 500
     locale: en-GB
   google-analytics:
     tracking-id: "G"
     anonymize-ip: true
+  page-footer:
+    left: |
+      Copyright &copy; 2024 Sergio Jácobo |<br>
+      Este sitio web fue creado usando [![](/images/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org).
+    center:
+      - href: https://www.github.com/SJacoboZavaleta
+        icon: github
+        aria-label: GitHub
+    right: |
+      Inspirado por [Real World Data Science](https://realworlddatascience.net/) <br> y [EllaKaye](https://ellakaye.co.uk/)
 
 format:
   html:
@@ -76,4 +77,3 @@ format:
     link-external-newwindow: true
     
 editor: source
-

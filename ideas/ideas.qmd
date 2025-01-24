@@ -1,0 +1,35 @@
+---
+pagetitle: Ideas
+repo-actions: false
+# listing:
+#   contents: 
+#   - projects
+#   - "!ideas.qmd"
+#   sort: "date desc"
+#   type: grid
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
+#   image-height: 416px
+#   fields: [title, author, image, description]
+page-layout: full
+title-block-banner: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [IDEAS]{.fourth-color}
+
+
+:::{.header-text}
+:::{.header-block}
+I'm working on some ideas that might be useful to others.
+:::
+:::
+
+:::{.header-banner}
+![](../../images/noPreview.jpg){fig-alt="No preview" width=500px}
+:::

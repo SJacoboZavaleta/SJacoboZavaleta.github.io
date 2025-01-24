@@ -54,9 +54,9 @@ $theme: "litera" !default;
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 // fonts
-$font-family-sans-serif: "LEMONMILKPro-Light", Figtree, Helvetica, sans-serif !default;
-$font-family-monospace: "MonoLisa-Regular", "Fira Mono", monospace;
-$headings-font-family: "LEMONMILKPro-Regular", Figtree, Helvetica, sans-serif !default;
+$font-family-sans-serif: Figtree, Helvetica, sans-serif !default;
+$font-family-monospace: "Fira Mono", monospace;
+$headings-font-family: Figtree, Helvetica, sans-serif !default;
 
 // litera bootswatch theme colors
 /*
@@ -101,6 +101,7 @@ $cyan:    #17a2b8 !default;
 */
 
 //  my colors (comment out above)
+/*
 $pink: #D4006A;
 $blue: #006AD4;
 $green: #00D46A;
@@ -111,6 +112,20 @@ $purple: #6A00D4;
 $orange: #D46A00;
 $yellow: #D4D400;
 $green-bright: #6AD400;
+*/
+
+//  my colors (comment out above)
+$pink: #D4006A; // orderer than previous
+$pink2: #FF3B77; // Brightened for better visibility
+$blue: #006AD4; // Brighter, more vibrant blue
+$green: #49CCB8; // More saturated green
+$cyan: #06B6D4; // Adjusted for better contrast
+$red: #DC2626; // Brightened red for better visibility
+$indigo: #4338CA; // Slightly lighter indigo
+$purple: #7C3AED; // More vibrant purple
+$orange: #F97316; // Brighter, more vivid orange
+$yellow: #FACC15; // Lightened yellow for better readability   
+$green-bright: #22C55E; // Adjusted bright green
 
 $primary:       $green !default;
 $secondary:     $gray-400 !default;
@@ -121,8 +136,16 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
 
-$second-color:  $green-bright;
-$third-color:   $orange;
+$second-color:  $blue;
+$third-color:   $red;
+$fourth-color: $green-bright;
+$fifth-color: $purple;
+
+$primary-color-card: #E76F51;
+$second-color-card: #2A9D8F;
+$third-color-card: #E9C46A;
+$fourth-color-card: #F4A261;
+$fifth-color-card: #264653;
 
 // font sizes;
 $font-size-base:    1rem !default; // Assumes the browser default, typically `16px`
@@ -134,8 +157,7 @@ $h5-font-size:      $font-size-base * 1.25 !default;
 $h6-font-size:      $font-size-base !default;
 
 
-// colour tweaks to theme
-// to make it dark
+// colour tweaks to theme to make it dark
 $body-bg: $dark;
 $body-color: $light;
 $navbar-bg: $body-bg;
@@ -208,6 +230,14 @@ $callout-color-important: $red;
   color: $third-color;
 }
 
+.fourth-color {
+  color: $fourth-color;
+}
+
+.fifth-color {
+  color: $fifth-color;
+}
+
 // code
 pre.sourceCode {
   border-radius: 0;
@@ -267,6 +297,28 @@ div.tippy-content a:hover {
   margin-bottom: -6px;
 }
 
+// new components of line in animation
+.icon-line2 {
+  display: block;
+  background: $primary;
+  width: 6px;
+  height: 44px;
+  position: absolute;
+  top: 30;
+  left: 5;
+  margin-left: -6px;
+}
+
+.icon-line3 {
+  display: block;
+  background: $primary;
+  width: 6px;
+  height: 44px;
+  position: absolute;
+  margin-top: -6px;
+  margin-left: 120px;
+}
+
 /* keep text the body colour when active
 this was a change in Quarto 1.2 - now defaults to a darker shade of $primary
 would be fine, except that I want to target the different list items to keep 
@@ -286,26 +338,35 @@ the color that matches the card
 }
 
 // then override colors so they match cards
-#navbarCollapse > ul > li:nth-child(2) > a:hover,
-#navbarCollapse > ul > li:nth-child(4) > a:hover {
+#navbarCollapse > ul > li:nth-child(2) > a:hover{
   color: $second-color;
 }
 
-#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
+#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active{
   color: $second-color;
 }
 
-#navbarCollapse > ul > li:nth-child(3) > a:hover,
-#navbarCollapse > ul > li:nth-child(5) > a:hover {
+#navbarCollapse > ul > li:nth-child(3) > a:hover{
   color: $third-color;
 }
 
-#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
+#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active{
   color: $third-color;
 }
 
+#navbarCollapse > ul > li:nth-child(4) > a:hover{
+  color: $fourth-color;
+}
+#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active{
+  color: $fourth-color;
+}
+
+#navbarCollapse > ul > li:nth-child(5) > a:hover{
+  color: $fifth-color;
+}
+#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active{
+  color: $fifth-color;
+}
 
 // stop the name in my icon from changing colour on hover
 .navbar-title:hover {
@@ -335,14 +396,20 @@ the color that matches the card
     transition: all 0.3s;
   }
   
-  .navbar .navbar-nav .nav-item:nth-child(2)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(4)::after {
+  .navbar .navbar-nav .nav-item:nth-child(2)::after{
     background-color: $second-color;
   }
   
-  .navbar .navbar-nav .nav-item:nth-child(3)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(5)::after {
+  .navbar .navbar-nav .nav-item:nth-child(3)::after{
     background-color: $third-color;
+  }
+  
+  .navbar .navbar-nav .nav-item:nth-child(4)::after{
+    background-color: $fourth-color;
+  }
+  
+  .navbar .navbar-nav .nav-item:nth-child(5)::after{
+    background-color: $fifth-color;
   }
   
   .navbar .navbar-nav .nav-item:hover::after {
@@ -418,28 +485,33 @@ iframe.slide-deck {
 // for cards on home page
 #card-first-color {
   background-color: $body-bg;
-  border: 4px solid $primary;
+  border: 4px solid $primary-color-card;
   border-radius: 5px; 
 }
 
 #card-second-color {
   background-color: $body-bg;
-  border: 4px solid $second-color;
+  border: 4px solid $second-color-card;
   border-radius: 5px; 
 }
 
 #card-third-color {
   background-color: $body-bg;
-  border: 4px solid $third-color;
+  border: 4px solid $third-color-card;
   border-radius: 5px; 
 }
 
 
+// To force letter color in cards to light color (white)
+.card-body > p {
+  color: $body-color;
+}
+
 .card-link {
-    background-color: $primary;
+    background-color: $primary-color-card;
     color: $body-bg;
-    border: 4px solid $primary;
-    border-color: $primary;
+    border: 4px solid $primary-color-card;
+    border-color: $primary-color-card;
     padding: 5px .5rem 5px .5rem !important;
     margin: 0;
     border-radius: 5px; 
@@ -450,29 +522,29 @@ iframe.slide-deck {
 
 .card-link:hover {
   background-color: $body-bg;
-  color: $primary;
+  color: $primary-color-card;
 }
 
 .second-color-link{
-    background-color: $second-color;
-    border-color: $second-color;
+    background-color: $second-color-card;
+    border-color: $second-color-card;
     color: $body-bg;
 }
 
 .second-color-link:hover {
-  color: $second-color;
-  border-color: $second-color;
+  color: $second-color-card;
+  border-color: $second-color-card;
 }
 
 .third-color-link{
-    background-color: $third-color;
-    border-color: $third-color;
+    background-color: $third-color-card;
+    border-color: $third-color-card;
     color: $body-bg;
 }
 
 .third-color-link:hover {
-  color: $third-color;
-  border-color: $third-color;
+  color: $third-color-card;
+  border-color: $third-color-card;
 }
 
 kbd {
@@ -693,3 +765,5 @@ iframe.slide-deck-4-3 {
 }
 */
 
+.dark-mode { display: block; }
+.light-mode { display: none; }

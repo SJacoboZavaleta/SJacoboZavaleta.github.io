@@ -1,0 +1,31 @@
+---
+pagetitle: Biblioteca Galáctica | Robotics
+repo-actions: false
+listing:
+  id: "robotics-listing"
+  contents:  
+  - blogs/2023/robotics/
+  - blogs/2024/robotics/
+  - "!quarto.qmd"
+  - "!research.qmd"
+  - "!robotics.qmd"
+  - "!posts.qmd"
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [Robotics]{.second-color}
+
+:::{#robotics-listing}
+
+:::

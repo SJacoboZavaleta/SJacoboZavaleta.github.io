@@ -1,129 +1,51 @@
 ---
+pagetitle: Sergio Jacobo Website
+about:
+  template: jolla
+  image: images/sergio-bio.png
+  image-alt: "Headshot of a person with a serious look, taken in a fountain, with a green tree background, wearing glasses, in selfie mode"
+  id: about-heading
+  image-shape: round
+  links:
+    - icon: twitter-x
+      text: Twitter
+      href: https://x.com/JacoboZavaleta
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/sjacobozavaleta/
+    - icon: github
+      text: Github
+      href: https://github.com/SJacoboZavaleta
+    - icon: envelope-at-fill
+      text: Email
+      href: mailto:100514566@alumnos.uc3m.es
+    - text:  "{{< fa brands orcid >}} ORCID"
+      href: https://orcid.org/0000-0001-5084-8032
 knitr:
-  opts_chunk: 
+  opts_chunk:
     collapse: true
 execute: 
   echo: false
-page-layout: full
 include-in-header: 
   - _includes/fontawesome-2up.html
-  - _includes/mastodon.html
 ---
 
-::: {.grid}
-
-::: {.g-col-12}
+::: {.header-text} 
 [Hello and welcome!]{.home-header}
 :::
 
-::: {.g-col-12 .g-col-md-4}
-<div class="card h-100" id="card-first-color">
-<div class="card-body d-flex flex-column">
-<p class="card-text">About me, my interests and experience, and my work as a Research Software Engineer.</p>
-<div style="margin-top: auto;"><a href="about.qmd" class="card-link heading-font">ABOUT</a></div>
-</div>
-</div>
-:::
+::: {#about-heading}
 
-::: {.g-col-12 .g-col-md-4}
-<div class="card h-100" id="card-second-color">
-<div class="card-body d-flex flex-column">
-<p class="card-text">I sometimes write about what I'm doing and learning, mostly about <i class="fa-brands fa-r-project" aria-label="R project"></i> and building websites.</p>
-<div style="margin-top: auto;"><a href="posts.qmd" class="card-link second-color-link heading-font">POSTS</a></div>
-</div>
-</div>
-:::
+:::{grid}
 
-::: {.g-col-12 .g-col-md-4}
-<div class="card h-100" id="card-third-color">
-<div class="card-body d-flex flex-column">
-<p class="card-text">Slides and resources from talks I've given at R and RLadies user groups and conferences.</p>
-<div style="margin-top: auto;"><a href="talks.qmd" class="card-link third-color-link heading-font">TALKS</a></div>
-</div>
-</div>
-:::
+🦾 I am a Mechatronics Engineer with a passion for designing innovative clinical robots and biomedical devices. My many hats include robotics researcher, artificial intelligence enthusiast, and software developer. Currently, my main hat is that of a developer of cutting-edge healthcare solutions, enhancing medical imaging and robotics, with my research published in esteemed peer-reviewed journals.
 
-::: {.g-col-12 .g-col-md-4}
-<div class="card h-100" id="card-second-color">
-<div class="card-body d-flex flex-column">
-<p class="card-text">I develop R packages. Here are links to their repos, websites and any other resources. </p>
-<div style="margin-top: auto;"><a href="packages.qmd" class="card-link second-color-link heading-font">PACKAGES</a></div>
-</div>
-</div>
-:::
+🎓 Outside of my professional pursuits, I am dedicated to educating others about modern tools for efficient research manuscript writing, including $\LaTeX$, Zotero, Rmarkdown, Python, and R. Through this website, I aim to share my knowledge and passion for these tools, which are also essential for writing books, blogs, and creating websites with ease using [Quarto](https://quarto.org/docs/websites).
 
-::: {.g-col-12 .g-col-md-4}
-<div class="card h-100" id="card-third-color">
-<div class="card-body d-flex flex-column">
-<p class="card-text">I love the R community! Here's how to get involved, and groups I help organise or contribute to.</p>
-<div style="margin-top: auto;"><a href="community.qmd" class="card-link third-color-link heading-font">COMMUNITY</a></div>
-</div>
-</div>
-:::
+🌱  This blog serves as a fertile ground for cultivating ideas, thoughts, and projects I'm exploring while pursuing my master's degree in Robotics and Automation. Expect insights on everything from path planning, machine learning, and robot programming to reproducible workflows, and personal reflections on social issues. This space is designed to document what I've learned in classes, notes, projects, ideas, and everything that will help create an extensive vault of ideas for others and for my personal use. As I juggle these diverse interests, I also embrace the joys of films, books, running, and playing video games.
 
-::: {.g-col-12 .g-col-md-4}
-<div class="card h-100" id="card-first-color">
-<div class="card-body d-flex flex-column">
-<p class="card-text">Where to find me online and how to get in touch. I'd love to hear from you!</p>
-<div style="margin-top: auto;"><a href="contact.qmd" class="card-link heading-font">CONTACT</a></div>
-</div>
-</div>
-:::
+🔍 Most of my articles are written in [spanish]{.bg-color-red} to cater to new Hispanic students who may not yet have widespread access to detailed, high-quality information on these topics 🤖.
 
 :::
 
-```{r}
-#| echo: false
-
-# redirects strategy from djnavarro
-# https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/#netlify-redirects
-# list names of posts, talks and packages folders
-posts <- list.dirs(
-  path = here::here("posts"),
-  full.names = FALSE,
-  recursive = FALSE
-)
-
-talks <- list.dirs(
-  path = here::here("talks"),
-  full.names = FALSE,
-  recursive = FALSE
-)
-
-packages <- list.dirs(
-  path = here::here("packages"),
-  full.names = FALSE,
-  recursive = FALSE
-)
-
-# extract the slugs
-posts_slugs <- gsub("^.*_", "", posts)
-talks_slugs <- gsub("^.*_", "", talks)
-packages_slugs <- gsub("^.*_", "", packages)
-
-# redirects from distill site
-distill_redirects <- c("/posts/2017-06-17-n-letter-words/ /posts/2017-06-17_n-letter-words/",
-                  "/posts/2020-12-09-advent-of-code-2020/ /2020-12-09_advent-of-code-2020/",
-                  "/2021-05-08-welcome-to-my-distill-website/  /posts/2021-05-08_welcome-distill/",
-                  "/posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/ /posts/2021-05-25_custom-highlighting-distill-1/",
-                  "/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/ /posts/2021-05-26_custom-highlighting-distill-2/",
-                  "/talks/2017-05-25-an-overview-of-htmlwidgets/ /talks/2017-05-25_overview-of-htmlwidgets/",
-                  "/talks/2017-07-06-introducing-bradleyterryscalable/ /talks/2017-07-06_introducing-bradleyterryscalable/",
-                  "/talks/2018-08-23-phd-as-package/ /talks/2018-08-23_phd-as-package/",
-                  "/talks/2019-10-05-working-with-text-in-r/ /talks/2019-10-05_working-with-text-in-r/",
-                  "/talks/2020-10-29-how-to-get-help-in-r/ /talks/2020-10-29_how-to-get-help-in-r/",
-                  "/projects.html /packages.html")
-
-# lines to insert to a netlify _redirect file
-posts_redirects <- paste0("/", posts_slugs, " ", "/posts/", posts)
-talks_redirects <- paste0("/", talks_slugs, " ", "/talks/", talks)
-packages_redirects <- paste0("/", packages_slugs, " ", "/packages/", packages)
-redirects <- c(distill_redirects,
-               posts_redirects,
-               talks_redirects,
-               packages_redirects)
-
-# write the _redirect file
-writeLines(redirects, here::here("_redirects"))
-```
-
+:::
