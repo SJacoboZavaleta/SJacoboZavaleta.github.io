@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Sergio Jacobo</title>
+<link>https://sergiojacobo.com/posts/research.html</link>
+<atom:link href="https://sergiojacobo.com/posts/research.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website, portfolio and blog</description>
+<image>
+<url>https://sergiojacobo.com/images/website_logo.png</url>
+<title>Sergio Jacobo</title>
+<link>https://sergiojacobo.com/posts/research.html</link>
+</image>
+<generator>quarto-1.5.45</generator>
+<lastBuildDate>Thu, 23 Jan 2025 21:45:21 GMT</lastBuildDate>
+<item>
+  <title>Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/posts/blogs/2023/research/01/b1_1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="img-fluid figure-img"></p>
+<figcaption>Imagen subida por Kaitlyn Baker bajo Licencia Unsplash</figcaption>
+</figure>
+</div>
+<section id="a-quien-va-dirigido" class="level1">
+<h1>¿A quien va dirigido?</h1>
+<p>La presente guía tiene como objetivo presentar un flujo de trabajo para la generación de reportes universitarios, literarios, científicos y más de alta calidad, bajo la modalidad colaborativa en la nube utilizando la plataforma web <strong>Overleaf</strong> y el administrador de referencias <strong>Zotero</strong>. Esta guía es útil para nuevos usuarios que desean comenzar en el mundo de o buscan una alternativa práctica y open-source a editores de texto comerciales. Siendo su principal ventaja, centrarse menos en la <em>forma</em> del documento y más en el <em>fondo</em> del mismo. Pero sobre todo, para todos aquellos estudiantes y profesionales que prefieren aprender lo básico en idioma español.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/logoZoteroOverleaf3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="b1_1-introduccionGestorReferencia" class="level1">
+<h1>Gestor de Referencias</h1>
+<p>En esta oportunidad, se recomienda el uso de <a href="https://www.zotero.org">Zotero</a> <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/icons/zotero.png" class="img-fluid" width="20"> por la evidente ventaja y flexibilidad sobre otros programas en el mercado gracias a la gran cantidad de <a href="https://www.zotero.org/support/plugins">plugins</a> o extensiones que mejoran, simplifican y enlazan el manejo de referencias bibliográficas, tanto para editar libros, páginas web, blogs, etc.</p>
+<ol type="1">
+<li><p>Crearse una cuenta de forma gratuita en su página oficial.</p></li>
+<li><p>Descargar el programa e instalar según tu sistema operativo de preferencia. La pantalla principal se verá así.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/2_inicio.png" class="img-fluid figure-img" width="730"></p>
+<figcaption>Paso 2. Ventana principal de Zotero</figcaption>
+</figure>
+</div></li>
+<li><p>Descargar e instalar el plugin <code>Zotero Better Bibtex</code> <a href="https://retorque.re/zotero-better-bibtex/">más reciente</a> (desde Github) para el control y creación de etiquetas automáticas (identificador que deberás escribir para especificar una referencia particular) para citar de forma fácil y ordenada durante la redacción de documentos.</p>
+<ol type="i">
+<li><p>Ir a la pestaña de <strong>Herramientas</strong>, luego a <strong>Complementos</strong> que abrirá una nueva ventana.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/3_1_zoteroConfiguracion.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Paso i. Ir a complementos</figcaption>
+</figure>
+</div></li>
+<li><p>Ir a <strong>Configuración</strong> ⚙️ y escoger instalar desde un archivo (<em>install Add-on From File</em>). Buscar y seleccionar el archivo previamente descargado (por ejemplo <code>zotero-better-bibtex-6.7.1.xpi</code>). Reiniciar el programa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/3_2_instalarPlugin.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Paso ii. Instalar plugin</figcaption>
+</figure>
+</div></li>
+<li><p>Repetir el paso 1 y el plugin ahora debe aparecer instalado así.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/3_3_bibtexPlugin.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Paso iii. Verificar plugin instalado</figcaption>
+</figure>
+</div></li>
+<li><p>Ahora lo más importante es modificar la configuración por defecto de las etiquetas de citación (<em>citation key</em>). Término que tal vez te resulte familiar si tienes experiencia con , Markdown, Rmarkdown o Quarto. En cualquier caso, una etiqueta es la palabra clave por el que identificarás una fuente específica a la hora de relacionar y crear una cita para algún documento científico, libro, página web, etc. Dependiendo del formato de etiqueta que desees por comodidad, el parámetro a modificar será diferente. Por conveniencia, se utiliza el formato APA compuesto por el primer apellido del autor principal y el año de publicación<sup>1</sup>.</p></li>
+<li><p>Ir a la pestaña <strong>Editar</strong> y luego a <strong>Preferencias</strong> que abrirá una nueva ventana. Ir a la opción <strong>Better BibTex</strong> y a la subpestaña <strong>Citation keys</strong>.</p>
+<blockquote class="blockquote">
+<p>En el espacio <em>New citation key format</em> modificar a <code>auth.capitalize+year</code> .</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/5_editarCitationKey.png" class="img-fluid figure-img" width="520"></p>
+<figcaption>Paso v. Formato de etiquetas</figcaption>
+</figure>
+</div></li>
+<li><p>En este punto, cualquier archivo nuevo que se agregue a tu biblioteca, estará asociado a una etiqueta reconocible para su fácil manejo y memorización a la hora de buscar alguna cita. En caso de repetirse citas, el plugin tiene la capacidad de diferenciarlos por letras al final de la etiqueta según su antiguedad, por ejemplo, Cryan2019a, Cryan2019b, etc.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/6_nuevaEtiqueta.png" class="img-fluid figure-img" width="310"></p>
+<figcaption>Paso vi. Etiquetas</figcaption>
+</figure>
+</div></li>
+</ol></li>
+<li><p>Armar tu biblioteca Zotero</p>
+<p>Antes de explicar como agregar nuevas fuentes, es necesario saber dos aspectos importantes:</p>
+<ul>
+<li><p>Tu biblioteca puede organizarse como cualquier organizador de archivos: Carpetas y subcarpetas 📁.</p></li>
+<li><p>Existen dos bibliotecas principales: <strong>Mi biblioteca</strong> y <strong>Bibliotecas de grupo.</strong> La primera es para tu manejo personal y los documentos agregados solo podrán ser manipulados por ti. Por el contrario, los de tipo grupal pueden compartirse con otros usuarios de Zotero, incluso con privilegios de modificación (agregar notas 📔, adjuntar archivos 🔗, comentar 📝, etc.). En pocas palabras, investigación colaborativa 🧑‍🤝‍🧑.</p></li>
+</ul>
+<ol type="a">
+<li><p>Desde la aplicación de escritorio 🖥️</p>
+<ol type="A">
+<li><p>Método 1 (<strong>El mejor método 😃</strong>): La forma más elegante es buscar los códigos de la publicación como DOI, ISBN, PMID, arXiv, etc. En el caso de artículos científicos, el código está casi siempre en la página de publicación. Solo basta con copiar, pegar, presionar enter y voilà : Toda la información ha sido agregado. Si tienes suerte (o mejor dicho si la publicación es <em>open-access</em>), el archivo pdf aparecerá como adjunto <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/icons/pdf.png" class="img-fluid" width="20" alt="pdf">. Sino adjuntarlo de forma manual <code>click derecho a tu cita agregada -&gt; Añadir adjunto -&gt;  Añadir copia guardada</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/4_1_metodo1_1.png" class="img-fluid figure-img" width="560"></p>
+<figcaption>Paso A. Busqueda de archivos por código DOI</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/4_1_metodo1_2.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso A. Archivo pdf correctamente agregado.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_añadirPDF.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso A. Adjutando pdf al archivo.</figcaption>
+</figure>
+</div></li>
+<li><p>Método 2 (<strong>Cuando no tienes opción 😑</strong>): El ingreso se realiza de forma manual y según el tipo de fuente bibliográfica (revista, libro, etc.), los datos requeridos pueden variar (<strong>al menos un autor y el título son necesarios</strong>).</p></li>
+</ol></li>
+<li><p>Desde tu navegador de búsqueda 🌐</p>
+<p>La magia de utilizar una extensión (<em>add-on)</em> desde tu navegador favorito, es que <a href="https://www.zotero.org/download/">Zotero Connector</a> permite guardar la información de la página web con un solo click (utilizando metadata) a tu biblioteca.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/4_2_metodo2.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso b. Método 2 para añadir referencias</figcaption>
+</figure>
+</div></li>
+</ol></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para un guardado correcto de los datos, utilizar la extensión desde la página oficial o repositorio de preferencia del artículo científico. Por ejemplo, SAGE, IEEE, Scielo, etc.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Manteniendo la carpeta de interés seleccionada desde la aplicación de Zotero mientras se activa la extensión en el navegador, el nuevo documento es automáticamente guardado en dicha carpeta. Caso contrario, se selecciona la ubicación desde la misma extensión.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Precaución
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En las nuevas versiones de Zotero, las etiquetas de citación (“Citation key”) pueden permanecer fijas en todo momento y no seguir la regla por defecto o definida en el punto 3. Esto puede ocurrir quizas por el cambio en el siguiente parámetro: <code>0 seconds</code> <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/5_errorCitacionFija.png" class="img-fluid quarto-figure quarto-figure-center" width="650" alt="Configuración del complemento Better Bibtex"></p>
+</div>
+</div>
+<section id="exportación-de-las-referencias" class="level2">
+<h2 class="anchored" data-anchor-id="exportación-de-las-referencias">Exportación de las referencias</h2>
+<p>Zotero ofrece la ventaja de exportar las referencias en diferentes formatos, debidamente estructurados en un simple paso. Para su uso con Overleaf, es necesario el uso de ficheros <code>.bib</code> compatibles con . El plugin <strong>Better Bibtex</strong> ayuda justamente en la correcta exportación de las referencias, sobre todo, a la hora de manejar las tildes y diéresis en el nombre de los autores y títulos en el idioma español.</p>
+<ul>
+<li><strong>Método 1</strong>: Selección parcial. Seleccionar los elementos deseados, click derecho y <strong>Exportar elementos</strong>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_exportarFiles.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Método 1</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Método 2</strong>: Selección de una carpeta completa. Dirigirse al panel izquierdo y seleccionar la carpeta de interés (por ejemplo ScrewTheory). Todos los elementos dentro de ella serán exportados.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_exportarFolder.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Método 2</figcaption>
+</figure>
+</div>
+<p>Finalmente, una ventana con algunos ajustes pueden seleccionarse si es necesario. Por recomendación, dejar sin marcar todas las opciones, y dar <strong>OK</strong>. Un archivo <code>.bib</code> será creado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_exportarSettings.png" class="img-fluid figure-img" width="350"></p>
+<figcaption>Modificar exportación de referencias</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="entorno-colaborativo-para-creación-de-documentos" class="level1">
+<h1>Entorno colaborativo para creación de documentos</h1>
+<p>Si bien existen múltiples editores o aplicaciones web de moda para escribir documentos de forma colaborativa en tiempo real como <a href="https://docs.google.com/">GoogleDocs</a>, <a href="https://www.office.com/">Microsoft Office 365</a>, <a href="https://jupyter.org">Jupyter</a>, la mayoría de ellos siguen el estilo de redacción <em>“What you see, what you get”</em> , que en otras palabras, la configuración y personalización de los estilos de texto se realizan mediante la interfaz del programa al presionar botones (por ejemplo, la clásica justificación de texto en Microsoft Word que todos hemos realizado alguna vez). Sin embargo, existen otros editores que utilizan código plano mediante instrucciones específicas (algunas palabras claves que hay que memorizarse 😢) que pueden realizar lo mismo o incluso, mayor personalización.</p>
+<p>Tal es el caso de los editores que trabajan como entornos para la preparación de artículos científicos. Si bien su uso desde una aplicación de escritorio implica la instalación de algunos programas, editores y paquetes desde un <a href="https://www.ctan.org/">super repositorio</a>, en esta oportunidad, se recomienda el uso de editores <em>online</em> que se encargan de todo ese trabajo aburrido y concentrarte principalmente en escribir <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/icons/typeWriter.png" class="img-fluid" width="20" alt="typewriter">, que es para lo que estamos aquí. Así, la mejor opción que te recomiendo es comenzar con <strong>Overleaf</strong>, ya que cuenta con más de 15 000 plantillas, desde como hacer un currículum vitae profesional hasta utilizar los formatos de publicación de las revistas indexadas más conocidas. En cualquier caso, la creación de una nueva plantilla establece la configuración mínima reproducible para generar tu documento en formato pdf (curiosamente es el único formato que puede exportarse pero el más utilizado para compartir en la nube ☁️😂☁️).</p>
+<ol type="a">
+<li><p>Crearse una cuenta desde la <a href="https://www.overleaf.com/">página oficial</a>. Por recomendación, utilizar el mismo correo electrónico de su cuenta Zotero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_inicio.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso a. Ventana principal de Overleaf</figcaption>
+</figure>
+</div></li>
+<li><p>Escoger alguna plantilla para comenzar a escribir. Una vez seleccionada, se abrirá el entorno de edición. Para seleccionar otra plantilla, ir a <code>Templates</code> o si prefieres escoger alguno otro previamente creado, ir a <code>Projects</code> o presionar <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/icons/home.png" class="img-fluid" width="20" alt="home">.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_templates.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso b. Biblioteca de plantillas</figcaption>
+</figure>
+</div></li>
+<li><p>El editor se compone de cuatro paneles principales según:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_recompile_chat_mod.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Paso c.&nbsp;Paneles del editor Overleaf</figcaption>
+</figure>
+</div>
+<p>Donde,</p>
+<ol type="1">
+<li><p><strong>El administrador de archivos.</strong> Contiene distintos ficheros para la creación del documento, como el fichero base (.tex), los distintos estilos de la plantilla si existen (<code>.cls</code>, ⚠️ no modificar a menos que tengas conocimiento previo), el archivo de referencias (<code>.bib</code>), figuras, etc.</p></li>
+<li><p><strong>El editor de documentos</strong>. Todo el texto deseado se escribe dentro de los límites definidos por las sentencias <code>\begin{document} … \end{document}</code>.</p></li>
+<li><p><strong>Salida del documento.</strong> El documento es creado por la compilación del código y su exportación en formato pdf, al presionar el botón superior derecho <strong>Recompile</strong>.</p></li>
+<li><p><strong>Chat.</strong> Para la comunicación entre colaboradores.</p></li>
+</ol></li>
+</ol>
+<section id="subir-archivos-al-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="subir-archivos-al-proyecto">Subir archivos al “proyecto”</h2>
+<p>Desde el botón <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/icons/upload.png" class="img-fluid" width="20"> puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo <code>.bib</code> contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_subirArchivos.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Ventana para subir y enlazar archivos a Overleaf</figcaption>
+</figure>
+</div>
+</section>
+<section id="compartir-plantilla" class="level2">
+<h2 class="anchored" data-anchor-id="compartir-plantilla">Compartir plantilla</h2>
+<p>Para trabajar de forma conjunta y redactar el reporte en tiempo real, basta con activar la opción de compartir la plantilla desde el bóton <strong>Share</strong> <img src="https://sergiojacobo.com/posts/blogs/2023/research/01/icons/share.png" class="img-fluid" width="20"> para invitar a otros usuarios de Overleaf (necesario) con permisos de visualización o modificación según prefieras.</p>
+<ul>
+<li>La ventana que se abre tiene por defecto la opción de <em>compartido general</em> apagado y puede activarse desde la opción <em>Turn on link sharing</em>. Solo colaboradores invitados por correo electrónico podrán acceder al proyecto en Overleaf según los permisos otorgados.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_compartirArchivo2.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Ventana para invitar a colaboradores de trabajo</figcaption>
+</figure>
+</div>
+<ul>
+<li>Caso contrario, puede compartirse como cualquier archivo en la nube mediante dos tipos de enlace para visualización o edición.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_compartirArchivo.png" class="img-fluid figure-img" width="550"></p>
+<figcaption>Ventana para compartir un documento con permisos</figcaption>
+</figure>
+</div>
+</section>
+<section id="manejo-de-referencias-.bib" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-referencias-.bib">Manejo de referencias <code>.bib</code></h2>
+<ul>
+<li><p>Por defecto, la mayoría de plantillas utilizan el siguiente código, donde el archivo de referencias <code>.bib</code> es indicado dentro de <code>\bibliography{}</code>. Y el estilo de citas y bibliografía dentro de <code>\bibliographystyle{}</code>.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Área de encabezados y modificación de plantilla</span></span>
+<span id="cb1-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Inicio de reporte</span></span>
+<span id="cb1-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Fin de reporte</span></span>
+<span id="cb1-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\bibliographystyle</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">apalike</span>}</span>
+<span id="cb1-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\bibliography</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">biblio.bib</span>}</span>
+<span id="cb1-7"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}    </span></code></pre></div></li>
+<li><p>De forma alterna, el archivo de referencias <code>.bib</code> puede también indicarse dentro de <code>\addbibresource{}</code>. Y el estilo de citas y bibliografías dentro de <code>\usepackage{style=apa}{biblatex}</code>.</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Área de encabezados y modificación de plantilla</span></span>
+<span id="cb2-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\usepackage</span>[backend=biber,style=apa,sortcites=true,natbib=true, url=true]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">biblatex</span>}</span>
+<span id="cb2-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\DeclareLanguageMapping</span>{spanish}{spanish-apa}</span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\addbibresource</span>{biblio.bib}</span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span>
+<span id="cb2-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Inicio de reporte</span></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% Fin de reporte</span></span>
+<span id="cb2-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span>
+<span id="cb2-10"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}  </span></code></pre></div></li>
+</ul>
+<p>Las referencias exportadas por Zotero (<code>biblio.bib</code>) pueden modificarse según sea necesario. Nótese los elementos de dos artículos de tipo <span class="citation" data-cites="article">@article</span> con sus etiquetas <code>Abbasi2019</code> y <code>Acharya2018</code> respectivamente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/o_bib.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>Detalle de un archivo <code>.bib</code></figcaption>
+</figure>
+</div>
+</section>
+<section id="sentencias-necesarias" class="level2">
+<h2 class="anchored" data-anchor-id="sentencias-necesarias">Sentencias necesarias</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Código</th>
+<th style="text-align: center;">Salida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\section</span>{Título 1}</span>
+<span id="cb3-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\subsection</span>{Título 2}</span>
+<span id="cb3-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\subsubsection</span>{Título 3}</span>
+<span id="cb3-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\subsubsection</span>{Título 4}</span></code></pre></div></td>
+<td style="text-align: center;"><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/1_titulos.png" class="img-fluid" width="190"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\centering</span></span>
+<span id="cb4-3">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\includegraphics</span>[width="valor"]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">cat.jpg</span>}</span>
+<span id="cb4-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\caption</span>{A cat.}</span>
+<span id="cb4-5">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\label</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fig:etiqueta1</span>}</span>
+<span id="cb4-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span></code></pre></div>
+<p>Donde “valor” puede ser:</p>
+<blockquote class="blockquote">
+<ul>
+<li><p>Ancho máximo de la hoja para escribir: \textwidth.</p></li>
+<li><p>Ancho máximo de una columna: \linewidth.</p></li>
+<li><p>Ancho por unidades métricas: 2cm, 20mm, 40em, 1in.</p></li>
+</ul>
+</blockquote></td>
+<td style="text-align: center;"><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/3_figuraSimple.png" class="img-fluid" width="240"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para leer más sobre \linewdith y \textwidth y sus diferencias, revisar <a href="https://tex.stackexchange.com/questions/16942/difference-between-textwidth-linewidth-and-hsize">aquí</a>.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\documentclass</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">article</span>}</span>
+<span id="cb5-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\usepackage</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">subfig</span>}</span>
+<span id="cb5-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span>
+<span id="cb5-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span>
+<span id="cb5-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\centering</span></span>
+<span id="cb5-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\subfloat</span>[Un lemur.]{<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\includegraphics</span>[width=0.4<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\linewidth</span>]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">lemur.jpg</span>}}</span>
+<span id="cb5-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\subfloat</span>[Un lobo.]{<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">\includegraphics</span>[width=0.4<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\linewidth</span>]{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fox.jpg</span>}}</span>
+<span id="cb5-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\caption</span>{Animales random.}</span>
+<span id="cb5-9">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\label</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fig:etiqueta2</span>}</span>
+<span id="cb5-10"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">figure</span>}</span>
+<span id="cb5-11"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">document</span>}</span></code></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></p>
+</figure>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">table</span>}</span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\centering</span></span>
+<span id="cb6-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tabular</span>}{l|r}</span>
+<span id="cb6-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\hline</span></span>
+<span id="cb6-5">  Variable <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> Cantidad <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\hline</span></span>
+<span id="cb6-7">  Presión <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> 0.5 kPa <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-8">  Fuerza <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> 2 N <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-9">  Masa <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> 5 kg<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\\</span></span>
+<span id="cb6-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\hline</span></span>
+<span id="cb6-11"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tabular</span>}</span>
+<span id="cb6-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\caption</span>{Ejemplo de una tabla.}</span>
+<span id="cb6-13"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\label</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tab:Tabla1</span>}</span>
+<span id="cb6-14"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">table</span>}</span></code></pre></div></td>
+<td style="text-align: center;"><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/4_tablas.png" class="img-fluid" width="234"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">equation</span>}</span>
+<span id="cb7-2"><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">  F = G</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\left</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">[{</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\frac</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{{{m_1}{m_2}}}{{{r^2}}}}</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\right</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb7-3"><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">  </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\label</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{eq:Eq1}</span></span>
+<span id="cb7-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">equation</span>}</span></code></pre></div>
+<p><img src="https://latex.codecogs.com/png.latex?F%20=%20G%5Cleft%5B%20%7B%5Cfrac%7B%7B%7Bm_1%7D%7Bm_2%7D%7D%7D%7B%7B%7Br%5E2%7D%7D%7D%7D%20%5Cright%5D"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para crear las ecuaciones de forma rápida y fácil se recomienda el uso páginas web gratis para escribir de forma gráfica (símbolos, texto, etc.) como <a href="https://latex.codecogs.com/eqneditor/editor.php">latex.codecogs</a>, <a href="https://latexeditor.lagrida.com/">latexeditor</a>, <a href="https://www.latex4technics.com/">latex4technics</a> y más; o en forma <em>offline</em>, con programas como <a href="https://www.wiris.com/en/mathtype/">MathType</a> para insertar el código directamente entre los entornos de ecuaciones <code>\begin{equation} … \end{equation}</code> o a nivel del texto usando <code>$ … $</code> o <code>\( … \)</code>. Por ejemplo, esta ecuación de aquí <img src="https://latex.codecogs.com/png.latex?%5Csum%20a%5E%7Bi%7D%20+%20%5Cepsilon"> se escribe como <code>$\sum a^{i} + \epsilon$</code>.</p>
+<p>Mayor información acerca de los entornos de ecuaciones, símbolos matemáticos (<img src="https://latex.codecogs.com/png.latex?%5Calpha,%20%5Cgamma,%20%5Cpm">, etc.) y sus ejemplos pueden encontrarse en esta corta pero útil <a href="http://tug.ctan.org/info/short-math-guide/short-math-guide.pdf">guía</a> (en inglés).</p>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 55%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>}</span>
+<span id="cb8-2">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Monday</span>
+<span id="cb8-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Tuesday</span>
+<span id="cb8-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>}</span>
+<span id="cb8-5"></span>
+<span id="cb8-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\begin</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">itemize</span>}</span>
+<span id="cb8-7">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Twitter</span>
+<span id="cb8-8">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\item</span> Discord</span>
+<span id="cb8-9"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\end</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">itemize</span>}</span></code></pre></div></td>
+<td style="text-align: center;"><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/5_listas.png" class="img-fluid" width="125"></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\section</span>{Como referenciar una figura, una tabla y citar}</span>
+<span id="cb9-2">Realizando una referencia cruzada a la Figura <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\ref</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fig:Figura1</span>}. A la Tabla <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\ref</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">tab:Tabla1</span>}.</span></code></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/7_referenciasCruzada.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="465"></p>
+</figure>
+</div>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\section</span>{Como citar y agregar una lista de referencias}</span>
+<span id="cb10-2">Aquí va una cita textual <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\cite</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Abbasi2019</span>} y otra de tipo indirecta <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">\citep</span>{<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Anwar2020</span>} en formato APA7.</span>
+<span id="cb10-3"></span>
+<span id="cb10-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span></code></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/01/images/8_referencias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="653"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Más allá de esta guía
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Overleaf ofrece las herramientas básicas para un trabajo colaborativo en la nube, con las ventajas de crear reportes de alta calidad en de forma sencilla, sin tener que preocuparte por su instalación y actualización de paquetes (códigos específicos para modificar el formato como figuras, colores, formas geométricas, encabezados, bloques de código de programación, anexos, tablas, etc.), y aumentar la productividad de tu escritura. Y que junto al gestor de referencias de Zotero, puede obtenerse un fácil guardado, modificación y exportación de referencias bibliográficas correctamente formateadas para su trabajo desde Overleaf o con cualquier otro editor disponible.</p>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Las etiquetas usadas por Zotero se utilizan únicamente para crear el enlace y llamar la cita requerida durante la redacción de documentos. No confundir con el estilo visual de las citas que se aprecian en el documento final. El formato de las etiquetas es para un uso interno y de ayuda memotécnica, ordenada y sencilla a la hora de buscar un autor particular dentro de toda una biblioteca.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2025,
+  author = {Jácobo, Sergio},
+  title = {Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la
+    Nube},
+  date = {2025-01-23},
+  url = {https://sergiojacobo.com/posts/blogs/2023/research/01/b1_1.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2025" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2025. <span>“Overleaf y Zotero: Potenciando el Trabajo
+Colaborativo en la Nube.”</span> January 23, 2025. <a href="https://sergiojacobo.com/posts/blogs/2023/research/01/b1_1.html">https://sergiojacobo.com/posts/blogs/2023/research/01/b1_1.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Latex</category>
+  <category>Overleaf</category>
+  <category>Zotero</category>
+  <guid>https://sergiojacobo.com/posts/blogs/2023/research/01/b1_1.html</guid>
+  <pubDate>Thu, 23 Jan 2025 21:45:21 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/posts/blogs/2023/research/01/images/thumbnail.png" medium="image" type="image/png" height="58" width="144"/>
+</item>
+<item>
+  <title>Eficiencia en LaTeX: Manejo de Tablas Simplificado</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/posts/blogs/2023/research/02/b1_2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<figcaption>Imagen de <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pexels</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pixabay</a></figcaption>
+</figure>
+</div>
+<section id="modificar-el-tamaño-de-tablas" class="level1">
+<h1>Modificar el tamaño de tablas</h1>
+<p>Muchas veces el contenido de una tabla sobrepasa los límites de la hoja como el ancho del formato utilizado en una o dos columnas. Para ello, existen múltiples maneras de adaptar el extenso contenido de una celda en múltiples lineas utilizando el entorno básico <code>\begin{tabular}...\end{tabular}</code>. Sin embargo, resulta tedioso realizar el mismo tratamiento para cada tabla y ni que decir en diversos archivos. Así que una solución práctica es dejar que <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"> calcule el ancho de las columnas de forma automática y se ajuste al contenido deseado, definiendo el tipo de alineación de las columnas y ancho máximo de la tabla. Para ello, se recomienda el uso del entorno <code>\begin{tabularx}…\end{tabularx}</code> luego de cargar el paquete <code>\usepackage{tabularx}</code> en el encabezado del archivo <code>.tex</code>.</p>
+<p>Pero antes de presentar los ejemplos, es necesario mostrar las diferencias entre la terminología utilizada para definir la longitud de una línea de texto (<code>\textwidth</code>) y columna (<code>\linewidth</code>) cuando se utiliza una configuración en una o dos columnas, incluido en un entorno de lista.</p>
+<section id="dimensiones-en-latex" class="level2">
+<h2 class="anchored" data-anchor-id="dimensiones-en-latex">Dimensiones en <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"></h2>
+<ol type="1">
+<li><code>\textwidth</code> es el ancho constante del bloque total de texto.</li>
+<li><code>\linewidth</code> es el ancho actual de la línea de texto dentro de un entorno (i.e.&nbsp;una columna de tabla).</li>
+<li><code>\hsize</code> es el ancho de la actual línea antes de saltar a la siguiente línea.</li>
+<li><code>\columnwidth</code> es el ancho de una sola columna de texto (que coincide a <code>\textwidth</code> en un documento de una sola columna).</li>
+</ol>
+<section id="en-una-columna" class="level3">
+<h3 class="anchored" data-anchor-id="en-una-columna">En una columna</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/20.png" class="img-fluid figure-img"></p>
+<figcaption>Utilizando una configuración <code>oneside</code> o <code>onecolumn</code></figcaption>
+</figure>
+</div>
+</section>
+<section id="en-dos-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="en-dos-columnas">En dos columnas</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/10.png" class="img-fluid figure-img"></p>
+<figcaption>Utilizando una configuración <code>twoside</code> o <code>twocolumn</code></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="ajustando-al-ancho-de-la-hoja" class="level2">
+<h2 class="anchored" data-anchor-id="ajustando-al-ancho-de-la-hoja">Ajustando al ancho de la hoja</h2>
+<section id="una-sola-columna" class="level3">
+<h3 class="anchored" data-anchor-id="una-sola-columna">Una sola columna</h3>
+<p>Utilizando el entorno de tablas por defecto <code>\begin{tabular}...\end{tabular}</code>, el resultado es el siguiente:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla0" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/30.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Caso por defecto
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>\begin{table}[h]
+  \centering
+  \caption{Casos de conducta suicida}
+  \begin{tabular}{ccccc}
+    \toprule
+    Caso  &amp; Edad  &amp; Sexo  &amp; Tóxico &amp; Conducta Suicida \\
+    \midrule
+    1     &amp; 19    &amp; Masculino &amp; Raticida &amp; Suicidio \\
+    2     &amp; 14    &amp; Femenino &amp; Indeterminado &amp; Suicidio \\
+    3     &amp; 16    &amp; Femenino &amp; Indeterminado &amp; Suicidio \\
+    4     &amp; 26    &amp; Masculino &amp; Raticida &amp; Intento de suicidio \\
+    5     &amp; 18    &amp; Masculino &amp; Órgano fosforado &amp; Intento de suicidio \\
+    6     &amp; 50    &amp; Masculino &amp; Órgano fosforado y etanol &amp; Intento de suicidio \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:Tabla0}
+\end{table}</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En la sentencia <code>\begin{tabular}{ccccc}</code>, cada valor de <code>c</code> indica la alineación ordenada de las columnas. En este caso, la tabla tiene cinco columnas con el contenido centrado <code>c</code>. Otros valores como <code>l</code> y <code>r</code> indican una alineación a la izquierda y derecha respectivamente.</p>
+</div>
+</div>
+<p>Por otro lado, el ancho de la tabla anterior puede modificarse de forma intuitiva utilizando el <a href="https://ctan.org/pkg/tabularx">paquete</a> <code>tabularx</code> que trabaja con el espaciado horizontal.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A diferencia de las alineaciones <code>c</code>, <code>l</code> y <code>r</code>, tabularx ofrece una nueva alineación por defecto <code>X</code> que permite justificar el contenido de la columna. Siendo muy útil para contenidos extensos.</p>
+</div>
+</div>
+<p>Para ello se modifica el entorno de tabla <code>\begin{tabular}...\end{tabular}</code> por <code>\begin{tabularx}...\end{tabularx}</code>.</p>
+<ol type="1">
+<li><strong>Al ancho total de una línea de texto.</strong> Para ello se utiliza el comando <code>\begin{tabularx}{\linewidth}{cccXX}</code>. Donde <code>{\textwidth}</code> indica que el ancho máximo de la tabla es el ancho total de la hoja (configuración de una columna) según se aprecia en la Tabla Figura&nbsp;2.<br>
+</li>
+<li><strong>A la mitad de la ancho de una línea de texto.</strong> Para ello se especifica la proporción deseada respecto del ancho base <code>\textwidth</code>. La Tabla Figura&nbsp;3 utiliza un ancho reducido al 80% de la tabla anterior definiendo <code>\begin{tabularx}{0.8\textwidth}{cccXX}</code>.<br>
+</li>
+<li><strong>Cuidado</strong>!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla. La tabla Figura&nbsp;4 muestra una reducción del 50% según <code>\begin{tabularx}{0.5\textwidth}{cccXX}</code>.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/40.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Caso 1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-tabla2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/50.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Caso 2
+</figcaption>
+</figure>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/60.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Caso 3
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="dos-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="dos-columnas">Dos columnas</h3>
+<p>En un formato de dos columnas, el ancho de cada tabla esta restringido al ancho de cada columna definida por <code>\linewidth</code>.</p>
+<ol type="1">
+<li><p><strong>Utilizando la configuración de centrado X para columnas con contenido extenso.</strong> En la Figura 1.5, la configuración de centrado de columnas <em>centro-centro-centro-X-X</em> ordena el contenido de las columnsas por defecto. No obstante existe superposición de contenido entre celdas contiguas. Haciendo uso del siguiente comando <code>\begin{tabularx}{\linewidth}{cccXX}</code>.<br>
+</p></li>
+<li><p><strong>Modificando la separación entre columnas.</strong> Es posible modificar el espacio entre columnas por defecto y ajustar más el contenido de la Tabla 1.6 de ser necesario. Haciendo uso del siguiente comando <code>\setlength\tabcolsep{0.7mm}</code>.<br>
+</p></li>
+<li><p><strong>Creación de nuevos argumentos para el control y alineación de columnas.</strong> La distribución del contenido de las columnas puede mejorarse aun más si se combina con la creación de nuevos argumentos para ajustar el contenido. Así, utilizando el comando <code>\newcolumntype{nombre}[argumento]{Definición}</code> se definieron tres alineaciones automáticas basadas en <code>X</code> utilizando los criterios de centrado (<code>\centering</code>), a la derecha (<code>\raggedleft</code>) e izquierda (<code>\raggedright</code>). Así, la configuración para la Figura 1.7 fue <code>\begin{tabularx}{\linewidth}{cccXC{1}}</code>. Donde las nuevas alineaciones se definieron como:</p>
+<pre><code> ```
+ \newcolumntype{L}[1]{&gt;{\hsize=#1\hsize\raggedright\arraybackslash}X}
+ \newcolumntype{R}[1]{&gt;{\hsize=#1\hsize\raggedleft\arraybackslash}X}
+ \newcolumntype{C}[1]{&gt;{\hsize=#1\hsize\centering\arraybackslash}X}
+ ```</code></pre>
+<p>Donde el parámetro <code>C{1}</code> indica la proporción respecto del ancho base de la columna. En este caso, el valor <code>1</code> indica el ancho por defecto.<br>
+</p></li>
+<li><p>Utilizando la configuración <code>\begin{tabularx}{\linewidth}{cccC{1}C{1}}</code> en la Tabla 1.8.<br>
+</p></li>
+<li><p>Utilizando la configuración <code>\begin{tabularx}{\linewidth}{cccR{1}R{1}}</code>en la Tabla 1.9.</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/700.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan con respecto de una hoja A4.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li><strong>Modificando el propio ancho de la columna.</strong> Utilizando el comando <code>\begin{tabularx}{\linewidth}{L{1} L{0.7} R{0.7} C{1.6}}</code>. Por lo tanto, la cuarta columna se adapta mejor un contenido más extenso a comparación con las otras columnas.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tabla9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/02/images/120.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Caso 6
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2025,
+  author = {Jácobo, Sergio},
+  title = {Eficiencia en LaTeX: Manejo de Tablas Simplificado},
+  date = {2025-01-23},
+  url = {https://sergiojacobo.com/posts/blogs/2023/research/02/b1_2.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2025" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2025. <span>“Eficiencia en LaTeX: Manejo de Tablas
+Simplificado.”</span> January 23, 2025. <a href="https://sergiojacobo.com/posts/blogs/2023/research/02/b1_2.html">https://sergiojacobo.com/posts/blogs/2023/research/02/b1_2.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Latex</category>
+  <guid>https://sergiojacobo.com/posts/blogs/2023/research/02/b1_2.html</guid>
+  <pubDate>Thu, 23 Jan 2025 21:45:11 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/posts/blogs/2023/research/02/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Guía didáctica de LaTeX para publicación en Revista Peruana</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<figcaption>Foto de <a href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash%22">Annie Spratt</a> en <a href="https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+</figure>
+</div>
+<section id="propósito-de-la-plantilla-de-la-revista" class="level1">
+<h1>Propósito de la plantilla de la Revista</h1>
+<p>Este artiículo facilita y agiliza el proceso de edición de los artículos mediante el uso de un formato basado en código <img src="https://latex.codecogs.com/png.latex?%5CLaTeX">. Aunque su correcto manejo requiere cierto conocimiento de instrucciones básicas, este artículo proporciona una guía didáctica destinada a usuarios no familiarizados con <img src="https://latex.codecogs.com/png.latex?%5CLaTeX">. El objetivo es que estos usuarios puedan faciliar la edición de la plantilla por parte de la Revista utilizando herramientas ampliamente disponibles, lo que garantiza un envío exitoso de sus artículos para revisión y publicación.</p>
+<p>En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">revista universitaria Norte Médico</a> de la Universidad Nacional de Cajamarca.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/norteMedicopage.png" class="img-fluid figure-img"></p>
+<figcaption>Página princial de la revista Norte Médico</figcaption>
+</figure>
+</div>
+</section>
+<section id="vista-previa-de-la-plantilla" class="level1">
+<h1>Vista previa de la plantilla</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/1_revistaVistaPrevia.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Ejemplo de publicación en Norte Médico
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="consideracions-esenciales-para-envio-del-formato" class="level1">
+<h1>Consideracions esenciales para envio del formato</h1>
+<section id="manejo-de-ecuaciones" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-ecuaciones">Manejo de Ecuaciones</h2>
+<p>Para escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.</p>
+<section id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word" class="level3">
+<h3 class="anchored" data-anchor-id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word">Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word</h3>
+<p>En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver Figura&nbsp;2). Luego, asegurándose de que esté activada la opción <code>latex</code>, se selecciona la ecuación deseada y se copia (<code>control + C</code>) para pegarla posteriormente en su destino (<code>control + V</code>).</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/1_10_EditorEcuacionesOffline.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Usando recursos en línea
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="método-2-utilizando-un-editior-de-ecuaciones-en-línea" class="level3">
+<h3 class="anchored" data-anchor-id="método-2-utilizando-un-editior-de-ecuaciones-en-línea">Método 2: Utilizando un editior de ecuaciones en Línea</h3>
+<p>En este método, se utiliza el recurso web en línea <a href="https://equationeditor.atomurl.net/">Equation Editor</a>. Después de ingresar la ecuación deseada (ver Figura&nbsp;3), se presiona el botón <code>Save to LaTeX</code>, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/1_20_EditorEcuacionesOnline.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- #### Símbolos matemáticos
+Para escribir correctamente los distntios símbolos matemáticos es necesario utilizar las sentencias de código o instrucciones correctas en base a la siguiente lista. Algunas fuentes son:
+- https://mathvault.ca/wp-content/uploads/Comprehensive-List-of-Mathematical-Symbols.pdf  
+- https://ctan.dcc.uchile.cl/info/symbols/comprehensive/symbols-a4.pdf  
+- https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf -->
+</section>
+</section>
+<section id="manejo-de-tablas" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-tablas">Manejo de Tablas</h2>
+<!-- Utilizando el paquete [Excel2Latex](ctan.org/pkg/excel2latex) -->
+<p>Las tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:</p>
+<ul>
+<li><p><strong>Crear la Tabla con Espacios de Celdas Respetados:</strong> Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver Figura&nbsp;4).</p></li>
+<li><p><strong>Utilizar Líneas Horizontales para Presentar la Información:</strong> Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver Figura&nbsp;5).</p></li>
+<li><p><strong>Posibilidad de Combinar Celdas o Columnas:</strong> Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver Figura&nbsp;5).</p></li>
+<li><p><strong>Preferencia por Tablas en Blanco y Negro:</strong> Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.</p></li>
+</ul>
+<p>A continuación, se incluyen ejemplos visuales que ilustran estas pautas:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/3_10_Tabla1.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura31" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Tabla simple en una hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/3_20_Tabla2.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura32" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Tabla más elaborada en una hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Estas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.</p>
+<section id="manejo-de-figuras-y-gráficas" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-figuras-y-gráficas">Manejo de Figuras y Gráficas</h3>
+<p>El manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:</p>
+</section>
+<section id="de-fuentes-externas" class="level3">
+<h3 class="anchored" data-anchor-id="de-fuentes-externas">De Fuentes Externas</h3>
+<p>Todas las imágenes se deben enviar incrustadas en el documento, indicando siempre <strong>título o descripcion</strong> y <strong>su fuente bibliográfica</strong>. Además, se recomienda enviar el archivo original de las imágenes por <strong>separado (archivo original en .jpg o .png)</strong>, indicando siempre el orden de las figuras.</p>
+</section>
+<section id="generadas-utilizando-microsoft-excel" class="level3">
+<h3 class="anchored" data-anchor-id="generadas-utilizando-microsoft-excel">Generadas Utilizando Microsoft Excel</h3>
+<ol type="1">
+<li>Cada gráfica se debe organizar en su propia hoja de Excel, indicando <strong>Indicando siempre el título de la misma</strong> (ver Figura&nbsp;6).</li>
+<li>Si la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver Figura&nbsp;7).</li>
+<li>Para las gráficas creadas en Microsoft Excel (<strong>formato .xlsx</strong>), se deben seguir estos pasos para garantizar una calidad alta:
+<ul>
+<li>Guardar la imagen seleccionando clic derecho y luego guardar imagen.</li>
+<li>Elegir el destino de almacenamiento y seleccionar entre los <strong>formatos .png o .svg</strong> (ver Figura&nbsp;8).</li>
+<li>También se puede enviar el archivo original en formato .xlsx.</li>
+</ul></li>
+</ol>
+<p>A continuación, se presentan ejemplos visuales que ilustran estos procesos:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/4_10_SoloFigura_excel.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura41" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Figura única en un hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/4_20_Tabla2ConFigura.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura42" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Figura única creada a partir de una tabla de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">knitr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">include_graphics</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"images/4_30_GuardarTablasExcel.png"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura43" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://sergiojacobo.com/posts/blogs/2023/research/03/images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Siguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores.</p>
+</section>
+</section>
+<section id="manejo-de-bibliografía" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-bibliografía">Manejo de Bibliografía</h2>
+<p>Para la bibliografía se utiliza el programa administrador de citas conocido como Zotero. Ver la siguiente <a href="../../../../../posts/blogs/2023/research/01/b1_1.html#b1_1-introduccionGestorReferencia">guía</a>.</p>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2025,
+  author = {Jácobo, Sergio},
+  title = {Guía didáctica de LaTeX para publicación en Revista Peruana},
+  date = {2025-01-23},
+  url = {https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2025" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2025. <span>“Guía didáctica de LaTeX para publicación en
+Revista Peruana.”</span> January 23, 2025. <a href="https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html">https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Latex</category>
+  <category>Zotero</category>
+  <category>Excel</category>
+  <guid>https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html</guid>
+  <pubDate>Thu, 23 Jan 2025 21:45:04 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/posts/blogs/2023/research/03/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

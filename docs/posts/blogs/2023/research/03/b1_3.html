@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sergio Jácobo">
+<meta name="description" content="Descubre los tips claves para completar de manera eficiente y precisa el formato \LaTeX{} de la revista Norte Médico, con una guía paso a paso que te facilitará el proceso.">
+
+<title>Guía didáctica de LaTeX para publicación en Revista Peruana – Sergio Jacobo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../">
+<link href="../../../../../images/ThirdFoundation_favicon.png" rel="icon" type="image/png">
+<script src="../../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<!-- Thank you to Ben Ruijl for the progress bar code!
+
+Ben is on GitHub here: https://github.com/benruijl
+
+And you can see the original code here: https://github.com/quarto-dev/quarto-cli/discussions/3842#discussioncomment-4591721 -->
+
+
+
+<meta property="og:title" content="Sergio Jacobo - Guía didáctica de LaTeX para publicación en Revista Peruana">
+<meta property="og:description" content="Descubre los tips claves para completar de manera eficiente y precisa el formato \(\LaTeX{}\) de la revista Norte Médico, con una guía paso a paso que te facilitará el proceso.">
+<meta property="og:image" content="https://sergiojacobo.com/posts/blogs/2023/research/03/images/thumbnail.jpg">
+<meta property="og:site_name" content="Sergio Jacobo">
+<meta property="og:image:alt" content="Fondos de papel">
+<meta name="twitter:title" content="Sergio Jacobo">
+<meta name="twitter:description" content="The personal website of Sergio Jacobo">
+<meta name="twitter:image" content="https://sergiojacobo.com/posts/blogs/2023/research/03/images/twitter-card.png">
+<meta name="twitter:image:alt" content="Third Foundation logo">
+<meta name="twitter:creator" content="@JacoboZavaleta">
+<meta name="twitter:site" content="@JacoboZavaleta">
+<meta name="twitter:card" content="summary_large_image">
+</head><body class="nav-fixed"><div id="progress-bar" style="width: 0%; height:4px; background-color: #41c4f8ce; position: fixed; top: 0px; z-index: 2000;"></div>
+
+
+
+<script id="progressbar" type="text/javascript">
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+
+    const bar = document.querySelector('#progress-bar');
+
+    const post = document.querySelector('#quarto-content');
+
+    const html = document.documentElement;
+
+
+
+    const height = post.scrollHeight + post.offsetTop;
+
+
+
+    window.addEventListener('scroll', () => {
+
+        bar.style.width = (html.scrollTop / (height- html.clientHeight)) * 100 + '%';
+
+    });
+
+});
+
+</script>
+
+<script>
+  
+  function getGiscusTheme() {
+  const quartoTheme = localStorage.getItem("quarto-color-scheme");
+  const giscusTheme = quartoTheme === "alternate" ? "dark" : "light";
+  // const giscusTheme = quartoTheme === "alternate" ? "dark" : "assets/giscus-light-custom.css";
+  return giscusTheme;
+}
+
+function setGiscusTheme() {
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  sendMessage({
+    setConfig: {
+      theme: getGiscusTheme(),
+    },
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const giscusAttributes = {
+    "src": "https://giscus.app/client.js",
+    "data-repo": "SJacoboZavaleta/sergiojacobo",
+    "data-repo-id": "R_kgDONuGjcg",
+    "data-category": "General",
+    "data-category-id": "DIC_kwDONuGjcs4CmP63",
+    "data-mapping": "title",
+    "data-strict": "0",
+    "data-reactions-enabled": "1",
+    "data-emit-metadata": "0",
+    "data-input-position": "top",
+    "data-theme": getGiscusTheme(),
+    "data-lang": "en",
+    "crossorigin": "anonymous",
+    "async": "",
+  };
+
+  // Dynamically create script tag
+  const giscusScript = document.createElement("script");
+  Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+  document.body.appendChild(giscusScript);
+
+  // Update giscus theme when theme switcher is clicked
+  const toggle = document.querySelector('.quarto-color-scheme-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', setGiscusTheme);
+  }
+});
+  
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../../assets/ek-styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../../index.html">
+    <span class="navbar-title"><span class="icon-line2"></span>Sergio<span class="icon-line3"></span><span class="icon-line"></span>Jacobo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../about.html"> 
+<span class="menu-text">about</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../posts/posts.html"> 
+<span class="menu-text">blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../talks.html"> 
+<span class="menu-text">talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../ideas/ideas.html"> 
+<span class="menu-text">ideas</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../community.html"> 
+<span class="menu-text">community</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../contact.html"> 
+<span class="menu-text">contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Guía didáctica de LaTeX para publicación en Revista Peruana</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Ver el código fuente</a></li></ul></div></div>
+                  <div>
+        <div class="description">
+          <p>Descubre los tips claves para completar de manera eficiente y precisa el formato <span class="math inline">\(\LaTeX{}\)</span> de la revista <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">Norte Médico</a>, con una guía paso a paso que te facilitará el proceso.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Latex</div>
+                <div class="quarto-category">Zotero</div>
+                <div class="quarto-category">Excel</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Sergio Jácobo </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">23 de enero de 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito-de-la-plantilla-de-la-revista" id="toc-propósito-de-la-plantilla-de-la-revista" class="nav-link active" data-scroll-target="#propósito-de-la-plantilla-de-la-revista">Propósito de la plantilla de la Revista</a></li>
+  <li><a href="#vista-previa-de-la-plantilla" id="toc-vista-previa-de-la-plantilla" class="nav-link" data-scroll-target="#vista-previa-de-la-plantilla">Vista previa de la plantilla</a></li>
+  <li><a href="#consideracions-esenciales-para-envio-del-formato" id="toc-consideracions-esenciales-para-envio-del-formato" class="nav-link" data-scroll-target="#consideracions-esenciales-para-envio-del-formato">Consideracions esenciales para envio del formato</a>
+  <ul class="collapse">
+  <li><a href="#manejo-de-ecuaciones" id="toc-manejo-de-ecuaciones" class="nav-link" data-scroll-target="#manejo-de-ecuaciones">Manejo de Ecuaciones</a>
+  <ul class="collapse">
+  <li><a href="#método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word" id="toc-método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word" class="nav-link" data-scroll-target="#método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word">Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word</a></li>
+  <li><a href="#método-2-utilizando-un-editior-de-ecuaciones-en-línea" id="toc-método-2-utilizando-un-editior-de-ecuaciones-en-línea" class="nav-link" data-scroll-target="#método-2-utilizando-un-editior-de-ecuaciones-en-línea">Método 2: Utilizando un editior de ecuaciones en Línea</a></li>
+  </ul></li>
+  <li><a href="#manejo-de-tablas" id="toc-manejo-de-tablas" class="nav-link" data-scroll-target="#manejo-de-tablas">Manejo de Tablas</a>
+  <ul class="collapse">
+  <li><a href="#manejo-de-figuras-y-gráficas" id="toc-manejo-de-figuras-y-gráficas" class="nav-link" data-scroll-target="#manejo-de-figuras-y-gráficas">Manejo de Figuras y Gráficas</a></li>
+  <li><a href="#de-fuentes-externas" id="toc-de-fuentes-externas" class="nav-link" data-scroll-target="#de-fuentes-externas">De Fuentes Externas</a></li>
+  <li><a href="#generadas-utilizando-microsoft-excel" id="toc-generadas-utilizando-microsoft-excel" class="nav-link" data-scroll-target="#generadas-utilizando-microsoft-excel">Generadas Utilizando Microsoft Excel</a></li>
+  </ul></li>
+  <li><a href="#manejo-de-bibliografía" id="toc-manejo-de-bibliografía" class="nav-link" data-scroll-target="#manejo-de-bibliografía">Manejo de Bibliografía</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<figcaption>Foto de <a href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash%22">Annie Spratt</a> en <a href="https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
+</figure>
+</div>
+<section id="propósito-de-la-plantilla-de-la-revista" class="level1">
+<h1>Propósito de la plantilla de la Revista</h1>
+<p>Este artiículo facilita y agiliza el proceso de edición de los artículos mediante el uso de un formato basado en código <span class="math inline">\(\LaTeX\)</span>. Aunque su correcto manejo requiere cierto conocimiento de instrucciones básicas, este artículo proporciona una guía didáctica destinada a usuarios no familiarizados con <span class="math inline">\(\LaTeX\)</span>. El objetivo es que estos usuarios puedan faciliar la edición de la plantilla por parte de la Revista utilizando herramientas ampliamente disponibles, lo que garantiza un envío exitoso de sus artículos para revisión y publicación.</p>
+<p>En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">revista universitaria Norte Médico</a> de la Universidad Nacional de Cajamarca.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images\norteMedicopage.png" class="img-fluid figure-img"></p>
+<figcaption>Página princial de la revista Norte Médico</figcaption>
+</figure>
+</div>
+</section>
+<section id="vista-previa-de-la-plantilla" class="level1">
+<h1>Vista previa de la plantilla</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/1_revistaVistaPrevia.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Ejemplo de publicación en Norte Médico
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="consideracions-esenciales-para-envio-del-formato" class="level1">
+<h1>Consideracions esenciales para envio del formato</h1>
+<section id="manejo-de-ecuaciones" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-ecuaciones">Manejo de Ecuaciones</h2>
+<p>Para escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.</p>
+<section id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word" class="level3">
+<h3 class="anchored" data-anchor-id="método-1-utilizando-el-editor-de-ecuaciones-de-microsoft-word">Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word</h3>
+<p>En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver <a href="#fig-figura11" class="quarto-xref">Figura&nbsp;2</a>). Luego, asegurándose de que esté activada la opción <code>latex</code>, se selecciona la ecuación deseada y se copia (<code>control + C</code>) para pegarla posteriormente en su destino (<code>control + V</code>).</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/1_10_EditorEcuacionesOffline.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Usando recursos en línea
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="método-2-utilizando-un-editior-de-ecuaciones-en-línea" class="level3">
+<h3 class="anchored" data-anchor-id="método-2-utilizando-un-editior-de-ecuaciones-en-línea">Método 2: Utilizando un editior de ecuaciones en Línea</h3>
+<p>En este método, se utiliza el recurso web en línea <a href="https://equationeditor.atomurl.net/">Equation Editor</a>. Después de ingresar la ecuación deseada (ver <a href="#fig-figura12" class="quarto-xref">Figura&nbsp;3</a>), se presiona el botón <code>Save to LaTeX</code>, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/1_20_EditorEcuacionesOnline.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- #### Símbolos matemáticos
+Para escribir correctamente los distntios símbolos matemáticos es necesario utilizar las sentencias de código o instrucciones correctas en base a la siguiente lista. Algunas fuentes son:
+- https://mathvault.ca/wp-content/uploads/Comprehensive-List-of-Mathematical-Symbols.pdf  
+- https://ctan.dcc.uchile.cl/info/symbols/comprehensive/symbols-a4.pdf  
+- https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf -->
+</section>
+</section>
+<section id="manejo-de-tablas" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-tablas">Manejo de Tablas</h2>
+<!-- Utilizando el paquete [Excel2Latex](ctan.org/pkg/excel2latex) -->
+<p>Las tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:</p>
+<ul>
+<li><p><strong>Crear la Tabla con Espacios de Celdas Respetados:</strong> Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver <a href="#fig-figura31" class="quarto-xref">Figura&nbsp;4</a>).</p></li>
+<li><p><strong>Utilizar Líneas Horizontales para Presentar la Información:</strong> Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver <a href="#fig-figura32" class="quarto-xref">Figura&nbsp;5</a>).</p></li>
+<li><p><strong>Posibilidad de Combinar Celdas o Columnas:</strong> Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver <a href="#fig-figura32" class="quarto-xref">Figura&nbsp;5</a>).</p></li>
+<li><p><strong>Preferencia por Tablas en Blanco y Negro:</strong> Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.</p></li>
+</ul>
+<p>A continuación, se incluyen ejemplos visuales que ilustran estas pautas:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/3_10_Tabla1.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura31" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Tabla simple en una hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/3_20_Tabla2.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura32" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Tabla más elaborada en una hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Estas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.</p>
+<section id="manejo-de-figuras-y-gráficas" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-figuras-y-gráficas">Manejo de Figuras y Gráficas</h3>
+<p>El manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:</p>
+</section>
+<section id="de-fuentes-externas" class="level3">
+<h3 class="anchored" data-anchor-id="de-fuentes-externas">De Fuentes Externas</h3>
+<p>Todas las imágenes se deben enviar incrustadas en el documento, indicando siempre <strong>título o descripcion</strong> y <strong>su fuente bibliográfica</strong>. Además, se recomienda enviar el archivo original de las imágenes por <strong>separado (archivo original en .jpg o .png)</strong>, indicando siempre el orden de las figuras.</p>
+</section>
+<section id="generadas-utilizando-microsoft-excel" class="level3">
+<h3 class="anchored" data-anchor-id="generadas-utilizando-microsoft-excel">Generadas Utilizando Microsoft Excel</h3>
+<ol type="1">
+<li>Cada gráfica se debe organizar en su propia hoja de Excel, indicando <strong>Indicando siempre el título de la misma</strong> (ver <a href="#fig-figura41" class="quarto-xref">Figura&nbsp;6</a>).</li>
+<li>Si la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver <a href="#fig-figura42" class="quarto-xref">Figura&nbsp;7</a>).</li>
+<li>Para las gráficas creadas en Microsoft Excel (<strong>formato .xlsx</strong>), se deben seguir estos pasos para garantizar una calidad alta:
+<ul>
+<li>Guardar la imagen seleccionando clic derecho y luego guardar imagen.</li>
+<li>Elegir el destino de almacenamiento y seleccionar entre los <strong>formatos .png o .svg</strong> (ver <a href="#fig-figura43" class="quarto-xref">Figura&nbsp;8</a>).</li>
+<li>También se puede enviar el archivo original en formato .xlsx.</li>
+</ul></li>
+</ol>
+<p>A continuación, se presentan ejemplos visuales que ilustran estos procesos:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/4_10_SoloFigura_excel.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura41" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Figura única en un hoja de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/4_20_Tabla2ConFigura.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura42" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Figura única creada a partir de una tabla de Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Toggle the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/4_30_GuardarTablasExcel.png"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-figura43" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Siguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores.</p>
+</section>
+</section>
+<section id="manejo-de-bibliografía" class="level2">
+<h2 class="anchored" data-anchor-id="manejo-de-bibliografía">Manejo de Bibliografía</h2>
+<p>Para la bibliografía se utiliza el programa administrador de citas conocido como Zotero. Ver la siguiente <a href="../../../../../posts/blogs/2023/research/01/b1_1.html#b1_1-introduccionGestorReferencia">guía</a>.</p>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2025,
+  author = {Jácobo, Sergio},
+  title = {Guía didáctica de LaTeX para publicación en Revista Peruana},
+  date = {2025-01-23},
+  url = {https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html},
+  langid = {es}
+}
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Jácobo, Sergio. 2025. <span>“Guía didáctica de LaTeX para publicación en
+Revista Peruana.”</span> January 23, 2025. <a href="https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html">https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<div class="giscus">
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/sergiojacobo\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright © 2024 Sergio Jácobo |<br> Este sitio web fue creado usando <a href="https://quarto.org"><img src="../../../../..\images/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.github.com/SJacoboZavaleta">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+<p>Inspirado por <a href="https://realworlddatascience.net/">Real World Data Science</a> <br> y <a href="https://ellakaye.co.uk/">EllaKaye</a></p>
+</div>
+  </div>
+</footer><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Guía didáctica de LaTeX para publicación en Revista Peruana"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Sergio Jácobo</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">  Descubre los tips claves para completar de manera eficiente y precisa el formato $\LaTeX{}$ de la revista [Norte Médico](https://revistas.unc.edu.pe/index.php/nortemedico/index), con una guía paso a paso que te facilitará el proceso.</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - "Latex"</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - "Zotero"</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - "Excel"</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/thumbnail.jpg</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> "Fondos de papel"</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="an">language:</span><span class="co"> </span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">    section-title-footnotes: Notas</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Foto de [Annie Spratt](https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash") en [Unsplash](https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash)</span><span class="co">](images/thumbnail.jpg)</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu"># Propósito de la plantilla de la Revista</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>Este artiículo facilita y agiliza el proceso de edición de los artículos mediante el uso de un formato basado en código $\LaTeX$. Aunque su correcto manejo requiere cierto conocimiento de instrucciones básicas, este artículo proporciona una guía didáctica destinada a usuarios no familiarizados con $\LaTeX$. El objetivo es que estos usuarios puedan faciliar la edición de la plantilla por parte de la Revista utilizando herramientas ampliamente disponibles, lo que garantiza un envío exitoso de sus artículos para revisión y publicación.</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la <span class="co">[</span><span class="ot">revista universitaria Norte Médico</span><span class="co">](https://revistas.unc.edu.pe/index.php/nortemedico/index)</span> de la Universidad Nacional de Cajamarca.</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="al">![Página princial de la revista Norte Médico](images\norteMedicopage.png)</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Vista previa de la plantilla</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '80%'}</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura1</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Ejemplo de publicación en Norte Médico"</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/1_revistaVistaPrevia.png")</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># Consideracions esenciales para envio del formato</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manejo de Ecuaciones</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>Para escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver @fig-figura11). Luego, asegurándose de que esté activada la opción <span class="in">`latex`</span>, se selecciona la ecuación deseada y se copia (<span class="in">`control + C`</span>) para pegarla posteriormente en su destino (<span class="in">`control + V`</span>).</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '100%'}</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura11</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Usando recursos en línea"</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/1_10_EditorEcuacionesOffline.png")</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Método 2: Utilizando un editior de ecuaciones en Línea</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>En este método, se utiliza el recurso web en línea <span class="co">[</span><span class="ot">Equation Editor</span><span class="co">](https://equationeditor.atomurl.net/)</span>. Después de ingresar la ecuación deseada (ver @fig-figura12), se presiona el botón <span class="in">`Save to LaTeX`</span>, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '100%'}</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura12</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Usando el editor de ecuaciones integrado en Microsoft Word"</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/1_20_EditorEcuacionesOnline.png")</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- #### Símbolos matemáticos</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="co">Para escribir correctamente los distntios símbolos matemáticos es necesario utilizar las sentencias de código o instrucciones correctas en base a la siguiente lista. Algunas fuentes son:</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="co">- https://mathvault.ca/wp-content/uploads/Comprehensive-List-of-Mathematical-Symbols.pdf  </span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="co">- https://ctan.dcc.uchile.cl/info/symbols/comprehensive/symbols-a4.pdf  </span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="co">- https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf --&gt;</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manejo de Tablas</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Utilizando el paquete [Excel2Latex](ctan.org/pkg/excel2latex) --&gt;</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>Las tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Crear la Tabla con Espacios de Celdas Respetados:** Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver @fig-figura31).</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Utilizar Líneas Horizontales para Presentar la Información:** Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver @fig-figura32).</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Posibilidad de Combinar Celdas o Columnas:** Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver @fig-figura32).</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Preferencia por Tablas en Blanco y Negro:** Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>A continuación, se incluyen ejemplos visuales que ilustran estas pautas:</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '70%'}</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura31</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Tabla simple en una hoja de Excel"</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/3_10_Tabla1.png")</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '80%'}</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura32</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Tabla más elaborada en una hoja de Excel"</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/3_20_Tabla2.png")</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>Estas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Manejo de Figuras y Gráficas</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>El manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### De Fuentes Externas</span></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>Todas las imágenes se deben enviar incrustadas en el documento, indicando siempre **título o descripcion** y **su fuente bibliográfica**. Además, se recomienda enviar el archivo original de las imágenes por **separado (archivo original en .jpg o .png)**, indicando siempre el orden de las figuras.</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Generadas Utilizando Microsoft Excel</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Cada gráfica se debe organizar en su propia hoja de Excel, indicando **Indicando siempre el título de la misma** (ver @fig-figura41).</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Si la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver @fig-figura42).</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Para las gráficas creadas en Microsoft Excel (**formato .xlsx**), se deben seguir estos pasos para garantizar una calidad alta:</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Guardar la imagen seleccionando clic derecho y luego guardar imagen.</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Elegir el destino de almacenamiento y seleccionar entre los **formatos .png o .svg** (ver @fig-figura43).</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>También se puede enviar el archivo original en formato .xlsx.</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>A continuación, se presentan ejemplos visuales que ilustran estos procesos:</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '100%'}</span></span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura41</span></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Figura única en un hoja de Excel"</span></span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/4_10_SoloFigura_excel.png")</span></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '100%'}</span></span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura42</span></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Figura única creada a partir de una tabla de Excel"</span></span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/4_20_Tabla2ConFigura.png")</span></span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r , out.width = '100%'}</span></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-figura43</span></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Pasos para guardar o exportar una gráfica en calidad alta creada en Excel"</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/4_30_GuardarTablasExcel.png")</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>Siguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores.</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manejo de Bibliografía</span></span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>Para la bibliografía se utiliza el programa administrador de citas conocido como Zotero. Ver la siguiente <span class="co">[</span><span class="ot">guía</span><span class="co">](../01/b1_1.qmd#b1_1-introduccionGestorReferencia)</span>.</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>::: {.further-info}</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>::: grid</span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-12}</span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>::: {.bio-footer}</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>&lt;img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer"&gt;</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>&lt;div class="p-footer"&gt;</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>  Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <span class="co">[</span><span class="ot">Twitter</span><span class="co">](https://twitter.com/JacoboZavaleta)</span>, ver algunos repositorios de mi trabajo en <span class="co">[</span><span class="ot">Github</span><span class="co">](https://www.github.com/SJacoboZavaleta)</span>, o leer más sobre mí en este <span class="co">[</span><span class="ot">sitio web</span><span class="co">](../../../../../about.qmd)</span>.</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+
+
+
+
+</div><script src="../../../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

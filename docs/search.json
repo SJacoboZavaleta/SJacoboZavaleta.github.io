@@ -1,0 +1,492 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sergio Jacobo",
+    "section": "",
+    "text": "Hello and welcome!\n\n\n  \n \n\n🦾 I am a Mechatronics Engineer with a passion for designing innovative clinical robots and biomedical devices. My many hats include robotics researcher, artificial intelligence enthusiast, and software developer. Currently, my main hat is that of a developer of cutting-edge healthcare solutions, enhancing medical imaging and robotics, with my research published in esteemed peer-reviewed journals.\n🎓 Outside of my professional pursuits, I am dedicated to educating others about modern tools for efficient research manuscript writing, including \\(\\LaTeX\\), Zotero, Rmarkdown, Python, and R. Through this website, I aim to share my knowledge and passion for these tools, which are also essential for writing books, blogs, and creating websites with ease using Quarto.\n🌱 This blog serves as a fertile ground for cultivating ideas, thoughts, and projects I’m exploring while pursuing my master’s degree in Robotics and Automation. Expect insights on everything from path planning, machine learning, and robot programming to reproducible workflows, and personal reflections on social issues. This space is designed to document what I’ve learned in classes, notes, projects, ideas, and everything that will help create an extensive vault of ideas for others and for my personal use. As I juggle these diverse interests, I also embrace the joys of films, books, running, and playing video games.\n🔍 Most of my articles are written in spanish to cater to new Hispanic students who may not yet have widespread access to detailed, high-quality information on these topics 🤖.\n\n \n  \n   \n  \n    \n     Twitter\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n  \n    \n     Email\n  \n  \n      ORCID"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "TALKS",
+    "section": "",
+    "text": "TALKS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe future of Commercial Robots\n\n\nA brief review of the State-of-the-art of commercial robots and future ones.\n\n\n\nSergio Jácobo-zavaleta\n\n\nDec 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRobot Intelligence\n\n\nWhat is Robot Intelligence?\n\n\n\nSergio Jácobo-zavaleta\n\n\nOct 10, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBachelor Thesis Presentation\n\n\n“Modeling and Simulation of a Clinical Robot Assisted by 3D Ultrasound to Improve Needle Insertion Guidance in Percutaneous Breast Biopsy\n\n\n\nSergio Jácobo-zavaleta\n\n\nSep 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRobot Intelligence\n\n\nA brief review of the State-of-the-art of commercial robots and future ones.\n\n\n\nSergio Jácobo-zavaleta\n\n\nSep 16, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/2024-10-10/index.html",
+    "href": "talks/2024-10-10/index.html",
+    "title": "Robot Intelligence",
+    "section": "",
+    "text": "slides  materials"
+  },
+  {
+    "objectID": "talks/2024-10-10/index.html#overview",
+    "href": "talks/2024-10-10/index.html#overview",
+    "title": "Robot Intelligence",
+    "section": "Overview",
+    "text": "Overview\nThe following topics were covered:\n\nWhat does Intelligence mean for a robot?\n\nA draft meaning\nShould a robot be intelligent?\nShould a robot be autonomous?\n\nCommercial Robots"
+  },
+  {
+    "objectID": "talks/2024-10-10/index.html#event-details",
+    "href": "talks/2024-10-10/index.html#event-details",
+    "title": "Robot Intelligence",
+    "section": "Event details",
+    "text": "Event details\nEvent: Course: Intelligent and Autonomous Robots | Master in Robotics and Automation\nDate: 10th October, 2024\nTime: 19:00\nLocation: Universidad Carlos III de Madrid"
+  },
+  {
+    "objectID": "talks/2024-10-10/index.html#slides",
+    "href": "talks/2024-10-10/index.html#slides",
+    "title": "Robot Intelligence",
+    "section": "Slides",
+    "text": "Slides\n\n\nKeyboard shortcuts for slideshow (once you’ve clicked inside it):\n\nUse ← and → to navigate through the slides\nUse o for an overview of all slides\nUse ? for an overview more keyboard shortcuts\nClick the hamburger menu in the bottom left corner of the slide deck for more options\n\nf to toggle full screen doesn’t work from this page. Go to slides and use that shortcut from there instead"
+  },
+  {
+    "objectID": "talks/2022-01-14/index.html",
+    "href": "talks/2022-01-14/index.html",
+    "title": "Bachelor Thesis Presentation",
+    "section": "",
+    "text": "slides  materials"
+  },
+  {
+    "objectID": "talks/2022-01-14/index.html#overview",
+    "href": "talks/2022-01-14/index.html#overview",
+    "title": "Bachelor Thesis Presentation",
+    "section": "Overview",
+    "text": "Overview\nBacherlor Thesis presentation for obtaining the professional title of Ingeniero Mecatrónico."
+  },
+  {
+    "objectID": "talks/2022-01-14/index.html#event-details",
+    "href": "talks/2022-01-14/index.html#event-details",
+    "title": "Bachelor Thesis Presentation",
+    "section": "Event details",
+    "text": "Event details\nEvent: Thesis presentation\nDate: 14th January , 2022\nTime: 09:00\nLocation: Universidad Nacional de Trujillo"
+  },
+  {
+    "objectID": "talks/2022-01-14/index.html#slides",
+    "href": "talks/2022-01-14/index.html#slides",
+    "title": "Bachelor Thesis Presentation",
+    "section": "Slides",
+    "text": "Slides\n\n\nKeyboard shortcuts for slideshow (once you’ve clicked inside it):\n\nUse ← and → to navigate through the slides\nUse o for an overview of all slides\nUse ? for an overview more keyboard shortcuts\nClick the hamburger menu in the bottom left corner of the slide deck for more options\n\nf to toggle full screen doesn’t work from this page. Go to slides and use that shortcut from there instead"
+  },
+  {
+    "objectID": "posts/research.html",
+    "href": "posts/research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Research\n\n\n\n\n\n\n\n\n\n\nOverleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube\n\n\nGuía Básica para LaTeX Online y Gestión de Referencias con Zotero\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEficiencia en LaTeX: Manejo de Tablas Simplificado\n\n\nAprende a manejar tablas en \\(\\LaTeX\\) de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta…\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGuía didáctica de LaTeX para publicación en Revista Peruana\n\n\nDescubre los tips claves para completar de manera eficiente y precisa el formato \\(\\LaTeX{}\\) de la revista [Norte…\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/posts.html",
+    "href": "posts/posts.html",
+    "title": "La Biblioteca Galáctica",
+    "section": "",
+    "text": "Bienvenido a este nuevo proyecto dedicado a proporcionar información valiosa y servir como una vitrina de ideas en varios campos como la robótica, redacción de investigaciones, programación y más, desde una perspectiva moderna dirigida a estudiantes y entusiastas. Al igual que la Primera y Segunda Fundación en las novelas de Isaac Asimov, este espacio (Bóveda) busca recopilar diversos proyectos y fundamentos impulsado por el rápido crecimiento de la IA en los últimos años en la web.\n\n\n\n\n\n\n\nExplora mi blog sobre Quarto, donde comparto mis conocimientos y experiencias.\n\n\nQuarto\n\n\n\n\n\n\n\n\nEscribo sobre apuntes para una mejor redacción en investigación.\n\n\nResearch\n\n\n\n\n\n\n\n\nComparto algunos proyectos e ideas en robótica.\n\n\nRobotics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEl Robot Cal (CL-123X) en Gold The Final Science Fiction Collection, Isaac Asimov (1983)\n\nLéelo completo en Novel12\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFundación e Imperio - Isaac Asimov (1952)\n\nLéelo completo en Novel12"
+  },
+  {
+    "objectID": "posts/posts.html#i-want-to-be-a-writer.",
+    "href": "posts/posts.html#i-want-to-be-a-writer.",
+    "title": "La Biblioteca Galáctica",
+    "section": "",
+    "text": "El Robot Cal (CL-123X) en Gold The Final Science Fiction Collection, Isaac Asimov (1983)\n\nLéelo completo en Novel12"
+  },
+  {
+    "objectID": "posts/posts.html#he-never-did-bayta-lifted-her-blaster-and-shot.",
+    "href": "posts/posts.html#he-never-did-bayta-lifted-her-blaster-and-shot.",
+    "title": "La Biblioteca Galáctica",
+    "section": "",
+    "text": "Fundación e Imperio - Isaac Asimov (1952)\n\nLéelo completo en Novel12"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "",
+    "text": "Ruta de trabajo para utilizar archivos URDF"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html#configuración-básica",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html#configuración-básica",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Configuración básica",
+    "text": "Configuración básica\nLa relación entre elementos se aprecia de forma intuitiva en la Figura 1. Un ejemplo de código básico y su representación gráfica se aprecian en la Figura 2.\n\n\n\n\n\n\n\n\nDetalle de un eslabón\n\n\n\n\n\n\n\nRelación eslabón-articulación\n\n\n\n\n\n\n\n\n\nRelación entre eslabones\n\n\n\n\n\n\nFigura 1: Representación de links, joints y sus orígenes utilizados en URDF\n\n\n\n\n\n\n\n\n 1 &lt;robot name=\"test_robot\"&gt;\n 2   &lt;link name=\"link1\" /&gt;\n 3   &lt;link name=\"link2\" /&gt;\n 4   &lt;link name=\"link3\" /&gt;\n 5   &lt;link name=\"link4\" /&gt;\n 6 \n 7   &lt;joint name=\"joint1\" type=\"continuous\"&gt;\n 8     &lt;parent link=\"link1\"/&gt;\n 9     &lt;child link=\"link2\"/&gt;\n10     &lt;origin xyz=\"5 3 0\" rpy=\"0 0 0\" /&gt;\n11     &lt;axis xyz=\"-0.9 0.15 0\" /&gt;\n12   &lt;/joint&gt;\n13 \n14   &lt;joint name=\"joint2\" type=\"continuous\"&gt;\n15     &lt;parent link=\"link1\"/&gt;\n16     &lt;child link=\"link3\"/&gt;\n17     &lt;origin xyz=\"-2 5 0\" rpy=\"0 0 1.57\" /&gt;\n18     &lt;axis xyz=\"-0.707 0.707 0\" /&gt;\n19   &lt;/joint&gt;\n20 \n21   &lt;joint name=\"joint3\" type=\"continuous\"&gt;\n22     &lt;parent link=\"link3\"/&gt;\n23     &lt;child link=\"link4\"/&gt;\n24     &lt;origin xyz=\"5 0 0\" rpy=\"0 0 -1.57\" /&gt;\n25     &lt;axis xyz=\"0.707 -0.707 0\" /&gt;\n26   &lt;/joint&gt;\n27 &lt;/robot&gt;\n\n\n\n\n\nVisualización con Graphviz\n\n\n\n\n\n\nFigura 2: Formato URDF y su representación gráfica de los elementos del robot\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nPara una descripción más detallada sobre el formato URDF y su configuración, se recomienda visitar la documentación URDF en ROS o algunas notas."
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html#aplicaciones",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html#aplicaciones",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Aplicaciones",
+    "text": "Aplicaciones\n\n\n\n\n\n\n\n\nEn Omniverse\n\n\n\n\n\n\n\nEn Rviz\n\n\n\n\n\n\nFigura 3: Ejemplos de robots importados como URDF"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html#consideraciones-cad",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html#consideraciones-cad",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Consideraciones CAD",
+    "text": "Consideraciones CAD\nYa sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como “top-down” y “bottom-up”) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o “links” y “joints” como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:\n\n\nToggle the code\ndigraph G {\n  fontname=\"Helvetica,Arial,sans-serif\"\n    node [fontname=\"Helvetica,sans-serif\"]\n    edge [fontname=\"Cambria,sans-serif\"]\n\n    subgraph cluster_0 {\n        style=filled;\n        color=\"#03AED2\";\n        node [style=filled,color=\"#FEEFAD\"];\n        label = \"CAD\";\n\n        \"Raiz\" -&gt; \"Componente 1\"\n        \"Raiz\" -&gt; \"Componente 2\"\n        \n        \"Componente 1\" -&gt; \"Cuerpo 1\"\n        \"Componente 1\" -&gt; \"Cuerpo 2\"\n        \"Componente 1\" -&gt; \"Cuerpo 3\"\n\n        \"Componente 2\" -&gt; \"Cuerpo 4\"\n        \"Componente 2\" -&gt; \"Cuerpo 5\"\n        \"Componente 2\" -&gt; \"Cuerpo 6\"\n    }\n\n    subgraph cluster_1 {\n        style=filled;\n        node [style=filled, color=\"#F3B95F\"]; \"Body 4, 5, 6\"; \"Body 1, 2 y 3\"\n        label = \"URDF\";\n        color=\"#FEFFD2\";\n        node [shape=box,style=filled,color=\"#FF7D29\"]; \"Link 1\";\n        node [shape=diamond,style=filled,color=\"#FFBF78\"]; \"Link 2\";\n\n        \"Link 2\" -&gt; \"Body 4, 5, 6\"\n\n        \"Link 1\" -&gt; \"Link 2\" [label=\"Joint 1\"]\n\n        \"Link 1\" -&gt; \"Body 1, 2 y 3\"\n    }\n\n}\n\n\n\n\n\n\n\n\nG\n\n\ncluster_0\n\nCAD\n\n\ncluster_1\n\nURDF\n\n\n\nRaiz\n\nRaiz\n\n\n\nComponente 1\n\nComponente 1\n\n\n\nRaiz-&gt;Componente 1\n\n\n\n\n\nComponente 2\n\nComponente 2\n\n\n\nRaiz-&gt;Componente 2\n\n\n\n\n\nCuerpo 1\n\nCuerpo 1\n\n\n\nComponente 1-&gt;Cuerpo 1\n\n\n\n\n\nCuerpo 2\n\nCuerpo 2\n\n\n\nComponente 1-&gt;Cuerpo 2\n\n\n\n\n\nCuerpo 3\n\nCuerpo 3\n\n\n\nComponente 1-&gt;Cuerpo 3\n\n\n\n\n\nCuerpo 4\n\nCuerpo 4\n\n\n\nComponente 2-&gt;Cuerpo 4\n\n\n\n\n\nCuerpo 5\n\nCuerpo 5\n\n\n\nComponente 2-&gt;Cuerpo 5\n\n\n\n\n\nCuerpo 6\n\nCuerpo 6\n\n\n\nComponente 2-&gt;Cuerpo 6\n\n\n\n\n\nBody 4, 5, 6\n\nBody 4, 5, 6\n\n\n\nBody 1, 2 y 3\n\nBody 1, 2 y 3\n\n\n\nLink 1\n\nLink 1\n\n\n\nLink 1-&gt;Body 1, 2 y 3\n\n\n\n\n\nLink 2\n\nLink 2\n\n\n\nLink 1-&gt;Link 2\n\n\nJoint 1\n\n\n\nLink 2-&gt;Body 4, 5, 6\n\n\n\n\n\n\n\n\nFigura 4: Relación entre los elementos entre los archivos CAD y URDF\n\n\n\n\n\nLa Figura 4 ejemplifica que es necesario que en Fusion 360, las partes principales del robot se definan como componentes, creados a partir de subpartes (cuerpos). Manteniendo esta relación en todo momento, se garantiza y facilita la definición de links y joints de forma correcta.\nEn esta oportunidad, se utilizó como ejemplo el robot colaborativo UR5 de Universal Robots a lo largo de todo el post. Así, en la Figura 5 se aprecia la jerarquía de los componentes y cuerpos creados durante el dibujo. Por ejemplo, el segundo eslabón se compone de 9 subpartes (de tipo “body” en Fusion 360), evitando la anidación de componentes en todo momento.\n\n\n\n\n\n\nFigura 5: Ruta de trabajo para utilizar archivos URDF"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html#consideraciones-cad-1",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html#consideraciones-cad-1",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Consideraciones CAD",
+    "text": "Consideraciones CAD\nPara generar correctamente el archivo URDF, se requiere: - Los eslabones del robot deben definirse como componentes. - El componente base debe renombrarse como base_link.\n- Cada componente debe contener únicamente cuerpos simples. No utilizar componentes anidados.\n- Cuando se definen las relaciones de articulación (joint): 1. Se selecciona primero el eslabón hijo (child link) como Componente 1. 2. Luego, el eslabón padre (parent link) como Componente 2. 3. Verificar que el movimiento del grado de libertad (por ejemplo, de rotación o traslación) siga el eje de rotación +Z."
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html#modificando-nuestro-archivo",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html#modificando-nuestro-archivo",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Modificando nuestro archivo",
+    "text": "Modificando nuestro archivo\n\nDentro del conjunto de la carpeta exportada, centrarse en las carpetas \\urdf y \\meshes que contienen el archivo URDF y los archivos de modelo 3D.\nCambiar la extensión del archivo URDF de .xacro por .urdf.\nVerificar que el nombre de los archivos mesh (formato STL) referenciados dentro del archivo URDF coincidan con sus archivos en la carpeta \\meshes. Si no, corregir.\nCorregir todos los enlaces de referencia en los entornos &lt;geometry&gt; del archivo URDF:\n\nDel siguiente código:\n\n\n&lt;geometry&gt;\n &lt;mesh filename=\"file://$(find UR5_description)/meshes/base_link.stl\" scale=\"0.001 0.001 0.001\"/&gt;\n&lt;/geometry&gt;\n\nReemplazar así:\n\n&lt;geometry&gt;\n  &lt;mesh filename=\"package://meshes/base_link.stl\" scale=\"0.001 0.001 0.001\"/&gt;\n&lt;/geometry&gt;\n\n\n\n\n\n\n\nTip\n\n\n\nPara verificar si nuestro archivo URDF se creó correctamente antes de importarlo a algún simulador, podemos utilizar un visualizador como RViz en Ubuntu. Sin embargo, para los usuarios de Windows, la aplicación urdf-loaders de gkjohnson nos permite visualizar y manipular de forma intuitiva el resultado de nuestro robot en línea. Incluso, viene un ejemplo de un robot hexápodo ATHLETE. Para nuestro"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/01/b1_1.html#para-coppeliasim",
+    "href": "posts/blogs/2024/robotics/01/b1_1.html#para-coppeliasim",
+    "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
+    "section": "Para CoppeliaSim",
+    "text": "Para CoppeliaSim\n\nDirigirse a la opción de importación según Modules -&gt; Importers -&gt; URDF importer.\nSeleccionar la opción Convex hull of non-convex collision links para mejorar el rendimiento de simulación según la Figura 6.\n\n\n\n\n\n\n\nFigura 6: Opciones de URDF importer\n\n\n\n\nFinalmente, el resultado se aprecia en la siguiente figura. Nótese la jerarquía de los elementos del robot, de forma secuencial, correspondiente a un robot de cadena abierta como el robot cooperativo UR5 en la Figura 7.\n\n\n\n\n\n\n\nFigura 7: Vista de CoppeliaSim\n\n\n\nPor otro lado, CoppeliaSim ofrece una gran cantidad de robots comerciales incluidos en el programa para arrastrar al espacio de trabajo y comenzar a trabajar. Esto reduce el tiempo de creación del modelo cuando se pretende utilizar algún robot comercial disponible, como Sawyer, Kuka LBR4, Franka Emika Panda, etc. La Figura 8 muestra la simulación cinemática por defecto luego de importar el robot desde el panel navegador de robots.\n\n\n\n\n\n\nFigura 8: Simulación del robot UR5 integrado en CoppeliaSim\n\n\n\n¡Y ahí lo tienes! Siguiendo estos sencillos pasos, puedes crear y exportar tus propios archivos URDF desde Fusion 360, y usarlos para simular tus robots en CoppeliaSim o cualquier otro simulador compatible con URDF. ¡Feliz simulación!\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "posts/blogs/2023/robotics/01/b2_1.html",
+    "href": "posts/blogs/2023/robotics/01/b2_1.html",
+    "title": "Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial",
+    "section": "",
+    "text": "Notar que:\n\nSistema de referencia normalmente se abrevia como “frame”.\n\n\n\n\\[\n\\begin{aligned}\n\\bar{r}=\\bar{R}+{\\bar{r}}^{'}\\\\\n\\bar{r}^{'}=\\bar{r}-{\\bar{R}}\\\\\n\\end{aligned}\n\\]\nPero \\(\\bar{V}\\) es una constante.\n\\[\n\\begin{aligned}\n\\bar{R}(t)=\\bar{R_0}-{\\bar{V}t}\\\\\n\\frac{d\\bar{r}^{'}}{dt} = \\frac{d\\bar{r}}{dt} - \\frac{d\\bar{R}}{dt}\\\\\n\\bar{v}^{'}=\\bar{v}-{\\bar{V}}\\\\\n\\frac{d\\bar{v}^{'}}{dt} = \\frac{d\\bar{v}}{dt} - \\frac{d\\bar{V}}{dt}\\\\\n\\bar{a}^{'} = \\bar{a}\n\\end{aligned}\n\\]\nLuego, aplicando la primera Ley de Newton se cumple que:\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}\\\\\n\\bar{F}^{'} & = m\\bar{a}^{'} = m\\bar{a}\\\\\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\nPero que pasa si \\(\\bar{V}\\) no es una constante?\n\n\n\n\n\n\nImportante\n\n\n\nEl sistema de referencia \\(S^{'}\\) tiene una aceleración \\(\\bar{A}\\) relativa a S.\n\n\n\\[\n\\begin{aligned}\n\\bar{a} & = \\bar{a} - \\bar{A}\\\\\n\\end{aligned}\n\\]\nPor lo tanto,\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}^{'}\\\\\n& = m\\bar{a} - m\\bar{A}\\\\\n& = \\bar{F}_\\text{físico} - \\bar{F}_\\text{ficticio}\\\\\n\\end{aligned}\n\\]\nDonde:\n\n\\(\\bar{F}_\\text{físico}\\) es la fuerza físicamente aplicada al cuerpo.\n\n\\(\\bar{F}_\\text{ficticio}\\). Dado un observador en el sistema de referencia o frame \\(S^{'}\\) que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales (\\(S^{'}\\)).\n\n\n\n\n\n\n\nTip\n\n\n\nConsiderando el moviendo de rotación “circular” de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis.\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "posts/blogs/2023/robotics/01/b2_1.html#sistema-de-referencia-inercial-inertial-reference-frame",
+    "href": "posts/blogs/2023/robotics/01/b2_1.html#sistema-de-referencia-inercial-inertial-reference-frame",
+    "title": "Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial",
+    "section": "",
+    "text": "\\[\n\\begin{aligned}\n\\bar{r}=\\bar{R}+{\\bar{r}}^{'}\\\\\n\\bar{r}^{'}=\\bar{r}-{\\bar{R}}\\\\\n\\end{aligned}\n\\]\nPero \\(\\bar{V}\\) es una constante.\n\\[\n\\begin{aligned}\n\\bar{R}(t)=\\bar{R_0}-{\\bar{V}t}\\\\\n\\frac{d\\bar{r}^{'}}{dt} = \\frac{d\\bar{r}}{dt} - \\frac{d\\bar{R}}{dt}\\\\\n\\bar{v}^{'}=\\bar{v}-{\\bar{V}}\\\\\n\\frac{d\\bar{v}^{'}}{dt} = \\frac{d\\bar{v}}{dt} - \\frac{d\\bar{V}}{dt}\\\\\n\\bar{a}^{'} = \\bar{a}\n\\end{aligned}\n\\]\nLuego, aplicando la primera Ley de Newton se cumple que:\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}\\\\\n\\bar{F}^{'} & = m\\bar{a}^{'} = m\\bar{a}\\\\\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "posts/blogs/2023/robotics/01/b2_1.html#sistema-de-referencia-no-inercial-non-inertial-reference-frame",
+    "href": "posts/blogs/2023/robotics/01/b2_1.html#sistema-de-referencia-no-inercial-non-inertial-reference-frame",
+    "title": "Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial",
+    "section": "",
+    "text": "Pero que pasa si \\(\\bar{V}\\) no es una constante?\n\n\n\n\n\n\nImportante\n\n\n\nEl sistema de referencia \\(S^{'}\\) tiene una aceleración \\(\\bar{A}\\) relativa a S.\n\n\n\\[\n\\begin{aligned}\n\\bar{a} & = \\bar{a} - \\bar{A}\\\\\n\\end{aligned}\n\\]\nPor lo tanto,\n\\[\n\\begin{aligned}\n\\bar{F} & = m\\bar{a}^{'}\\\\\n& = m\\bar{a} - m\\bar{A}\\\\\n& = \\bar{F}_\\text{físico} - \\bar{F}_\\text{ficticio}\\\\\n\\end{aligned}\n\\]\nDonde:\n\n\\(\\bar{F}_\\text{físico}\\) es la fuerza físicamente aplicada al cuerpo.\n\n\\(\\bar{F}_\\text{ficticio}\\). Dado un observador en el sistema de referencia o frame \\(S^{'}\\) que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales (\\(S^{'}\\)).\n\n\n\n\n\n\n\nTip\n\n\n\nConsiderando el moviendo de rotación “circular” de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis.\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "posts/blogs/2023/research/02/b1_2.html",
+    "href": "posts/blogs/2023/research/02/b1_2.html",
+    "title": "Eficiencia en LaTeX: Manejo de Tablas Simplificado",
+    "section": "",
+    "text": "Imagen de Pexels en Pixabay"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/02/b1_2.html#dimensiones-en-latex",
+    "href": "posts/blogs/2023/research/02/b1_2.html#dimensiones-en-latex",
+    "title": "Eficiencia en LaTeX: Manejo de Tablas Simplificado",
+    "section": "Dimensiones en \\(\\LaTeX\\)",
+    "text": "Dimensiones en \\(\\LaTeX\\)\n\n\\textwidth es el ancho constante del bloque total de texto.\n\\linewidth es el ancho actual de la línea de texto dentro de un entorno (i.e. una columna de tabla).\n\\hsize es el ancho de la actual línea antes de saltar a la siguiente línea.\n\\columnwidth es el ancho de una sola columna de texto (que coincide a \\textwidth en un documento de una sola columna).\n\n\nEn una columna\n\n\n\nUtilizando una configuración oneside o onecolumn\n\n\n\n\nEn dos columnas\n\n\n\nUtilizando una configuración twoside o twocolumn"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/02/b1_2.html#ajustando-al-ancho-de-la-hoja",
+    "href": "posts/blogs/2023/research/02/b1_2.html#ajustando-al-ancho-de-la-hoja",
+    "title": "Eficiencia en LaTeX: Manejo de Tablas Simplificado",
+    "section": "Ajustando al ancho de la hoja",
+    "text": "Ajustando al ancho de la hoja\n\nUna sola columna\nUtilizando el entorno de tablas por defecto \\begin{tabular}...\\end{tabular}, el resultado es el siguiente:\n\n\n\n\n\n\n\n\nFigura 1: Caso por defecto\n\n\n\n\n\n\\begin{table}[h]\n  \\centering\n  \\caption{Casos de conducta suicida}\n  \\begin{tabular}{ccccc}\n    \\toprule\n    Caso  & Edad  & Sexo  & Tóxico & Conducta Suicida \\\\\n    \\midrule\n    1     & 19    & Masculino & Raticida & Suicidio \\\\\n    2     & 14    & Femenino & Indeterminado & Suicidio \\\\\n    3     & 16    & Femenino & Indeterminado & Suicidio \\\\\n    4     & 26    & Masculino & Raticida & Intento de suicidio \\\\\n    5     & 18    & Masculino & Órgano fosforado & Intento de suicidio \\\\\n    6     & 50    & Masculino & Órgano fosforado y etanol & Intento de suicidio \\\\\n    \\bottomrule\n  \\end{tabular}\n  \\label{tab:Tabla0}\n\\end{table}\n\n\n\n\n\n\nImportante\n\n\n\nEn la sentencia \\begin{tabular}{ccccc}, cada valor de c indica la alineación ordenada de las columnas. En este caso, la tabla tiene cinco columnas con el contenido centrado c. Otros valores como l y r indican una alineación a la izquierda y derecha respectivamente.\n\n\nPor otro lado, el ancho de la tabla anterior puede modificarse de forma intuitiva utilizando el paquete tabularx que trabaja con el espaciado horizontal.\n\n\n\n\n\n\nImportante\n\n\n\nA diferencia de las alineaciones c, l y r, tabularx ofrece una nueva alineación por defecto X que permite justificar el contenido de la columna. Siendo muy útil para contenidos extensos.\n\n\nPara ello se modifica el entorno de tabla \\begin{tabular}...\\end{tabular} por \\begin{tabularx}...\\end{tabularx}.\n\nAl ancho total de una línea de texto. Para ello se utiliza el comando \\begin{tabularx}{\\linewidth}{cccXX}. Donde {\\textwidth} indica que el ancho máximo de la tabla es el ancho total de la hoja (configuración de una columna) según se aprecia en la Tabla Figura 2.\n\nA la mitad de la ancho de una línea de texto. Para ello se especifica la proporción deseada respecto del ancho base \\textwidth. La Tabla Figura 3 utiliza un ancho reducido al 80% de la tabla anterior definiendo \\begin{tabularx}{0.8\\textwidth}{cccXX}.\n\nCuidado!!! Disminuir demasiado el ancho puede superponerse el contenido de las celdas en la tabla. La tabla Figura 4 muestra una reducción del 50% según \\begin{tabularx}{0.5\\textwidth}{cccXX}.\n\n\n\n\n\n\n\n\n\nFigura 2: Caso 1\n\n\n\n\n\n\n\n\n\n\n\nFigura 3: Caso 2\n\n\n\n\n\n\n\n\n\n\n\nFigura 4: Caso 3\n\n\n\n\n\n\n\nDos columnas\nEn un formato de dos columnas, el ancho de cada tabla esta restringido al ancho de cada columna definida por \\linewidth.\n\nUtilizando la configuración de centrado X para columnas con contenido extenso. En la Figura 1.5, la configuración de centrado de columnas centro-centro-centro-X-X ordena el contenido de las columnsas por defecto. No obstante existe superposición de contenido entre celdas contiguas. Haciendo uso del siguiente comando \\begin{tabularx}{\\linewidth}{cccXX}.\n\nModificando la separación entre columnas. Es posible modificar el espacio entre columnas por defecto y ajustar más el contenido de la Tabla 1.6 de ser necesario. Haciendo uso del siguiente comando \\setlength\\tabcolsep{0.7mm}.\n\nCreación de nuevos argumentos para el control y alineación de columnas. La distribución del contenido de las columnas puede mejorarse aun más si se combina con la creación de nuevos argumentos para ajustar el contenido. Así, utilizando el comando \\newcolumntype{nombre}[argumento]{Definición} se definieron tres alineaciones automáticas basadas en X utilizando los criterios de centrado (\\centering), a la derecha (\\raggedleft) e izquierda (\\raggedright). Así, la configuración para la Figura 1.7 fue \\begin{tabularx}{\\linewidth}{cccXC{1}}. Donde las nuevas alineaciones se definieron como:\n ```\n \\newcolumntype{L}[1]{&gt;{\\hsize=#1\\hsize\\raggedright\\arraybackslash}X}\n \\newcolumntype{R}[1]{&gt;{\\hsize=#1\\hsize\\raggedleft\\arraybackslash}X}\n \\newcolumntype{C}[1]{&gt;{\\hsize=#1\\hsize\\centering\\arraybackslash}X}\n ```\nDonde el parámetro C{1} indica la proporción respecto del ancho base de la columna. En este caso, el valor 1 indica el ancho por defecto.\n\nUtilizando la configuración \\begin{tabularx}{\\linewidth}{cccC{1}C{1}} en la Tabla 1.8.\n\nUtilizando la configuración \\begin{tabularx}{\\linewidth}{cccR{1}R{1}}en la Tabla 1.9.\n\n\n\n\n\n\n\n\n\nFigura 5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan con respecto de una hoja A4.\n\n\n\n\n\n\nModificando el propio ancho de la columna. Utilizando el comando \\begin{tabularx}{\\linewidth}{L{1} L{0.7} R{0.7} C{1.6}}. Por lo tanto, la cuarta columna se adapta mejor un contenido más extenso a comparación con las otras columnas.\n\n\n\n\n\n\n\n\n\nFigura 6: Caso 6\n\n\n\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "posts/blogs/2023/quarto/01/b3_1.html",
+    "href": "posts/blogs/2023/quarto/01/b3_1.html",
+    "title": "Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)",
+    "section": "",
+    "text": "A todas los profesionales en nutrición que desean planificar o programar sus dietas nutricionales en base a la composición nutricional de diversos alimentos en la cocina peruana según la cantidad deseada."
+  },
+  {
+    "objectID": "posts/blogs/2023/quarto/01/b3_1.html#el-código",
+    "href": "posts/blogs/2023/quarto/01/b3_1.html#el-código",
+    "title": "Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)",
+    "section": "El Código",
+    "text": "El Código\n\n\nToggle the code\nsetwd(\"Ruta/a/tu/proyecto/\")\n\nlibrary(shiny)\nlibrary(DT) # Manejo de tablas en formato Data Frame\nlibrary(shinyjs)\n\n# Cargar datos para alimentos individuales\n1alimentos &lt;- read.csv(\"alimentos.csv\")\ncolnames(alimentos) &lt;- c(\n    \"COD\", \"NUM\", \"ALIMENTO\", \"ENERCKCAL\", \"ENERCKJ\", \"WATER\", \"PROCNT\",\n    \"FAT\", \"CHOCDF\", \"ZN\", \"K\", \"P\", \"FE\", \"VITA\",\n    \"ACFOLIC\", \"VITC\", \"NA\"\n)\nalimentos &lt;- alimentos[, c(\n    \"COD\", \"NUM\", \"ALIMENTO\", \"ENERCKCAL\", \"ENERCKJ\", \"WATER\", \"PROCNT\",\n    \"FAT\", \"CHOCDF\", \"ZN\", \"K\", \"P\", \"FE\", \"VITA\", \"ACFOLIC\", \"VITC\", \"NA\"\n)]\n\n# Cargar datos para alimentos compuestos\n2platos &lt;- read.csv(\"alimentosCompuestos.csv\")\ncolnames(platos) &lt;- c(\n    \"COD\", \"NUM\", \"ALIMENTO\", \"ENERCKCAL\", \"ENERCKJ\", \"WATER\", \"PROCNT\",\n    \"FAT\", \"CHOCDF\", \"CHOAVL\", \"FIBTG\", \"ASH\", \"CA\", \"P\", \"ZN\", \"FE\", \"VITA\", \"THIA\",\n    \"RIBF\", \"NIA\", \"VITC\", \"ACFOLIC\", \"NA\", \"K\", \"ESTRATO\"\n)\nplatos &lt;- platos[, c(\n    \"COD\", \"NUM\", \"ALIMENTO\", \"ENERCKCAL\", \"ENERCKJ\", \"WATER\", \"PROCNT\", \"FAT\", \"CHOCDF\",\n    \"ZN\", \"K\", \"P\", \"FE\", \"VITA\", \"ACFOLIC\", \"VITC\", \"NA\"\n)]\n\n\n# Creamos tablas de Anexo\n3codigo &lt;- c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\", \"J\", \"K\", \"L\", \"Q\", \"T\", \"U\", \"SE\", \"SS\")\ncategoria &lt;- c(\n    \"Cereales y derivados\", \"Verduras, hortalizas y derivados\", \"Frutas y derivados\",\n    \"Grasas, aceites y oleaginosas\", \"Pescados y mariscos\", \"Carnes y derivados\",\n    \"Leche y derivados\", \"Bebidas (alcohólicas y analcohólicas)\", \"Huevos y derivados\",\n    \"Productos azucarados\", \"Misceláneos\", \"Alimentos infantiles\", \"Leguminosas y derivados\",\n    \"Tubérculos, raíces y derivados\", \"Alimentos preparados (entrada)\",\n    \"Alimentos preparados (segundo)\"\n)\ncodigoGrupo &lt;- data.frame(codigo, categoria)\ncolnames(codigoGrupo) &lt;- c(\"Código\", \"Categoría\")\n\n\n# Cargas coódigos de componentes - Anexo\n4anexoCodigo &lt;- read.csv(\"anexosCodigoComponentes.csv\")\ncolnames(anexoCodigo) &lt;- c(\"Componente\", \"Identificador INFOODS\", \"Unidad\", \"Comentario\")\n\n# Definir interfaz\n5ui &lt;- fluidPage(\n6    includeCSS(\"styles.css\"),\n    titlePanel(\"TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017\"),\n    h2(tags$a(\"Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima.\",\n        href = \"https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos\"\n    )),\n    h3(\"Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681).\"),\n    h3(class = \"bold-text\", \"Nota: Composición en 100 g de alimento\"),\n7    numericInput(\"proportion\", \"Nueva composición (gramos)?\", value = 100, min = 1, max = 500),\n8    useShinyjs(),\n9    tabsetPanel(\n        tabPanel(\n            \"Alimentos individuales\",\n            dataTableOutput(\"foodTable1\"),\n            h4(class = \"bold-text\", \"Componentes seleccionados:\"),\n            tableOutput(\"selectedData1\"),\n            actionButton(\"copyButton1\", \"Copiar datos seleccionados\")\n        ),\n        tabPanel(\n            \"Alimentos en platos\",\n            dataTableOutput(\"foodTable2\"),\n            h4(\"Componentes seleccionados:\"),\n            tableOutput(\"selectedData2\"),\n            actionButton(\"copyButton2\", \"Copiar datos seleccionados\")\n        ),\n        tabPanel(\n            \"Códigos y grupos\",\n            tableOutput(\"codigoGrupos\"),\n            tableOutput(\"codigoComponentes\")\n        )\n    ),\n    hr(),\n10    tags$div(\n        class = \"footer\",\n        style = \"text-align: center; background-color: #333; color: #fff; padding: 20px;\",\n        tags$h4(\"¿Te ha gustado esta App?\"),\n        tags$p(\n            \"¡Esta aplicación ha sido desarrollada con \",\n            tags$a(\n                href = \"https://shiny.rstudio.com/\",\n                style = \"color: #ffcc00; font-weight: bold;\",\n                \"R Shiny\"\n            ),\n            \"!\"\n        ),\n        tags$p(\n            \"Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, \",\n            tags$a(\n                href = \"https://shiny.rstudio.com/tutorial/\",\n                style = \"color: #ffcc00; font-weight: bold;\",\n                \"haz clic aquí\"\n            ),\n            \" para acceder al tutorial oficial.\"\n        ),\n        tags$p(\n            \"¡Comienza a explorar el poder de Shiny hoy mismo!\",\n            style = \"font-weight: bold;\"\n        )\n    )\n)\n\n# Definir server\nserver &lt;- function(input, output, session) {\n11    getComposition &lt;- function(input_table) {\n        proportionConversion &lt;- input$proportion\n        idx &lt;- input[[input_table]]\n        selectedRow &lt;- alimentos[idx, c(\"PROCNT\", \"FAT\", \"CHOCDF\", \"ZN\", \"K\", \"P\", \"FE\", \"VITA\", \"ACFOLIC\", \"VITC\", \"NA\")]\n        selectedRow &lt;- selectedRow * proportionConversion / 100\n        rownames(selectedRow) &lt;- NULL\n        selectedRow\n    }\n\n12    output$foodTable1 &lt;- renderDataTable(\n        alimentos,\n        server = FALSE, selection = \"single\",\n        options = list(\n            pageLength = 15,\n            columnDefs = list(\n                list(\n                    targets = \"_all\",\n                    className = \"dt-center\"\n                )\n            )\n        )\n    )\n\n13    output$selectedData1 &lt;- renderTable({\n        getComposition(\"foodTable1_rows_selected\")\n    })\n\n    output$foodTable2 &lt;- renderDataTable(\n        platos,\n        server = FALSE, selection = \"single\",\n        options = list(\n            pageLength = 15,\n            columnDefs = list(\n                list(\n                    targets = \"_all\",\n                    className = \"dt-center\"\n                )\n            )\n        )\n    )\n\n    output$selectedData2 &lt;- renderTable({\n        getComposition(\"foodTable2_rows_selected\")\n    })\n\n14    output$codigoGrupos &lt;- renderTable(codigoGrupo)\n\n    output$codigoComponentes &lt;- renderTable(anexoCodigo)\n\n15    observeEvent(input$copyButton1, {\n        selectedData &lt;- getComposition(\"foodTable1_rows_selected\")\n        if (length(input$foodTable1_rows_selected) &gt; 0) {\n            clipboard &lt;- apply(selectedData, 2, paste, collapse = \" \")\n            writeClipboard(clipboard)\n            shinyjs::alert(\"Datos copiados al portapapeles\")\n        } else {\n            shinyjs::alert(\"Selecciona una fila para copiar los datos\")\n        }\n    })\n\n    observeEvent(input$copyButton2, {\n        selectedData &lt;- getComposition(\"foodTable2_rows_selected\")\n        if (length(input$foodTable2_rows_selected) &gt; 0) {\n            clipboard &lt;- apply(selectedData, 2, paste, collapse = \" \")\n            writeClipboard(clipboard)\n            shinyjs::alert(\"Datos copiados al portapapeles\")\n        } else {\n            shinyjs::alert(\"Selecciona una fila para copiar los datos\")\n        }\n    })\n}\n\n# Ejecutar la aplicación Shiny\n16shinyApp(ui, server)\n\n\n\n1\n\nCargar tabla de alimentos individuales (alimentos.csv), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).\n\n2\n\nCargar tabla de alimentos compustos (alimentosCompuestos.csv), seleccionar datos requeridos y modificar sus atributos (nombre columnas).\n\n3\n\nCrear tabla de anexos para alimentos según código por grupo nutricional (Opcional).\n\n4\n\nCrear tabla de anexos para alimentos según código de componentes nutricional (Opcional).\n\n5\n\nImplementar la interfaz de usuario de la aplicación Shiny llamando a fluidPage.\n\n6\n\nIncluir ciertos estilos de contenido (archivo css).\n\n7\n\nDefinir una entrada de texto para la nueva composición de alimentos deseada.\n\n8\n\nComplemento para mostrar ayudas visuales (mensajes).\n\n9\n\nMostrar múltiples tablas mediante mediante pestañas separadas con tabPanel().\n\n10\n\nAgregar un pie de nota con detalles de la aplicación.\n\n11\n\nImplementar la función server que define la lógica del programa. Definir la función para manipular la fila seleccionada de las tablas de composición.\n\n12\n\nRenderizar las tablas principales de alimentos. Para centrar todo el contenido de las tablas se creó un estilo css dt-center.\n\n13\n\nRenderizar los datos de componentes de interés (salida).\n\n14\n\nRenderizar las tablas de Anexos.\n\n15\n\nEvento que permite copiar los datos seleccionados al portapapeles. Utilizando el paso 8.\n\n16\n\nImplementar la aplicación llamando a shinyApp."
+  },
+  {
+    "objectID": "posts/blogs/2023/quarto/01/b3_1.html#el-demo",
+    "href": "posts/blogs/2023/quarto/01/b3_1.html#el-demo",
+    "title": "Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)",
+    "section": "El demo ⏩",
+    "text": "El demo ⏩\n\n\n\nAplicación Shiny\n\n\n\n\n\n\n\n\nMás allá de esta guía\n\n\n\nRevisar la página oficial para obtener las Tablas de Composición completas\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Let’s Connect – I’m Here for You!",
+    "section": "",
+    "text": "Let’s Connect – I’m Here for You!\nYou can leave comments or feedback about any of my blog posts, projects, or other content using the comment section at the bottom of each page.\nYou can also find me on:\n GitHub  LinkedIn\nFor direct inquiries, feel free to email me at: - 100514566@alumnos.uc3m.es - sjacobo@unitru.edu.pe\nI’m happy to answer questions, discuss topics related to my blog and projects, or chat about your own work in robotics and automation. Looking forward to connecting!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "100514566g@alumnos.uc3m.es"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nMaster in Robotics and Automation\nCarlos III de Madrid, Madrid, Spain\nSeptember 2024 - ongoing\nBachelor of Science in Mechatronics Engineering\nUniversidad Nacional de Trujillo, Trujillo, Peru\nApril 2014 - December 2018\n\nThesis title: Modelamiento y simulación de un robot clínico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutánea de mama.\n\nThird-class rank."
+  },
+  {
+    "objectID": "about.html#profesional-experience",
+    "href": "about.html#profesional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Profesional Experience",
+    "text": "Profesional Experience\nMaintenance Assistant of biomedical equipment (Full-time)  Corporación Tecnobiomédica Healthcare del Perú SAC. — Medical equipments, Lima, Peru\nNovember 2020 - April 2021\n\nProgrammed and adapted preventive maintenance plans of old and out of date equipments based on user’s experience.\n\nMaintenance Assistant (Full-time)  Norsac SAC. — Textile Industry, Trujillo, Peru\nMay 2019 - November 2019\n\nFormulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.\n\nProvided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.\n\nReduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan."
+  },
+  {
+    "objectID": "about.html#research-experience",
+    "href": "about.html#research-experience",
+    "title": "Curriculum Vitae",
+    "section": "Research experience",
+    "text": "Research experience\nNational researcher Lima, Peru  April 2023 - Present\nEnabled and registered in the National Scientific Register (RENACYT). Code: P0153371\nTechnological projects about prevention and assistant in patients with COVID-19 Trujillo  March - October 2019\nFunded by the Universidad Nacional de Trujillo\n\nCollaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.\n\nThe initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use."
+  },
+  {
+    "objectID": "about.html#publications",
+    "href": "about.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\nJácobo-Zavaleta, S., & Zavaleta, J. (2023a). Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/tla.2023.10068849\n\nJácobo-Zavaleta, S., & Zavaleta, J. (2023b). A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study. IEEE Latin America Transactions, 21 (3). Link. https://doi.org/10.1109/TLA.2023.10068845\n\nZavaleta, A., Ñuflo-Vásquez, S., Alarcón-Turiani, V., & Jácobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Perú. Norte Médico, 1 (5), 27–30. Link.\n\nJácobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). Deep learning y enfermedades oculares. Norte Médico, 3 (2). Link.\n\nZavaleta de Los Ríos, V., Jácobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). Microbiota intestinal y las enfermedades neurodegenerativas. Norte Médico, 1 (2). Link."
+  },
+  {
+    "objectID": "about.html#honours-and-awards",
+    "href": "about.html#honours-and-awards",
+    "title": "Curriculum Vitae",
+    "section": "Honours and Awards",
+    "text": "Honours and Awards\n\nRecognition for technological projects about prevention and assistant in patients with COVID-19  Universidad Nacional de Trujillo\nOctober 2020\nThird place in Final Merit List of Undergraduate Program  Universidad Nacional de Trujillo\nDecember 2018\nRecognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”  José Faustino Sánchez Carrión High School\nDecember 2010"
+  },
+  {
+    "objectID": "about.html#extra-curricular-activities",
+    "href": "about.html#extra-curricular-activities",
+    "title": "Curriculum Vitae",
+    "section": "Extra Curricular Activities",
+    "text": "Extra Curricular Activities\n\nIndependent Tutor\n\nPrivate Maths and English tutor\n\n\n\nVoluntarism\n\nCitizen monitor\nEscuela Nacional de Control - Contraloría General de la República del Perú.\nJanuary 2022 – Present\nMonitored public-financed projects to report evidence of incidents of non-compliance.\n\n\n\nProvision of services\n\nExamination monitor\nMinister of Education, Cajamarca, Perú.\nNovember 2022 - Present\nCollaborated and moderated teacher evaluation processes for service examination."
+  },
+  {
+    "objectID": "about.html#references",
+    "href": "about.html#references",
+    "title": "Curriculum Vitae",
+    "section": "References",
+    "text": "References\nAvailable upon request"
+  },
+  {
+    "objectID": "community.html",
+    "href": "community.html",
+    "title": "COMMUNITY",
+    "section": "",
+    "text": "COMMUNITY\n\n\nI’m working on some ideas that might be useful to others."
+  },
+  {
+    "objectID": "ideas/ideas.html",
+    "href": "ideas/ideas.html",
+    "title": "IDEAS",
+    "section": "",
+    "text": "IDEAS\n\n\nI’m working on some ideas that might be useful to others."
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html",
+    "href": "posts/blogs/2023/research/01/b1_1.html",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "",
+    "text": "Imagen subida por Kaitlyn Baker bajo Licencia Unsplash"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html#exportación-de-las-referencias",
+    "href": "posts/blogs/2023/research/01/b1_1.html#exportación-de-las-referencias",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "Exportación de las referencias",
+    "text": "Exportación de las referencias\nZotero ofrece la ventaja de exportar las referencias en diferentes formatos, debidamente estructurados en un simple paso. Para su uso con Overleaf, es necesario el uso de ficheros .bib compatibles con . El plugin Better Bibtex ayuda justamente en la correcta exportación de las referencias, sobre todo, a la hora de manejar las tildes y diéresis en el nombre de los autores y títulos en el idioma español.\n\nMétodo 1: Selección parcial. Seleccionar los elementos deseados, click derecho y Exportar elementos.\n\n\n\n\nMétodo 1\n\n\n\nMétodo 2: Selección de una carpeta completa. Dirigirse al panel izquierdo y seleccionar la carpeta de interés (por ejemplo ScrewTheory). Todos los elementos dentro de ella serán exportados.\n\n\n\n\nMétodo 2\n\n\nFinalmente, una ventana con algunos ajustes pueden seleccionarse si es necesario. Por recomendación, dejar sin marcar todas las opciones, y dar OK. Un archivo .bib será creado.\n\n\n\nModificar exportación de referencias"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html#subir-archivos-al-proyecto",
+    "href": "posts/blogs/2023/research/01/b1_1.html#subir-archivos-al-proyecto",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "Subir archivos al “proyecto”",
+    "text": "Subir archivos al “proyecto”\nDesde el botón  puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo .bib contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.\n\n\n\nVentana para subir y enlazar archivos a Overleaf"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html#compartir-plantilla",
+    "href": "posts/blogs/2023/research/01/b1_1.html#compartir-plantilla",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "Compartir plantilla",
+    "text": "Compartir plantilla\nPara trabajar de forma conjunta y redactar el reporte en tiempo real, basta con activar la opción de compartir la plantilla desde el bóton Share  para invitar a otros usuarios de Overleaf (necesario) con permisos de visualización o modificación según prefieras.\n\nLa ventana que se abre tiene por defecto la opción de compartido general apagado y puede activarse desde la opción Turn on link sharing. Solo colaboradores invitados por correo electrónico podrán acceder al proyecto en Overleaf según los permisos otorgados.\n\n\n\n\nVentana para invitar a colaboradores de trabajo\n\n\n\nCaso contrario, puede compartirse como cualquier archivo en la nube mediante dos tipos de enlace para visualización o edición.\n\n\n\n\nVentana para compartir un documento con permisos"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html#manejo-de-referencias-.bib",
+    "href": "posts/blogs/2023/research/01/b1_1.html#manejo-de-referencias-.bib",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "Manejo de referencias .bib",
+    "text": "Manejo de referencias .bib\n\nPor defecto, la mayoría de plantillas utilizan el siguiente código, donde el archivo de referencias .bib es indicado dentro de \\bibliography{}. Y el estilo de citas y bibliografía dentro de \\bibliographystyle{}.\n% Área de encabezados y modificación de plantilla\n\\begin{document}\n% Inicio de reporte\n% Fin de reporte\n\\bibliographystyle{apalike}\n\\bibliography{biblio.bib}\n\\end{document}    \nDe forma alterna, el archivo de referencias .bib puede también indicarse dentro de \\addbibresource{}. Y el estilo de citas y bibliografías dentro de \\usepackage{style=apa}{biblatex}.\n% Área de encabezados y modificación de plantilla\n\\usepackage[backend=biber,style=apa,sortcites=true,natbib=true, url=true]{biblatex}\n\\DeclareLanguageMapping{spanish}{spanish-apa}\n\\addbibresource{biblio.bib}\n\n\\begin{document}\n% Inicio de reporte\n% Fin de reporte\n\\printbibliography[heading=bibintoc, title={Referencias Bibliográficas}]\n\\end{document}  \n\nLas referencias exportadas por Zotero (biblio.bib) pueden modificarse según sea necesario. Nótese los elementos de dos artículos de tipo @article con sus etiquetas Abbasi2019 y Acharya2018 respectivamente.\n\n\n\nDetalle de un archivo .bib"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html#sentencias-necesarias",
+    "href": "posts/blogs/2023/research/01/b1_1.html#sentencias-necesarias",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "Sentencias necesarias",
+    "text": "Sentencias necesarias\n\n\n\n\n\n\n\nCódigo\nSalida\n\n\n\n\n\\section{Título 1}\n\\subsection{Título 2}\n\\subsubsection{Título 3}\n\\subsubsection{Título 4}\n\n\n\n\\begin{figure}\n  \\centering\n  \\includegraphics[width=\"valor\"]{cat.jpg}\n  \\caption{A cat.}\n  \\label{fig:etiqueta1}\n\\end{figure}\nDonde “valor” puede ser:\n\n\nAncho máximo de la hoja para escribir: \\textwidth.\nAncho máximo de una columna: \\linewidth.\nAncho por unidades métricas: 2cm, 20mm, 40em, 1in.\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPara leer más sobre \\linewdith y \\textwidth y sus diferencias, revisar aquí.\n\n\n\\documentclass{article}\n\\usepackage{subfig}\n\\begin{document}\n\\begin{figure}\n  \\centering\n  \\subfloat[Un lemur.]{\\includegraphics[width=0.4\\linewidth]{lemur.jpg}}\n  \\subfloat[Un lobo.]{\\includegraphics[width=0.4\\linewidth]{fox.jpg}}\n  \\caption{Animales random.}\n  \\label{fig:etiqueta2}\n\\end{figure}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\n\n\\begin{table}\n\\centering\n\\begin{tabular}{l|r}\n  \\hline\n  Variable & Cantidad \\\\\n  \\hline\n  Presión & 0.5 kPa \\\\\n  Fuerza & 2 N \\\\\n  Masa & 5 kg\\\\\n  \\hline\n\\end{tabular}\n\\caption{Ejemplo de una tabla.}\n\\label{tab:Tabla1}\n\\end{table}\n\n\n\n\n\\begin{equation}\n  F = G\\left[{\\frac{{{m_1}{m_2}}}{{{r^2}}}}\\right]\n  \\label{eq:Eq1}\n\\end{equation}\n\\[F = G\\left[ {\\frac{{{m_1}{m_2}}}{{{r^2}}}} \\right]\\]\n\n\n\n\n\n\nTip\n\n\n\nPara crear las ecuaciones de forma rápida y fácil se recomienda el uso páginas web gratis para escribir de forma gráfica (símbolos, texto, etc.) como latex.codecogs, latexeditor, latex4technics y más; o en forma offline, con programas como MathType para insertar el código directamente entre los entornos de ecuaciones \\begin{equation} … \\end{equation} o a nivel del texto usando $ … $ o \\( … \\). Por ejemplo, esta ecuación de aquí \\(\\sum a^{i} + \\epsilon\\) se escribe como $\\sum a^{i} + \\epsilon$.\nMayor información acerca de los entornos de ecuaciones, símbolos matemáticos (\\(\\alpha, \\gamma, \\pm\\), etc.) y sus ejemplos pueden encontrarse en esta corta pero útil guía (en inglés).\n\n\n\n\n\n\n\n\n\n\\begin{enumerate}\n    \\item Monday\n    \\item Tuesday\n\\end{enumerate}\n\n\\begin{itemize}\n    \\item Twitter\n    \\item Discord\n\\end{itemize}\n\n\n\n\n\\section{Como referenciar una figura, una tabla y citar}\nRealizando una referencia cruzada a la Figura \\ref{fig:Figura1}. A la Tabla \\ref{tab:Tabla1}.\n\n\n\n\n\n\\section{Como citar y agregar una lista de referencias}\nAquí va una cita textual \\cite{Abbasi2019} y otra de tipo indirecta \\citep{Anwar2020} en formato APA7.\n\n\\printbibliography[heading=bibintoc, title={Referencias Bibliográficas}]\n\n\n\n\n\n\n\n\n\n\n\nMás allá de esta guía\n\n\n\nOverleaf ofrece las herramientas básicas para un trabajo colaborativo en la nube, con las ventajas de crear reportes de alta calidad en de forma sencilla, sin tener que preocuparte por su instalación y actualización de paquetes (códigos específicos para modificar el formato como figuras, colores, formas geométricas, encabezados, bloques de código de programación, anexos, tablas, etc.), y aumentar la productividad de tu escritura. Y que junto al gestor de referencias de Zotero, puede obtenerse un fácil guardado, modificación y exportación de referencias bibliográficas correctamente formateadas para su trabajo desde Overleaf o con cualquier otro editor disponible.\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "posts/blogs/2023/research/01/b1_1.html#footnotes",
+    "href": "posts/blogs/2023/research/01/b1_1.html#footnotes",
+    "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
+    "section": "Notas",
+    "text": "Notas\n\n\nLas etiquetas usadas por Zotero se utilizan únicamente para crear el enlace y llamar la cita requerida durante la redacción de documentos. No confundir con el estilo visual de las citas que se aprecian en el documento final. El formato de las etiquetas es para un uso interno y de ayuda memotécnica, ordenada y sencilla a la hora de buscar un autor particular dentro de toda una biblioteca.↩︎"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/03/b1_3.html",
+    "href": "posts/blogs/2023/research/03/b1_3.html",
+    "title": "Guía didáctica de LaTeX para publicación en Revista Peruana",
+    "section": "",
+    "text": "Foto de Annie Spratt en Unsplash"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/03/b1_3.html#manejo-de-ecuaciones",
+    "href": "posts/blogs/2023/research/03/b1_3.html#manejo-de-ecuaciones",
+    "title": "Guía didáctica de LaTeX para publicación en Revista Peruana",
+    "section": "Manejo de Ecuaciones",
+    "text": "Manejo de Ecuaciones\nPara escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.\n\nMétodo 1: Utilizando el Editor de Ecuaciones de Microsoft Word\nEn este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver Figura 2). Luego, asegurándose de que esté activada la opción latex, se selecciona la ecuación deseada y se copia (control + C) para pegarla posteriormente en su destino (control + V).\n\n\nToggle the code\nknitr::include_graphics(\"images/1_10_EditorEcuacionesOffline.png\")\n\n\n\n\n\n\n\n\nFigura 2: Usando recursos en línea\n\n\n\n\n\n\n\nMétodo 2: Utilizando un editior de ecuaciones en Línea\nEn este método, se utiliza el recurso web en línea Equation Editor. Después de ingresar la ecuación deseada (ver Figura 3), se presiona el botón Save to LaTeX, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.\n\n\nToggle the code\nknitr::include_graphics(\"images/1_20_EditorEcuacionesOnline.png\")\n\n\n\n\n\n\n\n\nFigura 3: Usando el editor de ecuaciones integrado en Microsoft Word"
+  },
+  {
+    "objectID": "posts/blogs/2023/research/03/b1_3.html#manejo-de-tablas",
+    "href": "posts/blogs/2023/research/03/b1_3.html#manejo-de-tablas",
+    "title": "Guía didáctica de LaTeX para publicación en Revista Peruana",
+    "section": "Manejo de Tablas",
+    "text": "Manejo de Tablas\n\nLas tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:\n\nCrear la Tabla con Espacios de Celdas Respetados: Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver Figura 4).\nUtilizar Líneas Horizontales para Presentar la Información: Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver Figura 5).\nPosibilidad de Combinar Celdas o Columnas: Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver Figura 5).\nPreferencia por Tablas en Blanco y Negro: Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.\n\nA continuación, se incluyen ejemplos visuales que ilustran estas pautas:\n\n\nToggle the code\nknitr::include_graphics(\"images/3_10_Tabla1.png\")\n\n\n\n\n\n\n\n\nFigura 4: Tabla simple en una hoja de Excel\n\n\n\n\n\n\n\nToggle the code\nknitr::include_graphics(\"images/3_20_Tabla2.png\")\n\n\n\n\n\n\n\n\nFigura 5: Tabla más elaborada en una hoja de Excel\n\n\n\n\n\nEstas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.\n\nManejo de Figuras y Gráficas\nEl manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:\n\n\nDe Fuentes Externas\nTodas las imágenes se deben enviar incrustadas en el documento, indicando siempre título o descripcion y su fuente bibliográfica. Además, se recomienda enviar el archivo original de las imágenes por separado (archivo original en .jpg o .png), indicando siempre el orden de las figuras.\n\n\nGeneradas Utilizando Microsoft Excel\n\nCada gráfica se debe organizar en su propia hoja de Excel, indicando Indicando siempre el título de la misma (ver Figura 6).\nSi la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver Figura 7).\nPara las gráficas creadas en Microsoft Excel (formato .xlsx), se deben seguir estos pasos para garantizar una calidad alta:\n\nGuardar la imagen seleccionando clic derecho y luego guardar imagen.\nElegir el destino de almacenamiento y seleccionar entre los formatos .png o .svg (ver Figura 8).\nTambién se puede enviar el archivo original en formato .xlsx.\n\n\nA continuación, se presentan ejemplos visuales que ilustran estos procesos:\n\n\nToggle the code\nknitr::include_graphics(\"images/4_10_SoloFigura_excel.png\")\n\n\n\n\n\n\n\n\nFigura 6: Figura única en un hoja de Excel\n\n\n\n\n\n\n\nToggle the code\nknitr::include_graphics(\"images/4_20_Tabla2ConFigura.png\")\n\n\n\n\n\n\n\n\nFigura 7: Figura única creada a partir de una tabla de Excel\n\n\n\n\n\n\n\nToggle the code\nknitr::include_graphics(\"images/4_30_GuardarTablasExcel.png\")\n\n\n\n\n\n\n\n\nFigura 8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel\n\n\n\n\n\nSiguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores."
+  },
+  {
+    "objectID": "posts/blogs/2023/research/03/b1_3.html#manejo-de-bibliografía",
+    "href": "posts/blogs/2023/research/03/b1_3.html#manejo-de-bibliografía",
+    "title": "Guía didáctica de LaTeX para publicación en Revista Peruana",
+    "section": "Manejo de Bibliografía",
+    "text": "Manejo de Bibliografía\nPara la bibliografía se utiliza el programa administrador de citas conocido como Zotero. Ver la siguiente guía.\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web."
+  },
+  {
+    "objectID": "posts/blogs/2023/robotics/02/b2_2.html",
+    "href": "posts/blogs/2023/robotics/02/b2_2.html",
+    "title": "Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido",
+    "section": "",
+    "text": "Grados de libertad\nNotas claves:\n\nGrados de libertad : Degree of Freedom en inglés se abrevia como DOF, dof, Dof, etc.\nEspacio de configuración: Configuration Space en ingés se abrevia com C-space. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.\n\nDimensiones del espacio comunes de un cuerpo rígido:\n\nEn el espacio: 6\n\nPosición del cuerpo: Las coordenadas \\(x,y,z\\)\nOrientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.\n\nEn el plano: 3\n\n\n\n\nMovimiento de Cuerpos Rígidos\n\nRepresentación implícita: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.\nSistema de referencia conectada a un cuerpo en movimiento: Se considera esta referencia, por ejemplo el frame \\(\\{b\\}\\), de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.\n\n\n\nRotación de matrices\n\n6 Restricciones en matrices de rotación \\(R\\): Ortogonalidad de vectores\n\nRestriciones en las columnas: Los vectores unitarios deben ser unitarios: 3\nEl producto punto de alguno de dos de los vectores columna debe ser ser 0: 3\nEn consecuencia, se cumple que:\n\n\\(R^{T}R = I\\) lo que conlleva a \\(det(R) = 1\\) (regla de la mano derecha)\nLo que se agrupa en el conjunto de matrices reales 3x3 denominado Special orthogonal group SO(3)\nAlgunas propiedades relevantes:\n\nInversa: \\(R^{-1} = R^{T} \\in SO(3)\\)\n\n\\(R_{ab}R_{ba}=R_{aa}=I\\) Por lo tanto la inversa de \\(R_{ab}\\) es también \\(R_{ba}\\).\n\nCierre: \\(R_1 R_2 \\in SO(3)\\)\nFinalmente: \\(x \\in \\mathbb{R} \\left \\| Rx \\right \\| = \\left \\| x \\right \\|\\)\n\n\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web.\n\n\n\n\n\n\n\n\n\n\n\nReutilizaciónCC BY-SA 4.0Cómo citarBibTeX@online{jácobo2025,\n  author = {Jácobo, Sergio},\n  title = {Entendiendo la Robótica: Grados de Libertad y Movimiento de\n    Cuerpos Rígido},\n  date = {2025-01-23},\n  url = {https://sergiojacobo.com/posts/blogs/2023/robotics/02/b2_2.html},\n  langid = {es}\n}\nPor favor, cita este trabajo como:\nJácobo, Sergio. 2025. “Entendiendo la Robótica: Grados de Libertad\ny Movimiento de Cuerpos Rígido.” January 23, 2025. https://sergiojacobo.com/posts/blogs/2023/robotics/02/b2_2.html."
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "",
+    "text": "El Formato Unificado de Descripción de Robótica (URDF) es un archivo XML que incluye la descripción física de un robot. Básicamente, es un modelo 3D con información sobre articulaciones, motores, masa, etc. Para más detalles sobre cómo crear tu propio robot en formato URDF, revisa nuestro post anterior."
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html#realizar-una-copia-o-fork-del-repositorio-urdf-loaders",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html#realizar-una-copia-o-fork-del-repositorio-urdf-loaders",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "Realizar una copia o fork del repositorio “urdf-loaders”",
+    "text": "Realizar una copia o fork del repositorio “urdf-loaders”\nDirígete a gkjohnson/urdf-loaders y realiza una copia, ya sea de forma manual (descarga en .zip) o con Git. No todos los archivos serán necesarios para este tutorial."
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html#crear-tu-propia-estructura-del-proyecto",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html#crear-tu-propia-estructura-del-proyecto",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "Crear tu propia estructura del proyecto",
+    "text": "Crear tu propia estructura del proyecto\nyour-project/\n├── docs/                    # Carpeta de salida para GitHub Pages\n│   ├── index.html           # ¡Contenido creado automáticamente!\n│   └── ...                  # Otros archivos generados por Parcel\n├── urdf/                    # Carpeta de archivos URDF\n│   ├── robot/\n│   │   ├── urdf/\n│   │   │   ├── meshes/      # Archivos de malla para el robot\n│   │   │   └── urdf/        # Archivos URDF del robot\n│   │   └── ...              # Otros robots generados\n├── src/                     # Código fuente de tu aplicación\n│   ├── index.html           # Archivo HTML principal\n│   ├── main.js              # Archivo JS principal\n│   └── styles.css           # Archivo CSS principal\n├── utils/                    # Código fuente de tu aplicación\n│   ├── urdf-viewer-element.js  # Archivo del paquete urdf-loaders\n│   └── ...                 # Otros archivos el paquete\n├── test/                   # Carpeta de pruebas para compilar y servir\n│   ├── index.html          # ¡Contenido creado automáticamente!\n│   └── ...                 # Otros archivos generados por Parcel durante las pruebas\n├── package.json            # Archivo de configuración de npm\n└── .gitignore              # Archivos a ignorar por Git"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html#modificaciones-necesarias",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html#modificaciones-necesarias",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "Modificaciones necesarias",
+    "text": "Modificaciones necesarias\n\n1. Actualizar las dependencias\nLuego de estructurar tu proyecto, el primer paso es reutilizar el archivo de configuración package.json, encargado de instalar todas las dependencias y definir los comandos para probar y crear finalmente nuestra aplicación. Así, se reemplazó la sección devDependencies por sus versiones actualizadas.\n\"devDependencies\": {\n    \"@babel/core\": \"^7.21.8\",\n    \"@babel/preset-env\": \"^7.21.5\",\n    \"@types/three\": \"^0.164.0\",\n    \"@webcomponents/webcomponentsjs\": \"^2.4.4\",\n    \"babel-jest\": \"^29.5.0\",\n    \"concurrently\": \"^6.2.1\",\n    \"cssnano\": \"^7.0.4\",\n    \"eslint\": \"^7.10.0\",\n    \"eslint-plugin-jest\": \"^24.1.0\",\n    \"jest\": \"^27.1.1\",\n    \"jest-cli\": \"^27.1.1\",\n    \"jsdom\": \"^17.0.0\",\n    \"node-fetch\": \"^3.0.0\",\n    \"nyc\": \"^15.1.0\",\n    \"parcel-bundler\": \"^1.12.5\",\n    \"postcss\": \"^8.4.39\",\n    \"rollup\": \"^2.29.0\",\n    \"static-server\": \"^3.0.0\",\n    \"three\": \"^0.164.1\",\n    \"typescript\": \"^4.4.3\",\n    \"http-server\": \"^14.1.1\"\n  },\n  \"dependencies\": {\n    \"parcel\": \"^2.12.0\"\n  }\n\n\n2. Modificar los comandos de ejecución\nLuego, en la sección de scripts se deben reemplazar los comandos start y build por sus versiones actualizadas (según la estructura de tu proyecto y algunos comandos nuevos como --dist-dir debido a la actualización de las dependencias). El resto de comandos como build-examples o test fueron eliminados.\n\"scripts\": {\n    \"start\": \"concurrently \\\"parcel watch ./src/index.html --dist-dir ./test/ --public-url . --no-cache\\\" \\\"http-server ./\\\"\",\n    \"build\": \"parcel build ./src/index.html --dist-dir ./docs/ --public-url ./ --no-cache --no-source-maps --no-content-hash\"\n}\n\n\n\n\n\n\nNota\n\n\n\nPara el comando start se prefirió utilizar el paquete “http-server” en vez del “static-server” por ser más ligero y estar familiarizado.\n\n\n\n\n3. Modificar las referencias a los archivos principales\nAlgunos de nuestro archivos se verán afectados y son compilados en este punto, ya que no estarán correctamente enlazados debido a la nueva estructura del proyecto. Lo siguiente será revisar el contenido de nuestro principales archivos del paquete ubicados en src y utils (archivos js y html). Sin embargo, para nuestro beneficio, estos ya fueron identificados y son los siguientes:\n\nEn src/\n\nEn index.js\n\n/* globals */\n...\nimport URDFManipulator from '../utils/urdf-manipulator-element.js';\n\nEn index.html\n\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"es\"&gt;\n\n&lt;head&gt;\n    &lt;meta charset=\"utf-8\"&gt;\n    ...\n    &lt;link href=\"styles.css\" type=\"text/css\" rel=\"stylesheet\"&gt;\n&lt;/head&gt;\n\n&lt;body&gt;\n    ...\n    &lt;script type=\"module\" src=\"./index.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;'\n\n\n\n4. Mantener solo archivos necesarios\nDado que solo se mantuvo los comandos start y build, los siguientes archivos de la carpeta original pueden eliminarse de nuestro proyecto:\n\numd/\n\n.eslintrc.json\n\nbabel.config.json\n\njest.config.js\n\npackage-lock.json (se volverá a crear al compilar)\n\nrollup.config.json\n\nexample/index.bundle.html\n\nexample/simple.html\n\nexample/vr.html\n\nexample/src/index.js\n\nexample/src/simple.js\n\nexample/src/vr.js"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html#relizando-pruebas",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html#relizando-pruebas",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "Relizando pruebas",
+    "text": "Relizando pruebas\nFinalmente, llegó la parte más interesante y fácil de toda esta guía. Simplemente con el siguiente comando, se puede probar nuestra aplicación en un servidor local desde nuestro navegador. Para realizar un cambio, solo basta con guardar el archivo luego de modificar. Se recomienda fuertemente utilizar VSCode para editar e implementar todo nuestro proyecto. Recuerda que los archivos creados para ello se almacenan en la carpeta /test, por lo que hay que tener en cuenta en nuestra dirección del localhost.\nnpm start\nAlgunas modificaciones incluyen, cambiar la posición de la cámara y zoom de nuestro robot, según:\ninitCamera() {\n        this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);\n        this.camera.position.z = 7;\n        this.camera.zoom = 8;\n    }"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html#realizando-la-exportación-final",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html#realizando-la-exportación-final",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "Realizando la exportación final",
+    "text": "Realizando la exportación final\nLuego de modificar todo lo necesario, probar con los robots incluidos por defecto y agregar nuestro propio archivo URDF, finalmente se procede a compilar los archivos necesarios en la carpeta /docs para subirlo a nuestro host con Github Pages, utilizando simplemente:\nnpm run build\n\nModificación final\nPara poder visualizar correctamente nuestra aplicación con ayuda de Github Pages (según lo explicado más adelante), se procederá a modificar el contenido de la carpeta /docs:\n\nRealizar una copia de nuestra carpeta urdf dentro de /docs\n\nModificar el archivo index.html creado en /docs, indicando que nuestro urdf se encuentra ahora en la misma carpeta:\n\n&lt;li urdf=\"./urdf/UR5/urdf/UR5.URDF\" color=\"#37B7C3\"&gt;&lt;b&gt;UR5&lt;/b&gt;&lt;/li&gt;\nDe esta manera, se asegura que todo nuestro proyecto y sus dependencias corran desde en la web /docs. Por lo que nuestro nueva jerarquía de archivos sería ahora:\nyour-project/\n├── docs/                    # Carpeta de salida para GitHub Pages\n│   ├── index.html\n│   ├── urdf/                # Carpeta de archivo del robot\n│   └── ...                  # Otros archivos creados al compilar"
+  },
+  {
+    "objectID": "posts/blogs/2024/robotics/02/b1_2.html#subiendo-a-github-pages",
+    "href": "posts/blogs/2024/robotics/02/b1_2.html#subiendo-a-github-pages",
+    "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
+    "section": "Subiendo a Github Pages",
+    "text": "Subiendo a Github Pages\nLa carpeta docs es importante porque nos permitirá almacenar todo nuestro visualizador URDF. Para ello, ir a la sección de Settings de nuestro repositorio público previamente creado. Eb la sección de Pages --&gt; Github Pages --&gt; Build and deployment seleccionar la opción Deploy from a branch. Luego, indicar ruta del folder base para la creación nuestro página a /docs. Por defecto es /root.\nLuego de unos minutos, aparecerá que nuestro sitio se creó correctamente y aparecerá un enlace a nuestra página web de nuestro visualizador URDF completamente funcional.\nY eso es todo, disfruta de tu robot en la web !!! o prueba el mío en Github."
+  },
+  {
+    "objectID": "posts/quarto.html",
+    "href": "posts/quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "Quarto\n\n\n\n\n\n\n\n\n\n\nGuía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)\n\n\nBasado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/robotics.html",
+    "href": "posts/robotics.html",
+    "title": "Robotics",
+    "section": "",
+    "text": "Robotics\n\n\n\n\n\n\n\n\n\n\nEntendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial\n\n\nExplora los fundamentos esenciales en dinámica con estas notas detalladas sobre la teoría básica, centrándose en la distinción entre sistemas de referencia inercial y no…\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido\n\n\nExplora las notas sobre la teoría básica en robótica, basadas principalmente en el libro Modern Robotics de Kevin M. Lynch y Frank C. Park.\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDesde Fusion 360 a URDF: Construye y Simula tu Robot\n\n\nManejo de exportación de archivos URDF utilizando Fusion 360\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDespliega tu Robot en 3D: Guía para Crear un Visor URDF\n\n\nTutorial para crear una aplicación de visualización de robots en URDF con Three.js\n\n\n\nSergio Jácobo\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/2024-09-16/index.html",
+    "href": "talks/2024-09-16/index.html",
+    "title": "Robot Intelligence",
+    "section": "",
+    "text": "slides  materials"
+  },
+  {
+    "objectID": "talks/2024-09-16/index.html#overview",
+    "href": "talks/2024-09-16/index.html#overview",
+    "title": "Robot Intelligence",
+    "section": "Overview",
+    "text": "Overview\nThe following topics were covered:\n\nWhat does autonomy mean for a robot?\n\nA draft meaning\nShould a robot be autonomous?\n\nWhat robots exist today that are autonomous?\n\nState of the art\nEffects of high-level autonomy on society"
+  },
+  {
+    "objectID": "talks/2024-09-16/index.html#event-details",
+    "href": "talks/2024-09-16/index.html#event-details",
+    "title": "Robot Intelligence",
+    "section": "Event details",
+    "text": "Event details\nEvent: Course: Intelligent and Autonomous Robots | Master in Robotics and Automation\nDate: 16th September, 2024\nTime: 19:00\nLocation: Universidad Carlos III de Madrid"
+  },
+  {
+    "objectID": "talks/2024-09-16/index.html#slides",
+    "href": "talks/2024-09-16/index.html#slides",
+    "title": "Robot Intelligence",
+    "section": "Slides",
+    "text": "Slides\n\n\nKeyboard shortcuts for slideshow (once you’ve clicked inside it):\n\nUse ← and → to navigate through the slides\nUse o for an overview of all slides\nUse ? for an overview more keyboard shortcuts\nClick the hamburger menu in the bottom left corner of the slide deck for more options\n\nf to toggle full screen doesn’t work from this page. Go to slides and use that shortcut from there instead"
+  },
+  {
+    "objectID": "talks/2024-12-18/index.html",
+    "href": "talks/2024-12-18/index.html",
+    "title": "A conversation about Equity, Diversity, Inclusion and Accessibility (EDIA) in the RSE community",
+    "section": "",
+    "text": "slides  materials  video"
+  },
+  {
+    "objectID": "talks/2024-12-18/index.html#overview",
+    "href": "talks/2024-12-18/index.html#overview",
+    "title": "A conversation about Equity, Diversity, Inclusion and Accessibility (EDIA) in the RSE community",
+    "section": "Overview",
+    "text": "Overview\nElla Kaye (Research Software Engineer, University of Warwick) and Malvika Sharan (Senior Researcher – Open Research at the Alan Turing Institute and co-lead of The Turing Way) will converse about their experiences in/with the RSE community, as well as both the challenges and successes they’ve encountered when working to improve EDIA. They will discuss the importance and difficulties of community-building and why it matters from an EDIA perspective. They will also consider the intersectionality between developing an RSE identity and their identities as members of groups under-represented in the broader RSE community. There will be time for questions and further discussion."
+  },
+  {
+    "objectID": "talks/2024-12-18/index.html#event-details",
+    "href": "talks/2024-12-18/index.html#event-details",
+    "title": "A conversation about Equity, Diversity, Inclusion and Accessibility (EDIA) in the RSE community",
+    "section": "Event details",
+    "text": "Event details\nEvent: DiveRSE, part of the seminar series\nDate: July 31st, 2024\nTime: 15:00\nLocation: Zoom"
+  },
+  {
+    "objectID": "talks/2024-12-18/index.html#slides",
+    "href": "talks/2024-12-18/index.html#slides",
+    "title": "A conversation about Equity, Diversity, Inclusion and Accessibility (EDIA) in the RSE community",
+    "section": "Slides",
+    "text": "Slides\n\n\nKeyboard shortcuts for slideshow (once you’ve clicked inside it):\n\nUse ← and → to navigate through the slides\nUse o for an overview of all slides\nUse ? for an overview more keyboard shortcuts\nClick the hamburger menu in the bottom left corner of the slide deck for more options\n\nf to toggle full screen doesn’t work from this page. Go to slides and use that shortcut from there instead"
+  }
+]
