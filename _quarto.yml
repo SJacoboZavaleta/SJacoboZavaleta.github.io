@@ -3,60 +3,60 @@ project:
   output-dir: docs
   resources:
     - "images"
-    
+
 execute:
-  freeze: auto
+  freeze: false
 
 website:
-  title: "Sergio Jacobo"
+  title: "Sergio Jácobo-Zavaleta"
   site-url: https://sergiojacobo.com
-  description: Personal website, portfolio and blog
+  description: Personal website and blog
   repo-url: https://github.com/SJacoboZavaleta/sergiojacobo
   #repo-actions: issue
-  image: images/website_logo.png	
+  page-navigation: true
+  back-to-top-navigation: true
+  image: images/Logo_ThirdFoundation_es_card.png	
   navbar:
-    #logo: ELLAKAYE-logo-light.png
     title: "<span class='icon-line2'></span>Sergio<span class='icon-line3'></span><span class='icon-line'></span>Jacobo"
     right:
       - text: about
         href: about.qmd
-      - text: blog
-        href: posts/posts.qmd
+      - text: research
+        href: research.qmd
+      - text: "blog: LTF"
+        href: blog/index.qmd
       - text: talks
         href: talks.qmd
       - text: ideas
         href: ideas/ideas.qmd
-      - text: community
-        href: community.qmd
       - text: contact
         href: contact.qmd
-  favicon: images/ThirdFoundation_favicon.png
+  favicon: images/favicon_ThirdFoundation.png
   twitter-card: 
-    title: Sergio Jacobo
-    description: The personal website of Sergio Jacobo
+    description: The personal website of Sergio Jácobo Zavaleta
     image: images/website_logo.png
     image-alt: |
-      A square logo made from Sergio Jacobo's name and The Third Foundation's logo.
-    image-width: 500
-    image-height: 500
+      The Third Foundation's logo.
+    image-width: 1100
+    image-height: 600
     card-style: summary # alternative summary_large_image
     creator: "@JacoboZavaleta"
     site: "@JacoboZavaleta"
   open-graph: 
-    description: The personal website of Sergio Jacobo
+    description: The personal website of Sergio Jácobo Zavaleta
     image: images/website_logo.png
     image-alt: |
-      A square logo made from Sergio Jacobo's name and The Third Foundation's logo.
-    image-width: 500
-    image-height: 500
+      The Third Foundation's logo.
+    image-width: 1100
+    image-height: 600
     locale: en-GB
   google-analytics:
     tracking-id: "G"
     anonymize-ip: true
   page-footer:
     left: |
-      Copyright &copy; 2024 Sergio Jácobo |<br>
-      Este sitio web fue creado usando [![](/images/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org).
+      Copyright &copy; 2024 Sergio Jácobo Zavaleta|<br>
+      Sitio web creado usando [![](/images/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org).
     center:
       - href: https://www.github.com/SJacoboZavaleta
         icon: github

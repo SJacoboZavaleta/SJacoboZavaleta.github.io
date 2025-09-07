@@ -1,0 +1,72 @@
+---
+title: "Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido"
+author: Sergio Jácobo
+description: |
+  Explora las notas sobre la teoría básica en robótica, basadas principalmente en el libro Modern Robotics de Kevin M. Lynch y Frank C. Park.
+date: 2023-10-15
+tags: 
+    - "Robotics"
+categories:
+    - "Robotics"
+    - "Theory"
+    - "Dynamics"
+    - "Kinematics"
+reading-time: true
+lang: es
+number-sections: false
+toc: true
+image: images/thumbnail.jpg
+image-alt: "Un robot academico"
+language: 
+    section-title-footnotes: Notas
+---
+
+{{< include ../../../../_includes/navigation_breadcrumbs_robotics.qmd >}}
+
+# Grados de libertad
+
+Notas claves:
+
+-   Grados de libertad : ***Degree of Freedom*** en inglés se abrevia como **DOF**, **dof**, **Dof**, etc.
+-   Espacio de configuración: ***Configuration Space*** en ingés se abrevia com *C-space*. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.\
+-   Dimensiones del espacio comunes de un **cuerpo rígido:**
+    -   En el espacio: 6
+        -   Posición del cuerpo: Las coordenadas $x,y,z$
+        -   Orientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.
+    -   En el plano: 3
+
+# Movimiento de Cuerpos Rígidos
+
+-   **Representación implícita**: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.
+
+-   **Sistema de referencia conectada a un cuerpo en movimiento:** Se considera esta referencia, por ejemplo el frame $\{b\}$, de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.
+
+# Rotación de matrices
+
+-   6 Restricciones en matrices de rotación $R$: Ortogonalidad de vectores
+
+    -   Restriciones en las columnas: Los vectores unitarios deben ser unitarios: 3
+    -   El producto punto de alguno de dos de los vectores columna debe ser ser 0: 3
+    -   En consecuencia, se cumple que:
+        -   $R^{T}R = I$ lo que conlleva a $det(R) = 1$ (regla de la mano derecha)
+        -   Lo que se agrupa en el conjunto de matrices reales 3x3 denominado **Special orthogonal group SO(3)**
+        -   Algunas propiedades relevantes:
+            -   Inversa: $R^{-1} = R^{T} \in SO(3)$
+                -   $R_{ab}R_{ba}=R_{aa}=I$ Por lo tanto la inversa de $R_{ab}$ es también $R_{ba}$.
+            -   Cierre: $R_1 R_2 \in SO(3)$
+            -   Finalmente: $x \in \mathbb{R} \left \| Rx \right \| = \left \| x \right \|$
+
+::: {.further-info}
+::: grid
+::: {.g-col-12 .g-col-md-12}
+::: {.bio-footer}
+<img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+  Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en [Twitter](https://twitter.com/JacoboZavaleta), ver algunos repositorios de mi trabajo en [Github](https://www.github.com/SJacoboZavaleta), o leer más sobre mí en este [sitio web](../../../../../about.qmd).
+</div>
+:::
+
+:::
+
+:::
+:::

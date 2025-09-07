@@ -1,0 +1,26 @@
+---
+#title: "Research"
+pagetitle: Research - Sergio Jacobo
+page-layout: full
+toc: true
+repo-actions: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [Research]{.second-color}
+
+:::{.header-text}
+:::{.header-block}
+I'm working on some ideas that might be useful to others.
+:::
+:::
+
+:::{.header-banner}
+![](images/noPreview.jpg){fig-alt="No preview" width=500px}
+:::
+
+

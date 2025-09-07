@@ -1,0 +1,25 @@
+# blog/posts/_metadata.yml
+
+# --- Academic & Code ---
+date-format: long
+toc: true
+toc-depth: 3
+citation: true
+license: CC BY-SA
+code-block-border-left: "#9ef8f5"
+code-overflow: wrap
+code-fold: show
+code-summary: "Toggle the code"
+code-tools: true
+
+# --- Execution ---
+execute:
+  echo: true
+  message: true
+  warning: true
+
+# --- Includes (comments, progress bar) ---
+include-in-header: 
+  - ../../_includes/progress-bar.html
+  - ../../_includes/giscus.html
+include-after-body: ../../_includes/div-giscus.html

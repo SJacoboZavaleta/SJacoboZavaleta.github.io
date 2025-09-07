@@ -1,101 +1,122 @@
 ---
-pagetitle: Curriculum Vitae
-title: "Curriculum Vitae"
+#title: "About"
+pagetitle: "Sergio Jacobo Zavaleta — Robotics & Research"
 format:
-  html: default
-  pdf:
-    author: Sergio Jacobo-Zavaleta
-    pdf-engine: weasyprint
-    css: assets/cv.css
-format-links: [pdf]
+  html:
+    toc: false
 ---
 
-::: {.print-only .contact-block}
-100514566g@alumnos.uc3m.es
+::: {#profile style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;"}
+::: {#profile-image style="flex: 0 0 120px;"}
+![Sergio Jacobo Zavaleta](/images/sergio-about2.JPG){.shadow}
+:::
+::: {#profile-text style="flex: 1;"}
+# [Sergio Jácobo Zavaleta]{.primary}
+
+**Mechatronics Engineer | Robotics Researcher | Educator** 
+
+📧 sjacobo@pa.uc3m.es | 📞 +617818424  
+🔗 [linkedin.com/in/sjacobozavaleta](https://linkedin.com/in/sjacobozavaleta)  
+📘 [github.com/sjacobozavaleta](https://github.com/sjacobozavaleta)  
+🎓 [Google Scholar](https://scholar.google.com/citations?user=NsiUPU0AAAAJ&hl=es) | [ResearchGate](https://www.researchgate.net/profile/Sergio-Jacobo-Zavaleta)
+
+Currently pursuing a Master’s in Robotics and Automation at Universidad Carlos III de Madrid.
+
+I design intelligent clinical robots and biomedical devices that bridge engineering, AI, and medicine. My research focuses on soft robotics, medical imaging, and automation for healthcare — with publications in peer-reviewed journals.
+
+When I'm not building or researching, I help students — especially Spanish speakers — master modern tools for academic success: $\LaTeX$, Quarto, Python, Zotero, and reproducible workflows.
+
+Welcome to my digital notebook: *La Tercera Fundación*.
+:::
 :::
 
-::: {.no-print}
-_Last updated  Oct 10, 2024_
-:::
+---
 
-## Education
+## 🧠 What I Do
+
+### 🤖 Robotics & Research
+I'm currently working on my master's thesis at UC3M, developing **novel actuation strategies for tendon-based soft actuators using Shape Memory Alloys (SMA)**. My goal is to improve performance in load capacity and recovery for applications in minimally invasive surgery and assistive robotics.
+
+Starting in September 2025, I’ll continue my journey at Universidad Carlos III de Madrid as a Graduate Researcher in the robotics lab, working on the project SRAR: Soft Robotics for Ankle Rehabilitation (PID2023-149141OB-I00). This role builds directly on my master’s research on soft actuators using Shape Memory Alloys (SMA), now evolving into the design of wearable robotic systems for medical rehabilitation. I’m excited to contribute to a project that bridges engineering and healthcare, turning research into tangible solutions for patients.
+
+I’ve also worked on:
+- Robot-assisted ultrasound-guided breast biopsy systems.
+- Deep learning for medical signal analysis (EEG, ocular diseases).
+- Restoration of biomedical equipment under resource constraints.
+
+### 📚 Educator & Open-Science Advocate
+I believe knowledge should be open, clear, and accessible. That’s why I write in **Spanish** — to support students who, like me once, struggled to find high-quality technical resources in our language.
+
+Through this site, I share guides on:
+- Academic writing with $\LaTeX$ and **Quarto**.
+- Reproducible research with Python, R, and RMarkdown.
+- Reference management with Zotero and BibTeX.
+
+This blog is my **personal library in progress** — a space to document, reflect, and share what I learn.
+
+---
+
+## 🎓 Education
+
 **Master in Robotics and Automation**  
-Carlos III de Madrid, Madrid, Spain  
-[*September 2024 - ongoing*]{.cvdate}
+*Universidad Carlos III de Madrid*, Spain  
+*Sep 2024 – Ongoing*  
+- Final thesis: *Enhancing SMA-based soft actuators via novel tendon retraining configurations*.
 
 **Bachelor of Science in Mechatronics Engineering**  
-Universidad Nacional de Trujillo, Trujillo, Peru  
-[*April 2014 - December 2018*]{.cvdate}
+*Universidad Nacional de Trujillo*, Peru  
+*Apr 2014 – Dec 2018*  
+- Thesis: *Modeling and simulation of a 3D ultrasound-guided clinical robot for percutaneous breast biopsy*.
 
-- Thesis title: [Modelamiento y simulación de un robot clínico asistido por Ultrasonido 3D para mejorar el guiado de insercion de agujas en biopsia percutánea de mama](https://hdl.handle.net/20.500.14414/18226).  
-- Third-class rank.
+---
 
-## Profesional Experience
+## 🔬 Research & Projects
 
-**Maintenance Assistant of biomedical equipment (Full-time)**  <br>
-Corporación Tecnobiomédica Healthcare del Perú SAC. — Medical equipments, Lima, Peru  
-[*November 2020 - April 2021*]{.cvdate}  
+### Researcher – SMA Soft Actuators  
+*UC3M Robotics Lab, Madrid* | *Mar 2025 – Present*  
+Designing next-gen soft actuators for medical robotics with improved efficiency and control.
 
-- Programmed and adapted preventive maintenance plans of old and out of date equipments based on user's experience.  
+### National Researcher (RENACYT)  
+*CONCYTEC, Peru* | *Apr 2023 – Present*  
+Registered in the National Scientific Register (Code: P0153371).
 
-**Maintenance Assistant (Full-time)**  <br>
-Norsac SAC. — Textile Industry, Trujillo, Peru  
-[*May 2019 - November 2019*]{.cvdate}  
+### Key Projects
+- **Topological Navigation for Mobile Robots** (ROS, Python, Gazebo) — [GitHub](https://github.com/SJacoboZavaleta/topology_navigation)
+- **Automated Medication Dispensing Robot** (RobotStudio) — [GitHub](https://github.com/SJacoboZavaleta/drug_dispensing_RI)
+- **ASL Hand Gesture Recognition** (OpenCV, MediaPipe) — [GitHub](https://github.com/SJacoboZavaleta/hand_gesture_detection)
+- **Ventilator Restoration & Low-Cost Thermometers** for hospitals during the pandemic.
 
-- Formulated and collected the effects of implementing new engineering-based features in their Integrated System of Management by reducing time of up to 50% in communication between Maintenance and Logistic Areas.  
-- Provided an updated version of the plant’s electrical power distribution system for facilitating manipulation, testing and equipments installation in less than a month.  
-- Reduced distribution time of maintenance assignments of up to 90% within the staff by computationally automating the management of preventive maintenance plan.
+---
 
-## Research experience
+## 💼 Skills
 
-**National researcher Lima, Peru**  <br>
-[*April 2023 - Present*]{.cvdate}  
-Enabled and registered in the National Scientific Register (RENACYT). Code: P0153371  
+| Category | Tools & Competencies |
+|--------|-----------------------|
+| **Programming** | Python, MATLAB, C++, R |
+| **Robotics** | ROS, Gazebo, Webots, RobotStudio, Arduino |
+| **Writing & Publishing** | $\LaTeX$, Quarto, RMarkdown, Markdown, Zotero |
+| **CAD & Simulation** | Fusion 360, SolidWorks, Onshape |
+| **Languages** | Spanish (native), English (B2), Japanese (N5), German (basic) |
+| **Soft Skills** | Teaching, technical communication, leadership, event management |
 
+---
 
-**Technological projects about prevention and assistant in patients with COVID-19 Trujillo**  <br>
-[*March - October 2019*]{.cvdate}  
-Funded by the Universidad Nacional de Trujillo  
-  
-- Collaborated in the implementation of digital thermometers and automated cleaning system at low cost by applying reverse engineering to produce a new, compact module-base design. Due to commercial limitations for importing specific electronic parts, the unit sales prices were up to 150% of the market prices.  
-- The initial prototype and testing of an Arduino-based design resulted in the enhancement of microcontroller-based control for devices that require long battery life up to 8 hours of continuous use.
+## 📦 Download My Full CV
 
-## Publications
-- Jácobo-Zavaleta, S., & Zavaleta, J. (2023a). *Needle placement for robot-assisted 3D-guided ultrasound breast biopsy: A preliminary study*. IEEE Latin America Transactions, 21 (3). [Link](https://latamt.ieeer9.org/index.php/transactions/article/view/7442). https://doi.org/10.1109/tla.2023.10068849  
-- Jácobo-Zavaleta, S., & Zavaleta, J. (2023b). *A Deep Learning Approach for Epilepsy Seizure Identification Using Electroencephalogram Signals: A Preliminary Study*. IEEE Latin America Transactions, 21 (3). [Link](https://latamt.ieeer9.org/index.php/transactions/article/view/7300). https://doi.org/10.1109/TLA.2023.10068845  
-- Zavaleta, A., Ñuflo-Vásquez, S., Alarcón-Turiani, V., & Jácobo-Zavaleta, S. (2023). Serie de casos de conducta suicida atendidos en un centro de salud del norte del Perú. Norte Médico, 1 (5), 27–30. [Link](https://revistas.unc.edu.pe/index.php/nortemedico/article/view/118).  
-- Jácobo-Zavaleta, S., Zavaleta Gavidia, W., & Zavaleta Gavidia, V. (2022). *Deep learning y enfermedades oculares*. Norte Médico, 3 (2). Link.  
-- Zavaleta de Los Ríos, V., Jácobo-Zavaleta, S., & Zavaleta Gavidia, V. (2022). *Microbiota intestinal y las enfermedades neurodegenerativas*. Norte Médico, 1 (2). [Link](https://revistas.unc.edu.pe/index.php/nortemedico/article/view/118).
+Prefer a formal, printable version?  
+📥 [Download CV as PDF](/assets/cv.pdf)
 
-## Honours and Awards
-- **Recognition for technological projects about prevention and assistant in patients with COVID-19**  <br>
-Universidad Nacional de Trujillo  
-[*October 2020*]{.cvdate}
--  **Third place in Final Merit List of Undergraduate Program**  <br>
-Universidad Nacional de Trujillo  
-[*December 2018*]{.cvdate}
-- **Recognition to the project “Production of Electrical Energy through a Helical Wind Turbine using wind’s velocities until Grade 2 in Beaufort Scale”**  <br>
-José Faustino Sánchez Carrión High School  
-[*December 2010*]{.cvdate}
+---
 
-## Extra Curricular Activities
+## 🧩 Beyond Academia
 
-### Independent Tutor  
-- **Private Maths and English tutor**
+When I step away from the screen, I enjoy:  
+- Running 🏃‍♂️  
+- Reading sci-fi books and manga  
+- Watching films and series  
+- Playing video games 🎮
 
-### Voluntarism
-- **Citizen monitor**  
-    Escuela Nacional de Control - Contraloría General de la República del Perú.  
-    [*January 2022 -- Present*]{.cvdate}   
-    Monitored public-financed projects to report evidence of incidents of non-compliance.
+This site is inspired by *La Tercera Fundación* — a place where knowledge is preserved and shared for the future.
 
-### Provision of services
-- **Examination monitor**  
-    Minister of Education, Cajamarca, Perú.  
-    [*November 2022 - Present*]{.cvdate}  
-    Collaborated and moderated teacher evaluation processes for service examination. 
+Welcome aboard.
 
-::: {.print-only}
-## References
-Available upon request
-:::

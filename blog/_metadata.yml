@@ -1,0 +1,17 @@
+# blog/_metadata.yml
+
+# --- General ---
+freeze: false
+title-block-banner: true
+sidebar: floating
+page-layout: article
+toc: false
+open-graph: true
+twitter-card:
+  image-width: 1100
+  image-height: 600
+  card-style: summary_large_image
+  creator: "@JacoboZavaleta"
+  site: "@JacoboZavaleta"
+  image: images/Logo_ThirdFoundation_es_card.png
+  image-alt: "La Tercera Fundacion logo"

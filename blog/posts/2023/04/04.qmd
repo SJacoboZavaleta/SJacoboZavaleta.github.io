@@ -1,0 +1,156 @@
+---
+title: "Guía didáctica de LaTeX para publicación en Revista Peruana"
+author: Sergio Jácobo
+description: |
+  Descubre los tips claves para completar de manera eficiente y precisa el formato $\LaTeX{}$ de la revista [Norte Médico](https://revistas.unc.edu.pe/index.php/nortemedico/index), con una guía paso a paso que te facilitará el proceso.
+date: 2023-08-15
+tags: 
+  - "Research"
+categories: 
+  - "Research"
+  - "Latex"
+  - "Zotero"
+  - "Excel"
+lang: es
+number-sections: false
+toc: true
+image: images/thumbnail.jpg
+image-alt: "Fondos de papel"
+language: 
+    section-title-footnotes: Notas
+---
+
+{{< include ../../../../_includes/navigation_breadcrumbs_research.qmd >}}
+
+![Foto de [Annie Spratt](https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash") en [Unsplash](https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)](images/thumbnail.jpg)
+
+# Propósito de la plantilla de la Revista
+Este artiículo facilita y agiliza el proceso de edición de los artículos mediante el uso de un formato basado en código $\LaTeX$. Aunque su correcto manejo requiere cierto conocimiento de instrucciones básicas, este artículo proporciona una guía didáctica destinada a usuarios no familiarizados con $\LaTeX$. El objetivo es que estos usuarios puedan faciliar la edición de la plantilla por parte de la Revista utilizando herramientas ampliamente disponibles, lo que garantiza un envío exitoso de sus artículos para revisión y publicación.
+
+En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la [revista universitaria Norte Médico](https://revistas.unc.edu.pe/index.php/nortemedico/index) de la Universidad Nacional de Cajamarca.
+
+![Página princial de la revista Norte Médico](images\norteMedicopage.png)
+
+# Vista previa de la plantilla
+```{r , out.width = '80%'}
+#| label: fig-figura1
+#| fig-cap: "Ejemplo de publicación en Norte Médico"
+knitr::include_graphics("images/1_revistaVistaPrevia.png")
+```
+
+# Consideracions esenciales para envio del formato
+
+## Manejo de Ecuaciones
+
+Para escribir ecuaciones matemáticas, se recomienda utilizar un editor de ecuaciones con el propósito de simplificar y acelerar el proceso.
+
+### Método 1: Utilizando el Editor de Ecuaciones de Microsoft Word
+
+En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver @fig-figura11). Luego, asegurándose de que esté activada la opción `latex`, se selecciona la ecuación deseada y se copia (`control + C`) para pegarla posteriormente en su destino (`control + V`).
+
+```{r , out.width = '100%'}
+#| label: fig-figura11
+#| fig-cap: "Usando recursos en línea"
+knitr::include_graphics("images/1_10_EditorEcuacionesOffline.png")
+```
+
+### Método 2: Utilizando un editior de ecuaciones en Línea
+
+En este método, se utiliza el recurso web en línea [Equation Editor](https://equationeditor.atomurl.net/). Después de ingresar la ecuación deseada (ver @fig-figura12), se presiona el botón `Save to LaTeX`, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.
+
+```{r , out.width = '100%'}
+#| label: fig-figura12
+#| fig-cap: "Usando el editor de ecuaciones integrado en Microsoft Word"
+knitr::include_graphics("images/1_20_EditorEcuacionesOnline.png")
+```
+
+
+<!-- #### Símbolos matemáticos
+Para escribir correctamente los distntios símbolos matemáticos es necesario utilizar las sentencias de código o instrucciones correctas en base a la siguiente lista. Algunas fuentes son:
+- https://mathvault.ca/wp-content/uploads/Comprehensive-List-of-Mathematical-Symbols.pdf  
+- https://ctan.dcc.uchile.cl/info/symbols/comprehensive/symbols-a4.pdf  
+- https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf -->
+
+## Manejo de Tablas
+<!-- Utilizando el paquete [Excel2Latex](ctan.org/pkg/excel2latex) -->
+Las tablas se crean y modifican en formato Microsoft Excel para uniformizar el llenado de los datos, los estilos de tabla y facilitar la edición final. Cada tabla se organiza en una hoja distinta, y siempre se coloca un título o un comentario al pie de la tabla si es necesario. A continuación, se detallan las pautas a seguir:
+
+- **Crear la Tabla con Espacios de Celdas Respetados:** Es importante crear la tabla respetando los espacios de celdas. Se permite utilizar texto en cursiva y negrita según sea necesario (Ver @fig-figura31).
+
+- **Utilizar Líneas Horizontales para Presentar la Información:** Se recomienda utilizar líneas horizontales para separar encabezados y presentar la información de manera clara (Ver @fig-figura32).
+
+- **Posibilidad de Combinar Celdas o Columnas:** Es posible combinar celdas o columnas según la información a presentar. Esto puede ayudar a mejorar la claridad y la organización de la tabla (Ver @fig-figura32).
+
+- **Preferencia por Tablas en Blanco y Negro:** Se recomienda utilizar tablas en blanco y negro siempre que sea posible. Si es necesario resaltar información relevante, se puede hacer uso de algún color, pero se debe tener en cuenta que la legibilidad no se vea afectada.
+
+A continuación, se incluyen ejemplos visuales que ilustran estas pautas:
+
+```{r , out.width = '70%'}
+#| label: fig-figura31
+#| fig-cap: "Tabla simple en una hoja de Excel"
+knitr::include_graphics("images/3_10_Tabla1.png")
+```
+
+```{r , out.width = '80%'}
+#| label: fig-figura32
+#| fig-cap: "Tabla más elaborada en una hoja de Excel"
+knitr::include_graphics("images/3_20_Tabla2.png")
+```
+
+Estas pautas garantizan que las tablas sean fáciles de entender y de interpretar para los lectores, lo que mejora la calidad y la presentación de los documentos.
+
+### Manejo de Figuras y Gráficas
+El manejo de figuras y gráficas es fundamental para la presentación efectiva de información visual en tus documentos. A continuación, se detallan las pautas para el manejo de figuras y gráficas:
+
+### De Fuentes Externas
+Todas las imágenes se deben enviar incrustadas en el documento, indicando siempre **título o descripcion** y **su fuente bibliográfica**. Además, se recomienda enviar el archivo original de las imágenes por **separado (archivo original en .jpg o .png)**, indicando siempre el orden de las figuras.
+
+### Generadas Utilizando Microsoft Excel
+
+1. Cada gráfica se debe organizar en su propia hoja de Excel, indicando **Indicando siempre el título de la misma** (ver @fig-figura41).
+2. Si la gráfica se construyó a partir de una tabla Excel, se debe conservar solo la figura de interés o ambas (ver @fig-figura42).
+3. Para las gráficas creadas en Microsoft Excel (**formato .xlsx**), se deben seguir estos pasos para garantizar una calidad alta:
+   - Guardar la imagen seleccionando clic derecho y luego guardar imagen.
+   - Elegir el destino de almacenamiento y seleccionar entre los **formatos .png o .svg** (ver @fig-figura43).
+   - También se puede enviar el archivo original en formato .xlsx.
+
+A continuación, se presentan ejemplos visuales que ilustran estos procesos:
+
+```{r , out.width = '100%'}
+#| label: fig-figura41
+#| fig-cap: "Figura única en un hoja de Excel"
+knitr::include_graphics("images/4_10_SoloFigura_excel.png")
+```
+
+```{r , out.width = '100%'}
+#| label: fig-figura42
+#| fig-cap: "Figura única creada a partir de una tabla de Excel"
+knitr::include_graphics("images/4_20_Tabla2ConFigura.png")
+```
+
+```{r , out.width = '100%'}
+#| label: fig-figura43
+#| fig-cap: "Pasos para guardar o exportar una gráfica en calidad alta creada en Excel"
+knitr::include_graphics("images/4_30_GuardarTablasExcel.png")
+```
+
+Siguiendo estas pautas, aseguras que las figuras y gráficas en tus documentos mantengan la calidad visual necesaria y facilitan su comprensión por parte de los lectores.
+
+## Manejo de Bibliografía
+Para la bibliografía se utiliza el programa administrador de citas conocido como Zotero. Ver la siguiente [guía](../01/01.qmd#01-introduccionGestorReferencia).
+
+
+::: {.further-info}
+::: grid
+::: {.g-col-12 .g-col-md-12}
+::: {.bio-footer}
+<img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+  Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en [Twitter](https://twitter.com/JacoboZavaleta), ver algunos repositorios de mi trabajo en [Github](https://www.github.com/SJacoboZavaleta), o leer más sobre mí en este [sitio web](../../../../../about.qmd).
+</div>
+:::
+
+:::
+
+:::
+:::

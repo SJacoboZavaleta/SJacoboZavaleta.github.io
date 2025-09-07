@@ -21,7 +21,7 @@ execute:
   echo: false
 ---
 
-# [IDEAS]{.fourth-color}
+# [Ideas]{.fifth-color}
 
 
 :::{.header-text}

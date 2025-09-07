@@ -10,13 +10,13 @@ sidebar: false
 page-layout: article
 open-graph: true
 twitter-card:
-    image-width: 600
-    image-height: 314
+    image-width: 1100
+    image-height: 600
     card-style: summary_large_image
     creator: "@JacoboZavaleta"
     site: "@JacoboZavaleta"
-    image: images/twitter-card.png
-    image-alt: "Third Foundation logo"
+    image: images/Logo_ThirdFoundation_es_card.png
+    image-alt: "La Tercera Fundacion logo"
 toc: false
 execute:
   echo: false

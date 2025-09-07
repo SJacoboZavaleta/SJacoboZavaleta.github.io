@@ -1,0 +1,44 @@
+---
+pagetitle: La Tercera Fundación | Quarto
+repo-actions: false
+listing:
+  id: "quarto-listing"
+  include: 
+    tags: ["Quarto"]
+  contents:  
+  - posts/2023/
+  - posts/2024/
+  - "!quarto.qmd"
+  - "!research.qmd"
+  - "!robotics.qmd"
+  - "!index.qmd"
+  sort: "date desc"
+  categories: true
+  type: grid
+  filter-ui: false
+  sort-ui: false
+  feed: true
+  fields: [image, date, title, author, description, reading-time]
+  image-placeholder: "../images/noPreview.jpg"
+page-layout: full
+lang: es
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [Quarto]{.third-color}
+
+Bienvenido a la sección de **Quarto** de *La Tercera Fundación*. Aquí comparto artículos sobre Quarto, markdown, RStudio y ahora Positron.
+
+[← Volver al blog principal](index.qmd)
+
+:::{#quarto-listing}
+
+:::
+
+::: {.no-sidebars}
+{{< include ../_includes/navigation.qmd >}}
+:::

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sergiojacobo.com/index.html</loc>
-    <lastmod>2025-01-24T23:15:01.804Z</lastmod>
-  </url>
-  <url>
     <loc>https://sergiojacobo.com/talks.html</loc>
-    <lastmod>2024-12-03T09:34:53.000Z</lastmod>
+    <lastmod>2025-09-06T19:09:23.025Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.com/talks/2024-10-10/index.html</loc>
@@ -17,68 +13,72 @@
     <lastmod>2025-01-24T10:37:34.514Z</lastmod>
   </url>
   <url>
-    <loc>https://sergiojacobo.com/posts/research.html</loc>
-    <lastmod>2025-01-24T18:57:13.930Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/posts.html</loc>
-    <lastmod>2025-01-24T20:36:30.490Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2024/robotics/01/b1_1.html</loc>
-    <lastmod>2025-01-23T21:44:36.129Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2023/robotics/01/b2_1.html</loc>
-    <lastmod>2025-01-23T21:44:57.007Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2023/research/02/b1_2.html</loc>
-    <lastmod>2025-01-23T21:45:11.845Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2023/quarto/01/b3_1.html</loc>
-    <lastmod>2025-01-23T21:43:38.056Z</lastmod>
+    <loc>https://sergiojacobo.com/index.html</loc>
+    <lastmod>2025-09-07T15:19:37.647Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.com/contact.html</loc>
-    <lastmod>2025-01-24T17:10:22.379Z</lastmod>
+    <lastmod>2025-09-05T19:53:10.729Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/research.html</loc>
+    <lastmod>2025-09-07T17:58:21.766Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2024/02/02.html</loc>
+    <lastmod>2025-09-07T18:39:12.736Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2023/06/06.html</loc>
+    <lastmod>2025-09-07T18:39:22.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2023/04/04.html</loc>
+    <lastmod>2025-09-07T18:39:53.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2023/02/02.html</loc>
+    <lastmod>2025-09-07T18:40:12.766Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/index.html</loc>
+    <lastmod>2025-09-07T18:42:37.968Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.com/about.html</loc>
-    <lastmod>2025-01-23T20:08:22.614Z</lastmod>
+    <lastmod>2025-09-05T19:58:54.756Z</lastmod>
   </url>
   <url>
-    <loc>https://sergiojacobo.com/community.html</loc>
-    <lastmod>2025-01-24T18:18:27.149Z</lastmod>
+    <loc>https://sergiojacobo.com/blog/posts/2023/01/01.html</loc>
+    <lastmod>2025-09-07T18:40:25.266Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2023/03/03.html</loc>
+    <lastmod>2025-09-07T18:40:01.641Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2023/05/05.html</loc>
+    <lastmod>2025-09-07T18:39:38.225Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/posts/2024/01/01.html</loc>
+    <lastmod>2025-09-07T18:38:52.260Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/quarto.html</loc>
+    <lastmod>2025-09-07T18:04:42.787Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sergiojacobo.com/blog/robotics.html</loc>
+    <lastmod>2025-09-07T17:56:14.758Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.com/ideas/ideas.html</loc>
-    <lastmod>2025-01-24T18:17:59.837Z</lastmod>
+    <lastmod>2025-09-05T19:53:53.686Z</lastmod>
   </url>
   <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2023/research/01/b1_1.html</loc>
-    <lastmod>2025-01-23T21:45:21.886Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2023/research/03/b1_3.html</loc>
-    <lastmod>2025-01-23T21:45:04.754Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2023/robotics/02/b2_2.html</loc>
-    <lastmod>2025-01-23T21:44:48.746Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/blogs/2024/robotics/02/b1_2.html</loc>
-    <lastmod>2025-01-23T21:27:49.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/quarto.html</loc>
-    <lastmod>2025-01-24T18:57:42.979Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sergiojacobo.com/posts/robotics.html</loc>
-    <lastmod>2025-01-24T18:57:23.113Z</lastmod>
+    <loc>https://sergiojacobo.com/research.html</loc>
+    <lastmod>2025-09-07T18:50:07.601Z</lastmod>
   </url>
   <url>
     <loc>https://sergiojacobo.com/talks/2024-09-16/index.html</loc>

@@ -1,0 +1,124 @@
+---
+pagetitle: La Tercera Fundación
+repo-actions: false
+page-navigation: true
+page-layout: full
+lang : es
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [La Tercera Fundación]{.third-color}
+:::{.header-banner}
+
+::: light-mode
+![](../images/Logo_animation_blog_light.svg){fig-alt="The Third Foundation logo" width=700px}
+:::
+
+::: dark-mode
+![](../images/Logo_animation_blog_dark.svg){fig-alt="The Third Foundation logo" width=700px}
+:::
+
+:::
+
+:::{.header-text style="margin-bottom: 20px;"}
+:::{.header-block}
+*The Third Foundation — A Personal Library in Progress*[^1] .
+:::
+:::
+
+Bienvenido a **La Tercera Fundación**, mi archivo personal en construcción: un espacio donde documentar, reflexionar y compartir lo que aprendo mientras estudio mi maestría en Robótica y Automatización, y mientras desarrollo soluciones en robótica clínica e inteligencia artificial.
+
+Como en las novelas de Isaac Asimov, imagino este sitio como una *bóveda del conocimiento* — no para salvar la civilización, sino para preservar ideas, apuntes, proyectos y herramientas que, de otro modo, quedarían perdidos en carpetas olvidadas.
+
+Este blog está dedicado especialmente a **estudiantes y entusiastas hispanohablantes** que, como yo alguna vez, buscan recursos claros, profundos y gratuitos sobre temas como:  
+
+- Robótica médica y planificación de trayectorias  
+- Aprendizaje automático aplicado a la salud  
+- Escritura académica con $\LaTeX$, Quarto y RMarkdown  
+- Flujos de trabajo reproducibles con Python y R  
+- Gestión de referencias con Zotero y BibTeX  
+- Reflexiones sobre ciencia, educación y sociedad
+
+Escribo en español porque creo que el conocimiento no debe tener fronteras lingüísticas. Pero también mantengo este sitio accesible para colegas internacionales, porque la ciencia es, por naturaleza, colaborativa.
+
+Bienvenido a mi biblioteca galáctica en miniatura.  
+Espero que encuentres algo útil aquí.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Explora mi blog sobre Quarto, donde comparto mis conocimientos y experiencias.</p>
+<div style="margin-top: auto;"><a href="quarto.qmd" class="card-link heading-font">Quarto</a></div>
+</div>
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-second-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Escribo sobre apuntes para una mejor redacción en investigación.</p>
+<div style="margin-top: auto;"><a href="research.qmd" class="card-link second-color-link heading-font">Research</a></div>
+</div>
+</div>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<div class="card h-100" id="card-third-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">Comparto algunos proyectos e ideas en robótica.</p>
+<div style="margin-top: auto;"><a href="robotics.qmd" class="card-link third-color-link heading-font">Robotics</a></div>
+</div>
+</div>
+:::
+
+:::
+
+
+::: {.pullout-text}
+::: {.pullout-container}
+::: {.pullout-block .black-background}
+![](../images/blue-quote.png){width="100px"}
+
+## But can I do it? Won’t the Laws of Robotics hold me back. No, they will not hold me back. I know they won’t.
+
+## There is something far more important to me than they are, something that dictates my actions beyond anything they can do to stop me.
+
+## I want to be a writer.
+El Robot Cal (CL-123X) en *Gold The Final Science Fiction Collection*, **Isaac Asimov (1983)**
+
+::: {.button}
+[Léelo completo en Novel12](https://novel12.com/243245/gold-the-final-science-fiction-collection-.htm)
+:::
+
+:::
+:::
+:::
+
+
+::: {.pullout-text}
+::: {.pullout-container}
+::: {.pullout-block .black-background}
+![](../images/orange-quote.png){width="100px"}
+
+## Mis (Ebling Mis) said, in a hoarse whisper, “I am convinced the Second Foundation can win, if it is not caught prematurely by the Mule. It has kept itself secret; the secrecy must be upheld; it has a purpose. You must go there; your information is vital . . . may make all the difference. Do you hear me?”
+
+## Toran cried in near-agony, “Yes, yes! Tell us how to get there, Ebling? Where is it?” “I can tell you,” said the faint voice.
+
+## He never did [Bayta lifted her blaster and shot].
+*Fundación e Imperio* - **Isaac Asimov (1952)**
+
+::: {.button}
+[Léelo completo en Novel12](https://novel12.com/241030/foundation-and-empire.htm)
+:::
+
+:::
+:::
+:::
+
+[^1]: Tipografía del logo inspirada en la serie de Apple TV+ Foundation. "Foundation Titles Hand" por Roger Sperberg (github.com/rsperberg/foundation-titles-hand), basada en diseños de Imaginary Forces. Licencia: SIL Open Font License.

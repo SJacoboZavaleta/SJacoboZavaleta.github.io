@@ -1,0 +1,35 @@
+<!-- _navigation.qmd -->
+<!-- Estilo basico -->
+<!-- <div class="text-center mb-4" style="border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">
+  <a href="index.qmd" class="mx-2">📘 Blog</a> | 
+  <a href="research.qmd" class="mx-2">🔬 Research</a> | 
+  <a href="robotics.qmd" class="mx-2">🤖 Robótica</a> | 
+  <a href="quarto.qmd" class="mx-2">📄 Quarto</a>
+</div> -->
+
+<!-- Estilo sencillo. Simula el boton selccionado segun categoria -->
+<!-- <div class="blog-navigation">
+<a href="quarto.qmd" class="btn btn-secondary">Quarto</a>
+<a href="research.qmd" class="btn btn-primary">Research</a>
+<a href="robotics.qmd" class="btn btn-secondary">Robotics</a>
+</div> -->
+
+<!-- Estilo mejorado -->
+<div class="category-nav">
+  <a href="index.qmd" class="category-btn blog-btn">
+    <span class="emoji">📘</span>
+    <span class="text">Blog</span>
+  </a>
+  <a href="research.qmd" class="category-btn research-btn">
+    <span class="emoji">🔬</span>
+    <span class="text">Research</span>
+  </a>
+  <a href="robotics.qmd" class="category-btn robotics-btn">
+    <span class="emoji">🤖</span>
+    <span class="text">Robótica</span>
+  </a>
+  <a href="quarto.qmd" class="category-btn quarto-btn">
+    <span class="emoji">📄</span>
+    <span class="text">Quarto</span>
+  </a>
+</div>

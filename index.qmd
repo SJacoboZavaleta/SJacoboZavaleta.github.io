@@ -2,8 +2,8 @@
 pagetitle: Sergio Jacobo Website
 about:
   template: jolla
-  image: images/sergio-bio.png
-  image-alt: "Headshot of a person with a serious look, taken in a fountain, with a green tree background, wearing glasses, in selfie mode"
+  image: images/sergio-home.png
+  image-alt: "Headshot of a person sitting along side to The Prado Museum"
   id: about-heading
   image-shape: round
   links:
@@ -38,13 +38,13 @@ include-in-header:
 
 :::{grid}
 
-🦾 I am a Mechatronics Engineer with a passion for designing innovative clinical robots and biomedical devices. My many hats include robotics researcher, artificial intelligence enthusiast, and software developer. Currently, my main hat is that of a developer of cutting-edge healthcare solutions, enhancing medical imaging and robotics, with my research published in esteemed peer-reviewed journals.
+I’m a Mechatronics Engineer passionate about designing innovative clinical robots and biomedical devices. My work blends robotics, artificial intelligence, and software development to enhance medical imaging and healthcare technologies — research that has been published in peer-reviewed journals.
 
-🎓 Outside of my professional pursuits, I am dedicated to educating others about modern tools for efficient research manuscript writing, including $\LaTeX$, Zotero, Rmarkdown, Python, and R. Through this website, I aim to share my knowledge and passion for these tools, which are also essential for writing books, blogs, and creating websites with ease using [Quarto](https://quarto.org/docs/websites).
+Beyond engineering, I’m deeply committed to education. Through this site, I share practical guides on modern academic tools: $\LaTeX$, Zotero, RMarkdown, Python, and Quarto — especially for Spanish-speaking students navigating research and publication.
 
-🌱  This blog serves as a fertile ground for cultivating ideas, thoughts, and projects I'm exploring while pursuing my master's degree in Robotics and Automation. Expect insights on everything from path planning, machine learning, and robot programming to reproducible workflows, and personal reflections on social issues. This space is designed to document what I've learned in classes, notes, projects, ideas, and everything that will help create an extensive vault of ideas for others and for my personal use. As I juggle these diverse interests, I also embrace the joys of films, books, running, and playing video games.
+This blog, [La Tercera Fundación]{.bg-color-red}, is my growing archive of ideas: notes from courses, robotics projects, reproducible workflows, and reflections on science and society. Think of it as a personal library under construction — one that I hope helps others along the way.
 
-🔍 Most of my articles are written in [spanish]{.bg-color-red} to cater to new Hispanic students who may not yet have widespread access to detailed, high-quality information on these topics 🤖.
+Welcome aboard.
 
 :::
 

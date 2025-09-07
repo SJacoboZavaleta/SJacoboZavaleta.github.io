@@ -1,0 +1,276 @@
+---
+title: "Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)"
+author: Sergio Jácobo
+description: Basado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.
+date: 2023-04-15
+tags: 
+    - "Quarto"
+categories:
+    - "Quarto"
+    - "ShinnyApp"
+number-sections: false
+lang: es
+toc: true
+image: images/thumbnail.png
+image-alt: Portada del Tablas Peruanas de composición de Alimentos por el Ministerio de Salud del Perú
+language: 
+    section-title-footnotes: Notas
+---
+
+{{< include ../../../../_includes/navigation_breadcrumbs_quarto.qmd >}}
+
+# A quien va dirigido?
+
+A todas los profesionales en nutrición que desean planificar o programar sus dietas nutricionales en base a la composición nutricional de diversos alimentos en la cocina peruana según la cantidad deseada.
+
+# Implementación
+
+> Versión 2 ✅:
+>
+> -   Se incluyeron alimentos compuestos como platos de entrada y almuerzo.  
+> -   Se incluyó la tabla de anexos de codigos de componentes.  
+> -   Se centró el contenido de las tablas.
+> -   Se mejoró la salida luego de seleccionar cada tabla principal y se incluyó una opción de copiado.
+
+> Versión 1 {{< fa folder-closed >}}:
+>
+> -   Es posible calcular cualquier composición en base a la cantidad ingresada por el usuario en gramos.
+>
+> -   Solo se incluyeron alimentos individuales y no compuestos.
+
+## El Código
+
+```{r}
+#| eval: false
+
+setwd("Ruta/a/tu/proyecto/")
+
+library(shiny)
+library(DT) # Manejo de tablas en formato Data Frame
+library(shinyjs)
+
+# Cargar datos para alimentos individuales
+alimentos <- read.csv("alimentos.csv") # <1>
+colnames(alimentos) <- c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
+    "FAT", "CHOCDF", "ZN", "K", "P", "FE", "VITA",
+    "ACFOLIC", "VITC", "NA"
+) # <1>
+alimentos <- alimentos[, c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
+    "FAT", "CHOCDF", "ZN", "K", "P", "FE", "VITA", "ACFOLIC", "VITC", "NA"
+)] # <1>
+
+# Cargar datos para alimentos compuestos
+platos <- read.csv("alimentosCompuestos.csv") # <2>
+colnames(platos) <- c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT",
+    "FAT", "CHOCDF", "CHOAVL", "FIBTG", "ASH", "CA", "P", "ZN", "FE", "VITA", "THIA",
+    "RIBF", "NIA", "VITC", "ACFOLIC", "NA", "K", "ESTRATO"
+) # <2>
+platos <- platos[, c(
+    "COD", "NUM", "ALIMENTO", "ENERCKCAL", "ENERCKJ", "WATER", "PROCNT", "FAT", "CHOCDF",
+    "ZN", "K", "P", "FE", "VITA", "ACFOLIC", "VITC", "NA"
+)] # <2>
+
+
+# Creamos tablas de Anexo
+codigo <- c("A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "Q", "T", "U", "SE", "SS") # <3>
+categoria <- c(
+    "Cereales y derivados", "Verduras, hortalizas y derivados", "Frutas y derivados",
+    "Grasas, aceites y oleaginosas", "Pescados y mariscos", "Carnes y derivados",
+    "Leche y derivados", "Bebidas (alcohólicas y analcohólicas)", "Huevos y derivados",
+    "Productos azucarados", "Misceláneos", "Alimentos infantiles", "Leguminosas y derivados",
+    "Tubérculos, raíces y derivados", "Alimentos preparados (entrada)",
+    "Alimentos preparados (segundo)"
+) # <3>
+codigoGrupo <- data.frame(codigo, categoria)
+colnames(codigoGrupo) <- c("Código", "Categoría") # <3>
+
+
+# Cargas coódigos de componentes - Anexo
+anexoCodigo <- read.csv("anexosCodigoComponentes.csv") # <4>
+colnames(anexoCodigo) <- c("Componente", "Identificador INFOODS", "Unidad", "Comentario") # <4>
+
+# Definir interfaz
+ui <- fluidPage( # <5>
+    includeCSS("styles.css"), # <6>
+    titlePanel("TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"),
+    h2(tags$a("Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima.",
+        href = "https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos"
+    )),
+    h3("Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."),
+    h3(class = "bold-text", "Nota: Composición en 100 g de alimento"),
+    numericInput("proportion", "Nueva composición (gramos)?", value = 100, min = 1, max = 500), # <7>
+    useShinyjs(), # <8>
+    tabsetPanel( # <9>
+        tabPanel(
+            "Alimentos individuales",
+            dataTableOutput("foodTable1"),
+            h4(class = "bold-text", "Componentes seleccionados:"),
+            tableOutput("selectedData1"),
+            actionButton("copyButton1", "Copiar datos seleccionados")
+        ),
+        tabPanel(
+            "Alimentos en platos",
+            dataTableOutput("foodTable2"),
+            h4("Componentes seleccionados:"),
+            tableOutput("selectedData2"),
+            actionButton("copyButton2", "Copiar datos seleccionados")
+        ),
+        tabPanel(
+            "Códigos y grupos",
+            tableOutput("codigoGrupos"),
+            tableOutput("codigoComponentes")
+        )
+    ),
+    hr(),
+    tags$div( # <10>
+        class = "footer",
+        style = "text-align: center; background-color: #333; color: #fff; padding: 20px;",
+        tags$h4("¿Te ha gustado esta App?"),
+        tags$p(
+            "¡Esta aplicación ha sido desarrollada con ",
+            tags$a(
+                href = "https://shiny.rstudio.com/",
+                style = "color: #ffcc00; font-weight: bold;",
+                "R Shiny"
+            ),
+            "!"
+        ),
+        tags$p(
+            "Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, ",
+            tags$a(
+                href = "https://shiny.rstudio.com/tutorial/",
+                style = "color: #ffcc00; font-weight: bold;",
+                "haz clic aquí"
+            ),
+            " para acceder al tutorial oficial."
+        ),
+        tags$p(
+            "¡Comienza a explorar el poder de Shiny hoy mismo!",
+            style = "font-weight: bold;"
+        )
+    )
+)
+
+# Definir server
+server <- function(input, output, session) {
+    getComposition <- function(input_table) { # <11>
+        proportionConversion <- input$proportion
+        idx <- input[[input_table]]
+        selectedRow <- alimentos[idx, c("PROCNT", "FAT", "CHOCDF", "ZN", "K", "P", "FE", "VITA", "ACFOLIC", "VITC", "NA")]
+        selectedRow <- selectedRow * proportionConversion / 100
+        rownames(selectedRow) <- NULL
+        selectedRow
+    }
+
+    output$foodTable1 <- renderDataTable( # <12>
+        alimentos,
+        server = FALSE, selection = "single",
+        options = list(
+            pageLength = 15,
+            columnDefs = list(
+                list(
+                    targets = "_all",
+                    className = "dt-center"
+                )
+            )
+        )
+    )
+
+    output$selectedData1 <- renderTable({ # <13>
+        getComposition("foodTable1_rows_selected")
+    })
+
+    output$foodTable2 <- renderDataTable( # <12>
+        platos,
+        server = FALSE, selection = "single",
+        options = list(
+            pageLength = 15,
+            columnDefs = list(
+                list(
+                    targets = "_all",
+                    className = "dt-center"
+                )
+            )
+        )
+    )
+
+    output$selectedData2 <- renderTable({ # <13>
+        getComposition("foodTable2_rows_selected")
+    })
+
+    output$codigoGrupos <- renderTable(codigoGrupo) # <14>
+
+    output$codigoComponentes <- renderTable(anexoCodigo) # <14>
+
+    observeEvent(input$copyButton1, { # <15>
+        selectedData <- getComposition("foodTable1_rows_selected")
+        if (length(input$foodTable1_rows_selected) > 0) {
+            clipboard <- apply(selectedData, 2, paste, collapse = " ")
+            writeClipboard(clipboard)
+            shinyjs::alert("Datos copiados al portapapeles")
+        } else {
+            shinyjs::alert("Selecciona una fila para copiar los datos")
+        }
+    })
+
+    observeEvent(input$copyButton2, { # <15>
+        selectedData <- getComposition("foodTable2_rows_selected")
+        if (length(input$foodTable2_rows_selected) > 0) {
+            clipboard <- apply(selectedData, 2, paste, collapse = " ")
+            writeClipboard(clipboard)
+            shinyjs::alert("Datos copiados al portapapeles")
+        } else {
+            shinyjs::alert("Selecciona una fila para copiar los datos")
+        }
+    })
+}
+
+# Ejecutar la aplicación Shiny
+shinyApp(ui, server) # <16>
+```
+
+1. Cargar tabla de alimentos individuales (`alimentos.csv`), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).
+2. Cargar tabla de alimentos compustos (`alimentosCompuestos.csv`), seleccionar datos requeridos y modificar sus atributos (nombre columnas).
+3. Crear tabla de anexos para alimentos según código por grupo nutricional (*Opcional*).
+4. Crear tabla de anexos para alimentos según código de componentes nutricional (*Opcional*).
+5. Implementar la interfaz de usuario de la aplicación Shiny llamando a `fluidPage`.
+6. Incluir ciertos estilos de contenido (archivo css).
+7. Definir una entrada de texto para la nueva composición de alimentos deseada.
+8. Complemento para mostrar ayudas visuales (mensajes). 
+9. Mostrar múltiples tablas mediante mediante pestañas separadas con `tabPanel()`.
+10. Agregar un pie de nota con detalles de la aplicación.
+11. Implementar la función `server` que define la lógica del programa. Definir la función para manipular la fila seleccionada de las tablas de composición.
+12. Renderizar las tablas principales de alimentos. Para centrar todo el contenido de las tablas se creó un estilo css `dt-center`. 
+13. Renderizar los datos de componentes de interés **(salida)**.
+14. Renderizar las tablas de Anexos.
+15. Evento que permite copiar los datos seleccionados al portapapeles. Utilizando el paso 8.
+16. Implementar la aplicación llamando a `shinyApp`.
+
+## El demo ⏩
+
+[![Aplicación Shiny](images/1.png){fig-alt="Aplicación de composición de tablas de alimentos usando Shiny"}](https://sergiojacobozavaleta.shinyapps.io/rosaapp/)
+
+::: callout-tip
+## Más allá de esta guía
+
+Revisar la página oficial para obtener las [Tablas de Composición completas](https://web.ins.gob.pe/es/alimentacion-y-nutricion/ciencia-y-tecnologia-de-alimentos/tabla-de-composicion-de-alimentos)
+:::
+
+::: {.further-info}
+::: grid
+::: {.g-col-12 .g-col-md-12}
+::: {.bio-footer}
+<img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+  Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en [Twitter](https://twitter.com/JacoboZavaleta), ver algunos repositorios de mi trabajo en [Github](https://www.github.com/SJacoboZavaleta), o leer más sobre mí en este [sitio web](../../../../about.qmd).
+</div>
+:::
+
+:::
+
+
+:::
+:::

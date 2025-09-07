@@ -1,0 +1,51 @@
+---
+pagetitle: La Tercera Fundación | Research
+repo-actions: false
+listing:
+  id: "research-listing"
+  include: 
+    tags: "Research"
+  exclude: 
+    tags: "Quarto"
+  contents:  
+  - posts/2023/
+  - posts/2024/
+  - "!quarto.qmd"
+  - "!research.qmd"
+  - "!robotics.qmd"
+  - "!index.qmd"
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: [title, tags]
+  feed: true
+  fields: [image, date, title, author, description, reading-time]
+  image-placeholder: "../images/noPreview.jpg"
+page-layout: full
+lang: es
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [Research]{.third-color}
+
+::: {.no-sidebars}
+
+Bienvenido a la sección de **Research** de *La Tercera Fundación*. Aquí comparto artículos sobre robótica médica, inteligencia artificial aplicada a la salud, publicaciones académicas y proyectos de investigación.
+
+[← Volver al blog principal](index.qmd)
+
+:::
+
+
+:::{#research-listing}
+
+:::
+
+::: {.no-sidebars}
+{{< include ../_includes/navigation.qmd >}}
+:::

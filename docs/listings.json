@@ -9,26 +9,26 @@
     ]
   },
   {
-    "listing": "/posts/research.html",
+    "listing": "/blog/research.html",
     "items": [
-      "/posts/blogs/2023/research/01/b1_1.html",
-      "/posts/blogs/2023/research/02/b1_2.html",
-      "/posts/blogs/2023/research/03/b1_3.html"
+      "/blog/posts/2023/04/04.html",
+      "/blog/posts/2023/03/03.html",
+      "/blog/posts/2023/02/02.html"
     ]
   },
   {
-    "listing": "/posts/quarto.html",
+    "listing": "/blog/quarto.html",
     "items": [
-      "/posts/blogs/2023/quarto/01/b3_1.html"
+      "/blog/posts/2023/01/01.html"
     ]
   },
   {
-    "listing": "/posts/robotics.html",
+    "listing": "/blog/robotics.html",
     "items": [
-      "/posts/blogs/2023/robotics/01/b2_1.html",
-      "/posts/blogs/2023/robotics/02/b2_2.html",
-      "/posts/blogs/2024/robotics/01/b1_1.html",
-      "/posts/blogs/2024/robotics/02/b1_2.html"
+      "/blog/posts/2024/02/02.html",
+      "/blog/posts/2024/01/01.html",
+      "/blog/posts/2023/06/06.html",
+      "/blog/posts/2023/05/05.html"
     ]
   }
 ]

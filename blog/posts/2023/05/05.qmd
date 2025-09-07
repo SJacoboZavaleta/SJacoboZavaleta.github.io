@@ -1,0 +1,112 @@
+---
+title: "Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial"
+author: Sergio Jácobo
+description: |
+  Explora los fundamentos esenciales en dinámica con estas notas detalladas sobre la teoría básica, centrándose en la distinción entre sistemas de referencia inercial y no inercial.
+date: 2023-09-15
+tags:
+  - "Robotics"
+categories: 
+  - "Robotics"
+  - "Theory"
+  - "Dynamics"
+  - "Kinematics"
+reading-time: true
+lang: es
+number-sections: false
+toc: true
+image: images/thumbnail.jpg
+image-alt: "Apuntes de clases."
+language: 
+    section-title-footnotes: Notas
+---
+
+{{< include ../../../../_includes/navigation_breadcrumbs_robotics.qmd >}}
+
+# Sistemas de Referencia (*Reference Frames*)
+
+![](images/referenceFrame.png){fig-align="center"}
+
+Notar que:
+
+-   Sistema de referencia normalmente se abrevia como "*frame*".
+
+## Sistema de Referencia Inercial (*Inertial Reference Frame*)
+
+$$
+\begin{aligned}
+\bar{r}=\bar{R}+{\bar{r}}^{'}\\
+\bar{r}^{'}=\bar{r}-{\bar{R}}\\
+\end{aligned}
+$$
+
+Pero $\bar{V}$ es una constante.
+
+$$
+\begin{aligned}
+\bar{R}(t)=\bar{R_0}-{\bar{V}t}\\
+\frac{d\bar{r}^{'}}{dt} = \frac{d\bar{r}}{dt} - \frac{d\bar{R}}{dt}\\
+\bar{v}^{'}=\bar{v}-{\bar{V}}\\
+\frac{d\bar{v}^{'}}{dt} = \frac{d\bar{v}}{dt} - \frac{d\bar{V}}{dt}\\
+\bar{a}^{'} = \bar{a}
+\end{aligned}
+$$
+
+Luego, aplicando la primera Ley de Newton se cumple que:
+
+$$
+\begin{aligned}
+\bar{F} & = m\bar{a}\\
+\bar{F}^{'} & = m\bar{a}^{'} = m\bar{a}\\
+\end{aligned}
+$$
+
+## Sistema de Referencia no Inercial (*Non-Inertial Reference Frame*)
+
+![](images/paste-1.png){fig-align="center"}
+
+Pero que pasa si $\bar{V}$ no es una constante?
+
+::: callout-important
+El sistema de referencia $S^{'}$ tiene una aceleración $\bar{A}$ relativa a S.
+:::
+
+$$
+\begin{aligned}
+\bar{a} & = \bar{a} - \bar{A}\\
+\end{aligned}
+$$
+
+Por lo tanto,
+
+$$
+\begin{aligned}
+\bar{F} & = m\bar{a}^{'}\\
+& = m\bar{a} - m\bar{A}\\
+& = \bar{F}_\text{físico} - \bar{F}_\text{ficticio}\\
+\end{aligned}
+$$
+
+Donde:
+
+-   $\bar{F}_\text{físico}$ es la fuerza físicamente aplicada al cuerpo.\
+-   $\bar{F}_\text{ficticio}$. Dado un observador en el sistema de referencia o frame $S^{'}$ que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales ($S^{'}$).
+
+::: callout-tip
+Considerando el moviendo de rotación "circular" de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis.
+:::
+
+::: {.further-info}
+::: grid
+::: {.g-col-12 .g-col-md-12}
+::: {.bio-footer}
+<img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+  Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en [Twitter](https://twitter.com/JacoboZavaleta), ver algunos repositorios de mi trabajo en [Github](https://www.github.com/SJacoboZavaleta), o leer más sobre mí en este [sitio web](../../../../../about.qmd).
+</div>
+:::
+
+:::
+
+:::
+:::

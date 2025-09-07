@@ -372,3 +372,134 @@ body.no-footer footer {
 .button a:hover {
   color: #939bc9;
 }
+
+
+/* Botones de navegacion */
+.category-nav {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* Cambiado de wrap a nowrap */
+  gap: 1.2rem;
+  margin: 2.5rem 0;
+  padding: 1.2rem;
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+  overflow-x: auto; /* Permite scroll horizontal en dispositivos muy pequeños */
+  box-sizing: border-box;
+}
+
+.category-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px; /* Usamos min-width en lugar de width fijo */
+  height: 95px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0; /* Evita que se reduzcan */
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  z-index: 1;
+}
+
+.category-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.category-btn:active {
+  transform: translateY(-1px);
+}
+
+.emoji {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.text {
+  font-size: 0.9rem;
+  color: white;
+  z-index: 2;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Colores mate para cada categoría */
+.blog-btn {
+  background: #5B7DB1; /* Azul mate */
+}
+
+.research-btn {
+  background: #C06C84; /* Rosa mate */
+}
+
+.robotics-btn {
+  background: #68A691; /* Verde mate */
+}
+
+.quarto-btn {
+  background: #7D5BA6; /* Púrpura mate */
+}
+
+/* Efecto adicional al pasar el ratón */
+.category-btn:hover .emoji {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive para tablets */
+@media (max-width: 900px) {
+  .category-nav {
+    gap: 0.9rem;
+  }
+  
+  .category-btn {
+    min-width: 95px;
+    height: 85px;
+  }
+  
+  .emoji {
+    font-size: 1.6rem;
+  }
+  
+  .text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .category-nav {
+    justify-content: flex-start; /* Permite scroll horizontal */
+    padding: 1rem 0.8rem;
+    gap: 0.8rem;
+  }
+  
+  .category-btn {
+    min-width: 85px;
+    height: 80px;
+  }
+  
+  .emoji {
+    font-size: 1.5rem;
+  }
+  
+  .text {
+    font-size: 0.8rem;
+  }
+}

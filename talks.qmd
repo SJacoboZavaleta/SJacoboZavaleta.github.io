@@ -1,5 +1,6 @@
 ---
 #title: "talks"
+pagetitle: Talks - Sergio Jacobo
 listing:
   contents: talks
   sort: "date desc"
@@ -17,4 +18,4 @@ execute:
   echo: false
 ---
 
-# [TALKS]{.third-color}
+# [Talks]{.fourth-color}

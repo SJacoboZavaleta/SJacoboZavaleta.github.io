@@ -1,0 +1,44 @@
+---
+pagetitle: La Tercera Fundación | Robotics
+repo-actions: false
+listing:
+  id: "robotics-listing"
+  include: 
+    tags: ["Robotics"]
+  contents:  
+  - posts/2023/
+  - posts/2024/
+  - "!quarto.qmd"
+  - "!research.qmd"
+  - "!robotics.qmd"
+  - "!index.qmd"
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+  fields: [image, date, title, author, description, reading-time]
+  image-placeholder: "../images/noPreview.jpg"
+page-layout: full
+lang: es
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# [Robotics]{.third-color}
+
+[← Volver al blog principal](index.qmd)
+
+Bienvenido a la sección de **Robótica** de *La Tercera Fundación*. Aquí comparto artículos sobre robótica y variedades aprendidas en mi Máster.
+
+:::{#robotics-listing}
+
+:::
+
+::: {.no-sidebars}
+{{< include ../_includes/navigation.qmd >}}
+:::
