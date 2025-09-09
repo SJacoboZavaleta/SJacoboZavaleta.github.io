@@ -4,7 +4,7 @@ title: "404: Page not found"
 
 Oops! The page you're looking for seems to have wandered off 😔. It might have been moved or renamed.
 
-![](images/link_caido.png)
+![](/images/link_caido.png)
 
 But don't worry! You can check out my [posts](blog/index.qmd), [talks](talks.qmd), or [ideas](ideas/ideas.qmd) to see if you can find what you were after.
 

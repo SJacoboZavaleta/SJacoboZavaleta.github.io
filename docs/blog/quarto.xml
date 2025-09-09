@@ -1088,7 +1088,7 @@ font-style: inherit;">shinyApp</span>(ui, server)</span><div class="code-annotat
 <h2 class="anchored" data-anchor-id="el-demo">El demo ⏩</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://sergiojacobozavaleta.shinyapps.io/rosaapp/"><img src="https://sergiojacobo.com/blog/posts/2023/01/images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></a></p>
+<p><img src="https://sergiojacobo.com/blog/posts/2023/01/images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></p>
 <figcaption>Aplicación Shiny</figcaption>
 </figure>
 </div>

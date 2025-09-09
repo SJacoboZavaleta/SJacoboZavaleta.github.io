@@ -1,0 +1,15 @@
+{
+  "hash": "97c862dafb26ec5004127350dda09b68",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\npagetitle: Sergio Jacobo Website\nabout:\n  template: jolla\n  image: images/sergio-home.png\n  image-alt: \"Headshot of a person sitting along side to The Prado Museum\"\n  id: about-heading\n  image-shape: round\n  links:\n    - icon: twitter-x\n      text: Twitter\n      href: https://x.com/JacoboZavaleta\n    - icon: linkedin\n      text: LinkedIn\n      href: https://www.linkedin.com/in/sjacobozavaleta/\n    - icon: github\n      text: Github\n      href: https://github.com/SJacoboZavaleta\n    - icon: envelope-at-fill\n      text: Email\n      href: mailto:100514566@alumnos.uc3m.es\n    - text:  \"{{< fa brands orcid >}} ORCID\"\n      href: https://orcid.org/0000-0001-5084-8032\nknitr:\n  opts_chunk:\n    collapse: true\nexecute: \n  echo: false\ninclude-in-header: \n  - _includes/fontawesome-2up.html\n---\n\n\n\n::: {.header-text} \n[Hello and welcome!]{.home-header}\n:::\n\n::: {#about-heading}\n\n:::{grid}\n\nI’m a Mechatronics Engineer passionate about designing innovative clinical robots and biomedical devices. My work blends robotics, artificial intelligence, and software development to enhance medical imaging and healthcare technologies — research that has been published in peer-reviewed journals.\n\nBeyond engineering, I’m deeply committed to education. Through this site, I share practical guides on modern academic tools: $\\LaTeX$, Zotero, RMarkdown, Python, and Quarto — especially for Spanish-speaking students navigating research and publication.\n\nThis blog, [La Tercera Fundación]{.bg-color-red}, is my growing archive of ideas: notes from courses, robotics projects, reproducible workflows, and reflections on science and society. Think of it as a personal library under construction — one that I hope helps others along the way.\n\nWelcome aboard.\n\n:::\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

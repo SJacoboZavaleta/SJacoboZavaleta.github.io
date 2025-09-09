@@ -15,7 +15,7 @@ execute:
 :::{.header-banner}
 
 ::: light-mode
-![](../images/Logo_animation_blog_light.svg){fig-alt="The Third Foundation logo" width=700px}
+![Logo de La Tercera Fundación (The Third Foundation)[^1]](../images/Logo_animation_blog_light.svg){fig-alt="The Third Foundation logo" width=700px}
 :::
 
 ::: dark-mode
@@ -26,7 +26,7 @@ execute:
 
 :::{.header-text style="margin-bottom: 20px;"}
 :::{.header-block}
-*The Third Foundation — A Personal Library in Progress*[^1] .
+*A Personal Library in Progress*.
 :::
 :::
 

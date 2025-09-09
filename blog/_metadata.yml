@@ -2,6 +2,11 @@
 
 # --- General ---
 freeze: false
+lightbox:
+  match: auto
+  effect: fade
+  desc-position: right
+  loop: false
 title-block-banner: true
 sidebar: floating
 page-layout: article

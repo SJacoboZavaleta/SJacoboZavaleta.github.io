@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="/site_libs/quarto-html/quarto-syntax-highlighting-dark-be95a99064d7c6f1a9d9998502355b25.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="/site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-79e0c18950119575320499d466dd59bf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark-20ca2db1930c0e795d52801a2110f274.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="/site_libs/bootstrap/bootstrap-e35f452af69158f47825d4c72631fc02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-dark-87cf42cf8611fb3ea57fa0ba6ffb94e9.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -176,7 +176,7 @@ gtag('config', 'G', { 'anonymize_ip': true});
 
 
 <p>Oops! The page you’re looking for seems to have wandered off 😔. It might have been moved or renamed.</p>
-<p><img src="/images/link_caido.png" class="img-fluid"></p>
+<p><img src="/.\images/link_caido.png" class="img-fluid"></p>
 <p>But don’t worry! You can check out my <a href="/./blog/index.html">posts</a>, <a href="/./talks.html">talks</a>, or <a href="/./ideas/ideas.html">ideas</a> to see if you can find what you were after.</p>
 <p>Still can’t find it? Use the search bar above 🔍, or head to the <a href="/./contact.html">contact</a> page to get in touch with me directly 📄. I’ll be happy to help you</p>
 
@@ -431,11 +431,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
+          // default icon
+          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

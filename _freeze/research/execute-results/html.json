@@ -1,0 +1,15 @@
+{
+  "hash": "0b6380cee9150e6de1edb1d9a3c1935b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\n#title: \"Research\"\npagetitle: Research - Sergio Jacobo\npage-layout: full\ntoc: true\nrepo-actions: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n# [Research]{.second-color}\n\n:::{.header-text}\n:::{.header-block}\nI'm working on some ideas that might be useful to others.\n:::\n:::\n\n:::{.header-banner}\n![](images/noPreview.jpg){fig-alt=\"No preview\" width=500px}\n:::\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

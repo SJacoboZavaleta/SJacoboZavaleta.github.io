@@ -236,7 +236,7 @@ body.no-footer footer {
 .quarto-grid-item .listing-categories .listing-category {
   color: #FF1493;
   border: solid 1px #939bc9 !important;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-weight: 400;
   font-size: .75em;
 }
@@ -246,7 +246,7 @@ body.no-footer footer {
 }
 
 .quarto-grid-item .card-attribution {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-weight: 300;
   color: black;
   flex-grow: 10;
@@ -262,7 +262,7 @@ body.no-footer footer {
 /*-- Modify category labels in banner 2 --*/
 .quarto-title .quarto-categories .quarto-category {
   padding: 0.25em 0.75em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-size: .7em;
   font-weight: 600;
   color: #da33d1;
@@ -328,7 +328,7 @@ body.no-footer footer {
 
 .pullout-text p {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-weight: 500;
   color: white;
   margin-left: 1.5em;
@@ -357,7 +357,7 @@ body.no-footer footer {
 
 .button p {
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-size: 1.3em;
   text-transform: uppercase;
   margin-bottom: 0px;

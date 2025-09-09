@@ -5,7 +5,7 @@ project:
     - "images"
 
 execute:
-  freeze: false
+  freeze: auto
 
 website:
   title: "Sergio Jácobo-Zavaleta"
@@ -75,6 +75,12 @@ format:
       light: assets/ek-light.theme
       dark: assets/ek-dark.theme
     smooth-scroll: true
-    link-external-newwindow: true
+    link-external-icon: true
+    link-external-newwindow: false
+    include-in-head:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Figtree:wght@300;400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
     
 editor: source

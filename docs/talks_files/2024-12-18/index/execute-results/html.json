@@ -1,0 +1,15 @@
+{
+  "hash": "6755e6911d3f8dc1b1632ba818b8bea3",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: The future of Commercial Robots\ndescription: |\n  A brief review of the State-of-the-art of commercial robots and future ones. \ndate: 2024-12-18\nauthor: \n  - name: Sergio Jácobo-zavaleta\nimage: s30_futureRobots.png\nimage-alt: |\n  An image of a humanoid robot adapted from ghost in the shell \n---\n\n::: {.cell}\n\n:::\n\n\n\n`<a href=\"https://jacobozavaleta.quarto.pub/s30_futurerobots/\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fas fa-images\"></i> slides</a>`{=html}\n`<a href=\"https://github.com/SJacoboZavaleta/uc3m-presentations/tree/main/s30_futureRobots\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> materials</a>`{=html}\n\n\n## Overview \n\nThe following topics were covered:\n\n- State-of-the-art of Commercial Robots \n    - Current state of Commercial Robots\n    - Current potential Challenges\n- 5-year Horizon (2029)\n    - 1. Healthcare and Assistive Robots \n    - 2. Manufacturing and Industrial Robots  \n    - Examples\n- 10-year Horizon (2034)\n- 20-year Horizon (2054)\n\n## Event details\n\n**Event:** Course: Intelligent and Autonomous Robots | Master in Robotics and Automation\n\n**Date:**  12th December, 2024\n\n**Time:** 19:00\n\n**Location:** Universidad Carlos III de Madrid\n\n\n## Slides\n\n<iframe class=\"slide-deck ar4x3\" src=\"https://jacobozavaleta.quarto.pub/s30_futurerobots/\" title=\"Slide deck for the presentation\">\n</iframe>\n\nKeyboard shortcuts for slideshow (once you've clicked inside it):\n\n- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides\n\n- Use <kbd>o</kbd> for an overview of all slides\n\n- Use <kbd>?</kbd> for an overview more keyboard shortcuts\n\n- Click the hamburger menu in the bottom left corner of the slide deck for more options\n\n  - <kbd>f</kbd> to toggle full screen doesn't work from this page. Go to [slides](https://ellakaye.github.io/2024-07-31-diverse/) and use that shortcut from there instead",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

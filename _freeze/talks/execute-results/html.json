@@ -1,0 +1,17 @@
+{
+  "hash": "0d3368ce044c1a1bdaace20b1126dbf1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\n#title: \"talks\"\npagetitle: Talks - Sergio Jacobo\nlisting:\n  contents: talks\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n# [Talks]{.fourth-color}",
+    "supporting": [
+      "talks_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

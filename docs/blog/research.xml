@@ -33,7 +33,7 @@
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/04/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<p><a href="images/thumbnail.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Foto de Annie Spratt en Unsplash"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/thumbnail.jpg" class="img-fluid figure-img" alt="Foto de Annie Spratt en Unsplash"></a></p>
 <figcaption>Foto de <a href="https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash%22">Annie Spratt</a> en <a href="https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></figcaption>
 </figure>
 </div>
@@ -43,7 +43,7 @@
 <p>En este caso particular, se ha considerado esta guía en base a los requisitos de publicación en la <a href="https://revistas.unc.edu.pe/index.php/nortemedico/index">revista universitaria Norte Médico</a> de la Universidad Nacional de Cajamarca.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/04/images/norteMedicopage.png" class="img-fluid figure-img"></p>
+<p><a href="images\norteMedicopage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Página princial de la revista Norte Médico"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/norteMedicopage.png" class="img-fluid figure-img" alt="Página princial de la revista Norte Médico"></a></p>
 <figcaption>Página princial de la revista Norte Médico</figcaption>
 </figure>
 </div>
@@ -65,7 +65,7 @@ font-style: inherit;">"images/1_revistaVistaPrevia.png"</span>)</span></code></p
 <div id="fig-figura1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%">
+<a href="images/1_revistaVistaPrevia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;1: Ejemplo de publicación en Norte Médico"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/1_revistaVistaPrevia.png" class="img-fluid figure-img" style="width:80.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;1: Ejemplo de publicación en Norte Médico
@@ -98,7 +98,7 @@ font-style: inherit;">"images/1_10_EditorEcuacionesOffline.png"</span>)</span></
 <div id="fig-figura11" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/1_10_EditorEcuacionesOffline.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;2: Usando recursos en línea"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/1_10_EditorEcuacionesOffline.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;2: Usando recursos en línea
@@ -126,7 +126,7 @@ font-style: inherit;">"images/1_20_EditorEcuacionesOnline.png"</span>)</span></c
 <div id="fig-figura12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/1_20_EditorEcuacionesOnline.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/1_20_EditorEcuacionesOnline.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;3: Usando el editor de ecuaciones integrado en Microsoft Word
@@ -168,7 +168,7 @@ font-style: inherit;">"images/3_10_Tabla1.png"</span>)</span></code></pre></div>
 <div id="fig-figura31" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%">
+<a href="images/3_10_Tabla1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;4: Tabla simple en una hoja de Excel"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/3_10_Tabla1.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4: Tabla simple en una hoja de Excel
@@ -192,7 +192,7 @@ font-style: inherit;">"images/3_20_Tabla2.png"</span>)</span></code></pre></div>
 <div id="fig-figura32" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%">
+<a href="images/3_20_Tabla2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;5: Tabla más elaborada en una hoja de Excel"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/3_20_Tabla2.png" class="img-fluid figure-img" style="width:80.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;5: Tabla más elaborada en una hoja de Excel
@@ -238,7 +238,7 @@ font-style: inherit;">"images/4_10_SoloFigura_excel.png"</span>)</span></code></
 <div id="fig-figura41" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/4_10_SoloFigura_excel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;6: Figura única en un hoja de Excel"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/4_10_SoloFigura_excel.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;6: Figura única en un hoja de Excel
@@ -262,7 +262,7 @@ font-style: inherit;">"images/4_20_Tabla2ConFigura.png"</span>)</span></code></p
 <div id="fig-figura42" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/4_20_Tabla2ConFigura.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figura&nbsp;7: Figura única creada a partir de una tabla de Excel"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/4_20_Tabla2ConFigura.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;7: Figura única creada a partir de una tabla de Excel
@@ -286,7 +286,7 @@ font-style: inherit;">"images/4_30_GuardarTablasExcel.png"</span>)</span></code>
 <div id="fig-figura43" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/04/images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/4_30_GuardarTablasExcel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/4_30_GuardarTablasExcel.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figura43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada en Excel
@@ -354,7 +354,11 @@ Revista Peruana.”</span> August 15, 2023. <a href="https://sergiojacobo.com/bl
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/03/images/thumbnail.jpg" class="img-fluid figure-img"></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="images/thumbnail.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Imagen de Pexels en Pixabay"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/thumbnail.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="Imagen de Pexels en Pixabay"></a></p>
+</figure>
+</div>
 <figcaption>Imagen de <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pexels</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1840479">Pixabay</a></figcaption>
 </figure>
 </div>
@@ -374,7 +378,11 @@ Revista Peruana.”</span> August 15, 2023. <a href="https://sergiojacobo.com/bl
 <h3 class="anchored" data-anchor-id="en-una-columna">En una columna</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/03/images/20.png" class="img-fluid figure-img"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/20.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Utilizando una configuración oneside o onecolumn"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/20.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Utilizando una configuración oneside o onecolumn"></a></p>
+</figure>
+</div>
 <figcaption>Utilizando una configuración <code>oneside</code> o <code>onecolumn</code></figcaption>
 </figure>
 </div>
@@ -383,7 +391,11 @@ Revista Peruana.”</span> August 15, 2023. <a href="https://sergiojacobo.com/bl
 <h3 class="anchored" data-anchor-id="en-dos-columnas">En dos columnas</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/03/images/10.png" class="img-fluid figure-img"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Utilizando una configuración twoside o twocolumn"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Utilizando una configuración twoside o twocolumn"></a></p>
+</figure>
+</div>
 <figcaption>Utilizando una configuración <code>twoside</code> o <code>twocolumn</code></figcaption>
 </figure>
 </div>
@@ -399,7 +411,7 @@ Revista Peruana.”</span> August 15, 2023. <a href="https://sergiojacobo.com/bl
 <div id="fig-tabla0" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/03/images/30.png" class="img-fluid figure-img" style="width:80.0%">
+<a href="images/30.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;1: Caso por defecto"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/30.png" class="img-fluid figure-img" style="width:80.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;1: Caso por defecto
@@ -465,7 +477,7 @@ Importante
 <div id="fig-tabla1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/03/images/40.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/40.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;2: Caso 1"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/40.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;2: Caso 1
@@ -477,7 +489,7 @@ Figura&nbsp;2: Caso 1
 <div id="fig-tabla2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/03/images/50.png" class="img-fluid figure-img" style="width:70.0%">
+<a href="images/50.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;3: Caso 2"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/50.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;3: Caso 2
@@ -489,7 +501,7 @@ Figura&nbsp;3: Caso 2
 <div id="fig-tabla3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/03/images/60.png" class="img-fluid figure-img" style="width:50.0%">
+<a href="images/60.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;4: Caso 3"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/60.png" class="img-fluid figure-img" style="width:50.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4: Caso 3
@@ -524,7 +536,7 @@ Figura&nbsp;4: Caso 3
 <div id="fig-tabla4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/03/images/700.png" class="img-fluid figure-img" style="width:100.0%">
+<a href="images/700.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan con respecto de una hoja A4."><img src="https://sergiojacobo.com/blog/posts/2023/03/images/700.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan con respecto de una hoja A4.
@@ -541,7 +553,7 @@ Figura&nbsp;5: Casos del 1 al 5. Las dimensiones de las tablas estan a escalan c
 <div id="fig-tabla9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://sergiojacobo.com/blog/posts/2023/03/images/120.png" class="img-fluid figure-img" style="width:70.0%">
+<a href="images/120.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figura&nbsp;6: Caso 6"><img src="https://sergiojacobo.com/blog/posts/2023/03/images/120.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabla9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;6: Caso 6
@@ -602,7 +614,11 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="img-fluid figure-img"></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="images\kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Imagen subida por Kaitlyn Baker bajo Licencia Unsplash"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="Imagen subida por Kaitlyn Baker bajo Licencia Unsplash"></a></p>
+</figure>
+</div>
 <figcaption>Imagen subida por Kaitlyn Baker bajo Licencia Unsplash</figcaption>
 </figure>
 </div>
@@ -611,7 +627,7 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 <p>La presente guía tiene como objetivo presentar un flujo de trabajo para la generación de reportes universitarios, literarios, científicos y más de alta calidad, bajo la modalidad colaborativa en la nube utilizando la plataforma web <strong>Overleaf</strong> y el administrador de referencias <strong>Zotero</strong>. Esta guía es útil para nuevos usuarios que desean comenzar en el mundo de o buscan una alternativa práctica y open-source a editores de texto comerciales. Siendo su principal ventaja, centrarse menos en la <em>forma</em> del documento y más en el <em>fondo</em> del mismo. Pero sobre todo, para todos aquellos estudiantes y profesionales que prefieren aprender lo básico en idioma español.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/logoZoteroOverleaf3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+<p><a href="images/logoZoteroOverleaf3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/logoZoteroOverleaf3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></a></p>
 </figure>
 </div>
 </section>
@@ -623,7 +639,11 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 <li><p>Descargar el programa e instalar según tu sistema operativo de preferencia. La pantalla principal se verá así.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/2_inicio.png" class="img-fluid figure-img" width="730"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/2_inicio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Paso 2. Ventana principal de Zotero"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/2_inicio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="730" alt="Ventana principal de Zotero."></a></p>
+</figure>
+</div>
 <figcaption>Paso 2. Ventana principal de Zotero</figcaption>
 </figure>
 </div></li>
@@ -632,21 +652,33 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 <li><p>Ir a la pestaña de <strong>Herramientas</strong>, luego a <strong>Complementos</strong> que abrirá una nueva ventana.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_1_zoteroConfiguracion.png" class="img-fluid figure-img" width="550"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/3_1_zoteroConfiguracion.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Paso i. Ir a complementos"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_1_zoteroConfiguracion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550" alt="Complementos."></a></p>
+</figure>
+</div>
 <figcaption>Paso i. Ir a complementos</figcaption>
 </figure>
 </div></li>
 <li><p>Ir a <strong>Configuración</strong> ⚙️ y escoger instalar desde un archivo (<em>install Add-on From File</em>). Buscar y seleccionar el archivo previamente descargado (por ejemplo <code>zotero-better-bibtex-6.7.1.xpi</code>). Reiniciar el programa.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_2_instalarPlugin.png" class="img-fluid figure-img" width="550"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/3_2_instalarPlugin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Paso ii. Instalar plugin"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_2_instalarPlugin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550" alt="Plugin Zotero Bibtex."></a></p>
+</figure>
+</div>
 <figcaption>Paso ii. Instalar plugin</figcaption>
 </figure>
 </div></li>
 <li><p>Repetir el paso 1 y el plugin ahora debe aparecer instalado así.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_3_bibtexPlugin.png" class="img-fluid figure-img" width="500"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/3_3_bibtexPlugin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Paso iii. Verificar plugin instalado"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_3_bibtexPlugin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500" alt="Plugin instalado."></a></p>
+</figure>
+</div>
 <figcaption>Paso iii. Verificar plugin instalado</figcaption>
 </figure>
 </div></li>
@@ -657,14 +689,22 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/5_editarCitationKey.png" class="img-fluid figure-img" width="520"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/5_editarCitationKey.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Paso v. Formato de etiquetas"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/5_editarCitationKey.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="520" alt="Formato de etiquetas."></a></p>
+</figure>
+</div>
 <figcaption>Paso v. Formato de etiquetas</figcaption>
 </figure>
 </div></li>
 <li><p>En este punto, cualquier archivo nuevo que se agregue a tu biblioteca, estará asociado a una etiqueta reconocible para su fácil manejo y memorización a la hora de buscar alguna cita. En caso de repetirse citas, el plugin tiene la capacidad de diferenciarlos por letras al final de la etiqueta según su antiguedad, por ejemplo, Cryan2019a, Cryan2019b, etc.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/6_nuevaEtiqueta.png" class="img-fluid figure-img" width="310"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/6_nuevaEtiqueta.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Paso vi. Etiquetas"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/6_nuevaEtiqueta.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="310" alt="Etiquetas."></a></p>
+</figure>
+</div>
 <figcaption>Paso vi. Etiquetas</figcaption>
 </figure>
 </div></li>
@@ -681,19 +721,31 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 <li><p>Método 1 (<strong>El mejor método 😃</strong>): La forma más elegante es buscar los códigos de la publicación como DOI, ISBN, PMID, arXiv, etc. En el caso de artículos científicos, el código está casi siempre en la página de publicación. Solo basta con copiar, pegar, presionar enter y voilà : Toda la información ha sido agregado. Si tienes suerte (o mejor dicho si la publicación es <em>open-access</em>), el archivo pdf aparecerá como adjunto <img src="https://sergiojacobo.com/blog/posts/2023/02/icons/pdf.png" class="img-fluid" width="20" alt="pdf">. Sino adjuntarlo de forma manual <code>click derecho a tu cita agregada -&gt; Añadir adjunto -&gt;  Añadir copia guardada</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/4_1_metodo1_1.png" class="img-fluid figure-img" width="560"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/4_1_metodo1_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Paso A. Busqueda de archivos por código DOI"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/4_1_metodo1_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="560" alt="Paso A. Busqueda de archivos por código DOI"></a></p>
+</figure>
+</div>
 <figcaption>Paso A. Busqueda de archivos por código DOI</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/4_1_metodo1_2.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/4_1_metodo1_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Paso A. Archivo pdf correctamente agregado."><img src="https://sergiojacobo.com/blog/posts/2023/02/images/4_1_metodo1_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Paso A. Archivo pdf correctamente agregado."></a></p>
+</figure>
+</div>
 <figcaption>Paso A. Archivo pdf correctamente agregado.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_añadirPDF.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_añadirPDF.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Paso A. Adjutando pdf al archivo."><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_añadirPDF.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Paso A. Adjutando pdf al archivo."></a></p>
+</figure>
+</div>
 <figcaption>Paso A. Adjutando pdf al archivo.</figcaption>
 </figure>
 </div></li>
@@ -703,7 +755,11 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 <p>La magia de utilizar una extensión (<em>add-on)</em> desde tu navegador favorito, es que <a href="https://www.zotero.org/download/">Zotero Connector</a> permite guardar la información de la página web con un solo click (utilizando metadata) a tu biblioteca.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/4_2_metodo2.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/4_2_metodo2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Paso b. Método 2 para añadir referencias"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/4_2_metodo2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Paso b. Método 2 para añadir referencias"></a></p>
+</figure>
+</div>
 <figcaption>Paso b. Método 2 para añadir referencias</figcaption>
 </figure>
 </div></li>
@@ -756,7 +812,11 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_exportarFiles.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_exportarFiles.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Método 1"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_exportarFiles.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Método 1"></a></p>
+</figure>
+</div>
 <figcaption>Método 1</figcaption>
 </figure>
 </div>
@@ -765,14 +825,22 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_exportarFolder.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_exportarFolder.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Método 2"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_exportarFolder.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Método 2"></a></p>
+</figure>
+</div>
 <figcaption>Método 2</figcaption>
 </figure>
 </div>
 <p>Finalmente, una ventana con algunos ajustes pueden seleccionarse si es necesario. Por recomendación, dejar sin marcar todas las opciones, y dar <strong>OK</strong>. Un archivo <code>.bib</code> será creado.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_exportarSettings.png" class="img-fluid figure-img" width="350"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_exportarSettings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Modificar exportación de referencias"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_exportarSettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350" alt="Modificar exportación de referencias"></a></p>
+</figure>
+</div>
 <figcaption>Modificar exportación de referencias</figcaption>
 </figure>
 </div>
@@ -786,21 +854,33 @@ Precaución
 <li><p>Crearse una cuenta desde la <a href="https://www.overleaf.com/">página oficial</a>. Por recomendación, utilizar el mismo correo electrónico de su cuenta Zotero.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_inicio.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_inicio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Paso a. Ventana principal de Overleaf"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_inicio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Paso a. Ventana principal de Overleaf"></a></p>
+</figure>
+</div>
 <figcaption>Paso a. Ventana principal de Overleaf</figcaption>
 </figure>
 </div></li>
 <li><p>Escoger alguna plantilla para comenzar a escribir. Una vez seleccionada, se abrirá el entorno de edición. Para seleccionar otra plantilla, ir a <code>Templates</code> o si prefieres escoger alguno otro previamente creado, ir a <code>Projects</code> o presionar <img src="https://sergiojacobo.com/blog/posts/2023/02/icons/home.png" class="img-fluid" width="20" alt="home">.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_templates.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_templates.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Paso b. Biblioteca de plantillas"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_templates.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Paso b. Biblioteca de plantillas"></a></p>
+</figure>
+</div>
 <figcaption>Paso b. Biblioteca de plantillas</figcaption>
 </figure>
 </div></li>
 <li><p>El editor se compone de cuatro paneles principales según:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_recompile_chat_mod.png" class="img-fluid figure-img" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_recompile_chat_mod.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Paso c.&nbsp;Paneles del editor Overleaf"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_recompile_chat_mod.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750" alt="Paso c.&nbsp;Paneles del editor Overleaf"></a></p>
+</figure>
+</div>
 <figcaption>Paso c.&nbsp;Paneles del editor Overleaf</figcaption>
 </figure>
 </div>
@@ -817,7 +897,11 @@ Precaución
 <p>Desde el botón <img src="https://sergiojacobo.com/blog/posts/2023/02/icons/upload.png" class="img-fluid" width="20"> puedes acceder a una nueva ventana para la importación de archivos dese tu almacenamiento local o externos, incluido otras bibliotecas como Mendeley y Zotero. Sin embargo, estas modalidades enlazan toda tu biblioteca (todas las carpetas y subcarpetas personales o compartidas) y por lo tanto, el archivo <code>.bib</code> contendrá todo estas referencias. Siendo su principal ventaja, una actualización automática sin necesidad de exportar las referencias desde Zotero y subir al proyecto de Overleaf.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_subirArchivos.png" class="img-fluid figure-img" width="550"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_subirArchivos.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Ventana para subir y enlazar archivos a Overleaf"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_subirArchivos.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550" alt="Ventana para subir y enlazar archivos a Overleaf"></a></p>
+</figure>
+</div>
 <figcaption>Ventana para subir y enlazar archivos a Overleaf</figcaption>
 </figure>
 </div>
@@ -830,7 +914,11 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_compartirArchivo2.png" class="img-fluid figure-img" width="500"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_compartirArchivo2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Ventana para invitar a colaboradores de trabajo"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_compartirArchivo2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500" alt="Ventana para invitar a colaboradores de trabajo"></a></p>
+</figure>
+</div>
 <figcaption>Ventana para invitar a colaboradores de trabajo</figcaption>
 </figure>
 </div>
@@ -839,7 +927,11 @@ Precaución
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_compartirArchivo.png" class="img-fluid figure-img" width="550"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_compartirArchivo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Ventana para compartir un documento con permisos"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_compartirArchivo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550" alt="Ventana para compartir un documento con permisos"></a></p>
+</figure>
+</div>
 <figcaption>Ventana para compartir un documento con permisos</figcaption>
 </figure>
 </div>
@@ -920,7 +1012,11 @@ font-style: inherit;">document</span>}  </span></code></pre></div></li>
 <p>Las referencias exportadas por Zotero (<code>biblio.bib</code>) pueden modificarse según sea necesario. Nótese los elementos de dos artículos de tipo <span class="citation" data-cites="article">@article</span> con sus etiquetas <code>Abbasi2019</code> y <code>Acharya2018</code> respectivamente.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_bib.png" class="img-fluid figure-img" width="700"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/o_bib.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Detalle de un archivo .bib"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/o_bib.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700" alt="Detalle de un archivo .bib"></a></p>
+</figure>
+</div>
 <figcaption>Detalle de un archivo <code>.bib</code></figcaption>
 </figure>
 </div>
@@ -1079,7 +1175,7 @@ background-color: null;
 font-style: inherit;">document</span>}</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></p>
+<p><a href="images/3_figuraDoble.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/3_figuraDoble.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="633"></a></p>
 </figure>
 </div>
 <table class="caption-top table">
@@ -1272,7 +1368,7 @@ background-color: null;
 font-style: inherit;">tab:Tabla1</span>}.</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/7_referenciasCruzada.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="465"></p>
+<p><a href="images/7_referenciasCruzada.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/7_referenciasCruzada.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="465"></a></p>
 </figure>
 </div>
 <div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><span class="kw" style="color: #003B4F;
@@ -1296,7 +1392,7 @@ background-color: null;
 font-style: inherit;">\printbibliography</span>[heading=bibintoc, title={Referencias Bibliográficas}]</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sergiojacobo.com/blog/posts/2023/02/images/8_referencias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="653"></p>
+<p><a href="images/8_referencias.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="https://sergiojacobo.com/blog/posts/2023/02/images/8_referencias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="653"></a></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">

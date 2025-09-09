@@ -1,0 +1,15 @@
+{
+  "hash": "0c84f05ce1f0270e89971ea63c9c2309",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\npagetitle: Contact\ninclude-in-header: \"_includes/fontawesome-2up.html\"\nlightbox: auto\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n\n\n\n\n\n# [Let's Connect – I'm Here for You!]{.primary}\n\nYou can leave comments or feedback about any of my blog posts, projects, or other content using the comment section at the bottom of each page.\n\nYou can also find me on:\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n\n\n\n`<a href=\"https://github.com/SJacoboZavaleta\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i> GitHub</a>`{=html}\n`<a href=\"https://www.linkedin.com/in/sjacobozavaleta/\" class=\"icon-link\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-linkedin\"></i> LinkedIn</a>`{=html}\n\nFor direct inquiries, feel free to email me at:\n- [100514566@alumnos.uc3m.es](.heading-font)\n- [sjacobo@unitru.edu.pe](.heading-font)\n\nI'm happy to answer questions, discuss topics related to my blog and projects, or chat about your own work in robotics and automation. Looking forward to connecting!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
