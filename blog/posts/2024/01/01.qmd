@@ -5,7 +5,7 @@ description: |
     Manejo de exportación de archivos URDF utilizando Fusion 360
 date: 2024-05-15
 tags:
-  - "Robotics"
+  - "robotics"
 categories: 
   - "Robotics"
   - "Research"
@@ -23,7 +23,7 @@ language:
     section-title-footnotes: Notas
 ---
 
-{{< include ../../../../_includes/navigation_breadcrumbs_robotics.qmd >}}
+{{< include ../../../../_includes/navigation_breadcrumbs.qmd >}}
 
 ![Ruta de trabajo para utilizar archivos URDF](images/logos_URDF_pathway.png){fig-align="center" width=60%} 
 

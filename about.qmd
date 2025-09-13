@@ -4,13 +4,19 @@ pagetitle: "Sergio Jacobo Zavaleta — Robotics & Research"
 format:
   html:
     toc: false
+  typst:
+    papersize: a4
+    margin:
+      x: 1.5cm
+      y: 1.5cm
 ---
 
 ::: {#profile style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;"}
 ::: {#profile-image style="flex: 0 0 120px;"}
-![Sergio Jacobo Zavaleta](/images/sergio-about2.JPG){.shadow}
+![](/images/sergio-about2.JPG){.shadow}
 :::
 ::: {#profile-text style="flex: 1;"}
+
 # [Sergio Jácobo Zavaleta]{.primary}
 
 **Mechatronics Engineer | Robotics Researcher | Educator** 
@@ -61,12 +67,12 @@ This blog is my **personal library in progress** — a space to document, reflec
 **Master in Robotics and Automation**  
 *Universidad Carlos III de Madrid*, Spain  
 *Sep 2024 – Ongoing*  
-- Final thesis: *Enhancing SMA-based soft actuators via novel tendon retraining configurations*.
+<!-- - Final thesis: *Enhancing SMA-based soft actuators via novel tendon retraining configurations*. -->
 
 **Bachelor of Science in Mechatronics Engineering**  
 *Universidad Nacional de Trujillo*, Peru  
 *Apr 2014 – Dec 2018*  
-- Thesis: *Modeling and simulation of a 3D ultrasound-guided clinical robot for percutaneous breast biopsy*.
+- Thesis: *Modeling and simulation of a 3D ultrasound-guided clinical robot for percutaneous breast biopsy*. [Link](https://hdl.handle.net/20.500.14414/18226).
 
 ---
 
@@ -103,8 +109,7 @@ Registered in the National Scientific Register (Code: P0153371).
 
 ## 📦 Download My Full CV
 
-Prefer a formal, printable version?  
-📥 [Download CV as PDF](/assets/cv.pdf)
+Prefer a formal, printable version? Go to *Other Formats* in the sidebar and click on Typst or download it from 📥 [here](cv.pdf)
 
 ---
 

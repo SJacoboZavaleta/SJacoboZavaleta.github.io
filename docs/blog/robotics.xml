@@ -28,9 +28,16 @@
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Despliega tu Robot en 3D: Guía para Crear un Visor URDF</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <section id="qué-es-urdf" class="level1">
 <h1>¿Qué es URDF?</h1>
 <p>El Formato Unificado de Descripción de Robótica (URDF) es un archivo XML que incluye la descripción física de un robot. Básicamente, es un modelo 3D con información sobre articulaciones, motores, masa, etc. Para más detalles sobre cómo crear tu propio robot en formato URDF, revisa nuestro <a href="../../../../blog/posts/2024/01/01.html">post anterior</a>.</p>
@@ -759,9 +766,16 @@ un Visor URDF.”</span> June 15, 2024. <a href="https://sergiojacobo.com/blog/p
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Desde Fusion 360 a URDF: Construye y Simula tu Robot</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
@@ -1960,9 +1974,16 @@ tu Robot.”</span> May 15, 2024. <a href="https://sergiojacobo.com/blog/posts/2
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <section id="grados-de-libertad" class="level1">
 <h1>Grados de libertad</h1>
 <p>Notas claves:</p>
@@ -2059,9 +2080,16 @@ y Movimiento de Cuerpos Rígido.”</span> October 15, 2023. <a href="https://se
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <section id="sistemas-de-referencia-reference-frames" class="level1">
 <h1>Sistemas de Referencia (<em>Reference Frames</em>)</h1>
 <div class="quarto-figure quarto-figure-center">

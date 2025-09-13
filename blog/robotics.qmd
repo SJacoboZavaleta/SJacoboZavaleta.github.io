@@ -4,7 +4,7 @@ repo-actions: false
 listing:
   id: "robotics-listing"
   include: 
-    tags: ["Robotics"]
+    tags: ["robotics"]
   contents:  
   - posts/2023/
   - posts/2024/
@@ -18,7 +18,7 @@ listing:
   sort-ui: false
   filter-ui: false
   feed: true
-  fields: [image, date, title, author, description, reading-time]
+  fields: [image, date, title, author, description, reading-time, categories]
   image-placeholder: "../images/noPreview.jpg"
 page-layout: full
 lang: es
@@ -29,7 +29,7 @@ execute:
   echo: false
 ---
 
-# [Robotics]{.third-color}
+# [Robotics]{.third-color-card}
 
 [← Volver al blog principal](index.qmd)
 

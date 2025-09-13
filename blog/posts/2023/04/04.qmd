@@ -5,7 +5,7 @@ description: |
   Descubre los tips claves para completar de manera eficiente y precisa el formato $\LaTeX{}$ de la revista [Norte Médico](https://revistas.unc.edu.pe/index.php/nortemedico/index), con una guía paso a paso que te facilitará el proceso.
 date: 2023-08-15
 tags: 
-  - "Research"
+  - "research"
 categories: 
   - "Research"
   - "Latex"
@@ -20,7 +20,7 @@ language:
     section-title-footnotes: Notas
 ---
 
-{{< include ../../../../_includes/navigation_breadcrumbs_research.qmd >}}
+{{< include ../../../../_includes/navigation_breadcrumbs.qmd >}}
 
 ![Foto de [Annie Spratt](https://unsplash.com/es/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash") en [Unsplash](https://unsplash.com/es/fotos/lote-de-papel-de-impresora-blanco-5cFwQ-WMcJU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)](images/thumbnail.jpg)
 

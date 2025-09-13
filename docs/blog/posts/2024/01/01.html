@@ -76,8 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-be95a99064d7c6f1a9d9998502355b25.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-216a44084347b448f05fe2c74b7e3ffd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/bootstrap/bootstrap-dark-94cf71ad5aa6239c00c101e0531a2e28.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../../site_libs/bootstrap/bootstrap-ff94a45166a54c3c3087a0ef9bfcea43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dark-619a615e8b6b749a234f31ad2d432226.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<link rel="stylesheet" href="../../../../assets/ek-styles.css">
+<link rel="stylesheet" href="../../../../assets/tercera-fundacion-styles.css">
 
 
 
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../../index.html">
-    <span class="navbar-title"><span class="icon-line2"></span>Sergio<span class="icon-line3"></span><span class="icon-line"></span>Jacobo</span>
+    <span class="navbar-title"><span class="icon-line2"></span> Sergio<span class="icon-line3"></span><span class="icon-line"></span> Jacobo</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
@@ -359,9 +359,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Desde Fusion 360 a URDF: Construye y Simula tu Robot</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
@@ -1568,7 +1575,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Manejo de exportación de archivos URDF utilizando Fusion 360</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-05-15</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Robotics"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - "robotics"</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Robotics"</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Research"</span></span>
@@ -1586,7 +1593,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">    section-title-footnotes: Notas</span></span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../../../../_includes/navigation_breadcrumbs_robotics.qmd &gt;}}</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../../../../_includes/navigation_breadcrumbs.qmd &gt;}}</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="al">![Ruta de trabajo para utilizar archivos URDF](images/logos_URDF_pathway.png)</span>{fig-align="center" width=60%} </span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>

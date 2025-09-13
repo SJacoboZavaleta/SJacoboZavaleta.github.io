@@ -20,6 +20,10 @@
     <span class="emoji">📘</span>
     <span class="text">Blog</span>
   </a>
+  <a href="quarto.qmd" class="category-btn quarto-btn">
+    <span class="emoji">📄</span>
+    <span class="text">Quarto</span>
+  </a>
   <a href="research.qmd" class="category-btn research-btn">
     <span class="emoji">🔬</span>
     <span class="text">Research</span>
@@ -27,9 +31,5 @@
   <a href="robotics.qmd" class="category-btn robotics-btn">
     <span class="emoji">🤖</span>
     <span class="text">Robótica</span>
-  </a>
-  <a href="quarto.qmd" class="category-btn quarto-btn">
-    <span class="emoji">📄</span>
-    <span class="text">Quarto</span>
   </a>
 </div>

@@ -17,7 +17,7 @@ website:
   back-to-top-navigation: true
   image: images/Logo_ThirdFoundation_es_card.png	
   navbar:
-    title: "<span class='icon-line2'></span>Sergio<span class='icon-line3'></span><span class='icon-line'></span>Jacobo"
+    title: "<span class='icon-line2'></span>&thinsp;Sergio<span class='icon-line3'></span><span class='icon-line'></span>&hairsp;Jacobo"
     right:
       - text: about
         href: about.qmd
@@ -67,13 +67,13 @@ website:
 format:
   html:
     theme: 
-      light: assets/ek-theme-light.scss
-      dark: assets/ek-theme-dark.scss
-    css: assets/ek-styles.css
+      light: assets/theme/tercera-fundacion-theme-light.scss
+      dark: assets/theme/tercera-fundacion-theme-dark.scss
+    css: assets/tercera-fundacion-styles.css
     code-block-border-left: true
     highlight-style: 
-      light: assets/ek-light.theme
-      dark: assets/ek-dark.theme
+      light: assets/theme/tercera-fundacion-light.theme
+      dark: assets/theme/tercera-fundacion-dark.theme
     smooth-scroll: true
     link-external-icon: true
     link-external-newwindow: false

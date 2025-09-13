@@ -4,7 +4,7 @@ repo-actions: false
 listing:
   id: "quarto-listing"
   include: 
-    tags: ["Quarto"]
+    tags: ["quarto"]
   contents:  
   - posts/2023/
   - posts/2024/
@@ -18,7 +18,7 @@ listing:
   filter-ui: false
   sort-ui: false
   feed: true
-  fields: [image, date, title, author, description, reading-time]
+  fields: [image, date, title, author, description, reading-time, categories]
   image-placeholder: "../images/noPreview.jpg"
 page-layout: full
 lang: es
@@ -29,7 +29,7 @@ execute:
   echo: false
 ---
 
-# [Quarto]{.third-color}
+# [Quarto]{.first-color-card}
 
 Bienvenido a la sección de **Quarto** de *La Tercera Fundación*. Aquí comparto artículos sobre Quarto, markdown, RStudio y ahora Positron.
 

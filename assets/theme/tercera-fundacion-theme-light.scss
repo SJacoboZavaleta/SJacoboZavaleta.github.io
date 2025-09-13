@@ -1,0 +1,458 @@
+// =============================================================================
+// THEME-lIGHT: Light Mode Styles
+// Purpose: Custom styles for the light theme of "La Tercera Fundación"
+// Author: Sergio Jacobo Zavaleta
+// =============================================================================
+
+// use litera as the base
+/*-- scss:defaults --*/
+// https://github.com/thomaspark/bootswatch/tree/v5/dist/litera
+$theme: "litera" !default;
+
+
+// How to import local font
+// @font-face {
+//   font-family: 'LEMONMILKPro-Regular';
+//   src: local('LEMONMILKPro-Regular'), url('fonts/LEMONMILKPro-Regular.woff2') format('woff2'), url('fonts/LEMONMILKPro-Regular.woff') format('woff');
+// }
+// How to import web fonts
+// @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+
+// Fonts
+// $font-family-sans-serif: Figtree, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+// $font-family-monospace: "Fira Code", "Fira Mono", "Courier New", monospace;
+// $headings-font-family: Figtree, Georgia, serif;//Lora
+
+$font-family-sans-serif: Figtree, Helvetica, sans-serif !default;
+$font-family-monospace: "Fira Mono", monospace;
+$headings-font-family: Figtree, Helvetica, sans-serif !default;
+
+
+// grays (hue 240)
+$white:    #fff !default;
+$gray-100: #F8F8FA !default;
+$gray-200: #E9E9EF !default;
+$gray-300: #DCDCE6 !default;
+$gray-400: #CECEDA !default;
+$gray-500: #ADADBD !default;
+$gray-600: #868696 !default;
+$gray-700: #494957 !default;
+$gray-800: #343440 !default;
+$gray-900: #212129 !default;
+$black:    #000 !default;
+
+
+// Color palette
+$pink: #BF4594;
+$rose: #D4006A;
+$blue: #1e7cbbff;  
+$green: #24c76dff;
+$turquoise: #49CCB8;
+$cyan: #54C7FF;
+$red: #C40000;
+$indigo: #2c6fc7ff;
+$purple: #9041c5ff;
+$orange: #FF9900;
+$yellow: #a1941cff;
+$green-bright: #6AD400;
+
+// Bootstrap semantic colors
+$primary:       $blue !default;
+$secondary:     $gray-500 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $orange !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+// Section-specific colors
+// $primary-color:  $primary;
+$second-color:  $cyan;
+$third-color:   $rose;
+$fourth-color: $green-bright;
+$fifth-color: $orange;
+
+// Card border colors for category buttons in Blog (different from web sections)
+$primary-color-card: $pink;
+$second-color-card: $green;
+$third-color-card: $purple;
+$fourth-color-card: $red;
+$fifth-color-card: $yellow;
+
+// font sizes;
+$font-size-base:   1rem; //16px //!default; // Assumes the browser default, typically `16px`
+$h1-font-size:     $font-size-base * 2.5 !default;
+$h2-font-size:     $font-size-base * 2 !default;
+$h3-font-size:     $font-size-base * 1.75 !default;
+$h4-font-size:     $font-size-base * 1.5 !default;
+$h5-font-size:     $font-size-base * 1.25 !default;
+$h6-font-size:     $font-size-base !default;
+
+// Theme color overrides
+$body-bg: $light;
+$body-color: $dark;
+$navbar-bg: $body-bg;
+$navbar-fg: $body-color;
+$code-bg: $light;
+$code-color: $second-color;
+$card-bg: $body-bg;
+$card-border-color: $gray-300;
+
+
+// =============================================================================
+// 1. VARIABLES & CONFIGURATION
+// Define reusable variables for consistency.
+// =============================================================================
+
+// Callout colors
+$callout-color-note: $blue;
+$callout-color-tip: $green;
+$callout-color-caution: $purple;
+$callout-color-warning: $orange;
+$callout-color-important: $red;
+
+
+/*-- scss:rules --*/
+// =============================================================================
+// 2. TYPOGRAPHY & HEADINGS
+// Apply font families and heading styles.
+// =============================================================================
+
+// Headings
+.heading-font,
+.home-header {
+  font-family: $headings-font-family;
+}
+
+#quarto-header {
+  text-transform: uppercase;
+  font-family: $headings-font-family;
+}
+
+.home-header {
+  font-size: $font-size-base * 3;
+}
+
+// Section headers with underline
+h2, .h2 {
+  border-bottom: 1px solid $gray-300;
+  padding-bottom: 0.5rem;
+}
+
+// =============================================================================
+// 3. LINKS & INTERACTIVITY
+// Style links globally and on hover.
+// =============================================================================
+
+a {
+  color: $body-color;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: $primary;
+  text-decoration-color: $primary;
+}
+
+// Remove underline from ToC and tooltip actions
+.toc-actions a,
+div.tippy-content a {
+  text-decoration: none !important;
+  border-bottom: 0;
+}
+
+.toc-actions a:hover,
+div.tippy-content a:hover {
+  color: $primary;
+  text-decoration: underline;
+}
+
+// =============================================================================
+// 4. NAVIGATION BAR (NAVBAR)
+// Custom styling for logo, title, and navigation items.
+// =============================================================================
+
+.navbar-title {
+  font-size: $font-size-base * 1.75;
+}
+
+// Navbar logo animation lines
+.icon-line {
+  display: block;
+  background: $primary;
+  width: 130px;
+  height: 6px;
+  margin: auto;
+  display: table;
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+
+// Left line
+.icon-line2 {
+  display: block;
+  background: $primary;
+  width: 6px;
+  height: 44px;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: -6px;
+}
+
+// Right line
+.icon-line3 {
+  display: block;
+  background: $primary;
+  width: 6px;
+  height: 44px;
+  position: absolute;
+  margin-top: -6px;
+  margin-left: 130px;
+}
+
+// Prevent title color change on hover
+.navbar-title:hover {
+  color: $body-color;
+}
+
+// Hover effect for nav links
+.navbar-expand-lg .navbar-nav .nav-link:hover,
+.navbar-expand-lg .navbar-nav .nav-link.active {
+  color: $primary;
+}
+
+// Color-specific hover/active states for each menu item
+#navbarCollapse > ul > li:nth-child(2) > a:hover,
+#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active {
+  color: $second-color;
+}
+
+#navbarCollapse > ul > li:nth-child(3) > a:hover,
+#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active {
+  color: $third-color;
+}
+
+#navbarCollapse > ul > li:nth-child(4) > a:hover,
+#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
+  color: $fourth-color;
+}
+
+#navbarCollapse > ul > li:nth-child(5) > a:hover,
+#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
+  color: $fifth-color;
+}
+
+// Animated underline for desktop navbar
+@media screen and (min-width: 992px) {
+  a.nav-link {
+    position: relative;
+  }
+  
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  
+  .navbar .navbar-nav .nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    height: 4px;
+    background-color: $primary;
+    transition: all 0.3s;
+  }
+  
+  // Match underline color to link's section color
+  .navbar .navbar-nav .nav-item:nth-child(2)::after { background-color: $second-color; }
+  .navbar .navbar-nav .nav-item:nth-child(3)::after { background-color: $third-color; }
+  .navbar .navbar-nav .nav-item:nth-child(4)::after { background-color: $fourth-color; }
+  .navbar .navbar-nav .nav-item:nth-child(5)::after { background-color: $fifth-color; }
+  
+  .navbar .navbar-nav .nav-item:hover::after {
+    width: 90%;
+  }
+}
+
+// =============================================================================
+// 5. CODE BLOCKS & FONTS
+// Style inline and block code elements.
+// =============================================================================
+
+pre.sourceCode {
+  border-radius: 0;
+  border-left-color: $gray-300;
+}
+
+// Ensure consistent code font
+code, pre {
+  font-family: var(--bs-font-monospace);
+}
+
+// Size adjustment for code in footnotes
+// A cleaner version
+// div[id^="fn"] > p > code {
+//   font-size: 0.8rem;
+  
+#fn1 > p > code,
+#fn2 > p > code,
+#fn3 > p > code,
+#fn4 > p > code,
+#fn5 > p > code,
+#fn6 > p > code {
+  font-size: 0.8rem;
+}
+
+// Font features for monospace (disable ligatures, enable zero slash)
+code {
+  font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 1, 'zero' 1, 'ss02' 0;
+}
+
+// Italic for comments if using MonoLisa
+code span.co {
+  font-family: "Fira Code", monospace;
+}
+
+// Match code size inside headings
+// h1 code { font-size: $h1-font-size; }
+// h2 code { font-size: $h2-font-size; }
+// h3 code { font-size: $h3-font-size; }
+// h4 code { font-size: $h4-font-size; }
+// h5 code { font-size: $h5-font-size; }
+// h6 code { font-size: $h6-font-size; }
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  font-size: inherit;
+}
+
+
+// =============================================================================
+// 6. CARDS & UI COMPONENTS
+// Style custom cards and call-to-action buttons.
+// =============================================================================
+
+// Colored card borders
+#card-first-color {
+  background-color: $body-bg;
+  border: 4px solid $primary-color-card;
+  border-radius: 5px;
+}
+
+#card-second-color {
+  background-color: $body-bg;
+  border: 4px solid $second-color-card;
+  border-radius: 5px;
+}
+
+#card-third-color {
+  background-color: $body-bg;
+  border: 4px solid $third-color-card;
+  border-radius: 5px;
+}
+
+// Generic card button
+.card-link {
+  background-color: $primary-color-card;
+  color: $body-bg;
+  border: 4px solid $primary-color-card;
+  padding: 5px 0.5rem;
+  margin: 0;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: $h5-font-size;
+}
+
+.card-link:hover {
+  background-color: $body-bg;
+  color: $primary-color-card;
+}
+
+// Secondary and tertiary card links
+.second-color-link {
+  background-color: $second-color-card;
+  border-color: $second-color-card;
+  color: $body-bg;
+}
+
+.second-color-link:hover {
+  color: $second-color-card;
+  border-color: $second-color-card;
+}
+
+.third-color-link {
+  background-color: $third-color-card;
+  border-color: $third-color-card;
+  color: $body-bg;
+}
+
+.third-color-link:hover {
+  color: $third-color-card;
+  border-color: $third-color-card;
+}
+
+
+// =============================================================================
+// 7. ICON LINKS & SOCIAL BUTTONS
+// Style external links (e.g., GitHub, LinkedIn).
+// =============================================================================
+
+.icon-link,
+div.quarto-about-jolla .about-link {
+  background-color: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+  padding: 5px 0.4rem;
+  margin: 4px 8px 4px 0;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.icon-link:hover,
+div.quarto-about-jolla .about-link:hover {
+  background-color: $primary;
+  color: $body-bg;
+  border-color: $primary;
+  text-decoration: none;
+}
+
+
+// =============================================================================
+// 8. EMBEDDED CONTENT
+// Style iframes (e.g., slides from talks).
+// =============================================================================
+
+iframe.slide-deck {
+  border: 3px solid $gray-700;
+  width: 100%;
+}
+
+.ar4x3 { aspect-ratio: 4 / 3; }
+.ar3x2 { aspect-ratio: 3 / 2; }
+
+
+// =============================================================================
+// 9. DARK MODE TOGGLE
+// Control visibility of light/dark mode elements.
+// =============================================================================
+
+.light-mode { display: block; }
+.dark-mode { display: none; }
+
+
+// =============================================================================
+// 10. UTILITY CLASSES
+// General-purpose color classes.
+// =============================================================================
+
+.first-color-card  { color: $primary-color-card; }
+.second-color-card { color: $second-color-card; }
+.third-color-card  { color: $third-color-card; }
+.fourth-color-card { color: $fourth-color-card; }
+.fifth-color-card  { color: $fifth-color-card; }

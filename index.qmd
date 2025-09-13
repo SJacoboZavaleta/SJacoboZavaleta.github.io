@@ -42,7 +42,7 @@ I’m a Mechatronics Engineer passionate about designing innovative clinical rob
 
 Beyond engineering, I’m deeply committed to education. Through this site, I share practical guides on modern academic tools: $\LaTeX$, Zotero, RMarkdown, Python, and Quarto — especially for Spanish-speaking students navigating research and publication.
 
-This blog, [La Tercera Fundación]{.bg-color-red}, is my growing archive of ideas: notes from courses, robotics projects, reproducible workflows, and reflections on science and society. Think of it as a personal library under construction — one that I hope helps others along the way.
+This blog, [La Tercera Fundación]{.bg-color-rose}, is my growing archive of ideas: notes from courses, robotics projects, reproducible workflows, and reflections on science and society. Think of it as a personal library under construction — one that I hope helps others along the way.
 
 Welcome aboard.
 

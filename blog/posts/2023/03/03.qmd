@@ -5,7 +5,7 @@ description: |
   Aprende a manejar tablas en $\LaTeX$ de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta esencial para tus publicaciones.
 date: 2023-07-15
 tags:
-  - "Research"
+  - "research"
 categories: 
   - "Research"
   - "Latex"
@@ -19,7 +19,7 @@ language:
     section-title-footnotes: Notas
 ---
 
-{{< include ../../../../_includes/navigation_breadcrumbs_research.qmd >}}
+{{< include ../../../../_includes/navigation_breadcrumbs.qmd >}}
 
 ![Imagen de [Pexels](https://pixabay.com/es/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1840479) en [Pixabay](https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1840479)](images/thumbnail.jpg){fig-align="left"}
 

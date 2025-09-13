@@ -81,14 +81,14 @@
     "href": "blog/research.html",
     "title": "Research",
     "section": "",
-    "text": "Research\n\nBienvenido a la sección de Research de La Tercera Fundación. Aquí comparto artículos sobre robótica médica, inteligencia artificial aplicada a la salud, publicaciones académicas y proyectos de investigación.\n← Volver al blog principal\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGuía didáctica de LaTeX para publicación en Revista Peruana\n\n\n5 minutos\n\n\nDescubre los tips claves para completar de manera eficiente y precisa el formato \\(\\LaTeX{}\\) de la revista [Norte…\n\n\n\nSergio Jácobo\n\n\n15 ago 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEficiencia en LaTeX: Manejo de Tablas Simplificado\n\n\n6 minutos\n\n\nAprende a manejar tablas en \\(\\LaTeX\\) de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta…\n\n\n\nSergio Jácobo\n\n\n15 jul 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOverleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube\n\n\n30 minutos\n\n\nGuía Básica para LaTeX Online y Gestión de Referencias con Zotero\n\n\n\nSergio Jácobo\n\n\n15 may 2023\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n\n\n\n\n 📘 Blog   🔬 Research   🤖 Robótica   📄 Quarto \n\n\n\n\n\n\n\n Volver arriba"
+    "text": "Research\n\nBienvenido a la sección de Research de La Tercera Fundación. Aquí comparto artículos sobre robótica médica, inteligencia artificial aplicada a la salud, publicaciones académicas y proyectos de investigación.\n← Volver al blog principal\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGuía didáctica de LaTeX para publicación en Revista Peruana\n\n\n5 minutos\n\n\n\nResearch\n\n\nLatex\n\n\nZotero\n\n\nExcel\n\n\n\nDescubre los tips claves para completar de manera eficiente y precisa el formato \\(\\LaTeX{}\\) de la revista [Norte…\n\n\n\nSergio Jácobo\n\n\n15 ago 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEficiencia en LaTeX: Manejo de Tablas Simplificado\n\n\n6 minutos\n\n\n\nResearch\n\n\nLatex\n\n\n\nAprende a manejar tablas en \\(\\LaTeX\\) de manera eficiente con tips claves y ejemplos prácticos, siguiendo una guía paso a paso que te ayudará a dominar esta herramienta…\n\n\n\nSergio Jácobo\n\n\n15 jul 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOverleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube\n\n\n30 minutos\n\n\n\nResearch\n\n\nLatex\n\n\nOverleaf\n\n\nZotero\n\n\n\nGuía Básica para LaTeX Online y Gestión de Referencias con Zotero\n\n\n\nSergio Jácobo\n\n\n15 may 2023\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n\n\n\n\n 📘 Blog   📄 Quarto   🔬 Research   🤖 Robótica \n\n\n\n\n\n\n\n Volver arriba"
   },
   {
     "objectID": "blog/posts/2024/02/02.html",
     "href": "blog/posts/2024/02/02.html",
     "title": "Despliega tu Robot en 3D: Guía para Crear un Visor URDF",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Robotics &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Robotics &gt; Despliega tu Robot en 3D: Guía para Crear un Visor URDF"
   },
   {
     "objectID": "blog/posts/2024/02/02.html#realizar-una-copia-o-fork-del-repositorio-urdf-loaders",
@@ -137,14 +137,14 @@
     "href": "blog/posts/2023/06/06.html",
     "title": "Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Robotics &gt; Post Actual\n\n\nGrados de libertad\nNotas claves:\n\nGrados de libertad : Degree of Freedom en inglés se abrevia como DOF, dof, Dof, etc.\nEspacio de configuración: Configuration Space en ingés se abrevia com C-space. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.\n\nDimensiones del espacio comunes de un cuerpo rígido:\n\nEn el espacio: 6\n\nPosición del cuerpo: Las coordenadas \\(x,y,z\\)\nOrientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.\n\nEn el plano: 3\n\n\n\n\nMovimiento de Cuerpos Rígidos\n\nRepresentación implícita: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.\nSistema de referencia conectada a un cuerpo en movimiento: Se considera esta referencia, por ejemplo el frame \\(\\{b\\}\\), de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.\n\n\n\nRotación de matrices\n\n6 Restricciones en matrices de rotación \\(R\\): Ortogonalidad de vectores\n\nRestriciones en las columnas: Los vectores unitarios deben ser unitarios: 3\nEl producto punto de alguno de dos de los vectores columna debe ser ser 0: 3\nEn consecuencia, se cumple que:\n\n\\(R^{T}R = I\\) lo que conlleva a \\(det(R) = 1\\) (regla de la mano derecha)\nLo que se agrupa en el conjunto de matrices reales 3x3 denominado Special orthogonal group SO(3)\nAlgunas propiedades relevantes:\n\nInversa: \\(R^{-1} = R^{T} \\in SO(3)\\)\n\n\\(R_{ab}R_{ba}=R_{aa}=I\\) Por lo tanto la inversa de \\(R_{ab}\\) es también \\(R_{ba}\\).\n\nCierre: \\(R_1 R_2 \\in SO(3)\\)\nFinalmente: \\(x \\in \\mathbb{R} \\left \\| Rx \\right \\| = \\left \\| x \\right \\|\\)\n\n\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web.\n\n\n\n\n\n\n\n\n\n\n\n Volver arribaReutilizaciónCC BY-SA 4.0Cómo citarBibTeX@online{jácobo2023,\n  author = {Jácobo, Sergio},\n  title = {Entendiendo la Robótica: Grados de Libertad y Movimiento de\n    Cuerpos Rígido},\n  date = {2023-10-15},\n  url = {https://sergiojacobo.com/blog/posts/2023/06/06.html},\n  langid = {es}\n}\nPor favor, cita este trabajo como:\nJácobo, Sergio. 2023. “Entendiendo la Robótica: Grados de Libertad\ny Movimiento de Cuerpos Rígido.” October 15, 2023. https://sergiojacobo.com/blog/posts/2023/06/06.html."
+    "text": "Inicio &gt; Blog &gt; Robotics &gt; Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido\n\n\n\nGrados de libertad\nNotas claves:\n\nGrados de libertad : Degree of Freedom en inglés se abrevia como DOF, dof, Dof, etc.\nEspacio de configuración: Configuration Space en ingés se abrevia com C-space. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.\n\nDimensiones del espacio comunes de un cuerpo rígido:\n\nEn el espacio: 6\n\nPosición del cuerpo: Las coordenadas \\(x,y,z\\)\nOrientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.\n\nEn el plano: 3\n\n\n\n\nMovimiento de Cuerpos Rígidos\n\nRepresentación implícita: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.\nSistema de referencia conectada a un cuerpo en movimiento: Se considera esta referencia, por ejemplo el frame \\(\\{b\\}\\), de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.\n\n\n\nRotación de matrices\n\n6 Restricciones en matrices de rotación \\(R\\): Ortogonalidad de vectores\n\nRestriciones en las columnas: Los vectores unitarios deben ser unitarios: 3\nEl producto punto de alguno de dos de los vectores columna debe ser ser 0: 3\nEn consecuencia, se cumple que:\n\n\\(R^{T}R = I\\) lo que conlleva a \\(det(R) = 1\\) (regla de la mano derecha)\nLo que se agrupa en el conjunto de matrices reales 3x3 denominado Special orthogonal group SO(3)\nAlgunas propiedades relevantes:\n\nInversa: \\(R^{-1} = R^{T} \\in SO(3)\\)\n\n\\(R_{ab}R_{ba}=R_{aa}=I\\) Por lo tanto la inversa de \\(R_{ab}\\) es también \\(R_{ba}\\).\n\nCierre: \\(R_1 R_2 \\in SO(3)\\)\nFinalmente: \\(x \\in \\mathbb{R} \\left \\| Rx \\right \\| = \\left \\| x \\right \\|\\)\n\n\n\n\n\n\n\n\n\n\nSoy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en Twitter, ver algunos repositorios de mi trabajo en Github, o leer más sobre mí en este sitio web.\n\n\n\n\n\n\n\n\n\n\n\n Volver arribaReutilizaciónCC BY-SA 4.0Cómo citarBibTeX@online{jácobo2023,\n  author = {Jácobo, Sergio},\n  title = {Entendiendo la Robótica: Grados de Libertad y Movimiento de\n    Cuerpos Rígido},\n  date = {2023-10-15},\n  url = {https://sergiojacobo.com/blog/posts/2023/06/06.html},\n  langid = {es}\n}\nPor favor, cita este trabajo como:\nJácobo, Sergio. 2023. “Entendiendo la Robótica: Grados de Libertad\ny Movimiento de Cuerpos Rígido.” October 15, 2023. https://sergiojacobo.com/blog/posts/2023/06/06.html."
   },
   {
     "objectID": "blog/posts/2023/04/04.html",
     "href": "blog/posts/2023/04/04.html",
     "title": "Guía didáctica de LaTeX para publicación en Revista Peruana",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Research &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Research &gt; Guía didáctica de LaTeX para publicación en Revista Peruana"
   },
   {
     "objectID": "blog/posts/2023/04/04.html#manejo-de-ecuaciones",
@@ -172,7 +172,7 @@
     "href": "blog/posts/2023/02/02.html",
     "title": "Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Research &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Research &gt; Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube"
   },
   {
     "objectID": "blog/posts/2023/02/02.html#exportación-de-las-referencias",
@@ -249,7 +249,7 @@
     "href": "about.html",
     "title": "Sergio Jácobo Zavaleta",
     "section": "",
-    "text": "Sergio Jacobo Zavaleta\n\n\n\n\n\n\nMechatronics Engineer | Robotics Researcher | Educator\n📧 sjacobo@pa.uc3m.es | 📞 +617818424\n🔗 linkedin.com/in/sjacobozavaleta\n📘 github.com/sjacobozavaleta\n🎓 Google Scholar | ResearchGate\nCurrently pursuing a Master’s in Robotics and Automation at Universidad Carlos III de Madrid.\nI design intelligent clinical robots and biomedical devices that bridge engineering, AI, and medicine. My research focuses on soft robotics, medical imaging, and automation for healthcare — with publications in peer-reviewed journals.\nWhen I’m not building or researching, I help students — especially Spanish speakers — master modern tools for academic success: \\(\\LaTeX\\), Quarto, Python, Zotero, and reproducible workflows.\nWelcome to my digital notebook: La Tercera Fundación."
+    "text": "Mechatronics Engineer | Robotics Researcher | Educator\n📧 sjacobo@pa.uc3m.es | 📞 +617818424\n🔗 linkedin.com/in/sjacobozavaleta\n📘 github.com/sjacobozavaleta\n🎓 Google Scholar | ResearchGate\nCurrently pursuing a Master’s in Robotics and Automation at Universidad Carlos III de Madrid.\nI design intelligent clinical robots and biomedical devices that bridge engineering, AI, and medicine. My research focuses on soft robotics, medical imaging, and automation for healthcare — with publications in peer-reviewed journals.\nWhen I’m not building or researching, I help students — especially Spanish speakers — master modern tools for academic success: \\(\\LaTeX\\), Quarto, Python, Zotero, and reproducible workflows.\nWelcome to my digital notebook: La Tercera Fundación."
   },
   {
     "objectID": "about.html#what-i-do",
@@ -263,7 +263,7 @@
     "href": "about.html#education",
     "title": "Sergio Jácobo Zavaleta",
     "section": "🎓 Education",
-    "text": "🎓 Education\nMaster in Robotics and Automation\nUniversidad Carlos III de Madrid, Spain\nSep 2024 – Ongoing\n- Final thesis: Enhancing SMA-based soft actuators via novel tendon retraining configurations.\nBachelor of Science in Mechatronics Engineering\nUniversidad Nacional de Trujillo, Peru\nApr 2014 – Dec 2018\n- Thesis: Modeling and simulation of a 3D ultrasound-guided clinical robot for percutaneous breast biopsy."
+    "text": "🎓 Education\nMaster in Robotics and Automation\nUniversidad Carlos III de Madrid, Spain\nSep 2024 – Ongoing\n\nBachelor of Science in Mechatronics Engineering\nUniversidad Nacional de Trujillo, Peru\nApr 2014 – Dec 2018\n- Thesis: Modeling and simulation of a 3D ultrasound-guided clinical robot for percutaneous breast biopsy. Link."
   },
   {
     "objectID": "about.html#research-projects",
@@ -284,7 +284,7 @@
     "href": "about.html#download-my-full-cv",
     "title": "Sergio Jácobo Zavaleta",
     "section": "📦 Download My Full CV",
-    "text": "📦 Download My Full CV\nPrefer a formal, printable version?\n📥 Download CV as PDF"
+    "text": "📦 Download My Full CV\nPrefer a formal, printable version? Go to Other Formats in the sidebar and click on Typst or download it from 📥 here"
   },
   {
     "objectID": "about.html#beyond-academia",
@@ -298,7 +298,7 @@
     "href": "blog/posts/2023/01/01.html",
     "title": "Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Quarto &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Quarto &gt; Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)"
   },
   {
     "objectID": "blog/posts/2023/01/01.html#el-código",
@@ -319,7 +319,7 @@
     "href": "blog/posts/2023/03/03.html",
     "title": "Eficiencia en LaTeX: Manejo de Tablas Simplificado",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Research &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Research &gt; Eficiencia en LaTeX: Manejo de Tablas Simplificado"
   },
   {
     "objectID": "blog/posts/2023/03/03.html#dimensiones-en-latex",
@@ -340,7 +340,7 @@
     "href": "blog/posts/2023/05/05.html",
     "title": "Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Robotics &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Robotics &gt; Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial"
   },
   {
     "objectID": "blog/posts/2023/05/05.html#sistema-de-referencia-inercial-inertial-reference-frame",
@@ -361,7 +361,7 @@
     "href": "blog/posts/2024/01/01.html",
     "title": "Desde Fusion 360 a URDF: Construye y Simula tu Robot",
     "section": "",
-    "text": "Inicio &gt; Blog &gt; Robotics &gt; Post Actual"
+    "text": "Inicio &gt; Blog &gt; Robotics &gt; Desde Fusion 360 a URDF: Construye y Simula tu Robot"
   },
   {
     "objectID": "blog/posts/2024/01/01.html#configuración-básica",
@@ -410,14 +410,14 @@
     "href": "blog/quarto.html",
     "title": "Quarto",
     "section": "",
-    "text": "Quarto\nBienvenido a la sección de Quarto de La Tercera Fundación. Aquí comparto artículos sobre Quarto, markdown, RStudio y ahora Positron.\n← Volver al blog principal\n\n\n\n\n\n\n\n\n\n\nGuía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)\n\n\n11 minutos\n\n\nBasado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.\n\n\n\nSergio Jácobo\n\n\n15 abr 2023\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n\n\n\n\n 📘 Blog   🔬 Research   🤖 Robótica   📄 Quarto \n\n\n\n\n\n\n\n Volver arriba"
+    "text": "Quarto\nBienvenido a la sección de Quarto de La Tercera Fundación. Aquí comparto artículos sobre Quarto, markdown, RStudio y ahora Positron.\n← Volver al blog principal\n\n\n\n\n\n\n\n\n\n\nGuía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)\n\n\n11 minutos\n\n\n\nQuarto\n\n\nShinnyApp\n\n\n\nBasado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.\n\n\n\nSergio Jácobo\n\n\n15 abr 2023\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n\n\n\n\n 📘 Blog   📄 Quarto   🔬 Research   🤖 Robótica \n\n\n\n\n\n\n\n Volver arriba"
   },
   {
     "objectID": "blog/robotics.html",
     "href": "blog/robotics.html",
     "title": "Robotics",
     "section": "",
-    "text": "Robotics\n← Volver al blog principal\nBienvenido a la sección de Robótica de La Tercera Fundación. Aquí comparto artículos sobre robótica y variedades aprendidas en mi Máster.\n\n\n\n\n\n\n\n\n\n\nDespliega tu Robot en 3D: Guía para Crear un Visor URDF\n\n\n9 minutos\n\n\nTutorial para crear una aplicación de visualización de robots en URDF con Three.js\n\n\n\nSergio Jácobo\n\n\n15 jun 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDesde Fusion 360 a URDF: Construye y Simula tu Robot\n\n\n8 minutos\n\n\nManejo de exportación de archivos URDF utilizando Fusion 360\n\n\n\nSergio Jácobo\n\n\n15 may 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido\n\n\n3 minutos\n\n\nExplora las notas sobre la teoría básica en robótica, basadas principalmente en el libro Modern Robotics de Kevin M. Lynch y Frank C. Park.\n\n\n\nSergio Jácobo\n\n\n15 oct 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial\n\n\n2 minutos\n\n\nExplora los fundamentos esenciales en dinámica con estas notas detalladas sobre la teoría básica, centrándose en la distinción entre sistemas de referencia inercial y no…\n\n\n\nSergio Jácobo\n\n\n15 sept 2023\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n\n\n\n\n 📘 Blog   🔬 Research   🤖 Robótica   📄 Quarto \n\n\n\n\n\n\n\n Volver arriba"
+    "text": "Robotics\n← Volver al blog principal\nBienvenido a la sección de Robótica de La Tercera Fundación. Aquí comparto artículos sobre robótica y variedades aprendidas en mi Máster.\n\n\n\n\n\n\n\n\n\n\nDespliega tu Robot en 3D: Guía para Crear un Visor URDF\n\n\n9 minutos\n\n\n\nRobotics\n\n\nResearch\n\n\nURDF\n\n\nThree.js\n\n\n\nTutorial para crear una aplicación de visualización de robots en URDF con Three.js\n\n\n\nSergio Jácobo\n\n\n15 jun 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDesde Fusion 360 a URDF: Construye y Simula tu Robot\n\n\n8 minutos\n\n\n\nRobotics\n\n\nResearch\n\n\nURDF\n\n\nCAD\n\n\nROS\n\n\nCoppeliaSim\n\n\n\nManejo de exportación de archivos URDF utilizando Fusion 360\n\n\n\nSergio Jácobo\n\n\n15 may 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido\n\n\n3 minutos\n\n\n\nRobotics\n\n\nTheory\n\n\nDynamics\n\n\nKinematics\n\n\n\nExplora las notas sobre la teoría básica en robótica, basadas principalmente en el libro Modern Robotics de Kevin M. Lynch y Frank C. Park.\n\n\n\nSergio Jácobo\n\n\n15 oct 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEntendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial\n\n\n2 minutos\n\n\n\nRobotics\n\n\nTheory\n\n\nDynamics\n\n\nKinematics\n\n\n\nExplora los fundamentos esenciales en dinámica con estas notas detalladas sobre la teoría básica, centrándose en la distinción entre sistemas de referencia inercial y no…\n\n\n\nSergio Jácobo\n\n\n15 sept 2023\n\n\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n\n\n\n\n 📘 Blog   📄 Quarto   🔬 Research   🤖 Robótica \n\n\n\n\n\n\n\n Volver arriba"
   },
   {
     "objectID": "ideas/ideas.html",

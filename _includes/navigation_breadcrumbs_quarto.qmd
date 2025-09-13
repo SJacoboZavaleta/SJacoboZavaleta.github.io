@@ -1,6 +1,0 @@
-<div class="breadcrumbs">
-  <a href="../../../../index.qmd">Inicio</a> > 
-  <a href="../../../index.qmd">Blog</a> > 
-  <a href="../../../quarto.qmd">Quarto</a> > 
-  <span>Post Actual</span>
-</div>

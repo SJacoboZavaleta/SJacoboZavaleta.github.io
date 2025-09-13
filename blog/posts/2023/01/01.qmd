@@ -4,7 +4,7 @@ author: Sergio Jácobo
 description: Basado en las Tablas Peruanas de composición de Alimentos, Ministerio de Salud del Perú, Lima.
 date: 2023-04-15
 tags: 
-    - "Quarto"
+    - "quarto"
 categories:
     - "Quarto"
     - "ShinnyApp"
@@ -17,7 +17,7 @@ language:
     section-title-footnotes: Notas
 ---
 
-{{< include ../../../../_includes/navigation_breadcrumbs_quarto.qmd >}}
+{{< include ../../../../_includes/navigation_breadcrumbs.qmd >}}
 
 # A quien va dirigido?
 

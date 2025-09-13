@@ -1,0 +1,15 @@
+<!-- _includes/navigation_breadcrumbs.qmd -->
+
+<div class="breadcrumbs">
+  [Inicio](../../../../index.qmd) >
+  [Blog](../../../index.qmd) >
+  [{{< meta categories.1 >}}](../../../{{< meta tags.1 >}}.qmd) >
+  <span>{{< meta title >}}</span>
+</div>
+
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->

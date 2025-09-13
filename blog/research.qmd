@@ -4,9 +4,9 @@ repo-actions: false
 listing:
   id: "research-listing"
   include: 
-    tags: "Research"
+    tags: "research"
   exclude: 
-    tags: "Quarto"
+    tags: "quarto"
   contents:  
   - posts/2023/
   - posts/2024/
@@ -20,7 +20,7 @@ listing:
   sort-ui: false
   filter-ui: [title, tags]
   feed: true
-  fields: [image, date, title, author, description, reading-time]
+  fields: [image, date, title, author, description, reading-time, categories]
   image-placeholder: "../images/noPreview.jpg"
 page-layout: full
 lang: es
@@ -31,7 +31,7 @@ execute:
   echo: false
 ---
 
-# [Research]{.third-color}
+# [Research]{.second-color-card}
 
 ::: {.no-sidebars}
 

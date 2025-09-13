@@ -5,7 +5,7 @@ description: |
   Explora las notas sobre la teoría básica en robótica, basadas principalmente en el libro Modern Robotics de Kevin M. Lynch y Frank C. Park.
 date: 2023-10-15
 tags: 
-    - "Robotics"
+    - "robotics"
 categories:
     - "Robotics"
     - "Theory"
@@ -21,7 +21,7 @@ language:
     section-title-footnotes: Notas
 ---
 
-{{< include ../../../../_includes/navigation_breadcrumbs_robotics.qmd >}}
+{{< include ../../../../_includes/navigation_breadcrumbs.qmd >}}
 
 # Grados de libertad
 

@@ -28,9 +28,16 @@
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/research.html">Research</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/research.html">Research</a> &gt; <span>Guía didáctica de LaTeX para publicación en Revista Peruana</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/thumbnail.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Foto de Annie Spratt en Unsplash"><img src="https://sergiojacobo.com/blog/posts/2023/04/images/thumbnail.jpg" class="img-fluid figure-img" alt="Foto de Annie Spratt en Unsplash"></a></p>
@@ -349,9 +356,16 @@ Revista Peruana.”</span> August 15, 2023. <a href="https://sergiojacobo.com/bl
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/research.html">Research</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/research.html">Research</a> &gt; <span>Eficiencia en LaTeX: Manejo de Tablas Simplificado</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <div class="quarto-figure quarto-figure-left">
@@ -609,9 +623,16 @@ Simplificado.”</span> July 15, 2023. <a href="https://sergiojacobo.com/blog/po
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/research.html">Research</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/research.html">Research</a> &gt; <span>Overleaf y Zotero: Potenciando el Trabajo Colaborativo en la Nube</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <div class="quarto-figure quarto-figure-left">

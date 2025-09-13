@@ -28,9 +28,16 @@
 
 
 
+<!-- _includes/navigation_breadcrumbs.qmd -->
 <div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/quarto.html">Quarto</a> &gt; <span>Post Actual</span></p>
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/quarto.html">Quarto</a> &gt; <span>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</span></p>
 </div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
 <section id="a-quien-va-dirigido" class="level1">
 <h1>A quien va dirigido?</h1>
 <p>A todas los profesionales en nutrición que desean planificar o programar sus dietas nutricionales en base a la composición nutricional de diversos alimentos en la cocina peruana según la cantidad deseada.</p>

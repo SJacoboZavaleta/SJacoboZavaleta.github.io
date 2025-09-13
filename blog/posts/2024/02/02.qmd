@@ -5,7 +5,7 @@ description: |
     Tutorial para crear una aplicación de visualización de robots en URDF con Three.js
 date: 2024-06-15
 tags:
-    - "Robotics"
+    - "robotics"
 categories: 
     - "Robotics"
     - "Research"
@@ -25,7 +25,7 @@ language:
     section-title-footnotes: Notas
 ---
 
-{{< include ../../../../_includes/navigation_breadcrumbs_robotics.qmd >}}
+{{< include ../../../../_includes/navigation_breadcrumbs.qmd >}}
 
 # ¿Qué es URDF?
 
