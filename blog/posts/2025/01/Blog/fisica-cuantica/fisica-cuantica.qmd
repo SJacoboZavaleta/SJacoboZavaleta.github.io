@@ -20,6 +20,8 @@ listing:
   fields: [image, date, title, description, reading-time, categories]
 ---
 
+[← Volver al Blog de Ciencia](../index.qmd)
+
 # Posts
 
 :::{#fisica-cuantica-listing}

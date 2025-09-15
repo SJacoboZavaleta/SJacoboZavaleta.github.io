@@ -879,48 +879,6 @@ Quarto.”</span> September 13, 2025. <a href="https://sergiojacobo.com/blog/pos
   <media:content url="https://sergiojacobo.com/blog/posts/2025/01/images/thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
-  <title>Cómo Crear Breadcrumbs Dinámicos en Quarto</title>
-  <dc:creator>Sergio Jácobo</dc:creator>
-  <link>https://sergiojacobo.com/blog/posts/2025/02/02.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<!-- _includes/navigation_breadcrumbs.qmd -->
-<div class="breadcrumbs">
-<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/quarto.html">Quarto</a> &gt; <span>Cómo Crear Breadcrumbs Dinámicos en Quarto</span></p>
-</div>
-<!-- <div class="breadcrumbs">
-  <a href="../../../../index.qmd">Inicio</a> > 
-  <a href="../../../index.qmd">Blog</a> > 
-  <a href="../../../quarto.qmd">Quarto</a> > 
-  <span>Post Actual</span>
-</div> -->
-
-
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2025,
-  author = {Jácobo, Sergio},
-  title = {Cómo Crear Breadcrumbs Dinámicos en Quarto},
-  date = {2025-09-13},
-  url = {https://sergiojacobo.com/blog/posts/2025/02/02.html},
-  langid = {es}
-}
-</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2025" class="csl-entry quarto-appendix-citeas">
-Jácobo, Sergio. 2025. <span>“Cómo Crear Breadcrumbs Dinámicos en
-Quarto.”</span> September 13, 2025. <a href="https://sergiojacobo.com/blog/posts/2025/02/02.html">https://sergiojacobo.com/blog/posts/2025/02/02.html</a>.
-</div></div></section></div> ]]></description>
-  <category>Quarto</category>
-  <category>meta</category>
-  <category>navegación</category>
-  <category>shortcode</category>
-  <guid>https://sergiojacobo.com/blog/posts/2025/02/02.html</guid>
-  <pubDate>Fri, 12 Sep 2025 22:00:00 GMT</pubDate>
-  <media:content url="https://sergiojacobo.com/blog/posts/2025/02/images/thumbnail.png" medium="image" type="image/png"/>
-</item>
-<item>
   <title>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</title>
   <dc:creator>Sergio Jácobo</dc:creator>
   <link>https://sergiojacobo.com/blog/posts/2023/01/01.html</link>

@@ -9,7 +9,9 @@ listing:
   - posts/2023/
   - posts/2024/
   - posts/2025/
-  - "!posts/2025/01/Blog/"
+  - "!posts/2025/02/02.qmd"
+  - "!posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.qmd"
+  - "!posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.qmd"
   - "!quarto.qmd"
   - "!research.qmd"
   - "!robotics.qmd"
