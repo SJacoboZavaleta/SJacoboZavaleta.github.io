@@ -2,11 +2,12 @@
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: true
+freeze: auto
 
 # Enable banner style title blocks
 title-block-banner: true
-
+lang: es
+toc: true  
 citation: true
 license: CC BY-SA
 
@@ -25,9 +26,6 @@ include-in-header:
   - ../_includes/giscus.html
   - ../../_includes/fontawesome-2up.html
 include-after-body: ../_includes/div-giscus.html
-
-toc: true    
-toc-title: Contents
 
 execute:
   echo: false

@@ -55,7 +55,7 @@ $red: #C40000;
 $indigo: #2c6fc7ff;
 $purple: #9041c5ff;
 $orange: #FF9900;
-$yellow: #a1941cff;
+$yellow: #ddd482ff;
 $green-bright: #6AD400;
 
 // Bootstrap semantic colors
@@ -70,7 +70,7 @@ $dark:          $gray-900 !default;
 
 // Section-specific colors
 // $primary-color:  $primary;
-$second-color:  $cyan;
+$second-color:  $blue;
 $third-color:   $rose;
 $fourth-color: $green-bright;
 $fifth-color: $orange;
@@ -199,8 +199,8 @@ div.tippy-content a:hover {
   width: 6px;
   height: 44px;
   position: absolute;
-  margin-top: 0px;
-  margin-left: -6px;
+  margin-top: -5px;
+  margin-left: 0px;
 }
 
 // Right line
@@ -456,3 +456,10 @@ iframe.slide-deck {
 .third-color-card  { color: $third-color-card; }
 .fourth-color-card { color: $fourth-color-card; }
 .fifth-color-card  { color: $fifth-color-card; }
+
+
+.first-color  { color: $primary; }
+.second-color { color: $second-color }
+.third-color  { color: $third-color; }
+.fourth-color { color: $fourth-color; }
+.fifth-color  { color: $fifth-color; }

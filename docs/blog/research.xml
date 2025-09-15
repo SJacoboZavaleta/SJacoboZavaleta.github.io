@@ -59,7 +59,7 @@
 <h1>Vista previa de la plantilla</h1>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -92,7 +92,7 @@ Figura&nbsp;1: Ejemplo de publicación en Norte Médico
 <p>En este método, se emplea el editor de ecuaciones de Microsoft Word. Primero, se escriben las ecuaciones de forma manual, ingresando símbolo por símbolo (ver Figura&nbsp;2). Luego, asegurándose de que esté activada la opción <code>latex</code>, se selecciona la ecuación deseada y se copia (<code>control + C</code>) para pegarla posteriormente en su destino (<code>control + V</code>).</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -120,7 +120,7 @@ Figura&nbsp;2: Usando recursos en línea
 <p>En este método, se utiliza el recurso web en línea <a href="https://equationeditor.atomurl.net/">Equation Editor</a>. Después de ingresar la ecuación deseada (ver Figura&nbsp;3), se presiona el botón <code>Save to LaTeX</code>, lo que abrirá una ventana con el código LaTeX debidamente formateado, listo para ser copiado y utilizado en el documento.</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -162,7 +162,7 @@ Para escribir correctamente los distntios símbolos matemáticos es necesario ut
 <p>A continuación, se incluyen ejemplos visuales que ilustran estas pautas:</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -186,7 +186,7 @@ Figura&nbsp;4: Tabla simple en una hoja de Excel
 </div>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -232,7 +232,7 @@ Figura&nbsp;5: Tabla más elaborada en una hoja de Excel
 <p>A continuación, se presentan ejemplos visuales que ilustran estos procesos:</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -256,7 +256,7 @@ Figura&nbsp;6: Figura única en un hoja de Excel
 </div>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -280,7 +280,7 @@ Figura&nbsp;7: Figura única creada a partir de una tabla de Excel
 </div>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">knitr<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
@@ -321,8 +321,6 @@ Figura&nbsp;8: Pasos para guardar o exportar una gráfica en calidad alta creada
 </div>
 </div>
 
-
-<!-- -->
 
 </section>
 </section>
@@ -589,8 +587,6 @@ Figura&nbsp;6: Caso 6
 </div>
 </div>
 
-
-<!-- -->
 
 </section>
 </section>
@@ -1442,8 +1438,6 @@ Más allá de esta guía
 </div>
 </div>
 
-
-<!-- -->
 
 </section>
 </section>

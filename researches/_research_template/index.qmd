@@ -1,0 +1,111 @@
+---
+title: "Título del Artículo Científico"
+description: |
+  Breve descripción del trabajo (una oración). Ej: Propuesta de un nuevo algoritmo para la detección de señales EEG en pacientes epilépticos.
+date: 2025-06-03
+
+author: 
+  - name: "Sergio Jacobo-Zavaleta"
+    affiliation: "Universidad X"
+  - name: "Coautor 1"
+    affiliation: "Institución Y"
+  - name: "Coautor 2"
+    affiliation: "Institución Z"
+
+image: images/publication-thumbnail.png
+image-alt: "Portada del artículo o visualización principal"
+
+journal: 
+  name: "IEEE Latin America Transactions"
+  volume: 21
+  issue: 3
+  pages: "123–456"
+  year: 2023
+
+article:
+  doi: "10.1109/tla.2023.10068849"
+
+categories:
+  - Research
+  - Machine Learning
+  - Medical Signal Processing
+
+tags: []
+
+twitter-card:
+  image: images/twitter-card-research.png
+  image-alt: "Publicación científica en IEEE"
+  image-width: 600
+  image-height: 314
+  card-style: summary_large_image
+  creator: "@JacoboZavaleta"
+  site: "@JacoboZavaleta"
+---
+
+## 📎 Enlaces
+
+[📄 PDF](https://doi.org/{{< meta doi >}}) | [🔗 DOI](https://doi.org/{{< meta doi >}}) | [🐙 Código](https://github.com/SJacoboZavaleta/project-name) | [🗄️ Datos](https://figshare.com/s/xxxxx) | [📖 Revista](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=99)
+
+## 🏛️ Ficha de la publicación
+
+- **Revista:** {{< meta journal.name >}}
+- **Volumen:** {{< meta journal.volume >}}, **Número:** {{< meta journal.issue >}}
+- **Páginas:** {{< meta journal.pages >}}
+- **Año:** {{< meta journal.year >}}
+- **DOI:** [{{< meta article.doi >}}](https://doi.org/{{< meta article.doi >}})
+
+## 📄 Resumen
+
+> *"Inserta aquí un resumen claro y conciso del artículo, adaptado para lectores no especializados. Máximo 3–4 líneas."*
+
+Este estudio presenta [breve descripción del problema], proponiendo [método o solución]. Los resultados muestran [hallazgo principal], lo que sugiere [implicación práctica o teórica]. Este trabajo contribuye al campo de [área] al [contribución específica].
+
+
+## 🔍 Palabras clave
+
+- Inteligencia Artificial
+- Señales Biomédicas
+- Aprendizaje Profundo
+- Robótica Clínica
+- Dispositivos Médicos
+
+## 🧩 Contribuciones clave
+
+- Desarrollo de un nuevo modelo de detección de crisis epilépticas con precisión superior al 95%.
+- Implementación eficiente en dispositivos de borde (edge computing) para monitoreo continuo.
+- Validación con datos reales de pacientes en entornos clínicos.
+
+
+## 📚 Citación (BibTeX)
+
+Para citar este trabajo, usa:
+
+```bibtex
+@article{jacobo2023deep,
+  title={A Deep Learning Approach for Epilepsy Seizure Identification Using EEG Signals},
+  author={Jacobo-Zavaleta, Sergio and Zavaleta, Jorge},
+  journal={IEEE Latin America Transactions},
+  volume={21},
+  number={3},
+  pages={123--456},
+  year={2023},
+  publisher={IEEE},
+  doi={10.1109/tla.2023.10068849}
+}
+```
+
+## 🖼️ Figuras destacadas
+
+<!-- Opcional: incluye 1-2 figuras clave del artículo -->
+![Gráfico de rendimiento del modelo](images/figure1.png){.thumbnail-image}
+
+*Rendimiento del modelo frente a benchmarks tradicionales.*
+
+
+## 💬 Comentarios o reflexiones
+
+> *(Opcional: espacio para reflexionar sobre el proceso de escritura, lecciones aprendidas, limitaciones, o cómo este trabajo conecta con otros proyectos en tu blog)*
+
+Escribir este artículo fue un desafío técnico y lingüístico, especialmente al tener que comunicar conceptos complejos de manera clara. Lo hice en español primero, luego adapté al inglés para la revista. Este proceso me enseñó la importancia de la **redacción iterativa** y el uso de herramientas como $\LaTeX$ y Quarto para mantener el flujo de trabajo reproducible.
+
+

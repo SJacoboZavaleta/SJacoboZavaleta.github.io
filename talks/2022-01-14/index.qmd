@@ -2,7 +2,7 @@
 title: Bachelor Thesis Presentation
 description: |
     "Modeling and Simulation of a Clinical Robot Assisted by 3D Ultrasound to Improve Needle Insertion Guidance in Percutaneous Breast Biopsy
-date: 2024-09-16
+date: 2022-01-14
 author: 
   - name: Sergio Jácobo-zavaleta
 image: s_bachelor_presentation.png

@@ -8,7 +8,7 @@ execute:
   echo: false
 ---
 
-# [Let's Connect – I'm Here for You!]{.primary}
+# [Let's Connect – I'm Here for You!]{.first-color}
 
 You can leave comments or feedback about any of my blog posts, projects, or other content using the comment section at the bottom of each page.
 
@@ -30,8 +30,10 @@ library(distilltools)
   url = "https://www.linkedin.com/in/sjacobozavaleta/"
 )`
 
-For direct inquiries, feel free to email me at:
-- [100514566@alumnos.uc3m.es](.heading-font)
-- [sjacobo@unitru.edu.pe](.heading-font)
+For direct inquiries, feel free to email me at:  
+
+- [sjacobo@pa.uc3m.es](.heading-font)  
+- [sjacobo@unitru.edu.pe](.heading-font)  
+
 
 I'm happy to answer questions, discuss topics related to my blog and projects, or chat about your own work in robotics and automation. Looking forward to connecting!

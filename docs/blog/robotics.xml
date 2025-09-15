@@ -733,8 +733,6 @@ Jácobo-Zavaleta, Sergio. 2024. <em>“Despliega tu Robot en 3D: Guía para Crea
 </div>
 
 
-<!-- -->
-
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2024,
@@ -1123,7 +1121,7 @@ Figura&nbsp;3: Ejemplos de robots importados como URDF
 <p>Ya sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como <em>“top-down”</em> y <em>“bottom-up”</em>) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o <em>“links”</em> y <em>“joints”</em> como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:</p>
 <div class="cell" data-layout-align="default">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb2-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -1938,8 +1936,6 @@ Figura&nbsp;8: Simulación del robot UR5 integrado en CoppeliaSim
 </div>
 
 
-<!-- -->
-
 </section>
 </section>
 
@@ -2045,8 +2041,6 @@ tu Robot.”</span> May 15, 2024. <a href="https://sergiojacobo.com/blog/posts/2
 </div>
 </div>
 
-
-<!-- -->
 
 </section>
 
@@ -2165,8 +2159,6 @@ Tip
 </div>
 </div>
 
-
-<!-- -->
 
 </section>
 </section>

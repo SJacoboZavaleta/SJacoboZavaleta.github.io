@@ -1,0 +1,8 @@
+<!-- _includes/navigation_breadcrumbs.qmd -->
+
+<div class="breadcrumb">
+  [Inicio](../../../01.qmd) >
+  [Blog](../../index.qmd) >
+  [{{< meta categories.1 >}}](../{{< meta tags.1 >}}.qmd) >
+  <span>{{< meta title >}}</span>
+</div>

@@ -1,0 +1,103 @@
+---
+title: "Needle Placement for Robot-Assisted 3D-guided Ultrasound Breast Biopsy: A Preliminary Study"
+description: |
+  Propuesta de un sistema robótico guiado por ultrasonido 3D para mejorar la precisión y reproducibilidad del posicionamiento de agujas en biopsias mamarias.
+date: 2023-03-01
+
+author: 
+  - name: "Sergio Jacobo-Zavaleta"
+    affiliation: "Universidad Carlos III de Madrid, España"
+  - name: "Jorge Zavaleta"
+    affiliation: "Universidad Nacional de Trujillo, Perú"
+
+image: images/thumbnail.png
+image-alt: "Representación esquemática del sistema robótico para biopsia asistida por ultrasonido"
+
+journal: 
+  name: "IEEE Latin America Transactions"
+  volume: 21
+  issue: 3
+  pages: "115–122"
+  year: 2023
+
+article:
+  doi: "10.1109/TLA.2023.10068849"
+
+categories:
+  - Research
+  - Robotics
+  - Medical Imaging
+  - Clinical Robotics
+
+tags: []
+
+twitter-card:
+  image: images/thumbnail.png
+  image-alt: "Publicación científica en IEEE sobre biopsia robótica asistida por ultrasonido"
+  image-width: 600
+  image-height: 314
+  card-style: summary_large_image
+  creator: "@JacoboZavaleta"
+  site: "@JacoboZavaleta"
+---
+
+![Graphical Abstract](images/GraphicalAbstract.png)
+
+## 📎 Enlaces
+
+[📄 PDF](https://doi.org/{{< meta article.doi >}}) | 
+[🔗 DOI](https://doi.org/{{< meta article.doi >}}) | 
+[🐙 Código y datos en CodeOcean](https://codeocean.com/capsule/1270271/tree/v1) | 
+[📖 Revista](https://ieeexplore.ieee.org/document/10068849)
+
+## 🏛️ Ficha de la publicación
+
+- **Revista:** [*{{< meta journal.name >}}*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=99)
+- **Volumen:** {{< meta journal.volume >}}, **Número:** {{< meta journal.issue >}}
+- **Páginas:** {{< meta journal.pages >}}
+- **Año:** {{< meta journal.year >}}
+- **DOI:** [`{{< meta article.doi >}}`](https://doi.org/{{< meta article.doi >}})
+
+## 📄 Resumen
+
+> *"Este estudio presenta un sistema robótico para el posicionamiento preciso de agujas en biopsias percutáneas de mama, guiado por imágenes de ultrasonido tridimensional (US 3D). El sistema combina una plataforma robótica controlada por software con un algoritmo de planificación de trayectorias que optimiza el ángulo y profundidad de inserción. Los resultados preliminares muestran una mejora significativa en la precisión y reproductibilidad del procedimiento, reduciendo el margen de error asociado a la variabilidad humana. Esta solución tiene potencial para aumentar la eficacia diagnóstica y disminuir el estrés tanto para pacientes como para médicos."*
+
+El objetivo de este trabajo fue diseñar y evaluar un prototipo robótico capaz de guiar la inserción de agujas durante biopsias mamarias bajo supervisión de ultrasonido 3D. El sistema permite planificar la trayectoria óptima de la aguja y ejecutarla con alta precisión, minimizando el riesgo de dañar tejidos sanos. Este enfoque representa un paso hacia la estandarización de procedimientos quirúrgicos mínimamente invasivos en entornos clínicos.
+
+## 🔍 Palabras clave
+
+- Robótica Clínica
+- Ultrasonido 3D
+- Biopsia Mamaria
+- Sistemas de Guiado Quirúrgico
+- Automatización Médica
+
+## 🧩 Contribuciones clave
+
+- Diseño de una plataforma robótica modular para aplicaciones de intervención médica.
+- Desarrollo de un algoritmo de planificación de trayectorias basado en segmentación de imágenes US 3D.
+- Validación funcional del sistema en entornos simulados y con fantomas físicos.
+- Potencial para integración en sistemas de telemedicina o formación médica.
+
+## 📚 Citación (BibTeX)
+
+Para citar este trabajo, usa:
+
+```bibtex
+@article{jacobo2023needle,
+  title={Needle Placement for Robot-Assisted 3D-guided Ultrasound Breast Biopsy: A Preliminary Study},
+  author={Jacobo-Zavaleta, Sergio and Zavaleta, Jorge},
+  journal={IEEE Latin America Transactions},
+  volume={21},
+  number={3},
+  pages={115--122},
+  year={2023},
+  publisher={IEEE},
+  doi={10.1109/TLA.2023.10068849}
+}
+```
+
+## Comentarios o reflexiones
+
+Este artículo es muy especial para mí porque nació de mi Trabajo Fin de Grado (TFG) sobre robótica clínica. Fue mi primer acercamiento serio a la intersección entre ingeniería mecatrónica y salud. Lo escribí mientras aprendía $\LaTeX$ y herramientas como Git y Quarto, lo cual hizo el proceso más desafiante pero también más formativo. Verlo publicado en una revista indexada fue una motivación enorme para seguir investigando. Hoy, años después, sigo trabajando en temas relacionados, pero ahora desde una perspectiva más madura y técnica. 
+

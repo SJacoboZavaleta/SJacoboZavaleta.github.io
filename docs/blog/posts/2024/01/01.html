@@ -76,8 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-be95a99064d7c6f1a9d9998502355b25.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-ff94a45166a54c3c3087a0ef9bfcea43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/bootstrap/bootstrap-dark-619a615e8b6b749a234f31ad2d432226.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../../site_libs/bootstrap/bootstrap-8609c3b22b35fd599bca53a4051c234f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dark-8b9c97e23d7fa7f27da01c18edc8f6ed.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../../index.html">
-    <span class="navbar-title"><span class="icon-line2"></span> Sergio<span class="icon-line3"></span><span class="icon-line"></span> Jacobo</span>
+    <span class="navbar-title"><span class="icon-line2"></span>  Sergio<span class="icon-line3"></span><span class="icon-line"></span> Jacobo</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Desde Fusion 360 a URDF: Construye y Simula tu Robot</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Ver el código fuente</a></li></ul></div></div>
+      <h1 class="title">Desde Fusion 360 a URDF: Construye y Simula tu Robot</h1>
                   <div>
         <div class="description">
           <p>Manejo de exportación de archivos URDF utilizando Fusion 360</p>
@@ -540,7 +540,7 @@ Figura&nbsp;3: Ejemplos de robots importados como URDF
 <p>Ya sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como <em>“top-down”</em> y <em>“bottom-up”</em>) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o <em>“links”</em> y <em>“joints”</em> como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:</p>
 <div class="cell" data-layout-align="default">
 <details open="" class="code-fold">
-<summary>Toggle the code</summary>
+<summary>Mostrar u ocultar el código</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="va">G</span> <span class="ot">{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">  </span><span class="at">fontname</span><span class="ot">=</span><span class="st">"Helvetica,Arial,sans-serif"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span><span class="kw">node</span><span class="co"> </span><span class="ot">[</span><span class="at">fontname</span><span class="ot">=</span><span class="st">"Helvetica,sans-serif"</span><span class="ot">]</span></span>
@@ -884,8 +884,6 @@ Figura&nbsp;8: Simulación del robot UR5 integrado en CoppeliaSim
 </div>
 
 
-<!-- -->
-
 </section>
 </section>
 
@@ -1132,57 +1130,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1567,244 +1514,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   };
   
 })();
-          </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Desde Fusion 360 a URDF: Construye y Simula tu Robot"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Sergio Jácobo</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Manejo de exportación de archivos URDF utilizando Fusion 360</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-05-15</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - "robotics"</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Robotics"</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Research"</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">  - "URDF"</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">  - "CAD"</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">  - "ROS"</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">  - "CoppeliaSim"</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="an">reading-time:</span><span class="co"> true</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/thumbnail.png</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> A robot generated by IA.</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="an">language:</span><span class="co"> </span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">    section-title-footnotes: Notas</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../../../../_includes/navigation_breadcrumbs.qmd &gt;}}</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="al">![Ruta de trabajo para utilizar archivos URDF](images/logos_URDF_pathway.png)</span>{fig-align="center" width=60%} </span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="fu"># ¿Qué es URDF?</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>El formato unificado de descripción de robótica (URDF) es un tipo de archivo XML que incluye la descripción física de un robot. Es básicamente un modelo 3D con información sobre articulaciones, motores, masa, etc. Estos archivos se ejecutan a través del Sistema Operativo de Robots (ROS). Los datos del archivo informan al operador humano sobre el aspecto y las capacidades del robot antes de que comiencen a operarlo.</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>Estos archivos también se utilizan en simuladores para probar el comportamiento del robot antes de su despliegue en el mundo real, o en la creación de un gemelo digital para la visualización en tiempo real y bidireccional del estado de un dispositivo robótico.</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>Muchos fabricantes de robots tienen modelos URDF de sus dispositivos disponibles para descargar. Pero si no es el caso, se tendrá que crear desde cero. La solución más práctica es generarlo a partir de un dibujo CAD 3D, dado que permite crear formas y relaciones mecánicas complejas, manteniendo una relación eslabón-articulación completamente referenciada y necesaria en el archivo URDF. </span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Configuración básica</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>La relación entre elementos se aprecia de forma intuitiva en la @fig-rosURDF. Un ejemplo de código básico y su representación gráfica se aprecian en la @fig-ejemplo-urdf.</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>::: {#fig-rosURDF layout-nrow=2}</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="al">![Detalle de un eslabón](images/link.png)</span>{width=70%}</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="al">![Relación eslabón-articulación](images/joint.png)</span>{width=60%}</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="al">![Relación entre eslabones](images/joint_link.png)</span>{fig-align="center" width=60%}</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>Representación de links, joints y sus orígenes utilizados en URDF </span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>::: {#fig-ejemplo-urdf layout-ncol=2}</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="in">```xml</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a> 1 &lt;<span class="kw">robot</span><span class="ot"> name=</span><span class="st">"test_robot"</span>&gt;</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a> 2   &lt;<span class="kw">link</span><span class="ot"> name=</span><span class="st">"link1"</span> /&gt;</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a> 3   &lt;<span class="kw">link</span><span class="ot"> name=</span><span class="st">"link2"</span> /&gt;</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a> 4   &lt;<span class="kw">link</span><span class="ot"> name=</span><span class="st">"link3"</span> /&gt;</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a> 5   &lt;<span class="kw">link</span><span class="ot"> name=</span><span class="st">"link4"</span> /&gt;</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a> 6 </span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a> 7   &lt;<span class="kw">joint</span><span class="ot"> name=</span><span class="st">"joint1"</span><span class="ot"> type=</span><span class="st">"continuous"</span>&gt;</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a> 8     &lt;<span class="kw">parent</span><span class="ot"> link=</span><span class="st">"link1"</span>/&gt;</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a> 9     &lt;<span class="kw">child</span><span class="ot"> link=</span><span class="st">"link2"</span>/&gt;</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>10     &lt;<span class="kw">origin</span><span class="ot"> xyz=</span><span class="st">"5 3 0"</span><span class="ot"> rpy=</span><span class="st">"0 0 0"</span> /&gt;</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>11     &lt;<span class="kw">axis</span><span class="ot"> xyz=</span><span class="st">"-0.9 0.15 0"</span> /&gt;</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>12   &lt;/<span class="kw">joint</span>&gt;</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>13 </span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>14   &lt;<span class="kw">joint</span><span class="ot"> name=</span><span class="st">"joint2"</span><span class="ot"> type=</span><span class="st">"continuous"</span>&gt;</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>15     &lt;<span class="kw">parent</span><span class="ot"> link=</span><span class="st">"link1"</span>/&gt;</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>16     &lt;<span class="kw">child</span><span class="ot"> link=</span><span class="st">"link3"</span>/&gt;</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>17     &lt;<span class="kw">origin</span><span class="ot"> xyz=</span><span class="st">"-2 5 0"</span><span class="ot"> rpy=</span><span class="st">"0 0 1.57"</span> /&gt;</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>18     &lt;<span class="kw">axis</span><span class="ot"> xyz=</span><span class="st">"-0.707 0.707 0"</span> /&gt;</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>19   &lt;/<span class="kw">joint</span>&gt;</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>20 </span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>21   &lt;<span class="kw">joint</span><span class="ot"> name=</span><span class="st">"joint3"</span><span class="ot"> type=</span><span class="st">"continuous"</span>&gt;</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>22     &lt;<span class="kw">parent</span><span class="ot"> link=</span><span class="st">"link3"</span>/&gt;</span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>23     &lt;<span class="kw">child</span><span class="ot"> link=</span><span class="st">"link4"</span>/&gt;</span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>24     &lt;<span class="kw">origin</span><span class="ot"> xyz=</span><span class="st">"5 0 0"</span><span class="ot"> rpy=</span><span class="st">"0 0 -1.57"</span> /&gt;</span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>25     &lt;<span class="kw">axis</span><span class="ot"> xyz=</span><span class="st">"0.707 -0.707 0"</span> /&gt;</span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>26   &lt;/<span class="kw">joint</span>&gt;</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>27 &lt;/<span class="kw">robot</span>&gt;</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="al">![Visualización con Graphviz](images/graphiz.png)</span>{width=65%}</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>Formato URDF y su representación gráfica de los elementos del robot</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>Para una descripción más detallada sobre el formato URDF y su configuración, se recomienda visitar la <span class="co">[</span><span class="ot">documentación URDF en ROS</span><span class="co">](https://wiki.ros.org/urdf/Tutorials/Create%20your%20own%20urdf%20file)</span> o algunas <span class="co">[</span><span class="ot">notas</span><span class="co">](https://abedgnu.github.io/Notes-ROS/chapters/ROS/10_robot_modeling/urdf.html)</span>.</span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aplicaciones</span></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>::: {#fig-aplicaciones layout-ncol=2}</span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">En Omniverse</span><span class="co">](https://docs.omniverse.nvidia.com/kit/docs/omniverse-urdf-importer/latest/index.html)</span>](images/urdf_franka.png)</span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">En Rviz</span><span class="co">](https://discourse.ros.org/t/urdf-viz-urdf-file-viewer/2472)</span>](images/urdf_rviz.png){width=80%}</span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>Ejemplos de robots importados como URDF</span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="fu"># Creando tu robot </span></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consideraciones CAD</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>Ya sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como *"top-down"* y *"bottom-up"*) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o *"links"* y *"joints"* como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:</span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{dot}</span></span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="in">//| label: fig-cad-urdf</span></span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="in">//| fig-cap: "Relación entre los elementos entre los archivos CAD y URDF"</span></span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="in">digraph G {</span></span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="in">  fontname="Helvetica,Arial,sans-serif"</span></span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="in">    node [fontname="Helvetica,sans-serif"]</span></span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="in">    edge [fontname="Cambria,sans-serif"]</span></span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph cluster_0 {</span></span>
-<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a><span class="in">        style=filled;</span></span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="in">        color="#03AED2";</span></span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a><span class="in">        node [style=filled,color="#FEEFAD"];</span></span>
-<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="in">        label = "CAD";</span></span>
-<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="in">        "Raiz" -&gt; "Componente 1"</span></span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a><span class="in">        "Raiz" -&gt; "Componente 2"</span></span>
-<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a><span class="in">        </span></span>
-<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a><span class="in">        "Componente 1" -&gt; "Cuerpo 1"</span></span>
-<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="in">        "Componente 1" -&gt; "Cuerpo 2"</span></span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a><span class="in">        "Componente 1" -&gt; "Cuerpo 3"</span></span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a><span class="in">        "Componente 2" -&gt; "Cuerpo 4"</span></span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a><span class="in">        "Componente 2" -&gt; "Cuerpo 5"</span></span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a><span class="in">        "Componente 2" -&gt; "Cuerpo 6"</span></span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph cluster_1 {</span></span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a><span class="in">        style=filled;</span></span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a><span class="in">        node [style=filled, color="#F3B95F"]; "Body 4, 5, 6"; "Body 1, 2 y 3"</span></span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a><span class="in">        label = "URDF";</span></span>
-<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a><span class="in">        color="#FEFFD2";</span></span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a><span class="in">        node [shape=box,style=filled,color="#FF7D29"]; "Link 1";</span></span>
-<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a><span class="in">        node [shape=diamond,style=filled,color="#FFBF78"]; "Link 2";</span></span>
-<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a><span class="in">        "Link 2" -&gt; "Body 4, 5, 6"</span></span>
-<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="in">        "Link 1" -&gt; "Link 2" [label="Joint 1"]</span></span>
-<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="in">        "Link 1" -&gt; "Body 1, 2 y 3"</span></span>
-<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
-<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>La @fig-cad-urdf ejemplifica que es necesario que en Fusion 360, las partes principales del robot se definan como **componentes**, creados a partir de subpartes (**cuerpos**). Manteniendo esta relación en todo momento, se garantiza y facilita la definición de links y joints de forma correcta.</span>
-<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>En esta oportunidad, se utilizó como ejemplo el robot colaborativo **UR5** de <span class="co">[</span><span class="ot">Universal Robots</span><span class="co">](https://www.universal-robots.com/products/ur5-robot/)</span> a lo largo de todo el post. Así, en la @fig-robotCad se aprecia la jerarquía de los componentes y cuerpos creados durante el dibujo. Por ejemplo, el segundo eslabón se compone de 9 subpartes (de tipo *"body"* en Fusion 360), evitando la anidación de componentes en todo momento. </span>
-<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="al">![Ruta de trabajo para utilizar archivos URDF](images/fusion2.png)</span>{fig-align="left" #fig-robotCad} </span>
-<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exportando un archivo URDF</span></span>
-<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>Luego de realizar nuestro dibujo CAD, se recomienda utilizar un plugin para generar de forma automática y bajo la mesa, todo el código necesario para la descripción gráfica de nuestro robot. Esto nos permite centrarnos principalmente en lo importante durante el modelado. Sin embargo, dado que cada plugin disponible depende del software utilizado, como Solidworks, FreeCAD o Fusion360. </span>
-<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>Para ello, se utilizó el plugin <span class="co">[</span><span class="ot">dheena2k2/fusion2urdf-ros2</span><span class="co">](https://github.com/dheena2k2/fusion2urdf-ros2)</span> para generar archivos URDF orientado a ROS2, el mismo que se basó en otro plugin de <span class="co">[</span><span class="ot">syuntoku14/fusion2urdf</span><span class="co">](https://github.com/dheena2k2/fusion2urdf-ros2)</span> orientado a ROS1.</span>
-<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consideraciones CAD</span></span>
-<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>Para generar correctamente el archivo URDF, se requiere:</span>
-<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Los eslabones del robot deben definirse como componentes.</span>
-<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El componente base debe renombrarse como <span class="in">`base_link`</span>.  </span>
-<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cada componente debe contener únicamente cuerpos simples. No utilizar componentes anidados.  </span>
-<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cuando se definen las relaciones de articulación (joint):</span>
-<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a><span class="ss">  1. </span>Se selecciona primero el eslabón hijo (child link) como Componente 1.</span>
-<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a><span class="ss">  2. </span>Luego, el eslabón padre (parent link) como Componente 2.</span>
-<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a><span class="ss">  3. </span>Verificar que el movimiento del grado de libertad (por ejemplo, de rotación o traslación) siga el eje de rotación +Z.</span>
-<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modificando nuestro archivo</span></span>
-<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a><span class="ss"> 1. </span>Dentro del conjunto de la carpeta exportada, centrarse en las carpetas <span class="in">`\urdf`</span> y <span class="in">`\meshes`</span> que contienen el archivo URDF y los archivos de modelo 3D.</span>
-<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a><span class="ss"> 2. </span>Cambiar la extensión del archivo URDF de <span class="in">`.xacro`</span> por <span class="in">`.urdf`</span>.</span>
-<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="ss"> 3. </span>Verificar que el nombre de los archivos *mesh* (formato STL) referenciados dentro del archivo URDF coincidan con sus archivos en la carpeta <span class="in">`\meshes`</span>. Si no, corregir.</span>
-<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a><span class="ss"> 4. </span>Corregir todos los enlaces de referencia en los entornos <span class="in">`&lt;geometry&gt;`</span> del archivo URDF:</span>
-<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="ss">     1. </span>Del siguiente código:  </span>
-<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a>     <span class="in">```xml</span></span>
-<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">geometry</span>&gt;</span>
-<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">mesh</span><span class="ot"> filename=</span><span class="st">"file://$(find UR5_description)/meshes/base_link.stl"</span><span class="ot"> scale=</span><span class="st">"0.001 0.001 0.001"</span>/&gt;</span>
-<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">geometry</span>&gt;</span>
-<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>    <span class="in">```</span></span>
-<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a><span class="ss">     2. </span>Reemplazar así:</span>
-<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>    <span class="in">```xml</span></span>
-<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">geometry</span>&gt;</span>
-<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">mesh</span><span class="ot"> filename=</span><span class="st">"package://meshes/base_link.stl"</span><span class="ot"> scale=</span><span class="st">"0.001 0.001 0.001"</span>/&gt;</span>
-<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">geometry</span>&gt;</span>
-<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>    <span class="in">```</span></span>
-<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
-<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>Para verificar si nuestro archivo URDF se creó correctamente antes de importarlo a algún simulador, podemos utilizar un visualizador como RViz en Ubuntu. Sin embargo, para los usuarios de Windows, la aplicación <span class="co">[</span><span class="ot">urdf-loaders</span><span class="co">](https://gkjohnson.github.io/urdf-loaders/javascript/example/bundle/index.html)</span> de <span class="co">[</span><span class="ot">gkjohnson</span><span class="co">](https://github.com/gkjohnson/urdf-loaders/)</span> nos permite visualizar y manipular de forma intuitiva el resultado de nuestro robot en línea. Incluso, viene un ejemplo de un robot hexápodo ATHLETE. Para nuestro </span>
-<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>::: {layout-nrow=2}</span>
-<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a><span class="al">![Robot ATHLETE](images/visorURDF.jpeg)</span>{fig-align="center" width=45%} </span>
-<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a><span class="al">![Robot UR5](images/visorURDF_ur5.jpeg)</span>{fig-align="center" width=45%}</span>
-<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="fu"># Importando a tu simulador </span></span>
-<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>Finalmente, dependiendo del simulador a utilizar, se requerirán ciertos parámetros o configuraciones para importar correctamente el robot en formato URDF. En cualquier caso, se debe verificar siempre la relación entre links y joints y cómo reaccionan al movimiento de los joints.</span>
-<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Para CoppeliaSim</span></span>
-<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Dirigirse a la opción de importación según <span class="in">`Modules -&gt; Importers -&gt; URDF importer`</span>.</span>
-<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Seleccionar la opción <span class="in">`Convex hull of non-convex collision links`</span> para mejorar el rendimiento de simulación según la @fig-urdfImporter. </span>
-<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>  <span class="al">![Opciones de URDF importer](images/coppeliaSim_1.png)</span>{#fig-urdfImporter} </span>
-<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Finalmente, el resultado se aprecia en la siguiente figura. Nótese la jerarquía de los elementos del robot, de forma secuencial, correspondiente a un robot de cadena abierta como el robot cooperativo UR5 en la @fig-coppeliaSimWithRobot.  </span>
-<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>  <span class="al">![Vista de CoppeliaSim](images/coppeliaSim_2.png)</span>{#fig-coppeliaSimWithRobot}</span>
-<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>Por otro lado, CoppeliaSim ofrece una gran cantidad de robots comerciales incluidos en el programa para arrastrar al espacio de trabajo y comenzar a trabajar. Esto reduce el tiempo de creación del modelo cuando se pretende utilizar algún robot comercial disponible, como Sawyer, Kuka LBR4, Franka Emika Panda, etc. La @fig-ur5-coppelia-incluido muestra la simulación cinemática por defecto luego de importar el robot desde el panel navegador de robots.</span>
-<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="al">![Simulación del robot UR5 integrado en CoppeliaSim](images/UR5.gif)</span>{width=100% #fig-ur5-coppelia-incluido}</span>
-<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>¡Y ahí lo tienes! Siguiendo estos sencillos pasos, puedes crear y exportar tus propios archivos URDF desde Fusion 360, y usarlos para simular tus robots en CoppeliaSim o cualquier otro simulador compatible con URDF. ¡Feliz simulación!</span>
-<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a>::: {.further-info}</span>
-<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a>::: grid</span>
-<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-12}</span>
-<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a>::: {.bio-footer}</span>
-<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>&lt;img src="../../../../../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer"&gt;</span>
-<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>&lt;div class="p-footer"&gt;</span>
-<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a>  Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <span class="co">[</span><span class="ot">Twitter</span><span class="co">](https://twitter.com/JacoboZavaleta)</span>, ver algunos repositorios de mi trabajo en <span class="co">[</span><span class="ot">Github</span><span class="co">](https://www.github.com/SJacoboZavaleta)</span>, o leer más sobre mí en este <span class="co">[</span><span class="ot">sitio web</span><span class="co">](../../../../../about.qmd)</span>.</span>
-<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
-<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a>:::</span>
-</code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+          </script>
 
 
 

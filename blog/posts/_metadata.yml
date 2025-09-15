@@ -9,8 +9,8 @@ license: CC BY-SA
 code-block-border-left: "#9ef8f5"
 code-overflow: wrap
 code-fold: show
-code-summary: "Toggle the code"
-code-tools: true
+code-summary: "Mostrar u ocultar el código"
+code-tools: false
 
 # --- Execution ---
 execute:

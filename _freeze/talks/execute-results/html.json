@@ -1,8 +1,8 @@
 {
-  "hash": "0d3368ce044c1a1bdaace20b1126dbf1",
+  "hash": "decd4ba30cc1e3f87d8f54dfc170d8b2",
   "result": {
     "engine": "knitr",
-    "markdown": "---\n#title: \"talks\"\npagetitle: Talks - Sergio Jacobo\nlisting:\n  contents: talks\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n# [Talks]{.fourth-color}",
+    "markdown": "---\n#title: \"talks\"\npagetitle: Talks - Sergio Jacobo\ntoc: false\nlang: es\nlisting:\n  contents: talks\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n# [Talks]{.fourth-color}",
     "supporting": [
       "talks_files"
     ],

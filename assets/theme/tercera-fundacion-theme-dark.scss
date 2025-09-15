@@ -83,7 +83,7 @@ $body-bg:           $dark;
 $body-color:        $light;
 $navbar-bg:         $body-bg;
 $navbar-fg:         $body-color;
-$code-bg:           $dark;
+$code-bg:           $light;
 $code-color:        $second-color;
 $card-bg:           $body-bg;
 $card-border-color: $gray-700;
@@ -179,8 +179,8 @@ div.tippy-content a:hover {
   width: 6px;
   height: 44px;
   position: absolute;
-  margin-top: 0px;
-  margin-left: -6px;
+  margin-top: -5px;
+  margin-left: 0px;
 }
 
 // Right line

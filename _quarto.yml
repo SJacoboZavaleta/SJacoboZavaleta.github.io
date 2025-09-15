@@ -17,7 +17,7 @@ website:
   back-to-top-navigation: true
   image: images/Logo_ThirdFoundation_es_card.png	
   navbar:
-    title: "<span class='icon-line2'></span>&thinsp;Sergio<span class='icon-line3'></span><span class='icon-line'></span>&hairsp;Jacobo"
+    title: "<span class='icon-line2'></span>&thinsp;&thinsp;Sergio<span class='icon-line3'></span><span class='icon-line'></span>&hairsp;Jacobo"
     right:
       - text: about
         href: about.qmd

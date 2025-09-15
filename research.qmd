@@ -1,9 +1,18 @@
 ---
 #title: "Research"
 pagetitle: Research - Sergio Jacobo
+lang: es
+toc: false
+listing:
+  contents: researches
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  image-height: 416px
 page-layout: full
-toc: true
-repo-actions: false
+title-block-banner: false
 knitr:
   opts_chunk: 
     collapse: true
@@ -11,16 +20,6 @@ execute:
   echo: false
 ---
 
-# [Research]{.second-color-card}
-
-:::{.header-text}
-:::{.header-block}
-I'm working on some ideas that might be useful to others.
-:::
-:::
-
-:::{.header-banner}
-![](images/noPreview.jpg){fig-alt="No preview" width=500px}
-:::
+# [Research]{.second-color}
 
 

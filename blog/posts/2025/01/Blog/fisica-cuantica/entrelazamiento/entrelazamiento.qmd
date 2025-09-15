@@ -1,0 +1,17 @@
+---
+title: "Entrelazamiento Cuántico"
+categories: ["Física Cuántica"]
+tags: ["fisica-cuantica", "entrelazamiento", "mecánica-cuántica"]
+description: Ejemplo de breadcrumbs
+date: 2025-09-14
+lang: es
+toc: true
+image: images/thumbnail.png
+---
+
+{{< include ../../../_include/breadcrumb.qmd >}}
+
+El entrelazamiento cuántico es un fenómeno en el que dos partículas quedan conectadas de tal forma que el estado de una afecta instantáneamente al estado de la otra, sin importar la distancia que las separe. Es como si compartieran una identidad cuántica común, desafiando nuestra intuición sobre el espacio y el tiempo. Einstein lo llamó “acción espeluznante a distancia”, y hoy es la base de tecnologías como la criptografía y la computación cuántica.
+
+
+>> Y ya está está, un breadcrums dinámico.

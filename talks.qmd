@@ -1,6 +1,8 @@
 ---
 #title: "talks"
 pagetitle: Talks - Sergio Jacobo
+toc: false
+lang: es
 listing:
   contents: talks
   sort: "date desc"

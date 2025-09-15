@@ -76,8 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d6a01e0adc7f1626533f048fafb5c941.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-473c7b44755c79c89fba38e5bcafd396.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/bootstrap/bootstrap-dark-cc6dc622a9b6f4e4322f58d1ea211391.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../../site_libs/bootstrap/bootstrap-05d94cea8ab991c1ffa673a2aae1ccdf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dark-8a94a6295840ef94092f04b83e807529.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../../index.html">
-    <span class="navbar-title"><span class="icon-line2"></span> Sergio<span class="icon-line3"></span><span class="icon-line"></span> Jacobo</span>
+    <span class="navbar-title"><span class="icon-line2"></span>  Sergio<span class="icon-line3"></span><span class="icon-line"></span> Jacobo</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Despliega tu Robot en 3D: Guía para Crear un Visor URDF</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+      <h1 class="title">Despliega tu Robot en 3D: Guía para Crear un Visor URDF</h1>
                   <div>
         <div class="description">
           <p>Tutorial para crear una aplicación de visualización de robots en URDF con Three.js</p>
@@ -604,8 +604,6 @@ Jácobo-Zavaleta, Sergio. 2024. <em>“Despliega tu Robot en 3D: Guía para Crea
 </div>
 
 
-<!-- -->
-
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2024,
@@ -851,57 +849,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1254,257 +1201,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>Inspirado por <a href="https://realworlddatascience.net/">Real World Data Science</a> <br> y <a href="https://ellakaye.co.uk/">EllaKaye</a></p>
 </div>
   </div>
-</footer><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Despliega tu Robot en 3D: Guía para Crear un Visor URDF"</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Sergio Jácobo</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Tutorial para crear una aplicación de visualización de robots en URDF con Three.js</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-06-15</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - "robotics"</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - "Robotics"</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">    - "Research"</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">    - "URDF"</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">    - "Three.js"</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="an">reading-time:</span><span class="co"> true</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="an">highlight-style:</span><span class="co"> atom-one</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="an">code-block-bg:</span><span class="co"> true</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="an">code-block-border-left:</span><span class="co"> "#9ef8f5"</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/thumbnail.png</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> A robot generated by IA.</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="an">language:</span><span class="co"> </span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">    section-title-footnotes: Notas</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../../../../_includes/navigation_breadcrumbs.qmd &gt;}}</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="fu"># ¿Qué es URDF?</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>El Formato Unificado de Descripción de Robótica (URDF) es un archivo XML que incluye la descripción física de un robot. Básicamente, es un modelo 3D con información sobre articulaciones, motores, masa, etc. Para más detalles sobre cómo crear tu propio robot en formato URDF, revisa nuestro <span class="co">[</span><span class="ot">post anterior</span><span class="co">](../01/01.qmd)</span>.</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># ¿Por dónde empezar?</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>Para crear nuestra aplicación y alojarla en un host web para presentar nuestro robot, utilizaremos las herramientas creadas con Three.js de <span class="co">[</span><span class="ot">gkjohnson/urdf-loaders</span><span class="co">](https://github.com/gkjohnson/urdf-loaders/)</span>. Es necesario tener conocimientos básicos sobre Three.js y cómo <span class="co">[</span><span class="ot">instalarlo</span><span class="co">](https://threejs.org/docs/index.html#manual/en/introduction/Installation)</span> localmente en nuestra PC. Puedes comenzar con este ejemplo básico desde su <span class="co">[</span><span class="ot">documentación oficial</span><span class="co">](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)</span>. Este demo fue realizado en un entorno Windows, pero se puede replicar en otros sistemas operativos. Al final de este post, dejaré algunos recursos útiles para usuarios de Windows que se utilizaron en este tutorial.</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>Para verificar una correcta instalación, basta con ejecutar en el terminal. Deberá devolver una salida con la versión como <span class="in">`10.7.0`</span>.</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> <span class="at">-v</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>Todo lo indicado en este post se basa en la poca experiencia como desarrollador de aplicaciones con JavaScript o Three.js. Sin embargo, la intención es documentar los buenos resultados obtenidos para proyectos personales 🎴🕹️. Es posible (y seguro) que existan mejores maneras de administrar la aplicación, y espero que este post sirva como guía general 😊.</span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Realizar una copia o fork del repositorio "urdf-loaders"</span></span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>Dirígete a <span class="co">[</span><span class="ot">gkjohnson/urdf-loaders</span><span class="co">](https://github.com/gkjohnson/urdf-loaders/)</span> y realiza una copia, ya sea de forma manual (descarga en .zip) o con Git. No todos los archivos serán necesarios para este tutorial.</span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crear tu propia estructura del proyecto</span></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="ex">your-project/</span></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> docs/                    <span class="co"># Carpeta de salida para GitHub Pages</span></span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── index.html           <span class="co"># ¡Contenido creado automáticamente!</span></span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── ...                  <span class="co"># Otros archivos generados por Parcel</span></span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> urdf/                    <span class="co"># Carpeta de archivos URDF</span></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── robot/</span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── urdf/</span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   │   ├── meshes/      <span class="co"># Archivos de malla para el robot</span></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   │   └── urdf/        <span class="co"># Archivos URDF del robot</span></span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── ...              <span class="co"># Otros robots generados</span></span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> src/                     <span class="co"># Código fuente de tu aplicación</span></span>
-<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── index.html           <span class="co"># Archivo HTML principal</span></span>
-<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── main.js              <span class="co"># Archivo JS principal</span></span>
-<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── styles.css           <span class="co"># Archivo CSS principal</span></span>
-<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> utils/                    <span class="co"># Código fuente de tu aplicación</span></span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── urdf-viewer-element.js  <span class="co"># Archivo del paquete urdf-loaders</span></span>
-<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── ...                 <span class="co"># Otros archivos el paquete</span></span>
-<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> test/                   <span class="co"># Carpeta de pruebas para compilar y servir</span></span>
-<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── index.html          <span class="co"># ¡Contenido creado automáticamente!</span></span>
-<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── ...                 <span class="co"># Otros archivos generados por Parcel durante las pruebas</span></span>
-<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> package.json            <span class="co"># Archivo de configuración de npm</span></span>
-<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> .gitignore              <span class="co"># Archivos a ignorar por Git</span></span>
-<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modificaciones necesarias</span></span>
-<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Actualizar las dependencias</span></span>
-<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>Luego de estructurar tu proyecto, el primer paso es reutilizar el archivo de configuración <span class="in">`package.json`</span>, encargado de instalar todas las dependencias y definir los comandos para probar y crear finalmente nuestra aplicación. Así, se reemplazó la sección devDependencies por sus versiones actualizadas.</span>
-<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a><span class="in">```js</span></span>
-<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="st">"devDependencies"</span><span class="op">:</span> {</span>
-<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>    <span class="st">"@babel/core"</span><span class="op">:</span> <span class="st">"^7.21.8"</span><span class="op">,</span></span>
-<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>    <span class="st">"@babel/preset-env"</span><span class="op">:</span> <span class="st">"^7.21.5"</span><span class="op">,</span></span>
-<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>    <span class="st">"@types/three"</span><span class="op">:</span> <span class="st">"^0.164.0"</span><span class="op">,</span></span>
-<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>    <span class="st">"@webcomponents/webcomponentsjs"</span><span class="op">:</span> <span class="st">"^2.4.4"</span><span class="op">,</span></span>
-<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">"babel-jest"</span><span class="op">:</span> <span class="st">"^29.5.0"</span><span class="op">,</span></span>
-<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>    <span class="st">"concurrently"</span><span class="op">:</span> <span class="st">"^6.2.1"</span><span class="op">,</span></span>
-<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cssnano"</span><span class="op">:</span> <span class="st">"^7.0.4"</span><span class="op">,</span></span>
-<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>    <span class="st">"eslint"</span><span class="op">:</span> <span class="st">"^7.10.0"</span><span class="op">,</span></span>
-<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>    <span class="st">"eslint-plugin-jest"</span><span class="op">:</span> <span class="st">"^24.1.0"</span><span class="op">,</span></span>
-<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jest"</span><span class="op">:</span> <span class="st">"^27.1.1"</span><span class="op">,</span></span>
-<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jest-cli"</span><span class="op">:</span> <span class="st">"^27.1.1"</span><span class="op">,</span></span>
-<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jsdom"</span><span class="op">:</span> <span class="st">"^17.0.0"</span><span class="op">,</span></span>
-<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>    <span class="st">"node-fetch"</span><span class="op">:</span> <span class="st">"^3.0.0"</span><span class="op">,</span></span>
-<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a>    <span class="st">"nyc"</span><span class="op">:</span> <span class="st">"^15.1.0"</span><span class="op">,</span></span>
-<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>    <span class="st">"parcel-bundler"</span><span class="op">:</span> <span class="st">"^1.12.5"</span><span class="op">,</span></span>
-<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>    <span class="st">"postcss"</span><span class="op">:</span> <span class="st">"^8.4.39"</span><span class="op">,</span></span>
-<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rollup"</span><span class="op">:</span> <span class="st">"^2.29.0"</span><span class="op">,</span></span>
-<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>    <span class="st">"static-server"</span><span class="op">:</span> <span class="st">"^3.0.0"</span><span class="op">,</span></span>
-<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a>    <span class="st">"three"</span><span class="op">:</span> <span class="st">"^0.164.1"</span><span class="op">,</span></span>
-<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>    <span class="st">"typescript"</span><span class="op">:</span> <span class="st">"^4.4.3"</span><span class="op">,</span></span>
-<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a>    <span class="st">"http-server"</span><span class="op">:</span> <span class="st">"^14.1.1"</span></span>
-<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dependencies"</span><span class="op">:</span> {</span>
-<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>    <span class="st">"parcel"</span><span class="op">:</span> <span class="st">"^2.12.0"</span></span>
-<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Modificar los comandos de ejecución</span></span>
-<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>Luego, en la sección de scripts se deben reemplazar los comandos <span class="in">`start`</span> y <span class="in">`build`</span> por sus versiones actualizadas (según la estructura de tu proyecto y algunos comandos nuevos como <span class="in">`--dist-dir`</span> debido a la actualización de las dependencias). El resto de comandos como <span class="in">`build-examples`</span> o <span class="in">`test`</span> fueron eliminados.</span>
-<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a><span class="st">"scripts"</span><span class="ex">:</span> {</span>
-<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a>    <span class="st">"start"</span><span class="ex">:</span> <span class="st">"concurrently </span><span class="dt">\"</span><span class="st">parcel watch ./src/index.html --dist-dir ./test/ --public-url . --no-cache</span><span class="dt">\"</span><span class="st"> </span><span class="dt">\"</span><span class="st">http-server ./</span><span class="dt">\"</span><span class="st">"</span>,</span>
-<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>    <span class="st">"build"</span><span class="ex">:</span> <span class="st">"parcel build ./src/index.html --dist-dir ./docs/ --public-url ./ --no-cache --no-source-maps --no-content-hash"</span></span>
-<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
-<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a>Para el comando <span class="in">`start`</span> se prefirió utilizar el paquete "http-server" en vez del "static-server" por ser más ligero y estar familiarizado.</span>
-<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Modificar las referencias a los archivos principales</span></span>
-<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>Algunos de nuestro archivos se verán afectados y son compilados en este punto, ya que no estarán correctamente enlazados debido a la nueva estructura del proyecto. Lo siguiente será revisar el contenido de nuestro principales archivos del paquete ubicados en <span class="in">`src`</span> y <span class="in">`utils`</span> (archivos js y html). Sin embargo, para nuestro beneficio, estos ya fueron identificados y son los siguientes:</span>
-<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a><span class="fu">#### En src/</span></span>
-<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>En <span class="in">`index.js`</span></span>
-<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a><span class="in">```js</span></span>
-<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a><span class="co">/* globals */</span></span>
-<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
-<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> URDFManipulator <span class="im">from</span> <span class="st">'../utils/urdf-manipulator-element.js'</span><span class="op">;</span></span>
-<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>En <span class="in">`index.html`</span></span>
-<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="in">```js</span></span>
-<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!</span>DOCTYPE html<span class="op">&gt;</span></span>
-<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>html lang<span class="op">=</span><span class="st">"es"</span><span class="op">&gt;</span></span>
-<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
-<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>meta charset<span class="op">=</span><span class="st">"utf-8"</span><span class="op">&gt;</span></span>
-<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
-<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>link href<span class="op">=</span><span class="st">"styles.css"</span> type<span class="op">=</span><span class="st">"text/css"</span> rel<span class="op">=</span><span class="st">"stylesheet"</span><span class="op">&gt;</span></span>
-<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
-<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
-<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
-<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>script type<span class="op">=</span><span class="st">"module"</span> src<span class="op">=</span><span class="st">"./index.js"</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span>
-<span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span><span class="st">'</span></span>
-<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### 4. Mantener solo archivos necesarios</span></span>
-<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a>Dado que solo se mantuvo los comandos <span class="in">`start`</span> y <span class="in">`build`</span>, los siguientes archivos de la carpeta original pueden eliminarse de nuestro proyecto:  </span>
-<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>umd/  </span>
-<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>.eslintrc.json  </span>
-<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>babel.config.json  </span>
-<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>jest.config.js  </span>
-<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>package-lock.json  (se volverá a crear al compilar)  </span>
-<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>rollup.config.json  </span>
-<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>example/index.bundle.html  </span>
-<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>example/simple.html  </span>
-<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>example/vr.html  </span>
-<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>example/src/index.js  </span>
-<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>example/src/simple.js  </span>
-<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>example/src/vr.js</span>
-<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Relizando pruebas</span></span>
-<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a>Finalmente, llegó la parte más interesante y fácil de toda esta guía. Simplemente con el siguiente comando, se puede probar nuestra aplicación en un servidor local desde nuestro navegador. Para realizar un cambio, solo basta con guardar el archivo luego de modificar. Se recomienda fuertemente utilizar <span class="co">[</span><span class="ot">VSCode</span><span class="co">](https://code.visualstudio.com/Download)</span> para editar e implementar todo nuestro proyecto. Recuerda que los archivos creados para ello se almacenan en la carpeta <span class="in">`/test`</span>, por lo que hay que tener en cuenta en nuestra dirección del localhost.</span>
-<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> start</span>
-<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a>Algunas modificaciones incluyen, cambiar la posición de la cámara y zoom de nuestro robot, según:</span>
-<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a><span class="fu">initCamera()</span> <span class="kw">{</span></span>
-<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a>        <span class="ex">this.camera</span> = new THREE.PerspectiveCamera<span class="er">(</span><span class="ex">75,</span> 1, 0.1, 1000<span class="kw">);</span></span>
-<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a>        <span class="ex">this.camera.position.z</span> = 7<span class="kw">;</span></span>
-<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a>        <span class="ex">this.camera.zoom</span> = 8<span class="kw">;</span></span>
-<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a>    <span class="kw">}</span></span>
-<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a><span class="co">## Realizando la exportación final</span></span>
-<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a><span class="ex">Luego</span> de modificar todo lo necesario, probar con los robots incluidos por defecto y agregar nuestro propio archivo URDF, finalmente se procede a compilar los archivos necesarios en la carpeta <span class="kw">`</span>/docs<span class="kw">`</span> <span class="ex">para</span> subirlo a nuestro host con Github Pages, utilizando simplemente:</span>
-<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span>bash</span>
-<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span>
-<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a><span class="co">### Modificación final</span></span>
-<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a><span class="ex">Para</span> poder visualizar correctamente nuestra aplicación con ayuda de Github Pages <span class="er">(</span><span class="ex">según</span> lo explicado más adelante<span class="kw">)</span><span class="ex">,</span> se procederá a modificar el contenido de la carpeta <span class="kw">`</span>/docs<span class="kw">`</span><span class="bu">:</span></span>
-<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> Realizar una copia de nuestra carpeta urdf dentro de <span class="kw">`</span>/docs<span class="kw">`</span>  </span>
-<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a><span class="ex">2.</span> Modificar el archivo index.html creado en <span class="kw">`</span>/docs<span class="kw">`</span><span class="ex">,</span> indicando que nuestro urdf se encuentra ahora en la misma carpeta:</span>
-<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span>bash</span>
-<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>li <span class="va">urdf</span><span class="op">=</span><span class="st">"./urdf/UR5/urdf/UR5.URDF"</span> <span class="va">color</span><span class="op">=</span><span class="st">"#37B7C3"</span><span class="op">&gt;&lt;</span>b<span class="op">&gt;</span>UR5<span class="op">&lt;</span>/b<span class="op">&gt;&lt;</span>/li<span class="op">&gt;</span></span>
-<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a><span class="ex">De</span> esta manera, se asegura que todo nuestro proyecto y sus dependencias corran desde en la web <span class="kw">`</span>/docs<span class="kw">`</span><span class="bu">.</span> Por lo que nuestro nueva jerarquía de archivos sería ahora:</span>
-<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span>bash</span>
-<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a><span class="ex">your-project/</span></span>
-<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> docs/                    <span class="co"># Carpeta de salida para GitHub Pages</span></span>
-<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── index.html</span>
-<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── urdf/                <span class="co"># Carpeta de archivo del robot</span></span>
-<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── ...                  <span class="co"># Otros archivos creados al compilar</span></span>
-<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a><span class="co">## Subiendo a Github Pages</span></span>
-<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="ex">La</span> carpeta <span class="kw">`</span>docs<span class="kw">`</span> <span class="ex">es</span> importante porque nos permitirá almacenar todo nuestro visualizador URDF. Para ello, ir a la sección de <span class="kw">`</span>Settings<span class="kw">`</span> <span class="ex">de</span> nuestro repositorio público previamente creado. Eb la sección de <span class="kw">`</span>Pages <span class="at">--</span><span class="op">&gt;</span> Github Pages <span class="at">--</span><span class="op">&gt;</span> Build and deployment<span class="kw">`</span> <span class="ex">seleccionar</span> la opción <span class="kw">`</span>Deploy from a branch<span class="kw">`</span><span class="bu">.</span> Luego, indicar ruta del folder base para la creación nuestro página a <span class="kw">`</span>/docs<span class="kw">`</span><span class="bu">.</span> Por defecto es <span class="kw">`</span>/root<span class="kw">`</span><span class="bu">.</span></span>
-<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a><span class="ex">Luego</span> de unos minutos, aparecerá que nuestro sitio se creó correctamente y aparecerá un enlace a nuestra página web de nuestro visualizador URDF completamente funcional.</span>
-<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a><span class="ex">Y</span> eso es todo, disfruta de tu robot en la web !!! o prueba el mío en <span class="pp">[</span><span class="ss">Github</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://sjacobozavaleta.github.io/URDFviewer/</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="co"># Recursos recomendados</span></span>
-<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> Instalador de Node.js y npm según su [página oficial]<span class="er">(</span><span class="ex">https://docs.npmjs.com/cli/v6/configuring-npm/install</span><span class="kw">)</span> <span class="ex">mediante</span> un gestor de versiones de Node como <span class="pp">[</span><span class="ss">coreybutler/nvm</span><span class="pp">-</span><span class="ss">windows</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://github.com/coreybutler/nvm-windows</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span> {.further-info}</span>
-<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span> grid</span>
-<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span> {.g-col-12 .g-col-md-12}</span>
-<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span> {.bio-footer}</span>
-<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>img <span class="va">src</span><span class="op">=</span><span class="st">"../../../../../images/sergio-bio.jpg"</span> <span class="va">alt</span><span class="op">=</span><span class="st">"Headshot of Sergio"</span> <span class="va">class</span><span class="op">=</span><span class="st">"img-footer"</span><span class="op">&gt;</span></span>
-<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div <span class="va">class</span><span class="op">=</span><span class="st">"p-footer"</span><span class="op">&gt;</span></span>
-<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Soy</span> Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <span class="pp">[</span><span class="ss">Twitter</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://twitter.com/JacoboZavaleta</span><span class="kw">)</span><span class="ex">,</span> ver algunos repositorios de mi trabajo en <span class="pp">[</span><span class="ss">Github</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://www.github.com/SJacoboZavaleta</span><span class="kw">)</span><span class="ex">,</span> o leer más sobre mí en este [sitio web]<span class="er">(</span><span class="ex">../../../../../about.qmd</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>/div<span class="op">&gt;</span></span>
-<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span>
-<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span>
-<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span> {.g-col-12 .g-col-md-6}</span>
-<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> y licencia</span>
-<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a><span class="bu">:</span>   © 2024 Sergio Jácobo</span>
-<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="va">href</span><span class="op">=</span><span class="st">"http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span> <span class="va">target</span><span class="op">=</span><span class="st">"_blank"</span> <span class="va">rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span> <span class="va">style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="op">&gt;</span> <span class="op">&lt;</span>img <span class="va">src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"</span> <span class="va">style</span><span class="op">=</span><span class="st">"height:22px!important;vertical-align:text-bottom;"</span>/<span class="op">&gt;&lt;</span>img <span class="va">src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"</span> <span class="va">style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span>/<span class="op">&gt;&lt;</span>/a<span class="op">&gt;</span> Este <span class="ex">artículo</span> está licenciado bajo Creative Commons Attribution 4.0 <span class="er">(</span><span class="ex">CC</span> BY 4.0<span class="kw">)</span> <span class="op">&lt;</span>a <span class="va">href</span><span class="op">=</span><span class="st">"http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span> <span class="va">target</span><span class="op">=</span><span class="st">"_blank"</span> <span class="va">rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span> <span class="va">style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="op">&gt;</span> Licencia <span class="ex">Internacional</span><span class="op">&lt;</span>/a<span class="op">&gt;</span>. </span>
-<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span>
-<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span> {.g-col-12 .g-col-md-6}</span>
-<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a><span class="ex">Como</span> citar  </span>
-<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a><span class="bu">:</span>   Jácobo-Zavaleta, Sergio. 2024. <span class="pp">*</span><span class="st">"Despliega tu Robot en 3D: Guía para Crear un Visor URDF"</span><span class="pp">*</span>, Third Foundation, 11 de julio, 2024. <span class="pp">[</span><span class="ss">URL</span><span class="pp">]</span><span class="er">(</span><span class="ex">https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/02/b1_2.html</span><span class="kw">)</span></span>
-<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span>
-<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span>
-<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span></code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</footer>
 
 
 

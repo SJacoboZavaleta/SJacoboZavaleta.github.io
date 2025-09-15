@@ -1,11 +1,9 @@
 {
-  "hash": "2d44a2a101941041e72ff913883469a5",
+  "hash": "b779ff3f400d464b2cf9d89829f32250",
   "result": {
     "engine": "knitr",
-    "markdown": "---\n#title: \"Research\"\npagetitle: Research - Sergio Jacobo\npage-layout: full\ntoc: true\nrepo-actions: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n# [Research]{.second-color-card}\n\n:::{.header-text}\n:::{.header-block}\nI'm working on some ideas that might be useful to others.\n:::\n:::\n\n:::{.header-banner}\n![](images/noPreview.jpg){fig-alt=\"No preview\" width=500px}\n:::\n\n\n",
-    "supporting": [
-      "research_files"
-    ],
+    "markdown": "---\n#title: \"Research\"\npagetitle: Research - Sergio Jacobo\nlang: es\ntoc: false\nlisting:\n  contents: researches\n  sort: \"date desc\"\n  type: grid\n  categories: false\n  sort-ui: false\n  filter-ui: false\n  image-height: 416px\npage-layout: full\ntitle-block-banner: false\nknitr:\n  opts_chunk: \n    collapse: true\nexecute: \n  echo: false\n---\n\n\n\n\n# [Research]{.second-color}\n\n\n",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

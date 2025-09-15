@@ -1,0 +1,23 @@
+---
+title: "Blog Científico Demo"
+description: "Explora los misterios del universo, la mente y la vida a través de la ciencia."
+date: 2025-09-14
+lang: es
+categories: ["Ciencia"]
+toc: false
+tags: ["astrobiología", "neurociencia", "física cuántica", "biotecnología"]
+image: images/thumbnail-ciencia.png
+---
+
+[Volver al Post principal](../01.qmd)
+
+# Bienvenido 🧬🌌🧠
+
+Este espacio está dedicado a compartir conocimientos, descubrimientos y reflexiones sobre algunos de los temas más fascinantes de la ciencia moderna. Aquí encontrarás artículos organizados por categoría:
+
+- **Astrobiología**: ¿Estamos solos en el universo?
+- **Neurociencia**: El cerebro como una máquina de adaptación.
+- [**Física Cuántica**](fisica-cuantica/fisica-cuantica.qmd): Realidades entrelazadas y partículas misteriosas.
+- **Biotecnología**: La revolución genética y sus implicaciones.
+
+Explora, aprende y cuestiona. La ciencia comienza con la curiosidad.

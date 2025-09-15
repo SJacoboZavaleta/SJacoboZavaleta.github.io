@@ -8,6 +8,8 @@ listing:
   contents:  
   - posts/2023/
   - posts/2024/
+  - posts/2025/
+  - "!posts/2025/01/Blog/"
   - "!quarto.qmd"
   - "!research.qmd"
   - "!robotics.qmd"
