@@ -1,0 +1,2012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Sergio Jácobo-Zavaleta</title>
+<link>https://sergiojacobo.com/blog/quarto.html</link>
+<atom:link href="https://sergiojacobo.com/blog/quarto.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website and blog</description>
+<image>
+<url>https://sergiojacobo.com/images/Logo_ThirdFoundation_es_card.png</url>
+<title>Sergio Jácobo-Zavaleta</title>
+<link>https://sergiojacobo.com/blog/quarto.html</link>
+<height>78</height>
+<width>144</width>
+</image>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Fri, 12 Sep 2025 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cómo Crear Breadcrumbs Dinámicos en Quarto</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/blog/posts/2025/01/01.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumbs">
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/quarto.html">Quarto</a> &gt; <span>Cómo Crear Breadcrumbs Dinámicos en Quarto</span></p>
+</div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
+<p>Si estás construyendo un sitio web o blog con <a href="https://quarto.org">Quarto</a>, seguramente quieres que tus lectores sepan exactamente dónde están en tu estructura de contenido. Una herramienta esencial para lograrlo son las famosas <strong>migas de pan (breadcrumbs)</strong>.</p>
+<p>Las breadcrumbs mejoran la experiencia del usuario, permiten retroceder fácilmente y refuerzan la arquitectura de información de tu sitio.</p>
+<p>En este artículo, te muestro <strong>cómo implementar breadcrumbs dinámicos en Quarto</strong>, aprovechando los metadatos del documento (<code>YAML</code>) sin necesidad de JavaScript ni shortcodes complejos. Todo usando el motor nativo de Quarto.</p>
+<hr>
+<section id="qué-son-las-breadcrumbs" class="level2">
+<h2 class="anchored" data-anchor-id="qué-son-las-breadcrumbs">🧱 ¿Qué son las breadcrumbs?</h2>
+<p>Las <em>breadcrumbs</em> son una barra de navegación secundaria (como un <code>sidebar</code>) que muestra la ubicación jerárquica del contenido actual. Por ejemplo:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Inicio</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> Blog <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> Psicología <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> 2025 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> Ello, yo y el superyó</span></code></pre></div>
+<p>Este patrón es común en blogs, documentación técnica y sitios académicos. Por defecto, Quarto permite la generación de breadcrumbs de forma automática utilizando el contenido definido en el archivo <code>_quarto_yml</code> dentro los parámetros de navegación en la barra lateral de una página web (<code>website &gt; sidebar &gt; contents</code>). El resultado son breadcrumbs aparecen encima del título de la página.</p>
+<p>Sin embargo, es posible crear breadcrumbs y ubicarlos en cualquier sección de nuestra página de forma automática utilizando únicamente metadatos del documento. Así, es posible incluir breadcrumbs a todos los posts clasificados en diversas categorías dentro del mismo blog.</p>
+<hr>
+</section>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">✅ Objetivo</h2>
+<p>Crear un breadcrumb automático como el siguiente:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Inicio</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> Blog <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">Categoría</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> [Título del Post]</span></code></pre></div>
+<p>Donde:</p>
+<ul>
+<li><code>[Categoría]</code> viene del primer elemento de <code>categories</code> en el YAML.<br>
+</li>
+<li><code>[Título del Post]</code> viene del campo <code>title</code>.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En breadcrumbs, cada término está asociado a un respectivo enlace.</p>
+</div>
+</div>
+<p>Además, se define una estructura de blog ordenado mediante subcarpetas para un aislamiento de contenido, escalabilidad y compatibilidad con Quarto. No obstante, la lógica funciona para cualquier otra estructura.</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">mi-pagina-web/</span></span>
+<span id="cb3-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> index.qmd</span>
+<span id="cb3-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> _includes/</span>
+<span id="cb3-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   └── breadcrumb.qmd</span>
+<span id="cb3-5"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> blog/</span>
+<span id="cb3-6"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── index.qmd</span>
+<span id="cb3-7"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── astrobiologia/</span>
+<span id="cb3-8"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   └── vida-en-marte/</span>
+<span id="cb3-9"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │       └── vida-en-marte.qmd</span>
+<span id="cb3-10"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── neurociencia/</span>
+<span id="cb3-11"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   └── cerebro-plastico/</span>
+<span id="cb3-12"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │       └── cerebro-plastico.qmd</span>
+<span id="cb3-13"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── fisica-cuantica/</span>
+<span id="cb3-14"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   ├── fisica-cuantica.qmd</span>
+<span id="cb3-15"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   └── entrelazamiento/</span>
+<span id="cb3-16"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │       └── entrelazamiento.qmd</span>
+<span id="cb3-17"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── biotecnologia/</span>
+<span id="cb3-18"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   └── edicion-genetica/</span>
+<span id="cb3-19"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │       └── edicion-genetica.qmd</span></code></pre></div>
+<hr>
+</section>
+<section id="solución-basada-en-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="solución-basada-en-metadata">💡 Solución basada en metadata</h2>
+<p>Como ejemplo, se define el siguiente post sobre <em>Entrelazamiento Cuántico</em> con la siguiente <code>YAML</code></p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb4-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Entrelazamiento Cuántico"</span></span>
+<span id="cb4-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">description</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Explorando uno de los fenómenos más misteriosos de la física moderna."</span></span>
+<span id="cb4-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">date</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> 2025-06-03</span></span>
+<span id="cb4-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">categories</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">[</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Física Cuántica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">]</span></span>
+<span id="cb4-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tags</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">[</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"fisica-cuantica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"cuántica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"entrelazamiento"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mecánica-cuántica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">]</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> # ← En minúsculas, para rutas</span></span>
+<span id="cb4-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">image</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> images/thumbnail-entrelazamiento.png</span></span>
+<span id="cb4-8"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span></code></pre></div>
+<section id="paso-1-define-categories-y-tags-apropiados-para-el-post" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-define-categories-y-tags-apropiados-para-el-post">Paso 1: Define <code>categories</code> y <code>tags</code> apropiados para el post</h3>
+<p>De forma conveniente, el uso de categorías coincide con las carpetas principales dentro del blog (<code>astrobiologia, neurociencia, fisica-cuantica y biotecnologia</code>), por lo que su contenido se define respetando mayúsculas, minúsculas y espacios (apropiado para la visualización). Por otro lado, el uso de <code>tags</code> no solo se reserva para palabras claves relacionedos con el tema, sino tambien para el nombre de la carpeta de nuestro post en minúsculas (<code>fisica-cuantica</code>). Esto asegura que sea utilizado como parte su URL de forma correcta.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Usa <code>tags</code> para control técnico (URLs), y <code>categories</code> para lo visual.</p>
+</div>
+</div>
+</section>
+<section id="paso-2-crea-un-archivo-de-breadcrumbs-reutilizable" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-crea-un-archivo-de-breadcrumbs-reutilizable">Paso 2: Crea un archivo de breadcrumbs reutilizable</h3>
+<p>Crea esta ruta en tu proyecto:</p>
+<pre class="basch"><code>_include/breadcrumb.qmd</code></pre>
+<p>Con el siguiente contenido:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Mostrar u ocultar el código</summary>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>div class<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"breadcrumbs"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-2">  [Inicio](..<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>..<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>..<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>index.qmd) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> </span>
+<span id="cb6-3">  [Blog](..<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>..<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>index.qmd) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> </span>
+<span id="cb6-4">  [{{<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> meta categories<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">.1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>}}](..<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>{{<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> meta tags<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">.1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>}}.qmd) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> </span>
+<span id="cb6-5">  <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span>span<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>{{<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> meta title <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>}}<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">/</span>span<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-6"><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span>div<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span></code></pre></div>
+</details>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>No puedes usar {{&lt; meta &gt;}} dentro de atributos HTML como <code>href</code></strong>. Intentarlo genera texto literal en lugar de valores reemplazados. No obstante, <strong>sí funciona aquí</strong> en código Quarto porque estamos incluyéndolo directamente con {{&lt; include &gt;}} y Quarto procesa los metadatos correctamente en texto plano como la definición de enlaces <code>[Nombre de post](ruta/a/post)</code>.</p>
+<p>Por ejemplo el siguiente código en html podría no funcionar directamente.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Mostrar u ocultar el código</summary>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>div class<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"breadcrumbs"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb7-2">  <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span>a href<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../../index.qmd"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>Inicio<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">/</span>a<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span> </span>
+<span id="cb7-3">  <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span>a href<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../index.qmd"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>Blog<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">/</span>a<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span> </span>
+<span id="cb7-4">  <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span>a href<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../{{&lt; meta tags.1 &gt;}}.qmd"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>{{<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> meta categories<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">.1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>}}<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">/</span>a<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span> </span>
+<span id="cb7-5">  <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span>span<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>{{<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> meta title <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>}}<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">/</span>span<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb7-6"><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span>div<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span></code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3-incluye-el-breadcrumb-en-tus-posts" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-incluye-el-breadcrumb-en-tus-posts">Paso 3: Incluye el breadcrumb en tus posts</h3>
+<p>En cualquier post, simplemente agrega:</p>
+<p>{{&lt; include ../../_include/breadcrumb.qmd &gt;}}</p>
+<p>En este se caso se utiliza una ruta relativa y dependerá de la ubicación del post (<code>entrelazamiento.qmd</code>) dentro de la estructura.</p>
+<hr>
+</section>
+<section id="resultado-final" class="level3">
+<h3 class="anchored" data-anchor-id="resultado-final">✅ Resultado final</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">YAML</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Salida HTML</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" aria-controls="tabset-1-3" aria-selected="false">Salida visual</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Entrelazamiento Cuántico"</span></span>
+<span id="cb8-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">categories</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">[</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Física Cuántica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">]</span></span>
+<span id="cb8-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tags</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">[</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"fisica-cuantica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"entrelazamiento"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mecánica-cuántica"</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">]</span></span></code></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">div</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> class</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"breadcrumbs"</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb9-2">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">a</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> href</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../../post_principal.qmd"</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span>Inicio<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">a</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span> &gt; </span>
+<span id="cb9-3">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">a</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> href</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../blog/index.qmd"</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span>Blog<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">a</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span> &gt; </span>
+<span id="cb9-4">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">a</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> href</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../fisica-quantica.qmd"</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span>Física Cuántica<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">a</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span> &gt; </span>
+<span id="cb9-5">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">span</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span>Entrelazamiento Cuántico<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">span</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb9-6"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&lt;/</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">div</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&gt;</span></span></code></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" aria-labelledby="tabset-1-3-tab">
+<p><a href="images/breadcrumbs_demo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://sergiojacobo.com/blog/posts/2025/01/images/breadcrumbs_demo.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Para ver el resultado final, ir a la demo del blog:</p>
+<ul>
+<li><a href="../../../../blog/posts/2025/01/Blog/index.html">Blog de Ciencia</a><br>
+</li>
+<li><a href="../../../../blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.html">Categoría sobre Física Cuántica</a><br>
+</li>
+<li><a href="../../../../blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html">Post sobre Entrelazamiento Cuántico</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="estilo-opcional-css" class="level2">
+<h2 class="anchored" data-anchor-id="estilo-opcional-css">🎨 Estilo opcional (CSS)</h2>
+<p>Agrega este CSS a tu <code>styles.css</code> para mejorar la apariencia:</p>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb10-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.breadcrumbs</span> {</span>
+<span id="cb10-2">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">font-size</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.9</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rem</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-3">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">color</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#666</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-4">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">margin</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rem</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-5">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">padding</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rem</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-6">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">border-bottom</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">px</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">solid</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#eee</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-7">}</span>
+<span id="cb10-8"></span>
+<span id="cb10-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.breadcrumbs</span> a {</span>
+<span id="cb10-10">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">color</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#006AD4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-11">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">text-decoration</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">none</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-12">}</span>
+<span id="cb10-13"></span>
+<span id="cb10-14"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.breadcrumbs</span> a<span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:hover</span> {</span>
+<span id="cb10-15">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">text-decoration</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">underline</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-16">}</span>
+<span id="cb10-17"></span>
+<span id="cb10-18"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.breadcrumbs</span> span {</span>
+<span id="cb10-19">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">color</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#333</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-20">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">font-weight</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">600</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb10-21">}</span></code></pre></div>
+</section>
+<section id="ventajas-de-esta-solución" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-de-esta-solución">✅ Ventajas de esta solución</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Beneficio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>📦 Reutilizable</td>
+<td>Un solo archivo para todos los posts</td>
+</tr>
+<tr class="even">
+<td>🧩 Dinámico</td>
+<td>Usa metadatos del post</td>
+</tr>
+<tr class="odd">
+<td>🌐 Compatible</td>
+<td>Funciona en GitHub Pages sin JS</td>
+</tr>
+<tr class="even">
+<td>🔧 Mantenible</td>
+<td>Fácil de actualizar</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="alternativas-consideradas-y-por-qué-no-las-usé" class="level2">
+<h2 class="anchored" data-anchor-id="alternativas-consideradas-y-por-qué-no-las-usé">🔄 Alternativas consideradas (y por qué no las usé)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Alternativa</th>
+<th>Problema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>JavaScript</td>
+<td>Rompe SSR, no recomendado para SEO</td>
+</tr>
+<tr class="even">
+<td>Shortcode personalizado</td>
+<td>Requiere más configuración y no siempre es portable</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="conclusión" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión">🏁 Conclusión</h2>
+<p>Crear breadcrumbs dinámicos en Quarto <strong>es posible y simple</strong>, si sabes cómo aprovechar los metadatos del documento. Mi solución combina:</p>
+<ul>
+<li><code>tags</code> para controlar rutas (<code>quarto.qmd</code>)</li>
+<li><code>categories</code> para mostrar nombres legibles (<code>Quarto</code>)</li>
+<li>{{&lt; meta &gt;}} dentro de enlaces Markdown</li>
+</ul>
+<p>Esta técnica mejora significativamente la usabilidad de tu blog o sitio académico.</p>
+<hr>
+</section>
+<section id="recursos-relacionados" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-relacionados">🔗 Recursos relacionados</h2>
+<ul>
+<li><a href="https://quarto.org/docs/content/reuse.html">Quarto Documentation – Includes</a></li>
+<li><a href="https://quarto.org/docs/projects/metadata.html">Quarto Documentation – Metadata</a></li>
+<li><a href="../../../../about.html">La Tercera Fundación – Sobre mí</a></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2025,
+  author = {Jácobo, Sergio},
+  title = {Cómo Crear Breadcrumbs Dinámicos en Quarto},
+  date = {2025-09-13},
+  url = {https://sergiojacobo.com/blog/posts/2025/01/01.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2025" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2025. <span>“Cómo Crear Breadcrumbs Dinámicos en
+Quarto.”</span> September 13, 2025. <a href="https://sergiojacobo.com/blog/posts/2025/01/01.html">https://sergiojacobo.com/blog/posts/2025/01/01.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Quarto</category>
+  <category>meta</category>
+  <category>navegación</category>
+  <category>shortcode</category>
+  <guid>https://sergiojacobo.com/blog/posts/2025/01/01.html</guid>
+  <pubDate>Fri, 12 Sep 2025 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2025/01/images/thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/blog/posts/2023/01/01.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumbs">
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/quarto.html">Quarto</a> &gt; <span>Guía Nutricional con Shiny: Selección de Alimentos de la Tabla Peruana de composición de alimentos (4ta Edición)</span></p>
+</div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
+<section id="a-quien-va-dirigido" class="level1">
+<h1>A quien va dirigido?</h1>
+<p>A todas los profesionales en nutrición que desean planificar o programar sus dietas nutricionales en base a la composición nutricional de diversos alimentos en la cocina peruana según la cantidad deseada.</p>
+</section>
+<section id="implementación" class="level1">
+<h1>Implementación</h1>
+<blockquote class="blockquote">
+<p>Versión 2 ✅:</p>
+<ul>
+<li>Se incluyeron alimentos compuestos como platos de entrada y almuerzo.<br>
+</li>
+<li>Se incluyó la tabla de anexos de codigos de componentes.<br>
+</li>
+<li>Se centró el contenido de las tablas.</li>
+<li>Se mejoró la salida luego de seleccionar cada tabla principal y se incluyó una opción de copiado.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Versión 1 :</p>
+<ul>
+<li><p>Es posible calcular cualquier composición en base a la cantidad ingresada por el usuario en gramos.</p></li>
+<li><p>Solo se incluyeron alimentos individuales y no compuestos.</p></li>
+</ul>
+</blockquote>
+<section id="el-código" class="level2">
+<h2 class="anchored" data-anchor-id="el-código">El Código</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Mostrar u ocultar el código</summary>
+<div class="sourceCode cell-code" id="annotated-cell-1" style="background: #f1f3f5;"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">setwd</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ruta/a/tu/proyecto/"</span>)</span>
+<span id="annotated-cell-1-2"></span>
+<span id="annotated-cell-1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(shiny)</span>
+<span id="annotated-cell-1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(DT) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Manejo de tablas en formato Data Frame</span></span>
+<span id="annotated-cell-1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(shinyjs)</span>
+<span id="annotated-cell-1-6"></span>
+<span id="annotated-cell-1-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cargar datos para alimentos individuales</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-8" class="code-annotation-target">alimentos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"alimentos.csv"</span>)</span>
+<span id="annotated-cell-1-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(alimentos) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="annotated-cell-1-10">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-11">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>,</span>
+<span id="annotated-cell-1-12">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span></span>
+<span id="annotated-cell-1-13">)</span>
+<span id="annotated-cell-1-14">alimentos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> alimentos[, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="annotated-cell-1-15">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-16">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span></span>
+<span id="annotated-cell-1-17">)]</span>
+<span id="annotated-cell-1-18"></span>
+<span id="annotated-cell-1-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cargar datos para alimentos compuestos</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-20" class="code-annotation-target">platos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"alimentosCompuestos.csv"</span>)</span>
+<span id="annotated-cell-1-21"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(platos) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="annotated-cell-1-22">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>,</span>
+<span id="annotated-cell-1-23">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOAVL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FIBTG"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ASH"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"THIA"</span>,</span>
+<span id="annotated-cell-1-24">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RIBF"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NIA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ESTRATO"</span></span>
+<span id="annotated-cell-1-25">)</span>
+<span id="annotated-cell-1-26">platos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> platos[, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="annotated-cell-1-27">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"COD"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NUM"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ALIMENTO"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKCAL"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERCKJ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"WATER"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>,</span>
+<span id="annotated-cell-1-28">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span></span>
+<span id="annotated-cell-1-29">)]</span>
+<span id="annotated-cell-1-30"></span>
+<span id="annotated-cell-1-31"></span>
+<span id="annotated-cell-1-32"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Creamos tablas de Anexo</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-33" class="code-annotation-target">codigo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"A"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"B"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"D"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"E"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"F"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"G"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"H"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"J"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"L"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Q"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"T"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"U"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SS"</span>)</span>
+<span id="annotated-cell-1-34">categoria <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="annotated-cell-1-35">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cereales y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Verduras, hortalizas y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Frutas y derivados"</span>,</span>
+<span id="annotated-cell-1-36">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Grasas, aceites y oleaginosas"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Pescados y mariscos"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Carnes y derivados"</span>,</span>
+<span id="annotated-cell-1-37">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Leche y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Bebidas (alcohólicas y analcohólicas)"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Huevos y derivados"</span>,</span>
+<span id="annotated-cell-1-38">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Productos azucarados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Misceláneos"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos infantiles"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Leguminosas y derivados"</span>,</span>
+<span id="annotated-cell-1-39">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tubérculos, raíces y derivados"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos preparados (entrada)"</span>,</span>
+<span id="annotated-cell-1-40">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos preparados (segundo)"</span></span>
+<span id="annotated-cell-1-41">)</span>
+<span id="annotated-cell-1-42">codigoGrupo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(codigo, categoria)</span>
+<span id="annotated-cell-1-43"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(codigoGrupo) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Código"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Categoría"</span>)</span>
+<span id="annotated-cell-1-44"></span>
+<span id="annotated-cell-1-45"></span>
+<span id="annotated-cell-1-46"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Cargas coódigos de componentes - Anexo</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-47" class="code-annotation-target">anexoCodigo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read.csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"anexosCodigoComponentes.csv"</span>)</span>
+<span id="annotated-cell-1-48"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">colnames</span>(anexoCodigo) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Identificador INFOODS"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Unidad"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Comentario"</span>)</span>
+<span id="annotated-cell-1-49"></span>
+<span id="annotated-cell-1-50"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Definir interfaz</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-51" class="code-annotation-target">ui <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fluidPage</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-52" class="code-annotation-target">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">includeCSS</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"styles.css"</span>),</span>
+<span id="annotated-cell-1-53">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">titlePanel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"TABLAS PERUANAS DE COMPOSICIÓN DE ALIMENTOS - 2017"</span>),</span>
+<span id="annotated-cell-1-54">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h2</span>(tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">a</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Fuente: Centro Nacional de Alimentación y Nutrición, 2017, Ministerio de Salud del Perú, Lima."</span>,</span>
+<span id="annotated-cell-1-55">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">href =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://www.gob.pe/institucion/ins/informes-publicaciones/4231115-tablas-peruanas-de-composicion-de-alimentos"</span></span>
+<span id="annotated-cell-1-56">    )),</span>
+<span id="annotated-cell-1-57">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h3</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Modificado para uso particular en planificación de dietas. Basado en la experiencia de Rosa Zavaleta Gavidia (Nutricionista CNP: 5681)."</span>),</span>
+<span id="annotated-cell-1-58">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h3</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">class =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold-text"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Nota: Composición en 100 g de alimento"</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-59" class="code-annotation-target">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">numericInput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"proportion"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Nueva composición (gramos)?"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">value =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">min =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">max =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500</span>),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-60" class="code-annotation-target">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">useShinyjs</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-61" class="code-annotation-target">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabsetPanel</span>(</span>
+<span id="annotated-cell-1-62">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabPanel</span>(</span>
+<span id="annotated-cell-1-63">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos individuales"</span>,</span>
+<span id="annotated-cell-1-64">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dataTableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable1"</span>),</span>
+<span id="annotated-cell-1-65">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h4</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">class =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold-text"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componentes seleccionados:"</span>),</span>
+<span id="annotated-cell-1-66">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"selectedData1"</span>),</span>
+<span id="annotated-cell-1-67">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">actionButton</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"copyButton1"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Copiar datos seleccionados"</span>)</span>
+<span id="annotated-cell-1-68">        ),</span>
+<span id="annotated-cell-1-69">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabPanel</span>(</span>
+<span id="annotated-cell-1-70">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alimentos en platos"</span>,</span>
+<span id="annotated-cell-1-71">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dataTableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable2"</span>),</span>
+<span id="annotated-cell-1-72">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h4</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componentes seleccionados:"</span>),</span>
+<span id="annotated-cell-1-73">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"selectedData2"</span>),</span>
+<span id="annotated-cell-1-74">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">actionButton</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"copyButton2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Copiar datos seleccionados"</span>)</span>
+<span id="annotated-cell-1-75">        ),</span>
+<span id="annotated-cell-1-76">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tabPanel</span>(</span>
+<span id="annotated-cell-1-77">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Códigos y grupos"</span>,</span>
+<span id="annotated-cell-1-78">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"codigoGrupos"</span>),</span>
+<span id="annotated-cell-1-79">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tableOutput</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"codigoComponentes"</span>)</span>
+<span id="annotated-cell-1-80">        )</span>
+<span id="annotated-cell-1-81">    ),</span>
+<span id="annotated-cell-1-82">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hr</span>(),</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-1-83" class="code-annotation-target">    tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">div</span>(</span>
+<span id="annotated-cell-1-84">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">class =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"footer"</span>,</span>
+<span id="annotated-cell-1-85">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"text-align: center; background-color: #333; color: #fff; padding: 20px;"</span>,</span>
+<span id="annotated-cell-1-86">        tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">h4</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"¿Te ha gustado esta App?"</span>),</span>
+<span id="annotated-cell-1-87">        tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">p</span>(</span>
+<span id="annotated-cell-1-88">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"¡Esta aplicación ha sido desarrollada con "</span>,</span>
+<span id="annotated-cell-1-89">            tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">a</span>(</span>
+<span id="annotated-cell-1-90">                <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">href =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://shiny.rstudio.com/"</span>,</span>
+<span id="annotated-cell-1-91">                <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"color: #ffcc00; font-weight: bold;"</span>,</span>
+<span id="annotated-cell-1-92">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"R Shiny"</span></span>
+<span id="annotated-cell-1-93">            ),</span>
+<span id="annotated-cell-1-94">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"!"</span></span>
+<span id="annotated-cell-1-95">        ),</span>
+<span id="annotated-cell-1-96">        tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">p</span>(</span>
+<span id="annotated-cell-1-97">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Si quieres aprender más sobre Shiny y crear tus propias aplicaciones interactivas, "</span>,</span>
+<span id="annotated-cell-1-98">            tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">a</span>(</span>
+<span id="annotated-cell-1-99">                <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">href =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://shiny.rstudio.com/tutorial/"</span>,</span>
+<span id="annotated-cell-1-100">                <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"color: #ffcc00; font-weight: bold;"</span>,</span>
+<span id="annotated-cell-1-101">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"haz clic aquí"</span></span>
+<span id="annotated-cell-1-102">            ),</span>
+<span id="annotated-cell-1-103">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" para acceder al tutorial oficial."</span></span>
+<span id="annotated-cell-1-104">        ),</span>
+<span id="annotated-cell-1-105">        tags<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">p</span>(</span>
+<span id="annotated-cell-1-106">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"¡Comienza a explorar el poder de Shiny hoy mismo!"</span>,</span>
+<span id="annotated-cell-1-107">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"font-weight: bold;"</span></span>
+<span id="annotated-cell-1-108">        )</span>
+<span id="annotated-cell-1-109">    )</span>
+<span id="annotated-cell-1-110">)</span>
+<span id="annotated-cell-1-111"></span>
+<span id="annotated-cell-1-112"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Definir server</span></span>
+<span id="annotated-cell-1-113">server <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(input, output, session) {</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-1-114" class="code-annotation-target">    getComposition <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(input_table) {</span>
+<span id="annotated-cell-1-115">        proportionConversion <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>proportion</span>
+<span id="annotated-cell-1-116">        idx <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> input[[input_table]]</span>
+<span id="annotated-cell-1-117">        selectedRow <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> alimentos[idx, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"PROCNT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FAT"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CHOCDF"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ZN"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"K"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"P"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"FE"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITA"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ACFOLIC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"VITC"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NA"</span>)]</span>
+<span id="annotated-cell-1-118">        selectedRow <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> selectedRow <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> proportionConversion <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="annotated-cell-1-119">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rownames</span>(selectedRow) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NULL</span></span>
+<span id="annotated-cell-1-120">        selectedRow</span>
+<span id="annotated-cell-1-121">    }</span>
+<span id="annotated-cell-1-122"></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-1-123" class="code-annotation-target">    output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderDataTable</span>(</span>
+<span id="annotated-cell-1-124">        alimentos,</span>
+<span id="annotated-cell-1-125">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">server =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">selection =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"single"</span>,</span>
+<span id="annotated-cell-1-126">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">options =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-127">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pageLength =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>,</span>
+<span id="annotated-cell-1-128">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columnDefs =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-129">                <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-130">                    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">targets =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"_all"</span>,</span>
+<span id="annotated-cell-1-131">                    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">className =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dt-center"</span></span>
+<span id="annotated-cell-1-132">                )</span>
+<span id="annotated-cell-1-133">            )</span>
+<span id="annotated-cell-1-134">        )</span>
+<span id="annotated-cell-1-135">    )</span>
+<span id="annotated-cell-1-136"></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-1-137" class="code-annotation-target">    output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>selectedData1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>({</span>
+<span id="annotated-cell-1-138">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable1_rows_selected"</span>)</span>
+<span id="annotated-cell-1-139">    })</span>
+<span id="annotated-cell-1-140"></span>
+<span id="annotated-cell-1-141">    output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderDataTable</span>(</span>
+<span id="annotated-cell-1-142">        platos,</span>
+<span id="annotated-cell-1-143">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">server =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">selection =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"single"</span>,</span>
+<span id="annotated-cell-1-144">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">options =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-145">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pageLength =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>,</span>
+<span id="annotated-cell-1-146">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columnDefs =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-147">                <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(</span>
+<span id="annotated-cell-1-148">                    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">targets =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"_all"</span>,</span>
+<span id="annotated-cell-1-149">                    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">className =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dt-center"</span></span>
+<span id="annotated-cell-1-150">                )</span>
+<span id="annotated-cell-1-151">            )</span>
+<span id="annotated-cell-1-152">        )</span>
+<span id="annotated-cell-1-153">    )</span>
+<span id="annotated-cell-1-154"></span>
+<span id="annotated-cell-1-155">    output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>selectedData2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>({</span>
+<span id="annotated-cell-1-156">        <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable2_rows_selected"</span>)</span>
+<span id="annotated-cell-1-157">    })</span>
+<span id="annotated-cell-1-158"></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-1-159" class="code-annotation-target">    output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>codigoGrupos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>(codigoGrupo)</span>
+<span id="annotated-cell-1-160"></span>
+<span id="annotated-cell-1-161">    output<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>codigoComponentes <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">renderTable</span>(anexoCodigo)</span>
+<span id="annotated-cell-1-162"></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-1-163" class="code-annotation-target">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">observeEvent</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>copyButton1, {</span>
+<span id="annotated-cell-1-164">        selectedData <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable1_rows_selected"</span>)</span>
+<span id="annotated-cell-1-165">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable1_rows_selected) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>) {</span>
+<span id="annotated-cell-1-166">            clipboard <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">apply</span>(selectedData, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, paste, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" "</span>)</span>
+<span id="annotated-cell-1-167">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">writeClipboard</span>(clipboard)</span>
+<span id="annotated-cell-1-168">            shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Datos copiados al portapapeles"</span>)</span>
+<span id="annotated-cell-1-169">        } <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> {</span>
+<span id="annotated-cell-1-170">            shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Selecciona una fila para copiar los datos"</span>)</span>
+<span id="annotated-cell-1-171">        }</span>
+<span id="annotated-cell-1-172">    })</span>
+<span id="annotated-cell-1-173"></span>
+<span id="annotated-cell-1-174">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">observeEvent</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>copyButton2, {</span>
+<span id="annotated-cell-1-175">        selectedData <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getComposition</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"foodTable2_rows_selected"</span>)</span>
+<span id="annotated-cell-1-176">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>(input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>foodTable2_rows_selected) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>) {</span>
+<span id="annotated-cell-1-177">            clipboard <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">apply</span>(selectedData, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, paste, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" "</span>)</span>
+<span id="annotated-cell-1-178">            <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">writeClipboard</span>(clipboard)</span>
+<span id="annotated-cell-1-179">            shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Datos copiados al portapapeles"</span>)</span>
+<span id="annotated-cell-1-180">        } <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> {</span>
+<span id="annotated-cell-1-181">            shinyjs<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alert</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Selecciona una fila para copiar los datos"</span>)</span>
+<span id="annotated-cell-1-182">        }</span>
+<span id="annotated-cell-1-183">    })</span>
+<span id="annotated-cell-1-184">}</span>
+<span id="annotated-cell-1-185"></span>
+<span id="annotated-cell-1-186"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ejecutar la aplicación Shiny</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-1-187" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">shinyApp</span>(ui, server)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="8,13,17" data-code-annotation="1">Cargar tabla de alimentos individuales (<code>alimentos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre de columnas).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="20,25,29" data-code-annotation="2">Cargar tabla de alimentos compustos (<code>alimentosCompuestos.csv</code>), seleccionar datos requeridos y modificar sus atributos (nombre columnas).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="33,41,43" data-code-annotation="3">Crear tabla de anexos para alimentos según código por grupo nutricional (<em>Opcional</em>).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="47,48" data-code-annotation="4">Crear tabla de anexos para alimentos según código de componentes nutricional (<em>Opcional</em>).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="51" data-code-annotation="5">Implementar la interfaz de usuario de la aplicación Shiny llamando a <code>fluidPage</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="52" data-code-annotation="6">Incluir ciertos estilos de contenido (archivo css).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="59" data-code-annotation="7">Definir una entrada de texto para la nueva composición de alimentos deseada.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="60" data-code-annotation="8">Complemento para mostrar ayudas visuales (mensajes).</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="61" data-code-annotation="9">Mostrar múltiples tablas mediante mediante pestañas separadas con <code>tabPanel()</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="83" data-code-annotation="10">Agregar un pie de nota con detalles de la aplicación.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="114" data-code-annotation="11">Implementar la función <code>server</code> que define la lógica del programa. Definir la función para manipular la fila seleccionada de las tablas de composición.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="123,141" data-code-annotation="12">Renderizar las tablas principales de alimentos. Para centrar todo el contenido de las tablas se creó un estilo css <code>dt-center</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="137,155" data-code-annotation="13">Renderizar los datos de componentes de interés <strong>(salida)</strong>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="159,161" data-code-annotation="14">Renderizar las tablas de Anexos.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="163,174" data-code-annotation="15">Evento que permite copiar los datos seleccionados al portapapeles. Utilizando el paso 8.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="16">16</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="187" data-code-annotation="16">Implementar la aplicación llamando a <code>shinyApp</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="el-demo" class="level2">
+<h2 class="anchored" data-anchor-id="el-demo">El demo ⏩</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sergiojacobo.com/blog/posts/2023/01/images/1.png" class="img-fluid figure-img" alt="Aplicación de composición de tablas de alimentos usando Shiny"></p>
+<figcaption>Aplicación Shiny</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Más allá de esta guía
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Revisar la página oficial para obtener las <a href="https://web.ins.gob.pe/es/alimentacion-y-nutricion/ciencia-y-tecnologia-de-alimentos/tabla-de-composicion-de-alimentos">Tablas de Composición completas</a></p>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../about.html">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2023,
+  author = {Jácobo, Sergio},
+  title = {Guía Nutricional con Shiny: Selección de Alimentos de la
+    Tabla Peruana de composición de alimentos (4ta Edición)},
+  date = {2023-04-15},
+  url = {https://sergiojacobo.com/blog/posts/2023/01/01.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2023" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2023. <span>“Guía Nutricional con Shiny: Selección de
+Alimentos de la Tabla Peruana de composición de alimentos (4ta
+Edición).”</span> April 15, 2023. <a href="https://sergiojacobo.com/blog/posts/2023/01/01.html">https://sergiojacobo.com/blog/posts/2023/01/01.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Quarto</category>
+  <category>ShinnyApp</category>
+  <guid>https://sergiojacobo.com/blog/posts/2023/01/01.html</guid>
+  <pubDate>Fri, 14 Apr 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2023/01/images/thumbnail.png" medium="image" type="image/png" height="103" width="144"/>
+</item>
+</channel>
+</rss>

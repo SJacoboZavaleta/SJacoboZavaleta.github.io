@@ -1,0 +1,2187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Sergio Jácobo-Zavaleta</title>
+<link>https://sergiojacobo.com/blog/robotics.html</link>
+<atom:link href="https://sergiojacobo.com/blog/robotics.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website and blog</description>
+<image>
+<url>https://sergiojacobo.com/images/Logo_ThirdFoundation_es_card.png</url>
+<title>Sergio Jácobo-Zavaleta</title>
+<link>https://sergiojacobo.com/blog/robotics.html</link>
+<height>78</height>
+<width>144</width>
+</image>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Fri, 14 Jun 2024 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Despliega tu Robot en 3D: Guía para Crear un Visor URDF</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/blog/posts/2024/02/02.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumbs">
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Despliega tu Robot en 3D: Guía para Crear un Visor URDF</span></p>
+</div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
+<section id="qué-es-urdf" class="level1">
+<h1>¿Qué es URDF?</h1>
+<p>El Formato Unificado de Descripción de Robótica (URDF) es un archivo XML que incluye la descripción física de un robot. Básicamente, es un modelo 3D con información sobre articulaciones, motores, masa, etc. Para más detalles sobre cómo crear tu propio robot en formato URDF, revisa nuestro <a href="../../../../blog/posts/2024/01/01.html">post anterior</a>.</p>
+</section>
+<section id="por-dónde-empezar" class="level1">
+<h1>¿Por dónde empezar?</h1>
+<p>Para crear nuestra aplicación y alojarla en un host web para presentar nuestro robot, utilizaremos las herramientas creadas con Three.js de <a href="https://github.com/gkjohnson/urdf-loaders/">gkjohnson/urdf-loaders</a>. Es necesario tener conocimientos básicos sobre Three.js y cómo <a href="https://threejs.org/docs/index.html#manual/en/introduction/Installation">instalarlo</a> localmente en nuestra PC. Puedes comenzar con este ejemplo básico desde su <a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">documentación oficial</a>. Este demo fue realizado en un entorno Windows, pero se puede replicar en otros sistemas operativos. Al final de este post, dejaré algunos recursos útiles para usuarios de Windows que se utilizaron en este tutorial.</p>
+<p>Para verificar una correcta instalación, basta con ejecutar en el terminal. Deberá devolver una salida con la versión como <code>10.7.0</code>.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">npm</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-v</span></span></code></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Todo lo indicado en este post se basa en la poca experiencia como desarrollador de aplicaciones con JavaScript o Three.js. Sin embargo, la intención es documentar los buenos resultados obtenidos para proyectos personales 🎴🕹️. Es posible (y seguro) que existan mejores maneras de administrar la aplicación, y espero que este post sirva como guía general 😊.</p>
+</div>
+</div>
+<section id="realizar-una-copia-o-fork-del-repositorio-urdf-loaders" class="level2">
+<h2 class="anchored" data-anchor-id="realizar-una-copia-o-fork-del-repositorio-urdf-loaders">Realizar una copia o fork del repositorio “urdf-loaders”</h2>
+<p>Dirígete a <a href="https://github.com/gkjohnson/urdf-loaders/">gkjohnson/urdf-loaders</a> y realiza una copia, ya sea de forma manual (descarga en .zip) o con Git. No todos los archivos serán necesarios para este tutorial.</p>
+</section>
+<section id="crear-tu-propia-estructura-del-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="crear-tu-propia-estructura-del-proyecto">Crear tu propia estructura del proyecto</h2>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">your-project/</span></span>
+<span id="cb2-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> docs/                    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Carpeta de salida para GitHub Pages</span></span>
+<span id="cb2-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── index.html           <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ¡Contenido creado automáticamente!</span></span>
+<span id="cb2-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   └── ...                  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Otros archivos generados por Parcel</span></span>
+<span id="cb2-5"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> urdf/                    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Carpeta de archivos URDF</span></span>
+<span id="cb2-6"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── robot/</span>
+<span id="cb2-7"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   ├── urdf/</span>
+<span id="cb2-8"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   │   ├── meshes/      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivos de malla para el robot</span></span>
+<span id="cb2-9"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   │   └── urdf/        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivos URDF del robot</span></span>
+<span id="cb2-10"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   │   └── ...              <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Otros robots generados</span></span>
+<span id="cb2-11"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> src/                     <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Código fuente de tu aplicación</span></span>
+<span id="cb2-12"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── index.html           <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivo HTML principal</span></span>
+<span id="cb2-13"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── main.js              <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivo JS principal</span></span>
+<span id="cb2-14"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   └── styles.css           <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivo CSS principal</span></span>
+<span id="cb2-15"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> utils/                    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Código fuente de tu aplicación</span></span>
+<span id="cb2-16"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── urdf-viewer-element.js  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivo del paquete urdf-loaders</span></span>
+<span id="cb2-17"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   └── ...                 <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Otros archivos el paquete</span></span>
+<span id="cb2-18"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> test/                   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Carpeta de pruebas para compilar y servir</span></span>
+<span id="cb2-19"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── index.html          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ¡Contenido creado automáticamente!</span></span>
+<span id="cb2-20"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   └── ...                 <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Otros archivos generados por Parcel durante las pruebas</span></span>
+<span id="cb2-21"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> package.json            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivo de configuración de npm</span></span>
+<span id="cb2-22"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">└──</span> .gitignore              <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Archivos a ignorar por Git</span></span></code></pre></div>
+</section>
+<section id="modificaciones-necesarias" class="level2">
+<h2 class="anchored" data-anchor-id="modificaciones-necesarias">Modificaciones necesarias</h2>
+<section id="actualizar-las-dependencias" class="level3">
+<h3 class="anchored" data-anchor-id="actualizar-las-dependencias">1. Actualizar las dependencias</h3>
+<p>Luego de estructurar tu proyecto, el primer paso es reutilizar el archivo de configuración <code>package.json</code>, encargado de instalar todas las dependencias y definir los comandos para probar y crear finalmente nuestra aplicación. Así, se reemplazó la sección devDependencies por sus versiones actualizadas.</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"devDependencies"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> {</span>
+<span id="cb3-2">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"@babel/core"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^7.21.8"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-3">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"@babel/preset-env"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^7.21.5"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"@types/three"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^0.164.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"@webcomponents/webcomponentsjs"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^2.4.4"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-6">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"babel-jest"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^29.5.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-7">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"concurrently"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^6.2.1"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-8">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"cssnano"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^7.0.4"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-9">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eslint"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^7.10.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-10">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eslint-plugin-jest"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^24.1.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-11">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"jest"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^27.1.1"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-12">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"jest-cli"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^27.1.1"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-13">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"jsdom"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^17.0.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-14">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"node-fetch"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^3.0.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-15">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"nyc"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^15.1.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-16">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"parcel-bundler"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^1.12.5"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-17">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"postcss"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^8.4.39"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-18">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rollup"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^2.29.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-19">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"static-server"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^3.0.0"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-20">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"three"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^0.164.1"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-21">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"typescript"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^4.4.3"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-22">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"http-server"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^14.1.1"</span></span>
+<span id="cb3-23">  }<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb3-24">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dependencies"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> {</span>
+<span id="cb3-25">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"parcel"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^2.12.0"</span></span>
+<span id="cb3-26">  }</span></code></pre></div>
+</section>
+<section id="modificar-los-comandos-de-ejecución" class="level3">
+<h3 class="anchored" data-anchor-id="modificar-los-comandos-de-ejecución">2. Modificar los comandos de ejecución</h3>
+<p>Luego, en la sección de scripts se deben reemplazar los comandos <code>start</code> y <code>build</code> por sus versiones actualizadas (según la estructura de tu proyecto y algunos comandos nuevos como <code>--dist-dir</code> debido a la actualización de las dependencias). El resto de comandos como <code>build-examples</code> o <code>test</code> fueron eliminados.</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"scripts"</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">:</span> {</span>
+<span id="cb4-2">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"start"</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"concurrently </span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">parcel watch ./src/index.html --dist-dir ./test/ --public-url . --no-cache</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> </span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">http-server ./</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>,</span>
+<span id="cb4-3">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"build"</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"parcel build ./src/index.html --dist-dir ./docs/ --public-url ./ --no-cache --no-source-maps --no-content-hash"</span></span>
+<span id="cb4-4"><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para el comando <code>start</code> se prefirió utilizar el paquete “http-server” en vez del “static-server” por ser más ligero y estar familiarizado.</p>
+</div>
+</div>
+</section>
+<section id="modificar-las-referencias-a-los-archivos-principales" class="level3">
+<h3 class="anchored" data-anchor-id="modificar-las-referencias-a-los-archivos-principales">3. Modificar las referencias a los archivos principales</h3>
+<p>Algunos de nuestro archivos se verán afectados y son compilados en este punto, ya que no estarán correctamente enlazados debido a la nueva estructura del proyecto. Lo siguiente será revisar el contenido de nuestro principales archivos del paquete ubicados en <code>src</code> y <code>utils</code> (archivos js y html). Sin embargo, para nuestro beneficio, estos ya fueron identificados y son los siguientes:</p>
+<section id="en-src" class="level4">
+<h4 class="anchored" data-anchor-id="en-src">En src/</h4>
+<ol type="1">
+<li>En <code>index.js</code></li>
+</ol>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/* globals */</span></span>
+<span id="cb5-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span></span>
+<span id="cb5-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> URDFManipulator <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'../utils/urdf-manipulator-element.js'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
+<ol start="2" type="1">
+<li>En <code>index.html</code></li>
+</ol>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;!</span>DOCTYPE html<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>html lang<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"es"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-3"></span>
+<span id="cb6-4"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>head<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-5">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>meta charset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"utf-8"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-6">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span></span>
+<span id="cb6-7">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>link href<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"styles.css"</span> type<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"text/css"</span> rel<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"stylesheet"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-8"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;/</span>head<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-9"></span>
+<span id="cb6-10"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>body<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-11">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span></span>
+<span id="cb6-12">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>script type<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"module"</span> src<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"./index.js"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&lt;/</span>script<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span>
+<span id="cb6-13"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;/</span>body<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span></span></code></pre></div>
+</section>
+</section>
+<section id="mantener-solo-archivos-necesarios" class="level3">
+<h3 class="anchored" data-anchor-id="mantener-solo-archivos-necesarios">4. Mantener solo archivos necesarios</h3>
+<p>Dado que solo se mantuvo los comandos <code>start</code> y <code>build</code>, los siguientes archivos de la carpeta original pueden eliminarse de nuestro proyecto:</p>
+<ul>
+<li>umd/<br>
+</li>
+<li>.eslintrc.json<br>
+</li>
+<li>babel.config.json<br>
+</li>
+<li>jest.config.js<br>
+</li>
+<li>package-lock.json (se volverá a crear al compilar)<br>
+</li>
+<li>rollup.config.json<br>
+</li>
+<li>example/index.bundle.html<br>
+</li>
+<li>example/simple.html<br>
+</li>
+<li>example/vr.html<br>
+</li>
+<li>example/src/index.js<br>
+</li>
+<li>example/src/simple.js<br>
+</li>
+<li>example/src/vr.js</li>
+</ul>
+</section>
+</section>
+<section id="relizando-pruebas" class="level2">
+<h2 class="anchored" data-anchor-id="relizando-pruebas">Relizando pruebas</h2>
+<p>Finalmente, llegó la parte más interesante y fácil de toda esta guía. Simplemente con el siguiente comando, se puede probar nuestra aplicación en un servidor local desde nuestro navegador. Para realizar un cambio, solo basta con guardar el archivo luego de modificar. Se recomienda fuertemente utilizar <a href="https://code.visualstudio.com/Download">VSCode</a> para editar e implementar todo nuestro proyecto. Recuerda que los archivos creados para ello se almacenan en la carpeta <code>/test</code>, por lo que hay que tener en cuenta en nuestra dirección del localhost.</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">npm</span> start</span></code></pre></div>
+<p>Algunas modificaciones incluyen, cambiar la posición de la cámara y zoom de nuestro robot, según:</p>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">initCamera()</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">{</span></span>
+<span id="cb8-2">        <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">this.camera</span> = new THREE.PerspectiveCamera<span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">75,</span> 1, 0.1, 1000<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">);</span></span>
+<span id="cb8-3">        <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">this.camera.position.z</span> = 7<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">;</span></span>
+<span id="cb8-4">        <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">this.camera.zoom</span> = 8<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">;</span></span>
+<span id="cb8-5">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">}</span></span></code></pre></div>
+</section>
+<section id="realizando-la-exportación-final" class="level2">
+<h2 class="anchored" data-anchor-id="realizando-la-exportación-final">Realizando la exportación final</h2>
+<p>Luego de modificar todo lo necesario, probar con los robots incluidos por defecto y agregar nuestro propio archivo URDF, finalmente se procede a compilar los archivos necesarios en la carpeta <code>/docs</code> para subirlo a nuestro host con Github Pages, utilizando simplemente:</p>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">npm</span> run build</span></code></pre></div>
+<section id="modificación-final" class="level3">
+<h3 class="anchored" data-anchor-id="modificación-final">Modificación final</h3>
+<p>Para poder visualizar correctamente nuestra aplicación con ayuda de Github Pages (según lo explicado más adelante), se procederá a modificar el contenido de la carpeta <code>/docs</code>:</p>
+<ol type="1">
+<li>Realizar una copia de nuestra carpeta urdf dentro de <code>/docs</code><br>
+</li>
+<li>Modificar el archivo index.html creado en <code>/docs</code>, indicando que nuestro urdf se encuentra ahora en la misma carpeta:</li>
+</ol>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>li <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">urdf</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"./urdf/UR5/urdf/UR5.URDF"</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">color</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#37B7C3"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&lt;</span>b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>UR5<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>/b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&lt;</span>/li<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span></code></pre></div>
+<p>De esta manera, se asegura que todo nuestro proyecto y sus dependencias corran desde en la web <code>/docs</code>. Por lo que nuestro nueva jerarquía de archivos sería ahora:</p>
+<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">your-project/</span></span>
+<span id="cb11-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">├──</span> docs/                    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Carpeta de salida para GitHub Pages</span></span>
+<span id="cb11-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── index.html</span>
+<span id="cb11-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   ├── urdf/                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Carpeta de archivo del robot</span></span>
+<span id="cb11-5"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">│</span>   └── ...                  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Otros archivos creados al compilar</span></span></code></pre></div>
+</section>
+</section>
+<section id="subiendo-a-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="subiendo-a-github-pages">Subiendo a Github Pages</h2>
+<p>La carpeta <code>docs</code> es importante porque nos permitirá almacenar todo nuestro visualizador URDF. Para ello, ir a la sección de <code>Settings</code> de nuestro repositorio público previamente creado. Eb la sección de <code>Pages --&gt; Github Pages --&gt; Build and deployment</code> seleccionar la opción <code>Deploy from a branch</code>. Luego, indicar ruta del folder base para la creación nuestro página a <code>/docs</code>. Por defecto es <code>/root</code>.</p>
+<p>Luego de unos minutos, aparecerá que nuestro sitio se creó correctamente y aparecerá un enlace a nuestra página web de nuestro visualizador URDF completamente funcional.</p>
+<p>Y eso es todo, disfruta de tu robot en la web !!! o prueba el mío en <a href="https://sjacobozavaleta.github.io/URDFviewer/">Github</a>.</p>
+</section>
+</section>
+<section id="recursos-recomendados" class="level1">
+<h1>Recursos recomendados</h1>
+<ol type="1">
+<li>Instalador de Node.js y npm según su <a href="https://docs.npmjs.com/cli/v6/configuring-npm/install">página oficial</a> mediante un gestor de versiones de Node como <a href="https://github.com/coreybutler/nvm-windows">coreybutler/nvm-windows</a>.</li>
+</ol>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.qmd">sitio web</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright y licencia</dt>
+<dd>
+<p>© 2024 Sergio Jácobo</p>
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;vertical-align:text-bottom;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"></a> Este artículo está licenciado bajo Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> Licencia Internacional</a>.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Como citar</dt>
+<dd>
+Jácobo-Zavaleta, Sergio. 2024. <em>“Despliega tu Robot en 3D: Guía para Crear un Visor URDF”</em>, Third Foundation, 11 de julio, 2024. <a href="https://sjacobozavaleta.github.io/blogs/posts/2024/robotics/02/b1_2.html">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2024,
+  author = {Jácobo, Sergio},
+  title = {Despliega tu Robot en 3D: Guía para Crear un Visor URDF},
+  date = {2024-06-15},
+  url = {https://sergiojacobo.com/blog/posts/2024/02/02.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2024" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2024. <span>“Despliega tu Robot en 3D: Guía para Crear
+un Visor URDF.”</span> June 15, 2024. <a href="https://sergiojacobo.com/blog/posts/2024/02/02.html">https://sergiojacobo.com/blog/posts/2024/02/02.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Robotics</category>
+  <category>Research</category>
+  <category>URDF</category>
+  <category>Three.js</category>
+  <guid>https://sergiojacobo.com/blog/posts/2024/02/02.html</guid>
+  <pubDate>Fri, 14 Jun 2024 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2024/02/images/thumbnail.png" medium="image" type="image/png" height="149" width="144"/>
+</item>
+<item>
+  <title>Desde Fusion 360 a URDF: Construye y Simula tu Robot</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/blog/posts/2024/01/01.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumbs">
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Desde Fusion 360 a URDF: Construye y Simula tu Robot</span></p>
+</div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/logos_URDF_pathway.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Ruta de trabajo para utilizar archivos URDF"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/logos_URDF_pathway.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Ruta de trabajo para utilizar archivos URDF"></a></p>
+</figure>
+</div>
+<figcaption>Ruta de trabajo para utilizar archivos URDF</figcaption>
+</figure>
+</div>
+<section id="qué-es-urdf" class="level1">
+<h1>¿Qué es URDF?</h1>
+<p>El formato unificado de descripción de robótica (URDF) es un tipo de archivo XML que incluye la descripción física de un robot. Es básicamente un modelo 3D con información sobre articulaciones, motores, masa, etc. Estos archivos se ejecutan a través del Sistema Operativo de Robots (ROS). Los datos del archivo informan al operador humano sobre el aspecto y las capacidades del robot antes de que comiencen a operarlo.</p>
+<p>Estos archivos también se utilizan en simuladores para probar el comportamiento del robot antes de su despliegue en el mundo real, o en la creación de un gemelo digital para la visualización en tiempo real y bidireccional del estado de un dispositivo robótico.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Muchos fabricantes de robots tienen modelos URDF de sus dispositivos disponibles para descargar. Pero si no es el caso, se tendrá que crear desde cero. La solución más práctica es generarlo a partir de un dibujo CAD 3D, dado que permite crear formas y relaciones mecánicas complejas, manteniendo una relación eslabón-articulación completamente referenciada y necesaria en el archivo URDF.</p>
+</div>
+</div>
+<section id="configuración-básica" class="level2">
+<h2 class="anchored" data-anchor-id="configuración-básica">Configuración básica</h2>
+<p>La relación entre elementos se aprecia de forma intuitiva en la Figura&nbsp;1. Un ejemplo de código básico y su representación gráfica se aprecian en la Figura&nbsp;2.</p>
+<div id="fig-rosURDF" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rosURDF-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/link.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Detalle de un eslabón"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/link.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<figcaption>Detalle de un eslabón</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/joint.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Relación eslabón-articulación"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/joint.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<figcaption>Relación eslabón-articulación</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/joint_link.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Relación entre eslabones"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/joint_link.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></a></p>
+</figure>
+</div>
+<figcaption>Relación entre eslabones</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rosURDF-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Representación de links, joints y sus orígenes utilizados en URDF
+</figcaption>
+</figure>
+</div>
+<div id="fig-ejemplo-urdf" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemplo-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"> 1 &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">robot</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"test_robot"</span>&gt;</span>
+<span id="cb1-2"> 2   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link1"</span> /&gt;</span>
+<span id="cb1-3"> 3   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link2"</span> /&gt;</span>
+<span id="cb1-4"> 4   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link3"</span> /&gt;</span>
+<span id="cb1-5"> 5   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">link</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link4"</span> /&gt;</span>
+<span id="cb1-6"> 6 </span>
+<span id="cb1-7"> 7   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"joint1"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"continuous"</span>&gt;</span>
+<span id="cb1-8"> 8     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">parent</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link1"</span>/&gt;</span>
+<span id="cb1-9"> 9     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">child</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link2"</span>/&gt;</span>
+<span id="cb1-10">10     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">origin</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5 3 0"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> rpy=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0 0 0"</span> /&gt;</span>
+<span id="cb1-11">11     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">axis</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-0.9 0.15 0"</span> /&gt;</span>
+<span id="cb1-12">12   &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span>&gt;</span>
+<span id="cb1-13">13 </span>
+<span id="cb1-14">14   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"joint2"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"continuous"</span>&gt;</span>
+<span id="cb1-15">15     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">parent</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link1"</span>/&gt;</span>
+<span id="cb1-16">16     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">child</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link3"</span>/&gt;</span>
+<span id="cb1-17">17     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">origin</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-2 5 0"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> rpy=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0 0 1.57"</span> /&gt;</span>
+<span id="cb1-18">18     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">axis</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-0.707 0.707 0"</span> /&gt;</span>
+<span id="cb1-19">19   &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span>&gt;</span>
+<span id="cb1-20">20 </span>
+<span id="cb1-21">21   &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> name=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"joint3"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"continuous"</span>&gt;</span>
+<span id="cb1-22">22     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">parent</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link3"</span>/&gt;</span>
+<span id="cb1-23">23     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">child</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> link=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"link4"</span>/&gt;</span>
+<span id="cb1-24">24     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">origin</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5 0 0"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> rpy=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0 0 -1.57"</span> /&gt;</span>
+<span id="cb1-25">25     &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">axis</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> xyz=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.707 -0.707 0"</span> /&gt;</span>
+<span id="cb1-26">26   &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">joint</span>&gt;</span>
+<span id="cb1-27">27 &lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">robot</span>&gt;</span></code></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/graphiz.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Visualización con Graphviz"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/graphiz.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption>Visualización con Graphviz</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemplo-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Formato URDF y su representación gráfica de los elementos del robot
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para una descripción más detallada sobre el formato URDF y su configuración, se recomienda visitar la <a href="https://wiki.ros.org/urdf/Tutorials/Create%20your%20own%20urdf%20file">documentación URDF en ROS</a> o algunas <a href="https://abedgnu.github.io/Notes-ROS/chapters/ROS/10_robot_modeling/urdf.html">notas</a>.</p>
+</div>
+</div>
+</section>
+<section id="aplicaciones" class="level2">
+<h2 class="anchored" data-anchor-id="aplicaciones">Aplicaciones</h2>
+<div id="fig-aplicaciones" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aplicaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/urdf_franka.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="En Omniverse"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/urdf_franka.png" class="img-fluid figure-img"></a></p>
+<figcaption><a href="https://docs.omniverse.nvidia.com/kit/docs/omniverse-urdf-importer/latest/index.html">En Omniverse</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/urdf_rviz.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="En Rviz"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/urdf_rviz.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<figcaption><a href="https://discourse.ros.org/t/urdf-viz-urdf-file-viewer/2472">En Rviz</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aplicaciones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Ejemplos de robots importados como URDF
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="creando-tu-robot" class="level1">
+<h1>Creando tu robot</h1>
+<section id="consideraciones-cad" class="level2">
+<h2 class="anchored" data-anchor-id="consideraciones-cad">Consideraciones CAD</h2>
+<p>Ya sea que dibujes desde cero o que reutilices archivos, deberás adaptar el modelado de tu dibujo teniendo en cuenta los requisitos solicitados en el paso de conversión o generación de nuestro archivo URDF (que dependerá del código del autor del script). Además, según el diseño CAD (por ejemplo, como <em>“top-down”</em> y <em>“bottom-up”</em>) esto será más o menos difícil en algunos casos dependiendo del proceso de modelado según el programa utilizado. En este caso, con ayuda de Fusion 360 con un diseño top-down, es necesario que los elementos de nuestro robot (eslabones y articulaciones o <em>“links”</em> y <em>“joints”</em> como se referirá a partir de ahora respectivamente) se conserve la siguiente distribución:</p>
+<div class="cell" data-layout-align="default">
+<details open="" class="code-fold">
+<summary>Mostrar u ocultar el código</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode dot code-with-copy"><code class="sourceCode dot"><span id="cb2-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">digraph</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">G</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">  </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fontname</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Helvetica,Arial,sans-serif"</span></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">node</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fontname</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Helvetica,sans-serif"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">edge</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fontname</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cambria,sans-serif"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">subgraph</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cluster_0</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">filled</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#03AED2"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">node</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">filled</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#FEEFAD"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">];</span></span>
+<span id="cb2-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CAD"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-11"></span>
+<span id="cb2-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Raiz"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 1"</span></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Raiz"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 2"</span></span>
+<span id="cb2-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span></span>
+<span id="cb2-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 1"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cuerpo 1"</span></span>
+<span id="cb2-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 1"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cuerpo 2"</span></span>
+<span id="cb2-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 1"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cuerpo 3"</span></span>
+<span id="cb2-18"></span>
+<span id="cb2-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 2"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cuerpo 4"</span></span>
+<span id="cb2-20"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 2"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cuerpo 5"</span></span>
+<span id="cb2-21"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Componente 2"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cuerpo 6"</span></span>
+<span id="cb2-22"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb2-23"></span>
+<span id="cb2-24"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">subgraph</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cluster_1</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">filled</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-26"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">node</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">filled</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">, </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#F3B95F"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">];</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Body 4, 5, 6"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Body 1, 2 y 3"</span></span>
+<span id="cb2-27"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"URDF"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-28"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#FEFFD2"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-29"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">node</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">shape</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">box</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">filled</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#FF7D29"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">];</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Link 1"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">node</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">shape</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">diamond</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">style</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">filled</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#FFBF78"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">];</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Link 2"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-31"></span>
+<span id="cb2-32"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Link 2"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Body 4, 5, 6"</span></span>
+<span id="cb2-33"></span>
+<span id="cb2-34"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Link 1"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Link 2"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Joint 1"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb2-35"></span>
+<span id="cb2-36"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Link 1"</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Body 1, 2 y 3"</span></span>
+<span id="cb2-37"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb2-38"></span>
+<span id="cb2-39"><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-cad-urdf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cad-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 961.00 262.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 258.6)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-258.6 957,-258.6 957,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<polygon fill="#03aed2" stroke="#03aed2" points="8,-8 8,-246.6 673,-246.6 673,-8 8,-8"></polygon>
+<text text-anchor="middle" x="340.5" y="-230" font-family="Helvetica,Arial,sans-serif" font-size="14.00">CAD</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1</title>
+<polygon fill="#feffd2" stroke="#feffd2" points="681,-8 681,-246.6 945,-246.6 945,-8 681,-8"></polygon>
+<text text-anchor="middle" x="813" y="-230" font-family="Helvetica,Arial,sans-serif" font-size="14.00">URDF</text>
+</g>
+<!-- Raiz -->
+<g id="node1" class="node">
+<title>Raiz</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="356" cy="-195.8" rx="28.97" ry="18"></ellipse>
+<text text-anchor="middle" x="356" y="-191.6" font-family="Helvetica,sans-serif" font-size="14.00">Raiz</text>
+</g>
+<!-- Componente 1 -->
+<g id="node2" class="node">
+<title>Componente 1</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="216" cy="-107" rx="67.76" ry="18"></ellipse>
+<text text-anchor="middle" x="216" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Componente 1</text>
+</g>
+<!-- Raiz&#45;&gt;Componente 1 -->
+<g id="edge1" class="edge">
+<title>Raiz-&gt;Componente 1</title>
+<path fill="none" stroke="black" d="M336.24,-182.55C313.89,-168.69 277.11,-145.89 250.1,-129.14"></path>
+<polygon fill="black" stroke="black" points="251.69,-126.01 241.35,-123.72 248,-131.96 251.69,-126.01"></polygon>
+</g>
+<!-- Componente 2 -->
+<g id="node3" class="node">
+<title>Componente 2</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="452" cy="-107" rx="67.76" ry="18"></ellipse>
+<text text-anchor="middle" x="452" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Componente 2</text>
+</g>
+<!-- Raiz&#45;&gt;Componente 2 -->
+<g id="edge2" class="edge">
+<title>Raiz-&gt;Componente 2</title>
+<path fill="none" stroke="black" d="M371.85,-180.47C386.63,-167.1 408.93,-146.94 426.26,-131.27"></path>
+<polygon fill="black" stroke="black" points="428.76,-133.73 433.83,-124.43 424.07,-128.54 428.76,-133.73"></polygon>
+</g>
+<!-- Cuerpo 1 -->
+<g id="node4" class="node">
+<title>Cuerpo 1</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="63" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="63" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 1</text>
+</g>
+<!-- Componente 1&#45;&gt;Cuerpo 1 -->
+<g id="edge3" class="edge">
+<title>Componente 1-&gt;Cuerpo 1</title>
+<path fill="none" stroke="black" d="M183.93,-91.12C159.76,-79.9 126.55,-64.49 101.04,-52.65"></path>
+<polygon fill="black" stroke="black" points="102.22,-49.34 91.68,-48.31 99.28,-55.69 102.22,-49.34"></polygon>
+</g>
+<!-- Cuerpo 2 -->
+<g id="node5" class="node">
+<title>Cuerpo 2</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="174" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="174" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 2</text>
+</g>
+<!-- Componente 1&#45;&gt;Cuerpo 2 -->
+<g id="edge4" class="edge">
+<title>Componente 1-&gt;Cuerpo 2</title>
+<path fill="none" stroke="black" d="M206.05,-89.17C200.97,-80.6 194.7,-69.99 189.05,-60.44"></path>
+<polygon fill="black" stroke="black" points="191.99,-58.53 183.88,-51.71 185.96,-62.09 191.99,-58.53"></polygon>
+</g>
+<!-- Cuerpo 3 -->
+<g id="node6" class="node">
+<title>Cuerpo 3</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="285" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="285" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 3</text>
+</g>
+<!-- Componente 1&#45;&gt;Cuerpo 3 -->
+<g id="edge5" class="edge">
+<title>Componente 1-&gt;Cuerpo 3</title>
+<path fill="none" stroke="black" d="M232.35,-89.17C241.24,-80.02 252.38,-68.56 262.12,-58.54"></path>
+<polygon fill="black" stroke="black" points="264.78,-60.83 269.24,-51.22 259.76,-55.95 264.78,-60.83"></polygon>
+</g>
+<!-- Cuerpo 4 -->
+<g id="node7" class="node">
+<title>Cuerpo 4</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="396" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="396" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 4</text>
+</g>
+<!-- Componente 2&#45;&gt;Cuerpo 4 -->
+<g id="edge6" class="edge">
+<title>Componente 2-&gt;Cuerpo 4</title>
+<path fill="none" stroke="black" d="M438.73,-89.17C431.82,-80.42 423.25,-69.55 415.6,-59.85"></path>
+<polygon fill="black" stroke="black" points="418.12,-57.39 409.18,-51.71 412.62,-61.72 418.12,-57.39"></polygon>
+</g>
+<!-- Cuerpo 5 -->
+<g id="node8" class="node">
+<title>Cuerpo 5</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="507" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="507" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 5</text>
+</g>
+<!-- Componente 2&#45;&gt;Cuerpo 5 -->
+<g id="edge7" class="edge">
+<title>Componente 2-&gt;Cuerpo 5</title>
+<path fill="none" stroke="black" d="M465.03,-89.17C471.82,-80.42 480.24,-69.55 487.75,-59.85"></path>
+<polygon fill="black" stroke="black" points="490.7,-61.75 494.06,-51.71 485.17,-57.47 490.7,-61.75"></polygon>
+</g>
+<!-- Cuerpo 6 -->
+<g id="node9" class="node">
+<title>Cuerpo 6</title>
+<ellipse fill="#feefad" stroke="#feefad" cx="618" cy="-34" rx="46.92" ry="18"></ellipse>
+<text text-anchor="middle" x="618" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Cuerpo 6</text>
+</g>
+<!-- Componente 2&#45;&gt;Cuerpo 6 -->
+<g id="edge8" class="edge">
+<title>Componente 2-&gt;Cuerpo 6</title>
+<path fill="none" stroke="black" d="M486.4,-91.29C513.15,-79.84 550.32,-63.95 578.33,-51.97"></path>
+<polygon fill="black" stroke="black" points="580.01,-55.06 587.83,-47.9 577.26,-48.62 580.01,-55.06"></polygon>
+</g>
+<!-- Body 4, 5, 6 -->
+<g id="node10" class="node">
+<title>Body 4, 5, 6</title>
+<ellipse fill="#f3b95f" stroke="#f3b95f" cx="878" cy="-34" rx="58.54" ry="18"></ellipse>
+<text text-anchor="middle" x="878" y="-29.8" font-family="Helvetica,sans-serif" font-size="14.00">Body 4, 5, 6</text>
+</g>
+<!-- Body 1, 2 y 3 -->
+<g id="node11" class="node">
+<title>Body 1, 2 y 3</title>
+<ellipse fill="#f3b95f" stroke="#f3b95f" cx="752" cy="-107" rx="63.2" ry="18"></ellipse>
+<text text-anchor="middle" x="752" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Body 1, 2 y 3</text>
+</g>
+<!-- Link 1 -->
+<g id="node12" class="node">
+<title>Link 1</title>
+<polygon fill="#ff7d29" stroke="#ff7d29" points="845,-213.8 791,-213.8 791,-177.8 845,-177.8 845,-213.8"></polygon>
+<text text-anchor="middle" x="818" y="-191.6" font-family="Helvetica,sans-serif" font-size="14.00">Link 1</text>
+</g>
+<!-- Link 1&#45;&gt;Body 1, 2 y 3 -->
+<g id="edge11" class="edge">
+<title>Link 1-&gt;Body 1, 2 y 3</title>
+<path fill="none" stroke="black" d="M804.96,-177.65C795.23,-164.85 781.78,-147.16 770.87,-132.82"></path>
+<polygon fill="black" stroke="black" points="773.63,-130.66 764.79,-124.82 768.05,-134.9 773.63,-130.66"></polygon>
+</g>
+<!-- Link 2 -->
+<g id="node13" class="node">
+<title>Link 2</title>
+<polygon fill="#ffbf78" stroke="#ffbf78" points="885,-125 833.21,-107 885,-89 936.79,-107 885,-125"></polygon>
+<text text-anchor="middle" x="885" y="-102.8" font-family="Helvetica,sans-serif" font-size="14.00">Link 2</text>
+</g>
+<!-- Link 1&#45;&gt;Link 2 -->
+<g id="edge10" class="edge">
+<title>Link 1-&gt;Link 2</title>
+<path fill="none" stroke="black" d="M831.24,-177.65C841.88,-163.86 856.91,-144.39 868.37,-129.55"></path>
+<polygon fill="black" stroke="black" points="871.3,-131.47 874.64,-121.42 865.76,-127.2 871.3,-131.47"></polygon>
+<text text-anchor="middle" x="875.86" y="-147.2" font-family="Cambria,sans-serif" font-size="14.00">Joint 1</text>
+</g>
+<!-- Link 2&#45;&gt;Body 4, 5, 6 -->
+<g id="edge9" class="edge">
+<title>Link 2-&gt;Body 4, 5, 6</title>
+<path fill="none" stroke="black" d="M883.38,-89.53C882.59,-81.52 881.62,-71.68 880.72,-62.57"></path>
+<polygon fill="black" stroke="black" points="884.18,-61.98 879.71,-52.37 877.21,-62.66 884.18,-61.98"></polygon>
+</g>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cad-urdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Relación entre los elementos entre los archivos CAD y URDF
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La Figura&nbsp;4 ejemplifica que es necesario que en Fusion 360, las partes principales del robot se definan como <strong>componentes</strong>, creados a partir de subpartes (<strong>cuerpos</strong>). Manteniendo esta relación en todo momento, se garantiza y facilita la definición de links y joints de forma correcta.</p>
+<p>En esta oportunidad, se utilizó como ejemplo el robot colaborativo <strong>UR5</strong> de <a href="https://www.universal-robots.com/products/ur5-robot/">Universal Robots</a> a lo largo de todo el post. Así, en la Figura&nbsp;5 se aprecia la jerarquía de los componentes y cuerpos creados durante el dibujo. Por ejemplo, el segundo eslabón se compone de 9 subpartes (de tipo <em>“body”</em> en Fusion 360), evitando la anidación de componentes en todo momento.</p>
+<div id="fig-robotCad" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-robotCad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/fusion2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;5: Ruta de trabajo para utilizar archivos URDF"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/fusion2.png" class="img-fluid quarto-figure quarto-figure-left figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-robotCad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Ruta de trabajo para utilizar archivos URDF
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="exportando-un-archivo-urdf" class="level1">
+<h1>Exportando un archivo URDF</h1>
+<p>Luego de realizar nuestro dibujo CAD, se recomienda utilizar un plugin para generar de forma automática y bajo la mesa, todo el código necesario para la descripción gráfica de nuestro robot. Esto nos permite centrarnos principalmente en lo importante durante el modelado. Sin embargo, dado que cada plugin disponible depende del software utilizado, como Solidworks, FreeCAD o Fusion360.</p>
+<p>Para ello, se utilizó el plugin <a href="https://github.com/dheena2k2/fusion2urdf-ros2">dheena2k2/fusion2urdf-ros2</a> para generar archivos URDF orientado a ROS2, el mismo que se basó en otro plugin de <a href="https://github.com/dheena2k2/fusion2urdf-ros2">syuntoku14/fusion2urdf</a> orientado a ROS1.</p>
+<section id="consideraciones-cad-1" class="level2">
+<h2 class="anchored" data-anchor-id="consideraciones-cad-1">Consideraciones CAD</h2>
+<p>Para generar correctamente el archivo URDF, se requiere: - Los eslabones del robot deben definirse como componentes. - El componente base debe renombrarse como <code>base_link</code>.<br>
+- Cada componente debe contener únicamente cuerpos simples. No utilizar componentes anidados.<br>
+- Cuando se definen las relaciones de articulación (joint): 1. Se selecciona primero el eslabón hijo (child link) como Componente 1. 2. Luego, el eslabón padre (parent link) como Componente 2. 3. Verificar que el movimiento del grado de libertad (por ejemplo, de rotación o traslación) siga el eje de rotación +Z.</p>
+</section>
+<section id="modificando-nuestro-archivo" class="level2">
+<h2 class="anchored" data-anchor-id="modificando-nuestro-archivo">Modificando nuestro archivo</h2>
+<ol type="1">
+<li>Dentro del conjunto de la carpeta exportada, centrarse en las carpetas <code>\urdf</code> y <code>\meshes</code> que contienen el archivo URDF y los archivos de modelo 3D.</li>
+<li>Cambiar la extensión del archivo URDF de <code>.xacro</code> por <code>.urdf</code>.</li>
+<li>Verificar que el nombre de los archivos <em>mesh</em> (formato STL) referenciados dentro del archivo URDF coincidan con sus archivos en la carpeta <code>\meshes</code>. Si no, corregir.</li>
+<li>Corregir todos los enlaces de referencia en los entornos <code>&lt;geometry&gt;</code> del archivo URDF:
+<ol type="1">
+<li>Del siguiente código:<br>
+</li>
+</ol>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb3-1">&lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span>
+<span id="cb3-2"> &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">mesh</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> filename=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"file://$(find UR5_description)/meshes/base_link.stl"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> scale=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.001 0.001 0.001"</span>/&gt;</span>
+<span id="cb3-3">&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span></code></pre></div>
+<ol start="2" type="1">
+<li>Reemplazar así:</li>
+</ol>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb4-1">&lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span>
+<span id="cb4-2">  &lt;<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">mesh</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> filename=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"package://meshes/base_link.stl"</span><span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;"> scale=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0.001 0.001 0.001"</span>/&gt;</span>
+<span id="cb4-3">&lt;/<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">geometry</span>&gt;</span></code></pre></div></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para verificar si nuestro archivo URDF se creó correctamente antes de importarlo a algún simulador, podemos utilizar un visualizador como RViz en Ubuntu. Sin embargo, para los usuarios de Windows, la aplicación <a href="https://gkjohnson.github.io/urdf-loaders/javascript/example/bundle/index.html">urdf-loaders</a> de <a href="https://github.com/gkjohnson/urdf-loaders/">gkjohnson</a> nos permite visualizar y manipular de forma intuitiva el resultado de nuestro robot en línea. Incluso, viene un ejemplo de un robot hexápodo ATHLETE. Para nuestro</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p><img src="https://sergiojacobo.com/blog/posts/2024/01/images/visorURDF.jpeg" class="img-fluid quarto-figure quarto-figure-center" style="width:45.0%" alt="Robot ATHLETE"> <img src="https://sergiojacobo.com/blog/posts/2024/01/images/visorURDF_ur5.jpeg" class="img-fluid quarto-figure quarto-figure-center" style="width:45.0%" alt="Robot UR5"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="importando-a-tu-simulador" class="level1">
+<h1>Importando a tu simulador</h1>
+<p>Finalmente, dependiendo del simulador a utilizar, se requerirán ciertos parámetros o configuraciones para importar correctamente el robot en formato URDF. En cualquier caso, se debe verificar siempre la relación entre links y joints y cómo reaccionan al movimiento de los joints.</p>
+<section id="para-coppeliasim" class="level2">
+<h2 class="anchored" data-anchor-id="para-coppeliasim">Para CoppeliaSim</h2>
+<ol type="1">
+<li>Dirigirse a la opción de importación según <code>Modules -&gt; Importers -&gt; URDF importer</code>.</li>
+<li>Seleccionar la opción <code>Convex hull of non-convex collision links</code> para mejorar el rendimiento de simulación según la Figura&nbsp;6.</li>
+</ol>
+<div id="fig-urdfImporter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-urdfImporter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/coppeliaSim_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figura&nbsp;6: Opciones de URDF importer"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/coppeliaSim_1.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-urdfImporter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Opciones de URDF importer
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Finalmente, el resultado se aprecia en la siguiente figura. Nótese la jerarquía de los elementos del robot, de forma secuencial, correspondiente a un robot de cadena abierta como el robot cooperativo UR5 en la Figura&nbsp;7.</li>
+</ol>
+<div id="fig-coppeliaSimWithRobot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coppeliaSimWithRobot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/coppeliaSim_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figura&nbsp;7: Vista de CoppeliaSim"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/coppeliaSim_2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coppeliaSimWithRobot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Vista de CoppeliaSim
+</figcaption>
+</figure>
+</div>
+<p>Por otro lado, CoppeliaSim ofrece una gran cantidad de robots comerciales incluidos en el programa para arrastrar al espacio de trabajo y comenzar a trabajar. Esto reduce el tiempo de creación del modelo cuando se pretende utilizar algún robot comercial disponible, como Sawyer, Kuka LBR4, Franka Emika Panda, etc. La Figura&nbsp;8 muestra la simulación cinemática por defecto luego de importar el robot desde el panel navegador de robots.</p>
+<div id="fig-ur5-coppelia-incluido" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ur5-coppelia-incluido-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/UR5.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figura&nbsp;8: Simulación del robot UR5 integrado en CoppeliaSim"><img src="https://sergiojacobo.com/blog/posts/2024/01/images/UR5.gif" class="img-fluid figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ur5-coppelia-incluido-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Simulación del robot UR5 integrado en CoppeliaSim
+</figcaption>
+</figure>
+</div>
+<p>¡Y ahí lo tienes! Siguiendo estos sencillos pasos, puedes crear y exportar tus propios archivos URDF desde Fusion 360, y usarlos para simular tus robots en CoppeliaSim o cualquier otro simulador compatible con URDF. ¡Feliz simulación!</p>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.qmd">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2024,
+  author = {Jácobo, Sergio},
+  title = {Desde Fusion 360 a URDF: Construye y Simula tu Robot},
+  date = {2024-05-15},
+  url = {https://sergiojacobo.com/blog/posts/2024/01/01.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2024" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2024. <span>“Desde Fusion 360 a URDF: Construye y Simula
+tu Robot.”</span> May 15, 2024. <a href="https://sergiojacobo.com/blog/posts/2024/01/01.html">https://sergiojacobo.com/blog/posts/2024/01/01.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Robotics</category>
+  <category>Research</category>
+  <category>URDF</category>
+  <category>CAD</category>
+  <category>ROS</category>
+  <category>CoppeliaSim</category>
+  <guid>https://sergiojacobo.com/blog/posts/2024/01/01.html</guid>
+  <pubDate>Tue, 14 May 2024 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2024/01/images/thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/blog/posts/2023/06/06.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumbs">
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Entendiendo la Robótica: Grados de Libertad y Movimiento de Cuerpos Rígido</span></p>
+</div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
+<section id="grados-de-libertad" class="level1">
+<h1>Grados de libertad</h1>
+<p>Notas claves:</p>
+<ul>
+<li>Grados de libertad : <strong><em>Degree of Freedom</em></strong> en inglés se abrevia como <strong>DOF</strong>, <strong>dof</strong>, <strong>Dof</strong>, etc.</li>
+<li>Espacio de configuración: <strong><em>Configuration Space</em></strong> en ingés se abrevia com <em>C-space</em>. Es el conjunto de configuraciones o posturas posibles del robot en el espacio. Esto dependerá de la dimensión del espacio conocido como grados de libertad.<br>
+</li>
+<li>Dimensiones del espacio comunes de un <strong>cuerpo rígido:</strong>
+<ul>
+<li>En el espacio: 6
+<ul>
+<li>Posición del cuerpo: Las coordenadas <img src="https://latex.codecogs.com/png.latex?x,y,z"></li>
+<li>Orientación del cuerpo: Por ejemplo, los ángulos rall, pitch y yaw.</li>
+</ul></li>
+<li>En el plano: 3</li>
+</ul></li>
+</ul>
+</section>
+<section id="movimiento-de-cuerpos-rígidos" class="level1">
+<h1>Movimiento de Cuerpos Rígidos</h1>
+<ul>
+<li><p><strong>Representación implícita</strong>: Usamos esta representación para el C-space ya que al usar matrices de rotación y transformación de matrices, donde se utilizan mayor cantidad de variables sujetas a restricciones, para eliminar singularidades en la representación de orientacion y permitir operaciones algebraicas como parte del modelado.</p></li>
+<li><p><strong>Sistema de referencia conectada a un cuerpo en movimiento:</strong> Se considera esta referencia, por ejemplo el frame <img src="https://latex.codecogs.com/png.latex?%5C%7Bb%5C%7D">, de tipo estacionario ya que es coincidente (en un instante particular) con la referencia conectada al cuerpo en movimiento.</p></li>
+</ul>
+</section>
+<section id="rotación-de-matrices" class="level1">
+<h1>Rotación de matrices</h1>
+<ul>
+<li><p>6 Restricciones en matrices de rotación <img src="https://latex.codecogs.com/png.latex?R">: Ortogonalidad de vectores</p>
+<ul>
+<li>Restriciones en las columnas: Los vectores unitarios deben ser unitarios: 3</li>
+<li>El producto punto de alguno de dos de los vectores columna debe ser ser 0: 3</li>
+<li>En consecuencia, se cumple que:
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?R%5E%7BT%7DR%20=%20I"> lo que conlleva a <img src="https://latex.codecogs.com/png.latex?det(R)%20=%201"> (regla de la mano derecha)</li>
+<li>Lo que se agrupa en el conjunto de matrices reales 3x3 denominado <strong>Special orthogonal group SO(3)</strong></li>
+<li>Algunas propiedades relevantes:
+<ul>
+<li>Inversa: <img src="https://latex.codecogs.com/png.latex?R%5E%7B-1%7D%20=%20R%5E%7BT%7D%20%5Cin%20SO(3)">
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?R_%7Bab%7DR_%7Bba%7D=R_%7Baa%7D=I"> Por lo tanto la inversa de <img src="https://latex.codecogs.com/png.latex?R_%7Bab%7D"> es también <img src="https://latex.codecogs.com/png.latex?R_%7Bba%7D">.</li>
+</ul></li>
+<li>Cierre: <img src="https://latex.codecogs.com/png.latex?R_1%20R_2%20%5Cin%20SO(3)"></li>
+<li>Finalmente: <img src="https://latex.codecogs.com/png.latex?x%20%5Cin%20%5Cmathbb%7BR%7D%20%5Cleft%20%5C%7C%20Rx%20%5Cright%20%5C%7C%20=%20%5Cleft%20%5C%7C%20x%20%5Cright%20%5C%7C"></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.qmd">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2023,
+  author = {Jácobo, Sergio},
+  title = {Entendiendo la Robótica: Grados de Libertad y Movimiento de
+    Cuerpos Rígido},
+  date = {2023-10-15},
+  url = {https://sergiojacobo.com/blog/posts/2023/06/06.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2023" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2023. <span>“Entendiendo la Robótica: Grados de Libertad
+y Movimiento de Cuerpos Rígido.”</span> October 15, 2023. <a href="https://sergiojacobo.com/blog/posts/2023/06/06.html">https://sergiojacobo.com/blog/posts/2023/06/06.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Robotics</category>
+  <category>Theory</category>
+  <category>Dynamics</category>
+  <category>Kinematics</category>
+  <guid>https://sergiojacobo.com/blog/posts/2023/06/06.html</guid>
+  <pubDate>Sat, 14 Oct 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2023/06/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial</title>
+  <dc:creator>Sergio Jácobo</dc:creator>
+  <link>https://sergiojacobo.com/blog/posts/2023/05/05.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumbs">
+<p><a href="../../../../index.html">Inicio</a> &gt; <a href="../../../../blog/index.html">Blog</a> &gt; <a href="../../../../blog/robotics.html">Robotics</a> &gt; <span>Entendiendo la Dinámica: Sistemas de Referencia Inercial y no Inercial</span></p>
+</div>
+<!-- <div class="breadcrumbs">
+  <a href="../../../../index.qmd">Inicio</a> > 
+  <a href="../../../index.qmd">Blog</a> > 
+  <a href="../../../quarto.qmd">Quarto</a> > 
+  <span>Post Actual</span>
+</div> -->
+<section id="sistemas-de-referencia-reference-frames" class="level1">
+<h1>Sistemas de Referencia (<em>Reference Frames</em>)</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/referenceFrame.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://sergiojacobo.com/blog/posts/2023/05/images/referenceFrame.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<p>Notar que:</p>
+<ul>
+<li>Sistema de referencia normalmente se abrevia como “<em>frame</em>”.</li>
+</ul>
+<section id="sistema-de-referencia-inercial-inertial-reference-frame" class="level2">
+<h2 class="anchored" data-anchor-id="sistema-de-referencia-inercial-inertial-reference-frame">Sistema de Referencia Inercial (<em>Inertial Reference Frame</em>)</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7Br%7D=%5Cbar%7BR%7D+%7B%5Cbar%7Br%7D%7D%5E%7B'%7D%5C%5C%0A%5Cbar%7Br%7D%5E%7B'%7D=%5Cbar%7Br%7D-%7B%5Cbar%7BR%7D%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Pero <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BV%7D"> es una constante.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7BR%7D(t)=%5Cbar%7BR_0%7D-%7B%5Cbar%7BV%7Dt%7D%5C%5C%0A%5Cfrac%7Bd%5Cbar%7Br%7D%5E%7B'%7D%7D%7Bdt%7D%20=%20%5Cfrac%7Bd%5Cbar%7Br%7D%7D%7Bdt%7D%20-%20%5Cfrac%7Bd%5Cbar%7BR%7D%7D%7Bdt%7D%5C%5C%0A%5Cbar%7Bv%7D%5E%7B'%7D=%5Cbar%7Bv%7D-%7B%5Cbar%7BV%7D%7D%5C%5C%0A%5Cfrac%7Bd%5Cbar%7Bv%7D%5E%7B'%7D%7D%7Bdt%7D%20=%20%5Cfrac%7Bd%5Cbar%7Bv%7D%7D%7Bdt%7D%20-%20%5Cfrac%7Bd%5Cbar%7BV%7D%7D%7Bdt%7D%5C%5C%0A%5Cbar%7Ba%7D%5E%7B'%7D%20=%20%5Cbar%7Ba%7D%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Luego, aplicando la primera Ley de Newton se cumple que:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7BF%7D%20&amp;%20=%20m%5Cbar%7Ba%7D%5C%5C%0A%5Cbar%7BF%7D%5E%7B'%7D%20&amp;%20=%20m%5Cbar%7Ba%7D%5E%7B'%7D%20=%20m%5Cbar%7Ba%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+</section>
+<section id="sistema-de-referencia-no-inercial-non-inertial-reference-frame" class="level2">
+<h2 class="anchored" data-anchor-id="sistema-de-referencia-no-inercial-non-inertial-reference-frame">Sistema de Referencia no Inercial (<em>Non-Inertial Reference Frame</em>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/paste-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://sergiojacobo.com/blog/posts/2023/05/images/paste-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<p>Pero que pasa si <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BV%7D"> no es una constante?</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El sistema de referencia <img src="https://latex.codecogs.com/png.latex?S%5E%7B'%7D"> tiene una aceleración <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BA%7D"> relativa a S.</p>
+</div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7Ba%7D%20&amp;%20=%20%5Cbar%7Ba%7D%20-%20%5Cbar%7BA%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Por lo tanto,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cbar%7BF%7D%20&amp;%20=%20m%5Cbar%7Ba%7D%5E%7B'%7D%5C%5C%0A&amp;%20=%20m%5Cbar%7Ba%7D%20-%20m%5Cbar%7BA%7D%5C%5C%0A&amp;%20=%20%5Cbar%7BF%7D_%5Ctext%7Bf%C3%ADsico%7D%20-%20%5Cbar%7BF%7D_%5Ctext%7Bficticio%7D%5C%5C%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Donde:</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?%5Cbar%7BF%7D_%5Ctext%7Bf%C3%ADsico%7D"> es la fuerza físicamente aplicada al cuerpo.<br>
+</li>
+<li><img src="https://latex.codecogs.com/png.latex?%5Cbar%7BF%7D_%5Ctext%7Bficticio%7D">. Dado un observador en el sistema de referencia o frame <img src="https://latex.codecogs.com/png.latex?S%5E%7B'%7D"> que desea explicar el comportamiento de las fuerzas de un cuerpo, no solo debe invocar todas las fuerzas físcias sobre un objeto, como la gravedad, fuerza de impulsión, etc; sino que es necesario considerar una fuerza aparente o ficticia. Esta fuerza es un artefacto debido al sistema de coordenadas no inerciales (<img src="https://latex.codecogs.com/png.latex?S%5E%7B'%7D">).</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Considerando el moviendo de rotación “circular” de un objeto alrededor de algún punto central implica la presencia de acelearaciones hacia el interior (centro del círculo). Como consecuencia de ello, un sistema de referencia no inercial en rotación alrededor de la tierra es acelerado respecto de un sistema inercial lo que genera en una fuerza ficticia de dos tipos: Fuerza centrífuga y Fuerza de Coriolis.</p>
+</div>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<div class="bio-footer">
+<img src="https://sergiojacobo.com/../images/sergio-bio.jpg" alt="Headshot of Sergio" class="img-footer">
+<div class="p-footer">
+<p>Soy Sergio, un apasionado ingeniero en mecatrónica dedicado al diseño de robots clínicos y dispositivos biomédicos. Puedes seguirme en <a href="https://twitter.com/JacoboZavaleta">Twitter</a>, ver algunos repositorios de mi trabajo en <a href="https://www.github.com/SJacoboZavaleta">Github</a>, o leer más sobre mí en este <a href="../../../../../about.qmd">sitio web</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jácobo2023,
+  author = {Jácobo, Sergio},
+  title = {Entendiendo la Dinámica: Sistemas de Referencia Inercial y no
+    Inercial},
+  date = {2023-09-15},
+  url = {https://sergiojacobo.com/blog/posts/2023/05/05.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-jácobo2023" class="csl-entry quarto-appendix-citeas">
+Jácobo, Sergio. 2023. <span>“Entendiendo la Dinámica: Sistemas de
+Referencia Inercial y no Inercial.”</span> September 15, 2023. <a href="https://sergiojacobo.com/blog/posts/2023/05/05.html">https://sergiojacobo.com/blog/posts/2023/05/05.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Robotics</category>
+  <category>Theory</category>
+  <category>Dynamics</category>
+  <category>Kinematics</category>
+  <guid>https://sergiojacobo.com/blog/posts/2023/05/05.html</guid>
+  <pubDate>Thu, 14 Sep 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2023/05/images/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Sergio Jácobo-Zavaleta</title>
+<link>https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.html</link>
+<atom:link href="https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website and blog</description>
+<image>
+<url>https://sergiojacobo.com/images/Logo_ThirdFoundation_es_card.png</url>
+<title>Sergio Jácobo-Zavaleta</title>
+<link>https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.html</link>
+<height>78</height>
+<width>144</width>
+</image>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Sat, 13 Sep 2025 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Entrelazamiento Cuántico</title>
+  <link>https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- _includes/navigation_breadcrumbs.qmd -->
+<div class="breadcrumb">
+<p><a href="../../../../../../../blog/posts/2025/01/01.html">Inicio</a> &gt; <a href="../../../../../../../blog/posts/2025/01/Blog/index.html">Blog</a> &gt; <a href="../../../../../../../blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.html">Física Cuántica</a> &gt; <span>Entrelazamiento Cuántico</span></p>
+</div>
+<p>El entrelazamiento cuántico es un fenómeno en el que dos partículas quedan conectadas de tal forma que el estado de una afecta instantáneamente al estado de la otra, sin importar la distancia que las separe. Es como si compartieran una identidad cuántica común, desafiando nuestra intuición sobre el espacio y el tiempo. Einstein lo llamó “acción espeluznante a distancia”, y hoy es la base de tecnologías como la criptografía y la computación cuántica.</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Y ya está está, un breadcrums dinámico.</p>
+</blockquote>
+</blockquote>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reutilización</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2025,
+  author = {},
+  title = {Entrelazamiento Cuántico},
+  date = {2025-09-14},
+  url = {https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html},
+  langid = {es}
+}
+</code></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-2025" class="csl-entry quarto-appendix-citeas">
+<span>“Entrelazamiento Cuántico.”</span> 2025. September 14, 2025. <a href="https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html">https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html</a>.
+</div></div></section></div> ]]></description>
+  <category>Física Cuántica</category>
+  <guid>https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html</guid>
+  <pubDate>Sat, 13 Sep 2025 22:00:00 GMT</pubDate>
+  <media:content url="https://sergiojacobo.com/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/images/thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+</channel>
+</rss>

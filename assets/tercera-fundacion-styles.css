@@ -1,0 +1,521 @@
+/* =============================================================================
+   STYLES: Global Custom Styles for "La Tercera Fundación"
+   Purpose: UI enhancements, typography, layout, and interactive components.
+   Author: Sergio Jacobo Zavaleta
+   ============================================================================= */
+
+
+/* =============================================================================
+   1. CUSTOM PROPERTIES (CSS VARIABLES)
+   Define reusable color variables for consistency.
+   ============================================================================= */
+
+:root {
+  --bg-red-color: #D4006A;
+  --bg-cyan-color: #06B6D4;
+  --bg-text-color: #ffffff;
+}
+
+
+/* =============================================================================
+   2. ANIMATIONS
+   Define keyframes for navbar hover effects.
+   ============================================================================= */
+
+@keyframes line-expand {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes line-expand2 {
+  from { height: 0%; }
+  to { height: 44px; }
+}
+
+@keyframes line-expand3 {
+  from { height: 0%; }
+  to { height: 44px; }
+}
+
+.navbar-title:hover > .icon-line {
+  animation: line-expand 600ms;
+}
+
+.navbar-title:hover > .icon-line2 {
+  animation: line-expand2 600ms;
+}
+
+.navbar-title:hover > .icon-line3 {
+  animation: line-expand3 600ms;
+}
+
+
+/* =============================================================================
+   3. TYPOGRAPHY & TITLE BLOCKS
+   Adjust spacing and font sizes in Quarto's default title blocks.
+   ============================================================================= */
+
+#title-block-header.quarto-title-block.default .quarto-title .title {
+  margin-bottom: 1rem;
+}
+
+#title-block-header.quarto-title-block.default .description > p:last-of-type,
+#title-block-header.quarto-title-block.default .abstract > p:last-of-type {
+  margin-bottom: 1rem;
+}
+
+
+/* =============================================================================
+   4. HEADER & BANNER STYLES
+   Style the top banner with centered text and optional image overlay.
+   ============================================================================= */
+
+.header-banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.header-banner .header-image {
+  position: absolute;
+  display: none;
+  height: auto;
+}
+
+.header-text p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.header-block {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 1.8em;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+}
+
+
+/* =============================================================================
+   5. UTILITY CLASSES
+   Background colors and inline highlight styles.
+   ============================================================================= */
+
+.bg-color-rose {
+  background-color: var(--bg-red-color);
+  color: var(--bg-text-color);
+  padding: 3px;
+}
+
+.bg-color-cyan {
+  background-color: var(--bg-cyan-color);
+  color: var(--bg-text-color);
+  padding: 3px;
+}
+
+
+/* =============================================================================
+   6. POST LISTING & GRID LAYOUT
+   Style the grid of blog posts on category pages.
+   ============================================================================= */
+   
+/* Slightly smaller category labels */
+#quarto-margin-sidebar .quarto-listing-category {
+  font-size: 0.8rem;
+}
+
+/* Post listing */
+div.listing-description {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+div.quarto-post .body .listing-subtitle {
+  font-size: 1.2rem;
+}
+
+/* Ensure card titles have consistent spacing */
+.quarto-grid-item .card-title {
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+  color: black;
+}
+
+.card-body {
+  color: black;
+}
+
+.quarto-grid-item {
+  border: none;
+  background-color: #F6DCAC;
+}
+
+.quarto-grid-item.borderless {
+  border: none;
+  background-color: #F6DCAC;
+}
+
+.quarto-grid-item div.post-contents {
+  padding: 0.5em;
+}
+
+.quarto-grid-item img.thumbnail-image {
+  object-fit: cover;
+  height: 188px !important;
+}
+
+
+/* Category tags inside post cards */
+
+.quarto-grid-item .listing-categories {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0.5em;
+}
+
+.quarto-grid-item .listing-categories .listing-category {
+  color: #FF1493;
+  border: 1px solid #939bc9 !important;
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  font-size: 0.75em;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+}
+
+/* Attribution at bottom of card */
+.quarto-grid-item .card-attribution {
+  font-family: 'Fira Code', monospace;
+  font-weight: 300;
+  color: black;
+  flex-grow: 10;
+  align-items: flex-end;
+}
+
+.quarto-grid-item .card-attribution.justify {
+  justify-content: left;
+}
+
+
+/* =============================================================================
+   7. CATEGORY LABELS IN POST HEADERS
+   Style the category badges shown on individual post headers.
+   ============================================================================= */
+
+.quarto-title .quarto-categories .quarto-category {
+  padding: 0.25em 0.75em;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: #da33d1;
+  text-transform: uppercase;
+  border: 2px solid;
+  border-radius: 0.25rem;
+  opacity: 1;
+}
+
+.quarto-title-meta {
+  margin-bottom: 2.5em;
+}
+
+
+/* =============================================================================
+   8. CALL-OUTS & HIGHLIGHTED SECTIONS
+   Pullout blocks for emphasis or quotes.
+   ============================================================================= */
+
+.further-info {
+  margin: 1.5em 0;
+  padding: 0.75em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.pullout-container {
+  padding: 1.5em;
+  padding-top: 2.5em;
+}
+
+.pullout-block {
+  text-align: center;
+  max-width: calc(1000px + 6vw);
+  margin: 0 auto;
+  padding: 1em 0 1.8em;
+  box-sizing: border-box;
+}
+
+.pullout-text h2 {
+  margin: 0.5em 5vw;
+  color: white;
+}
+
+.pullout-text p {
+  margin: 0 1.5em 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #118ab2;
+  text-decoration-thickness: 3px;
+}
+
+
+/* =============================================================================
+   9. BACKGROUND COLOR CLASSES
+   Utility classes for colored backgrounds.
+   ============================================================================= */
+
+.black-background    { background-color: black; }
+.purple-background   { background-color: #939bc9; }
+.blue-background     { background-color: #01204E; }
+.yellow-background   { background-color: #e3b638; }
+.pink-background     { background-color: #d6748c; }
+.orange-background   { background-color: #da9359; }
+
+
+/* =============================================================================
+   10. BIO FOOTER (About page)
+   Personal footer with image and text.
+   ============================================================================= */
+
+.bio-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+  padding: 1em;
+  background-color: #e78b44;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.img-footer {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  margin-right: 20px;
+}
+
+.p-footer {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+
+/* =============================================================================
+   11. NAVIGATION BUTTONS (Blog Categories)
+   Stylish buttons for navigating between Research, Robotics, etc.
+   ============================================================================= */
+
+.category-nav {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 2.5rem 0;
+  padding: 1.2rem;
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.category-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 95px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  z-index: 1;
+}
+
+.category-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.category-btn:active {
+  transform: translateY(-1px);
+}
+
+.emoji {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.text {
+  font-size: 0.9rem;
+  color: white;
+  z-index: 2;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Category-specific button colors */
+.blog-btn      { background: #5B7DB1; } /* Blue */
+.quarto-btn    { background: #C06C84; } /* Purple */
+.research-btn  { background: #68A691; } /* Rose */
+.robotics-btn  { background: #7D5BA6; } /* Teal */
+
+/* Hover effect on emoji */
+.category-btn:hover .emoji {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+
+/* =============================================================================
+   12. RESPONSIVE DESIGN
+   Adjust styling for tablets and mobile devices.
+   ============================================================================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .category-nav { gap: 0.9rem; }
+  .category-btn { min-width: 95px; height: 85px; }
+  .emoji { font-size: 1.6rem; }
+  .text { font-size: 0.85rem; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .category-nav {
+    justify-content: flex-start;
+    padding: 1rem 0.8rem;
+    gap: 0.8rem;
+  }
+  .category-btn { min-width: 85px; height: 80px; }
+  .emoji { font-size: 1.5rem; }
+  .text { font-size: 0.8rem; }
+}
+
+
+/* =============================================================================
+   13. MISC & UTILITIES
+   Additional small fixes and overrides.
+   ============================================================================= */
+
+/* Remove extra margin on top of first callout */
+.top-callout {
+  margin-top: 0;
+}
+
+/* Rounded profile picture */
+.profile-pic {
+  border-radius: 5px;
+}
+
+/* Hide footer on specific pages */
+body.no-footer footer {
+  display: none;
+}
+
+/* =============================================================================
+   14. NAVBAR LINK STYLING
+   Customize size and weight of navigation links.
+   ============================================================================= */
+
+.navbar-nav .nav-link {
+  /* font-size: 1.1rem; */
+  font-weight: 550;
+  /* letter-spacing: 0.1px; */
+  /* padding-left: 1rem !important; */
+  /* padding-right: 1rem !important; */
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+/* =============================================================================
+   15. BREADCRUMBS STYLE
+   ============================================================================= */
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: #006AD4;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.breadcrumbs a {
+  color: #006AD4;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs span {
+  color: #006AD4;
+  font-weight: 600;
+}
+
+/*
+
+ */
+
+ /* =============================================================================
+   16. Sección de Estilo para Poemas de Danteva
+   ============================================================================= */
+
+/*
+ * Sección de Estilo para Poemas de Danteva (ACTUALIZADO)
+ */
+
+.poema-danteva {
+  /* Control de Ancho y Centrado (¡NUEVO!) */
+  max-width: 750px; /* Define el ancho máximo del bloque para que no se extienda demasiado */
+  width: 90%; /* Asegura que en pantallas pequeñas (móviles) ocupe el 90% del ancho */
+  margin-left: auto; /* Centra el bloque horizontalmente (junto con margin-right: auto) */
+  margin-right: auto;
+  
+  /* Margen vertical (ya definido, pero lo mantenemos explícito) */
+  margin-top: 25px; 
+  margin-bottom: 25px;
+
+  /* Fondo y Borde (Estilos anteriores) */
+  background-color: #fffacd; /* Amarillo claro (Lemon Chiffon) */
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #a0522d;
+  padding: 20px 30px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+
+  /* Tipografía (Estilos anteriores) */
+  font-family: 'Garamond', 'Palatino', serif;
+  font-size: 1.15em;
+  line-height: 1;
+  white-space: pre-wrap; /* Mantiene los saltos de línea */
+}
+
+/* Opcional: Estilo para el nombre del pseudónimo dentro del bloque */
+.poema-danteva strong {
+    font-size: 1.1em;
+    color: #a0522d;
+}
