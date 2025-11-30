@@ -1,0 +1,49 @@
+---
+pagetitle: "La Tercera Fundación: Literatura"
+subtitle: "Notas de un archivo literario desde 2012"
+repo-actions: false
+listing:
+  id: literatura-listing
+  contents: 
+  - poetry
+  - novel
+  - "!index.qmd"
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  image-height: 416px
+  fields: [title, author, image, description]
+  grid-columns: 2
+page-layout: full
+title-block-banner: false
+knitr:
+  opts_chunk: 
+    collapse: true
+execute: 
+  echo: false
+---
+
+# Producción Literaria
+
+::: header-banner
+![](images/literatura_banner.png){fig-alt="Literatura banner" width="500px"}
+:::
+
+:::: header-text
+::: header-block
+Cuando tenía 14 años y estudiaba en el Colegio José Faustino Sánchez Carrión de Trujillo, La Libertad, formé parte de un grupo literario llamado **"Poesía Joven"**. En ese tiempo, mi pseudónimo era **Danteva**, un eco de las ambiciones líricas que se cocinaban entre cuadernos y clases de matemáticas.
+
+Esta sección de mi archivo digital es un tributo a esa etapa y a la idea de que la curiosidad no tiene fronteras, ni entre la robótica ni la poesía. Son piezas con la sensibilidad y el impulso de un adolescente que, sin saberlo, ya estaba construyendo su propia bóveda de conocimiento personal.
+
+**Explora el archivo a continuación. ¡Bienvenido a mis versos de juventud y los de ahora!**
+:::
+::::
+
+## Recursos recuperados
+Revisando unos discos de almacenamiento, encontré entre tantos archivos, una serie de poemas escritos en el super estable Word 2007. Para sorpresa, había algunos archivos dañados y algunos poemas sin terminar. No es coincidencia haber encontrado estas notas y mucho menos ahora que siento ganas de retomar el placer de escribir. Pero antes de ello, deseo documentar (*sin alterar*) y apreciar (o como diría Ashitaka: *"ver con ojos despejados por el odio"*) sobre mi pasado mientras escribo estos posts.
+
+:::{#literatura-listing}
+
+:::

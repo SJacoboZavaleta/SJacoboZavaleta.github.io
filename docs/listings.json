@@ -9,17 +9,12 @@
     ]
   },
   {
-    "listing": "/blog/research.html",
+    "listing": "/blog/robotics.html",
     "items": [
-      "/blog/posts/2023/04/04.html",
-      "/blog/posts/2023/03/03.html",
-      "/blog/posts/2023/02/02.html"
-    ]
-  },
-  {
-    "listing": "/blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.html",
-    "items": [
-      "/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html"
+      "/blog/posts/2024/02/02.html",
+      "/blog/posts/2024/01/01.html",
+      "/blog/posts/2023/06/06.html",
+      "/blog/posts/2023/05/05.html"
     ]
   },
   {
@@ -30,12 +25,28 @@
     ]
   },
   {
-    "listing": "/blog/robotics.html",
+    "listing": "/blog/posts/2025/01/Blog/fisica-cuantica/fisica-cuantica.html",
     "items": [
-      "/blog/posts/2024/02/02.html",
-      "/blog/posts/2024/01/01.html",
-      "/blog/posts/2023/06/06.html",
-      "/blog/posts/2023/05/05.html"
+      "/blog/posts/2025/01/Blog/fisica-cuantica/entrelazamiento/entrelazamiento.html"
+    ]
+  },
+  {
+    "listing": "/blog/research.html",
+    "items": [
+      "/blog/posts/2023/04/04.html",
+      "/blog/posts/2023/03/03.html",
+      "/blog/posts/2023/02/02.html"
+    ]
+  },
+  {
+    "listing": "/ideas/literature/index.html",
+    "items": [
+      "/ideas/literature/poetry/01_sin_salida/sin_salida.html",
+      "/ideas/literature/poetry/02_agujeros/agujeros.html",
+      "/ideas/literature/poetry/03_encanto/encanto.html",
+      "/ideas/literature/poetry/04_tragedia_nombre/tragedia_nombre.html",
+      "/ideas/literature/poetry/05_suenio.qmd/suenio.html",
+      "/ideas/literature/poetry/06_tragedia/tragedia.html"
     ]
   },
   {

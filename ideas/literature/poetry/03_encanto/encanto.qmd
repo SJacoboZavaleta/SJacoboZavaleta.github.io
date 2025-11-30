@@ -1,0 +1,57 @@
+---
+title: "Encanto"
+subtitle: "Pasión e idealización del primer amor"
+author: "Sergio Jácobo Zavaleta"
+date: "2012"
+categories: [amor, sensualidad, idealización]
+image: images\encanto_Gemini_Generated1_web.png
+---
+
+### El Encanto de la Idealización: Pureza y Pasión
+
+"Encanto" representa la inmersión de **Danteva** en la lírica amorosa, una alabanza a la amada. El joven poeta eleva a la mujer a un ideal casi divino, usando una imaginería barroca y dulce ("flor del naranjo", "perfumadas y emplumadas por los dioses"). Es un cambio de tono que muestra la amplitud emocional que buscaba explorar en aquella época.
+
+Hoy me causa gracia y ternura la **dualidad** que se teje: una alabanza a la pureza (*como las musas que tenían Dante Alighieri o el propio Don Quijote*) coexistiendo con el reconocimiento de la pasión física. La metáfora final de la fusión de las almas **"de día somos dos, de noche solo uno"** encapsula perfectamente la intensidad y el carácter absoluto del primer amor juvenil, y que decidí incluir debido a que estos versos iban a ser leídos frente a un público femenino durante un evento público 😛 (*obviamente, lo escribí con pocas horas antes* 😁).
+
+------------------------------------------------------------------------
+
+::: poema-danteva
+La más tierna idea, son tus ojos,\
+creadas y pulidas con el cincel del amor;\
+el aroma de una suave idea, son tus labios,\
+perfumadas y emplumadas por los dioses.
+
+------------------------------------------------------------------------
+
+¡Oh flor del naranjo, que azahar más bello eres tú!\
+rodeada entre mis brazos, tus aguas consuelan mi cansancio,\
+transforman mi locura como juego sin salida.
+
+------------------------------------------------------------------------
+
+Sumergidos bajo el manto del placer,\
+Mi paraíso es tu gracia, el infierno tu desgracia;\
+cien son tus virtudes, cien son mis pesares.\
+y solo tú, virgen de corazón, ¡tuyo solo soy!
+
+------------------------------------------------------------------------
+
+De viaje en viaje vengo, como el sol de luz en luz.\
+tus manos golpean mi calor y tu pecho esconde mi dolor;\
+enredados en el lecho, la fiesta continúa\
+lentamente en amor, dos viciosos sin control.
+
+------------------------------------------------------------------------
+
+Amor, amor, de día somos dos, de noche solo uno;\
+las sombras lo atestiguan, las mañana lo confirman.\
+¡Despertemos de este encanto! y sigamos caminando.
+
+<br> **Danteva**
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+## Expandir
+
+![Imagen generada con Google Gemini](images/encanto_Gemini_Generated2_web.png){fig-align="center" width="550"}
+:::

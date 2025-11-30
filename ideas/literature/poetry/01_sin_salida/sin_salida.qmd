@@ -1,0 +1,54 @@
+---
+title: "Sin Salida"
+subtitle: "Una reflexión sobre la culpa y la paz"
+author: "Sergio Jácobo Zavaleta"
+date: "2012"
+categories: [existencialismo, oscuridad]
+image: images\sin_salida_Gemini_Generated1_web.png
+---
+
+### El Contexto y el Conflicto
+
+En esta pieza, **Danteva** se adentra en un territorio emocional sombrío, explorando la culpa, la desesperación y la muerte como una posible liberación. El autor de entonces recurre a una atmósfera onírica y pesada, donde el conflicto interno se proyecta en la naturaleza ("pesadas mareas del fango" o "llanto de los peces").
+
+Recuerdo que este fue uno de los poemas que más me costó estructurar, buscando ese tono elevado y casi épico. Recuerdo que en ese momento tenía bien estudiado las figuras retóritcas y queria impresionar a mi profesora de Lenguaje. Me fascina hoy la forma en que el poema, después de toda una batalla cósmica de "cielos lloraban" y "tierra se partía", concluye con una resolución sorprendentemente simple: el perdón es tan **"Simple como una lámpara"** (*esa antigua lámpara que miraba y miraba mientras escribía aquellos versos*). Es un buen recordatorio de que a veces, las soluciones más profundas son las menos complejas.
+
+***
+
+::: {.poema-danteva}
+
+Subiendo y bajando las pesadas mareas del fango,  
+Perdido navegaba, como el llanto de los peces,  
+Desdichados y muriendo, tal batalla se enfrentaba,  
+Escapando de su santo, el padre, el hijo, la culpa.  
+
+***
+
+El eco del bosque, el momento esperado anunciaba,  
+Como la tenaz sombra del mártir reflejado en el lago de sus lamentos.  
+El silencio pintaba el cuadro perfecto, el viento grababa su nombre.  
+No había salida. ¡Qué triste vida! 
+
+***
+
+Los  cielos lloraban, llorando se partía la tierra;  
+El brillo de la vida, apenas le bañaba; la muerte noche, despierta le esperaba.  
+Lento como el invierno, el alma de su sangre volando por el aire se perdía.  
+
+***
+
+Desde el cielo, el paraíso le contempla. Desde el cielo, ella le esperaba.  
+La dama del dolor durmió sus sentidos, el amor olvidó sus penas.  
+La nave que nunca ha de tornar . . . deslizándose regresó.  
+Simple como una lámpara. Al final se perdonó.
+
+<br>
+**Danteva**
+:::
+
+
+::: {.callout-note collapse="true" appearance="minimal"}
+## Expandir
+
+![Imagen generada con Google Gemini](images/sin_salida_Gemini_Generated2_web.png){fig-align="center" width="550"}
+:::

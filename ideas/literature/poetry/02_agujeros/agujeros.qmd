@@ -1,0 +1,51 @@
+---
+title: "Agujeros"
+subtitle: "El miedo como huésped del hogar"
+author: "Sergio Jácobo Zavaleta"
+date: "2012"
+categories: [oscuridad, personificación]
+image: images/agujeros_Gemini_Generated1_web.png
+---
+
+### Los Agujeros del Alma
+
+En esta pieza, **Danteva** explora el despojo emocional y la fragilidad del hogar. El autor de entonces recurre a la **personificación** para dar cuerpo al vacío, manifestándolo como una figura "escuálida, triste y funesta de los mares" que recorre una casa 🏡(*y la vida de otras personas*). Este es uno de los poemas más oscuros de la colección, donde el miedo se convierte en algo físico y tangible.
+
+Lo que más me llama la atención hoy es cómo la esperanza es vista no como una luz, sino como un grillete: **"la esperanza que me encadena"**. Esta idea de que la vida se sostiene por una obligación, no por un deseo puro, me parece una reflexión muy avanzada para la edad y que ahora me resulta muy comprensible debido a una extraña infancia. Sin embargo, si algo debo destacar es que en este poema intenté plasmar esa sensación de pequeñez que me daba la casa donde crecí pero en el transcurso, me desvié de tema al escribir 😅.
+
+------------------------------------------------------------------------
+
+::: poema-danteva
+El viento ligero, soplando se llevaba las risas,\
+De niño en niño, se las arrancaba como dulce de panal.\
+Al final del pasillo, sus vidas se ahogaban,\
+El aroma del miedo al galope se aferraba.
+
+------------------------------------------------------------------------
+
+El escuálido, triste y funesto de los mares,\
+Embriagado recorre los pisos de casa, te despoja el alma\
+Abordando todo a su paso; el más mínimo calor\
+Te arranca. Todo o nada. Sin raíces.
+
+------------------------------------------------------------------------
+
+El más fuerte silencio aleja las miradas, corta el dolor.\
+Se refugia entre las ollas, la carne le acompaña.\
+Y al despertar, mi susto le alimenta, mi ira le transporta.
+
+------------------------------------------------------------------------
+
+Y Por último, la esperanza que me encadena, que me da vida y me roba amor.\
+Donde los campos pintan en la estación florida:\
+El cantar de mis pesares resumida en uno, dos tres, o más.\
+Donde nada es todo. Y todos son, los agujeros del alma.
+
+<br> **Danteva**
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+## Expandir
+
+![Imagen generada con Google Gemini](images/agujeros_Gemini_Generated2_web.png){fig-align="center" width="550"}
+:::

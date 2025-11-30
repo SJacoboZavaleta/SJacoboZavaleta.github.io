@@ -1,0 +1,57 @@
+---
+title: "Sueño"
+subtitle: "Cuando la pasión se vuelve tormento"
+author: "Sergio Jácobo Zavaleta"
+date: "2012"
+categories: [amor, onírico, deseo]
+image: images\suenio_Gemini_Generated1_web.png
+---
+
+### La Frontera Onírica: La Realidad Aumentada del Sueño
+
+"Sueño" explora la línea difusa entre el deseo y la realidad, donde el plano onírico se convierte en la única verdad viable. **Danteva** se autodenomina el "*bellaco de un cuento*," una figura que vive su plenitud emocional en el subconsciente, un **"sueño azul"** que es al mismo tiempo felicidad y tormento.
+
+De este poema me quedo con la intensidad física de la pasión adolescente. De algun modo, intenté describir esa fascinación amorosa descrita como una mezcla de épica y ternura (*ahora agradezco esa influencia de Pablo Neruda en mi forma de escribir sobre el amor, un claro punto de partida*). Visto desde ahora, recordar esas palabras me genera un sentimiento conmovedor de cómo me ilusionaba las cosas, las personas y como algo muy cotidiano como dormir, se volvía muy importante y necesario para buscar consuelo y prepararte para el nuevo día (*vaya mecanismo de autoprotección y cuidado tenía* 😲).
+
+------------------------------------------------------------------------
+
+::: poema-danteva
+Soy el bellaco de un cuento, al encuentro de la cuenca del amor,\
+Como el sueño azul, tal mar de mil colores y sabores descubro al navegar.\
+Quiero que la suerte me acompañe y me lleve rumbo a tus cabellos,\
+Poder llegar a tu interior, donde tus labios sumerjan mi dolor.
+
+------------------------------------------------------------------------
+
+A lo lejos te vi llegar tal disparo al corazón, ¡Oh hermosura mortal ¡\
+Que sol más bello para mi, que alumbra y relumbra hasta morir.\
+Parecía como si el malo fuese ella con sus redes traicioneras,\
+Deja mi cuerpo calcinado al final del recorrido.
+
+------------------------------------------------------------------------
+
+Tu más admirable admiración, cegado me dejo sin cielo al que ver.\
+Tus labios rojos de fresa embobaron mi razón como bala al corazón.\
+Y Tus ojos, ojos como espejos,
+
+------------------------------------------------------------------------
+
+Soy el bellaco de un cuento,\
+en un sueño que me hace feliz, y que a la vez me atormenta.\
+Fue tan real todo lo que sentí, que ahora solo espero volver a dormir;\
+para que te hagas presente, para que vuelvas a mí.
+
+------------------------------------------------------------------------
+
+Y tu ¿Me preguntas si te amo?... es que acaso no sientes mi energía\
+Esa pasión que recorre mis carnes y\
+Que se pierden en las tierras de tu vientre.
+
+<br> **Danteva**
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+## Expandir
+
+![Imagen generada con Google Gemini](images/suenio_Gemini_Generated2_web.png){fig-align="center" width="550"}
+:::

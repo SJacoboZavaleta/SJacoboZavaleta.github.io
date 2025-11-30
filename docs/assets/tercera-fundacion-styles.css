@@ -476,3 +476,46 @@ body.no-footer footer {
   color: #006AD4;
   font-weight: 600;
 }
+
+/*
+
+ */
+
+ /* =============================================================================
+   16. Sección de Estilo para Poemas de Danteva
+   ============================================================================= */
+
+/*
+ * Sección de Estilo para Poemas de Danteva (ACTUALIZADO)
+ */
+
+.poema-danteva {
+  /* Control de Ancho y Centrado (¡NUEVO!) */
+  max-width: 750px; /* Define el ancho máximo del bloque para que no se extienda demasiado */
+  width: 90%; /* Asegura que en pantallas pequeñas (móviles) ocupe el 90% del ancho */
+  margin-left: auto; /* Centra el bloque horizontalmente (junto con margin-right: auto) */
+  margin-right: auto;
+  
+  /* Margen vertical (ya definido, pero lo mantenemos explícito) */
+  margin-top: 25px; 
+  margin-bottom: 25px;
+
+  /* Fondo y Borde (Estilos anteriores) */
+  background-color: #fffacd; /* Amarillo claro (Lemon Chiffon) */
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #a0522d;
+  padding: 20px 30px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+
+  /* Tipografía (Estilos anteriores) */
+  font-family: 'Garamond', 'Palatino', serif;
+  font-size: 1.15em;
+  line-height: 1;
+  white-space: pre-wrap; /* Mantiene los saltos de línea */
+}
+
+/* Opcional: Estilo para el nombre del pseudónimo dentro del bloque */
+.poema-danteva strong {
+    font-size: 1.1em;
+    color: #a0522d;
+}

@@ -1,0 +1,43 @@
+---
+title: "Tragedia de un Nombre"
+subtitle: "El deseo de la inmortalidad y la memoria"
+author: "Sergio Jácobo Zavaleta"
+date: "2012"
+categories: [trascendencia, memoria, épica]
+image: images\tragedia_nombre_Gemini_Generated1_web.png
+---
+
+### El Tema de Fondo: La Trascendencia
+
+"Tragedia de un Nombre" toca directamente la ambición de la memoria y la frustración de la invisibilidad ("Fantasma era, olvidada así permaneció"). **Danteva** aborda la necesidad de tener un propósito y ser un recuerdo, resumiendo el deseo universal de ser **"inmortal"** (incluso mejor que la de *Dorian Gray*).
+
+Me gusta pensar en este poema hoy y trazar un paralelo con mi trabajo actual. Al final, **"La Tercera Fundación"** (*este sitio web si te perdiste*) es precisamente un proyecto sobre la trascendencia y la preservación del conocimiento. Por aquellos días, mi empeño estaba puesto en alcanzar la inmortalidad literaria, un sueño que me otorgó, aunque de manera efímera, cierta notoriedad en diversos eventos de poesía 😏; hoy, busco la inmortalidad del conocimiento útil y reproducible (*jajaja ya quisiera*). La **invocación a Julieta** 🥰 al final eleva la ambición personal a una escala dramática conocida por todos.
+
+------------------------------------------------------------------------
+
+::: poema-danteva
+La vida nunca le sonrió, la muerte jamás la conoció\
+Fantasma era, olvidada así permaneció.\
+Las calles la ven pasar, sin rumbo y sin color.
+
+Solo los murmullos la alimentan, así permaneció.\
+Nadie la quería, todos la veían.\
+Parecía muerta en vida, sin tierra y sin nación.
+
+No quiero morir sin causa, sino con motivo.\
+Ser recuerdo de la gente y que la gente lleve mi nombre\
+Vivir a la marea de los años. Ser inmortal.\
+Mi nombre sangre es, que pena es mi vida.
+
+¡Oh Julieta¡ Qué vida nos espera. No lo se\
+Nunca te rendiste, nunca te juzgue.\
+Mi nombre tuyo es ¡
+
+<br> **Danteva**
+:::
+
+::: {.callout-note collapse="true" appearance="minimal"}
+## Expandir
+
+![Imagen generada con Google Gemini](images/tragedia_nombre_Gemini_Generated2_web.png){fig-align="center" width="550"}
+:::

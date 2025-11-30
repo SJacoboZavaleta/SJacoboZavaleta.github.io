@@ -2,18 +2,18 @@ project:
   type: website
   output-dir: docs
   resources:
-    - "images"
+    - "images" 
 
 execute:
   freeze: auto
 
 website:
-  title: "Sergio Jácobo-Zavaleta"
+  title: "Sergio Jácobo-Zavaleta" 
   site-url: https://sergiojacobo.com
   description: Personal website and blog
   repo-url: https://github.com/SJacoboZavaleta/sergiojacobo
   #repo-actions: issue
-  page-navigation: true
+  page-navigation: true 
   back-to-top-navigation: true
   image: images/Logo_ThirdFoundation_es_card.png	
   navbar:

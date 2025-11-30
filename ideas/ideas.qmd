@@ -30,6 +30,8 @@ I'm working on some ideas that might be useful to others.
 :::
 :::
 
+[literature](literature/index.qmd)
+
 :::{.header-banner}
 ![](../../images/noPreview.jpg){fig-alt="No preview" width=500px}
 :::
